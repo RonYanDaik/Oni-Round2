@@ -1,0 +1,19 @@
+3D Point Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1012	Not used
+Minimum x-coordinate	$14	9	Minimum x-coordinate of all packages below
+Minimum y-coordinate	$18	9	Minimum y-coordinate (height) of all packages below
+Minimum z-coordinate	$1C	9	Minimum z-coordinate of all packages below
+Maximum x-coordinate	$20	9	Maximum x-coordinate of all packages below
+Maximum y-coordinate	$24	9	Maximum y-coordinate (height) of all packages below
+Maximum z-coordinate	$28	9	Maximum z-coordinate of all packages below
+Center x-coordinate	$2C	9	x-coordinate of the center [ (max. x-coord. - min. x-coord.) ÷ 2) + min. x-coord. ]
+Center y-coordinate	$30	9	y-coordinate of the center [ (max. y-coord. - min. y-coord.) ÷ 2) + min. y-coord. ]
+Center z-coordinate	$34	9	z-coordinate of the center [ (max. z-coord. - min. z-coord.) ÷ 2) + min. z-coord. ]
+Distance	$38	9	Distance from the center to each of the both points above
+Packages	$3C	4	Amount of packages that follow
+*Package		$40	$3C	4	12
+x-coordinate	$00	9	x-coordinate of the point
+y-coordinate	$04	9	y-coordinate (height) of the point
+z-coordinate	$08	9	z-coordinate of the point

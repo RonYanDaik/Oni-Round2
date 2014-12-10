@@ -1,0 +1,11 @@
+Oni Character Impact Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	164
+Particle name	$00	10016	Name of the particle
+Impact reference	$10	228	Reference to an Impt file of level 0
+Sound reference	$90	116	Reference to an OSBD file of level 0
+Unknown	$A0	2	Unknown
+Unknown	$A2	2	Unknown

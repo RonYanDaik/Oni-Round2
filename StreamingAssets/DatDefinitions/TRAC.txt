@@ -1,0 +1,11 @@
+Animation Collection
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1016	Not used
+TRAC-link	$18	12	Link to a shared Animation Collection
+Unknown	$1C	2	Unknown
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	12
+Unknown	$00	4	Unknown
+Not used	$04	1004	Not used
+TRAM-link	$08	12	Link to the Animation

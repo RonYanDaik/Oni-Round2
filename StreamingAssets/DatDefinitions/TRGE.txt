@@ -1,0 +1,13 @@
+Trigger Emitter
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	9	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	9	Unknown
+Unknown	$18	9	Unknown
+Unknown	$1C	9	Unknown
+M3GM-link	$20	12	Link to the Geometry
+Unknown	$24	4	Unknown; maybe a canceled link
+Not used	$28	1024	Not used
+

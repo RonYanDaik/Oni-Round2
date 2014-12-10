@@ -1,0 +1,11 @@
+Texture Animation
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1012	Not used
+Loop speed	$14	2	Loop speed
+Unknown	$16	2	Unknown
+Unknown	$18	2	Unknown
+Not used	$1A	1002	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	4
+TXMP link	$00	12	Image which is used for the texture animation

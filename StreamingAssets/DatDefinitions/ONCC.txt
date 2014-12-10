@@ -1,0 +1,72 @@
+Oni character class
+File id	$00	12	File id
+Level id	$04	17	Level id
+TXMP-link	$28	12	Shadow texture
+Shadow height 5 	$2C	9	Height, where the shadow fades out completely
+Shadow height 4	$30	9	Height, where the diameter of the shadow decreases and the shadow fades out half
+Shadow height 3	$34	9	Height, where the diameter of the shadow decreases
+Shadow height 2	$38	9	Height, where the diameter of the shadow decreases
+Shadow height 1	$3C	9	Height, where the diameter of the shadow decreases
+Shadow option 1	$40	2	Transparency of the shadow for the first part of a jump
+Shadow option 2	$42	2	Transparency of the shadow for the second part of a jump
+Regeneration time	$64	2	Regeneration time of one health point in 1/60 seconds if you use a hypo
+Hurt light sound	$98	132	Reference to an OSBD file of level 0
+Hurt medium sound	$B8	132	Reference to an OSBD file of level 0
+Hurt heavy sound	$D8	132	Reference to an OSBD file of level 0
+Death sound	$F8	132	Reference to an OSBD file of level 0
+Rotation factor	$12C	9	Rotation factor * 360 degrees = possible rotation per frame or animation
+Taunt sound query	$2B0	1	0 = not used; 100 = used
+Alert sound query	$2B1	1	0 = not used; 100 = used
+Startle sound query	$2B2	1	0 = not used; 100 = used
+Check body sound query	$2B3	1	0 = not used; 100 = used
+Pursue sound query	$2B4	1	0 = not used; 100 = used
+Cower sound query	$2B5	1	0 = not used; 100 = used
+Punch heavy sound query	$2B6	1	0 = not used; 100 = used
+Kich heavy sound query	$2B7	1	0 = not used; 100 = used
+Super3 sound query	$2B8	1	0 = not used; 100 = used
+Super4 sound query	$2B9	1	0 = not used; 100 = used
+Taunt sound	$2BC	132	Reference to a SNDD file of level 0
+Alert sound	$2DC	132	Reference to a SNDD file of level 0
+Startle sound	$2FC	132	Reference to a SNDD file of level 0
+Check body sound	$31C	132	Reference to a SNDD file of level 0
+Pursue sound	$33C	132	Reference to a SNDD file of level 0
+Cower sound	$35C	132	Reference to a SNDD file of level 0
+Punch heavy sound	$37C	132	Reference to a SNDD file of level 0
+Kick heavy sound	$39C	132	Reference to a SNDD file of level 0
+Super3 sound	$3BC	132	Reference to a SNDD file of level 0
+Super4 sound	$3DC	132	Reference to a SNDD file of level 0
+Eyeshot	$3FC	9	The max. distance where the AI can see you
+Earshot	$400	9	The max. distance where the AI can hear you
+ONCV-link	$434	12	Character varient link
+ONCP-link	$438	12	Character particle array link; useless?
+ONIA-link	$43C	12	Character impact array link; useless?
+Footstep walk impact	$454	230	Reference to an Impt file of level 0
+Footstep run impact	$4D6	230	Reference to an Impt file of level 0
+Footstep crouch impact	$558	230	Reference to an Impt file of level 0
+Fall slide impact	$5DA	230	Reference to an Impt file of level 0
+Fall land impact	$65C	230	Reference to an Impt file of level 0
+Fall land hard impact	$6DE	230	Reference to an Impt file of level 0
+Fall knockdown impact	$760	230	Reference to an Impt file of level 0
+Fall knockdown impact	$7E2	230	Reference to an Impt file of level 0
+Fall knockdown impact	$864	230	Reference to an Impt file of level 0
+Footstep turn impact	$8E6	230	Reference to an Impt file of level 0
+Footstep run start impact	$968	230	Reference to an Impt file of level 0
+Footstep single step impact	$9EA	230	Reference to an Impt file of level 0
+Footstep run stop impact	$A6C	230	Reference to an Impt file of level 0
+Footstep walk stop impact	$AEE	230	Reference to an Impt file of level 0
+Footstep run sprint impact	$B70	230	Reference to an Impt file of level 0
+Special death particles	$BF4	164	Reference to a 3Dparticle.BINA file of level 0; only the mad bomber use it
+TRBS-link	$C3C	12	Body set link
+TRMA-link	$C40	12	Texture map array link
+CBPM-link	$C44	12	Body part material link
+CBPI-link	$C48	12	Body part impact link
+Peace timer	$C4C	4	Peace timer in 1/60 seconds; after that time the character switches back from fight to peace mode
+First idle timer	$C50	4	First idle timer in 1/60 seconds; after that time Oni plays a special idle animation
+Second idle timer	$C54	4	Second idle timer in 1/60 seconds; after that time Oni plays a special idle animation
+Basic health	$C58	4	Extra health informations are stored in the Character.BINA files
+Basic health	$C5C	4	Unknown; always the same
+Minimal body size factor	$C60	9	Minimal body size factor
+Maximal body size factor	$C64	9	Maximal body size factor
+TRAC-link	$C88	8	Animation collection link
+TRSC-link	$C8C	8	Screen (aiming) collection link
+

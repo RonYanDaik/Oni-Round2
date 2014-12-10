@@ -1,0 +1,10 @@
+Totoro Quaternion Body Translation Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	4
+Not used	$00	1001	Oni doesn't need it; you can set it to what you want
+Major joint	$01	1	Major joint
+Minor joint	$02	1	Minor joint
+Not used	$03	1001	Not used

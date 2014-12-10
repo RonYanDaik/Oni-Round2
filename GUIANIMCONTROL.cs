@@ -1052,12 +1052,14 @@ public class GUIANIMCONTROL : MonoBehaviour
         {
             return;
         }
+
         if(param.Contains("|DONOTUSE"))
         {
             Debug.Log(param);
             Debug.Break();
             return;
         }
+
         //if (param == m_clipname)
         {
             OnLastFrame();
@@ -1273,14 +1275,37 @@ public class GUIANIMCONTROL : MonoBehaviour
     float _from_time;
     float startTime;
     string adds2 = "";
+    List<string> m_loadedClips = new List<string>();
 
     void PlayClip(string name)
     {
-        if (name != m_clipname && !animation.IsPlaying(name) && NewBehaviourScript.m_events.ContainsKey(name))
+        if (!m_loadedClips.Contains(name))
         {
-            NewBehaviourScript.m_events[name].stringParameter = NewBehaviourScript.m_events[name].stringParameter.Replace("|DONOTUSE", "");
+            AnimationClip l_clip = AnimationClipHolder.Get(name, this);
+            if (l_clip != null)
+            {
+                animation.AddClip(l_clip, name);
+                m_loadedClips.Add(name);
+            }
+            else
+            {
+                Debug.LogError("Cant load clip " + name);
+            }
+        }
+        if (name != m_clipname && !animation.IsPlaying(name) && m_loadedClips.Contains(name))
+        {
             Oni.Totoro.AnimationState old = 0;
             Oni.Totoro.AnimationState @new = 0;
+           
+            if (!string.IsNullOrEmpty(m_clipname))
+            {
+                from = animation[m_clipname];
+                to = animation[name];
+                old = ((Oni.Totoro.Animation)Round2.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
+            }
+            /*
+            NewBehaviourScript.m_events[name].stringParameter = NewBehaviourScript.m_events[name].stringParameter.Replace("|DONOTUSE", "");
+            
             if (!string.IsNullOrEmpty(m_clipname))
             {
                 NewBehaviourScript.m_events[m_clipname].stringParameter += "|DONOTUSE";
@@ -1288,10 +1313,10 @@ public class GUIANIMCONTROL : MonoBehaviour
                 to = animation[name];
                 old = NewBehaviourScript.m_anims[m_clipname].ToState;
                 
-            }
+            }*/
 
             m_clipname = name;
-            @new = NewBehaviourScript.m_anims[m_clipname].FromState;
+            @new = ((Oni.Totoro.Animation)Round2.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).FromState;
             adds2 = "mixstate: " + (old != @new).ToString();
             
             {
@@ -1307,16 +1332,17 @@ public class GUIANIMCONTROL : MonoBehaviour
         }
         else
         {
-            if (!NewBehaviourScript.m_events.ContainsKey(name))
+            if (!m_loadedClips.Contains(name))
             {
                 Debug.LogError("nave no clip " + name);
                 Debug.LogError("clipdump:");
                 string dump = "";
 
+                /*
                 foreach(string __name in NewBehaviourScript.m_events.Keys)
                 {
                     dump += __name + "\n";
-                }
+                }*/
 
                 Debug.LogError(dump);
             }
@@ -1382,60 +1408,57 @@ public class GUIANIMCONTROL : MonoBehaviour
             }
         }
 
-        if (NewBehaviourScript.EndFlag)
+        CollisionFlags flags = GetComponentInChildren<CharacterController>().Move(transform.rotation * (m_motionVector + Physics.gravity + m_rememberedSpeed + new Vector3(0, m_jumpStart != 0 ? Mathf.Sqrt(Mathf.Abs(m_jumpVal - (Time.time - m_jumpStart))) * Mathf.Sign((m_jumpVal - (Time.time - m_jumpStart))) * (m_travelDist * (Input.GetKey(KeyCode.Space) ? 1.3f : 1)) : 0, 0)) * Time.deltaTime);
+        //rigidbody.MovePosition(Vector3.up);
+        //rigidbody.MovePosition(Vector3.down);
         {
-            CollisionFlags flags = GetComponentInChildren<CharacterController>().Move(transform.rotation * (m_motionVector + Physics.gravity + m_rememberedSpeed + new Vector3(0, m_jumpStart != 0 ? Mathf.Sqrt(Mathf.Abs(m_jumpVal - (Time.time - m_jumpStart))) * Mathf.Sign((m_jumpVal - (Time.time - m_jumpStart))) * (m_travelDist * (Input.GetKey(KeyCode.Space) ? 1.3f : 1)) : 0, 0)) * Time.deltaTime);
-            //rigidbody.MovePosition(Vector3.up);
-            //rigidbody.MovePosition(Vector3.down);
+            if(m_lockCursor)
             {
-                if(m_lockCursor)
+                m_x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+                m_y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+            }
+
+            m_interpAngle = Quaternion.Lerp(m_interpAngle, m_targetAngle, Time.deltaTime * 15f);
+            m_y = ClampAngle(m_y, yMinLimit, yMaxLimit);
+            Quaternion rotation = Quaternion.Euler(m_y, m_x, 0);
+            Vector3 position = rotation * new Vector3(0, 0, -25f) + transform.position;
+            m_camera.rotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
+            transform.rotation = Quaternion.Euler(0, rotation.eulerAngles.y + m_interpAngle.eulerAngles.y, 0);
+            m_camera.position = position;
+            m_camera.LookAt(transform.position + new Vector3(0, 15, 0));
+        }
+
+        if ((flags & CollisionFlags.CollidedBelow) != 0)
+        {
+            if (m_waitingForLanding)
+            {
+                OnLand();
+            }
+        }
+        else
+        {
+            //if just lifted off
+
+            if ((m_lastCollisionFlags & CollisionFlags.CollidedBelow) != 0 && (flags & CollisionFlags.CollidedBelow) == 0)
+            {
+                if (m_jumpStart == 0)
                 {
-                    m_x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-                    m_y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+                    m_jumpStart = Time.time - m_jumpVal;
+                    m_rememberedSpeed = m_motionVector;
+                    Debug.Log("FALL LIFTOFF");
+                    m_waitingForLanding = true;
+                    m_lastFlags = AnimFlags.jump | AnimFlags.idle;
                 }
-
-                m_interpAngle = Quaternion.Lerp(m_interpAngle, m_targetAngle, Time.deltaTime * 15f);
-                m_y = ClampAngle(m_y, yMinLimit, yMaxLimit);
-                Quaternion rotation = Quaternion.Euler(m_y, m_x, 0);
-                Vector3 position = rotation * new Vector3(0, 0, -25f) + transform.position;
-                m_camera.rotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
-                transform.rotation = Quaternion.Euler(0, rotation.eulerAngles.y + m_interpAngle.eulerAngles.y, 0);
-                m_camera.position = position;
-                m_camera.LookAt(transform.position + new Vector3(0, 15, 0));
+                //m_jumpStart = Time.time;
             }
+        }
 
-            if ((flags & CollisionFlags.CollidedBelow) != 0)
-            {
-                if (m_waitingForLanding)
-                {
-                    OnLand();
-                }
-            }
-            else
-            {
-                //if just lifted off
+        m_lastCollisionFlags = flags;
 
-                if ((m_lastCollisionFlags & CollisionFlags.CollidedBelow) != 0 && (flags & CollisionFlags.CollidedBelow) == 0)
-                {
-                    if (m_jumpStart == 0)
-                    {
-                        m_jumpStart = Time.time - m_jumpVal;
-                        m_rememberedSpeed = m_motionVector;
-                        Debug.Log("FALL LIFTOFF");
-                        m_waitingForLanding = true;
-                        m_lastFlags = AnimFlags.jump | AnimFlags.idle;
-                    }
-                    //m_jumpStart = Time.time;
-                }
-            }
-
-            m_lastCollisionFlags = flags;
-
-            PlayClip("KONOKO" + GetAnim());
-            if (animation["KONOKO" + GetAnim()] != null)
-            {
-                adds = animation["KONOKO" + GetAnim()].normalizedTime.ToString() + "\n" + (m_jumpStart != 0 ? m_upperVector * (Time.time - m_jumpStart) - 0.5f * (Time.time - m_jumpStart) * (Time.time - m_jumpStart) * 9.8f : 0).ToString();
-            }
+        PlayClip("KONOKO" + GetAnim());
+        if (animation["KONOKO" + GetAnim()] != null)
+        {
+            adds = animation["KONOKO" + GetAnim()].normalizedTime.ToString() + "\n" + (m_jumpStart != 0 ? m_upperVector * (Time.time - m_jumpStart) - 0.5f * (Time.time - m_jumpStart) * (Time.time - m_jumpStart) * 9.8f : 0).ToString();
         }
     }
 

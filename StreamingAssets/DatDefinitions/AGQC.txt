@@ -1,0 +1,14 @@
+Gunk Quad Collision Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	28
+Unknown	$00	3	Unknown
+High bit	$03	1	High bit
+Unknown	$04	9	Unknown
+Unknown	$08	9	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	9	Unknown
+Unknown	$18	9	Unknown

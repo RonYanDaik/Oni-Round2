@@ -1,0 +1,25 @@
+Film
+File id	$00	12	File id
+Level id	$04	17	Level id
+x-coordinate	$08	9	x-coordinate of the start point
+y-coordinate	$0C	9	y-coordinate (height) of the start point
+z-coordinate	$10	9	z-coordinate of the start point
+Unknown	$14	9	Unknown
+Unknown	$18	9	Unknown
+Look left/right	$1C	9	Look from left or right to facing state
+Look up/down	$20	9	Look up or down
+Film lenght	$24	4	Lenght of the film in 1/60 seconds
+Unknown	$28	4	Unknown
+Unknown	$2C	4	Unknown
+Not used	$30	1012	Not used
+Packages	$3C	4	Amount of packages that follow
+*Package		$40	$3C	4	24
+Camera angle	$00	9	Camera angle in degrees (up / down)
+Character rotation	$04	9	Rotation of the charcter on the y-axis in degrees
+Unknown	$08	2	Unknown
+Movement	$0A	10	Movement bitset
+Unknown	$0B	1	Unknown
+Unknown	$0C	4	Unknown
+Frames to go	$10	4	Number of the frames to go
+Unknown	$14	2	Unknown
+Unknown	$16	2	Unknown

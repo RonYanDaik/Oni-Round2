@@ -1,0 +1,12 @@
+Oni Character Particle Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	88
+Particle name	$00	10016	Name of the particle (all entries after the first 00 are useless)
+Particle reference	$10	164	Reference to a BINA file of level 0
+Bodypart	$50	14	Particle is fixed to this bodypart
+Unknown	$52	2	Unknown
+Unknown	$54	4	Unknown
+

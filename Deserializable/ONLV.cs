@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 namespace Round2
 {   
-    public class ONLV
+    [System.Runtime.InteropServices.StructLayout( System.Runtime.InteropServices.LayoutKind.Sequential)]
+    public class ONLV //: IXmlSerializable
     {
         [XmlAttribute("id")]
         public int id
@@ -20,6 +21,12 @@ namespace Round2
             set;
         }
 
+        public _AKEV Environment
+        {
+            get;
+            set;
+        }
+
         [XmlArray("Objects")]
         public OBOA[] Objects
         {
@@ -27,7 +34,6 @@ namespace Round2
             set;
         }
 
-        public _AKEV Environment;
         private _AISA m_characters;
 
         public _AISA Characters
@@ -164,7 +170,23 @@ namespace Round2
                 m.RecalculateBounds();
                 m.RecalculateNormals();
                 mf.mesh = m;
+                g.AddComponent<MeshCollider>().mesh = m;
             }
         }
+        /*
+        System.Xml.Schema.XmlSchema IXmlSerializable.GetSchema()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void IXmlSerializable.ReadXml(System.Xml.XmlReader reader)
+        {
+           
+        }
+
+        void IXmlSerializable.WriteXml(System.Xml.XmlWriter writer)
+        {
+            
+        }*/
     }
 }

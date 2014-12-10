@@ -1,0 +1,19 @@
+Trigger
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	16	Unknown; always the same
+Unknown	$0C	4	Unknown; always the same
+Unknown	$10	4	Unknown; always the same
+Unknown	$14	9	Unknown; always the same
+M3GM-link	$18	12	Link to the Geometry
+Unknown	$1C	4	Unknown; always the same
+Unknown	$20	2	Unknown
+Unknown	$22	2	Unknown
+TRGE-link	$24	12	Link to the Trigger Emitter
+OBAN-link	$28	12	Link to the Object Animation
+Trigger active sound	$2C	132	Reference to an OSBD file
+Trigger hit sound	$4C	132	Reference to an OSBD file
+Unknown	$6C	4	Unknown; always the same
+Unknown	$70	4	Unknown; always the same
+Not used	$74	1012	Not used
+

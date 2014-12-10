@@ -1,0 +1,14 @@
+Key Icons
+File id	$00	12	File id
+Level id	$04	17	Level id
+TXMP-link	$08	12	Link to the punch texture
+TXMP-link	$0C	12	Link to the kick texture
+TXMP-link	$10	12	Link to the forward texture
+TXMP-link	$14	12	Link to the backward texture
+TXMP-link	$18	12	Link to the left texture
+TXMP-link	$1C	12	Link to the right texture
+TXMP-link	$20	12	Link to the crouch texture
+TXMP-link	$24	12	Link to the jump texture
+TXMP-link	$28	12	Link to the hold texture
+TXMP-link	$2C	12	Link to the plus texture
+Not used	$30	1016	Not used

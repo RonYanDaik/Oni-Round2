@@ -1,0 +1,12 @@
+WM (Window Menu) Menu
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1018	Not used
+Unknown	$1A	2	Unknown
+Menu name	$1C	10064	Name of the menu
+Packages	$5C	4	Amount of packages that follow
+
+*Package		$60	$5C	4	68
+Menu type	$00	2	Type of the menu
+Return number	$02	2	Number that returns if you choose this menu point
+Menu entry	$04	10064	Entry of the menu

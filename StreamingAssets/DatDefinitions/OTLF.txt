@@ -1,0 +1,22 @@
+Oct Tree Interior Node Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	36
+Unknown	$00	3	Unknown
+High bit	$03	1	High bit
+Unknown	$04	3	Unknown
+High bit	$07	1	High bit
+Unknown	$08	3	Unknown
+High bit	$0B	1	High bit
+Unknown	$0C	3	Unknown
+High bit	$0F	1	High bit
+Unknown	$10	3	Unknown
+High bit	$13	1	High bit
+Unknown	$14	3	Unknown
+High bit	$17	1	High bit
+Unknown	$18	3	Unknown
+High bit	$1B	1	High bit
+Unknown	$1C	9	Unknown
+Unknown	$20	4	Unknown; always the same (?)

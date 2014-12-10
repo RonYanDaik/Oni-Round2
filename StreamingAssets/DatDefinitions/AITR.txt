@@ -1,0 +1,15 @@
+AI Script Trigger Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	84
+Unknown	$00	2	Unknown
+Unknown	$02	2	Unknown
+Unknown	$04	2	Unknown
+Unknown	$06	2	Unknown
+Unknown	$08	2	Unknown
+Unknown	$0A	2	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	10064	Unknown

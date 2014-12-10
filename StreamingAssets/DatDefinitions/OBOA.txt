@@ -1,0 +1,36 @@
+Starting Object Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	240
+M3GA-link	$00	12	Link to the Geometry Array
+OBAN-link	$04	12	Link to the Object Animation
+ENVP-link	$08	12	Link to the Environment Particle Array
+Unknown	$0C	4	Unknown
+Unknown	$10	4	Unknown
+Unknown	$14	4	Unknown
+Unknown	$18	4	Unknown
+Unknown	$1C	4	Unknown
+Unknown	$20	9	Unknown
+Unknown	$24	9	Unknown
+Unknown	$28	9	Unknown
+Unknown	$2C	9	Unknown
+Unknown	$30	9	Unknown
+Unknown	$34	9	Unknown
+Unknown	$38	9	Unknown
+Unknown	$3C	9	Unknown
+Unknown	$40	9	Unknown
+Unknown	$44	9	Unknown
+Unknown	$48	9	Unknown
+Unknown	$4C	9	Unknown
+Unknown	$50	9	Unknown
+Unknown	$54	9	Unknown
+Unknown	$58	9	Unknown
+Unknown	$5C	9	Unknown
+Unknown	$60	9	Unknown
+Unknown	$64	9	Unknown
+Unknown	$68	9	Unknown
+Unknown	$6C	9	Unknown
+Name	$70	10064	Name of the object
+Unknown	$B0	10064	Unknown; maybe an old development relict

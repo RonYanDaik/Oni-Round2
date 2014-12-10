@@ -1,0 +1,15 @@
+DOOR File
+File id	$00	12	File id
+Level id	$04	17	Level id
+OFGA-link	$08	12	Link to the Object Furn Geom Array
+Unknown	$0C	4	Unknown; maybe a canceled link; always the same
+OBAN-link	$10	12	Link to the Object Animation
+Unknown	$14	9	Unknown; always the same
+Unknown	$18	4	Unknown; always the same
+Unknown	$1C	16	Unknown; always the same
+Unknown	$20	9	Unknown; always the same
+Door open sound	$24	132	Reference to an OSBD file of level 0
+Door close sound	$44	132	Reference to an OSBD file of level 0
+Unknown	$64	4	Unknown
+Unknown	$68	4	Unknown
+Not useed	$6C	1020	Not used

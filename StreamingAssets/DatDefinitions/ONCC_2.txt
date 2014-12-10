@@ -1,0 +1,258 @@
+Oni Character Class
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	9	Unknown; always the same; maybe downwards velocity?
+Downward acceleration	$0C	9	Downward gravity acceleration
+Starting velocity	$10	9	Starting velocity for a simple (tap) JUMP
+Limit velocity	$14	9	Limit velocity for jumping and gravity flight 
+Upward acceleration	$18	9	Upward acceleration (jetpack) if you hold JUMP
+Unknown	$1C	2	Unknown; always the same; maybe a gravity timer?
+Jetpack timer	$1E	2	Jetpack timer; time during which you can use the jetpack
+Height no damage	$20	9	Maximal falling height without damage 
+Height damage	$24	9	Maximal falling height with damage
+TXMP-link	$28	12	Link to the shadow texture
+Shadow height 5 	$2C	9	Height, where the shadow fades out completely
+Shadow height 4	$30	9	Height, where the diameter of the shadow decreases and the shadow fades out half
+Shadow height 3	$34	9	Height, where the diameter of the shadow decreases
+Shadow height 2	$38	9	Height, where the diameter of the shadow decreases
+Shadow height 1	$3C	9	Height, where the diameter of the shadow decreases
+Shadow option 1	$40	2	Transparency of the shadow for the first part of a jump
+Shadow option 2	$42	2	Transparency of the shadow for the second part of a jump
+Unknown	$44	9	Unknown; always the same
+Unknown	$48	1	Unknown
+Unknown	$49	1	Unknown; always the same
+Not used	$4A	1002	Not used
+Unknown	$4C	9	Unknown; always the same
+Unknown	$50	9	Unknown; always the same
+Unknown	$54	9	Unknown; always the same
+Unknown	$58	9	Unknown; always the same
+Unknown	$5C	9	Unknown; always the same
+Unknown	$60	9	Unknown; always the same
+Regeneration time	$64	2	Regeneration time of one health point in 1/60 seconds if you use a hypo
+Not used	$66	1002	Not used
+Unknown	$68	9	Unknown; always the same
+Unknown	$6C	9	Unknown; always the same
+Unknown	$70	9	Unknown; always the same
+Unknown	$74	9	Unknown; always the same
+Unknown	$78	9	Unknown; always the same
+Unknown	$7C	2	Unknown; always the same
+Unknown	$7E	2	Unknown; always the same
+Unknown	$80	2	Unknown; always the same
+Unknown	$82	2	Unknown; always the same
+Unknown	$84	2	Unknown; always the same
+Unknown	$86	2	Unknown; always the same
+Unknown	$88	2	Unknown; always the same
+Unknown	$8A	2	Unknown; always the same
+Unknown	$8C	2	Unknown; always the same
+Unknown	$8E	2	Unknown; always the same
+Unknown	$90	2	Unknown; always the same
+Unknown	$92	1	Unknown; always the same
+Not used	$93	1001	Not used
+Unknown	$94	9	Unknown; always the same
+Hurt light sound	$98	132	Reference to an OSBD file of level 0
+Hurt medium sound	$B8	132	Reference to an OSBD file of level 0
+Hurt heavy sound	$D8	132	Reference to an OSBD file of level 0
+Death sound	$F8	132	Reference to an OSBD file of level 0
+Unknown	$118	4	Unknown; always the same
+Unknown	$11C	4	Unknown; always the same
+Unknown	$120	4	Unknown; always the same
+Unknown	$124	4	Unknown; always the same
+Unknown	$128	4	Unknown
+Rotation factor	$12C	9	Rotation factor * 360 degrees = possible rotation per frame or animation
+Unknown	$130	2	Unknown
+Unknown	$132	2	Unknown
+Unknown	$134	4	Unknown
+Unknown	$138	9	Unknown
+Unknown	$13C	9	Unknown
+Unknown	$140	9	Unknown; always the same
+Unknown	$144	9	Unknown; always the same
+Unknown	$148	9	Unknown; always the same
+Unknown	$14C	4	Unknown
+Unknown	$150	4	Unknown
+Unknown	$154	4	Unknown
+Unknown	$158	4	Unknown
+w0_sec - recoil	$15C	9	recoil compensation amount (0 = min, 1 = max)
+w0_sec - best angle	$160	9	best aiming angle in radians
+w0_sec - error	$164	9	shot grouping error
+w0_sec - decay	$168	9	shot grouping decay
+w0_sec - inaccuracy	$16C	9	shooting inaccuracy multiplier
+w0_sec - minimum delay	$170	2	minimum delay between shots in frames
+w0_sec - maximum delay	$172	2	maximum delay between shots in frames
+w1_tap - recoil	$174	9	recoil compensation amount (0 = min, 1 = max)
+w1_tap - best angle	$178	9	best aiming angle in radians
+w1_tap - error	$17C	9	shot grouping error
+w1_tap - decay	$180	9	shot grouping decay
+w1_tap - inaccuracy	$184	9	shooting inaccuracy multiplier
+w1_tap - minimum delay	$188	2	minimum delay between shots in frames
+w1_tap - maximum delay	$18A	2	maximum delay between shots in frames
+w2_sap - recoil	$18C	9	recoil compensation amount (0 = min, 1 = max)
+w2_sap - best angle	$190	9	best aiming angle in radians
+w2_sap - error	$194	9	shot grouping error
+w2_sap - decay	$198	9	shot grouping decay
+w2_sap - inaccuracy	$19C	9	shooting inaccuracy multiplier
+w2_sap - minimum delay	$1A0	2	minimum delay between shots in frames
+w2_sap - maximum delay	$1A2	2	maximum delay between shots in frames
+w3_phr - recoil	$1A4	9	recoil compensation amount (0 = min, 1 = max)
+w3_phr - best angle	$1A8	9	best aiming angle in radians
+w3_phr - error	$1AC	9	shot grouping error
+w3_phr - decay	$1B0	9	shot grouping decay
+w3_phr - inaccuracy	$1B4	9	shooting inaccuracy multiplier
+w3_phr - minimum delay	$1B8	2	minimum delay between shots in frames
+w3_phr - maximum delay	$1BA	2	maximum delay between shots in frames
+w4_psm - recoil	$1BC	9	recoil compensation amount (0 = min, 1 = max)
+w4_psm - best angle	$1C0	9	best aiming angle in radians
+w4_psm - error	$1C4	9	shot grouping error
+w4_psm - decay	$1C8	9	shot grouping decay
+w4_psm - inaccuracy	$1CC	9	shooting inaccuracy multiplier
+w4_psm - minimum delay	$1D0	2	minimum delay between shots in frames
+w4_psm - maximum delay	$1D2	2	maximum delay between shots in frames
+w5_sbg - recoil	$1D4	9	recoil compensation amount (0 = min, 1 = max)
+w5_sbg - best angle	$1D8	9	best aiming angle in radians
+w5_sbg - error	$1DC	9	shot grouping error
+w5_sbg - decay	$1E0	9	shot grouping decay
+w5_sbg - inaccuracy	$1E4	9	shooting inaccuracy multiplier
+w5_sbg - minimum delay	$1E8	2	minimum delay between shots in frames
+w5_sbg - maximum delay	$1EA	2	maximum delay between shots in frames
+w6_vdg - recoil	$1EC	9	recoil compensation amount (0 = min, 1 = max)
+w6_vdg - best angle	$1F0	9	best aiming angle in radians
+w6_vdg - error	$1F4	9	shot grouping error
+w6_vdg - decay	$1F8	9	shot grouping decay
+w6_vdg - inaccuracy	$1FC	9	shooting inaccuracy multiplier
+w6_vdg - minimum delay	$200	2	minimum delay between shots in frames
+w6_vdg - maximum delay	$202	2	maximum delay between shots in frames
+w7_scc - recoil	$204	9	recoil compensation amount (0 = min, 1 = max)
+w7_scc - best angle	$208	9	best aiming angle in radians
+w7_scc - error	$20C	9	shot grouping error
+w7_scc - decay	$210	9	shot grouping decay
+w7_scc - inaccuracy	$214	9	shooting inaccuracy multiplier
+w7_scc - minimum delay	$218	2	minimum delay between shots in frames
+w7_scc - maximum delay	$21A	2	maximum delay between shots in frames
+w8_mbo - recoil	$21C	9	recoil compensation amount (0 = min, 1 = max)
+w8_mbo - best angle	$220	9	best aiming angle in radians
+w8_mbo - error	$224	9	shot grouping error
+w8_mbo - decay	$228	9	shot grouping decay
+w8_mbo - inaccuracy	$22C	9	shooting inaccuracy multiplier
+w8_mbo - minimum delay	$230	2	minimum delay between shots in frames
+w8_mbo - maximum delay	$232	2	maximum delay between shots in frames
+w9_scr - recoil	$234	9	recoil compensation amount (0 = min, 1 = max)
+w9_scr - best angle	$238	9	best aiming angle in radians
+w9_scr - error	$23C	9	shot grouping error
+w9_scr - decay	$240	9	shot grouping decay
+w9_scr - inaccuracy	$244	9	shooting inaccuracy multiplier
+w9_scr - minimum delay	$248	2	minimum delay between shots in frames
+w9_scr - maximum delay	$24A	2	maximum delay between shots in frames
+w10_sni - recoil	$24C	9	recoil compensation amount (0 = min, 1 = max)
+w10_sni - best angle	$250	9	best aiming angle in radians
+w10_sni - error	$254	9	shot grouping error
+w10_sni - decay	$258	9	shot grouping decay
+w10_sni - inaccuracy	$25C	9	shooting inaccuracy multiplier
+w10_sni - minimum delay	$260	2	minimum delay between shots in frames
+w10_sni - maximum delay	$262	2	maximum delay between shots in frames
+w11_ba1 - recoil	$264	9	recoil compensation amount (0 = min, 1 = max)
+w11_ba1 - best angle	$268	9	best aiming angle in radians
+w11_ba1 - error	$26C	9	shot grouping error
+w11_ba1 - decay	$270	9	shot grouping decay
+w11_ba1 - inaccuracy	$274	9	shooting inaccuracy multiplier
+w11_ba1 - minimum delay	$278	2	minimum delay between shots in frames
+w11_ba1 - maximum delay	$27A	2	maximum delay between shots in frames
+w12_ba2 - recoil	$27C	9	recoil compensation amount (0 = min, 1 = max)
+w12_ba2 - best angle	$280	9	best aiming angle in radians
+w12_ba2 - error	$284	9	shot grouping error
+w12_ba2 - decay	$288	9	shot grouping decay
+w12_ba2 - inaccuracy	$28C	9	shooting inaccuracy multiplier
+w12_ba2 - minimum delay	$290	2	minimum delay between shots in frames
+w12_ba2 - maximum delay	$292	2	maximum delay between shots in frames
+Unknown	$294	4	Unknown; always the same
+Unknown	$298	4	Unknown; always the same
+Unknown	$29C	4	Unknown; always the same
+Unknown	$2A0	4	Unknown; always the same
+Unknown	$2A4	4	Unknown
+Unknown	$2A8	4	Unknown
+Unknown	$2AC	2	Unknown
+Unknown	$2AE	2	Unknown
+Taunt sound query	$2B0	1	0 = not used; 100 = used
+Alert sound query	$2B1	1	0 = not used; 100 = used
+Startle sound query	$2B2	1	0 = not used; 100 = used
+Check body sound query	$2B3	1	0 = not used; 100 = used
+Pursue sound query	$2B4	1	0 = not used; 100 = used
+Cower sound query	$2B5	1	0 = not used; 100 = used
+Punch heavy sound query	$2B6	1	0 = not used; 100 = used
+Kich heavy sound query	$2B7	1	0 = not used; 100 = used
+Super3 sound query	$2B8	1	0 = not used; 100 = used
+Super4 sound query	$2B9	1	0 = not used; 100 = used
+Taunt sound	$2BC	132	Reference to a SNDD file of level 0
+Alert sound	$2DC	132	Reference to a SNDD file of level 0
+Startle sound	$2FC	132	Reference to a SNDD file of level 0
+Check body sound	$31C	132	Reference to a SNDD file of level 0
+Pursue sound	$33C	132	Reference to a SNDD file of level 0
+Cower sound	$35C	132	Reference to a SNDD file of level 0
+Punch heavy sound	$37C	132	Reference to a SNDD file of level 0
+Kick heavy sound	$39C	132	Reference to a SNDD file of level 0
+Super3 sound	$3BC	132	Reference to a SNDD file of level 0
+Super4 sound	$3DC	132	Reference to a SNDD file of level 0
+Eyeshot	$3FC	9	The max. distance where the AI can see you
+Earshot	$400	9	The max. distance where the AI can hear you
+Unknown	$404	9	Unknown
+Unknown	$408	9	Unknown
+Unknown	$40C	9	Unknown
+Unknown	$410	9	Unknown; always the same
+Unknown	$414	9	Unknown; always the same
+Unknown	$418	4	Unknown; always the same
+Unknown	$41C	4	Unknown; always the same
+Unknown	$420	4	Unknown; always the same
+Unknown	$424	4	Unknown; always the same
+Unknown	$428	4	Unknown; always the same
+Unknown	$42C	4	Unknown; always the same
+Unknown	$430	9	Unknown; always the same
+ONCV-link	$434	12	Link to the Character Varient
+ONCP-link	$438	12	Link to the Character Particle Array
+ONIA-link	$43C	12	Link to the Character Impact Array
+Unknown	$440	4	Unknown; maybe a canceled link; always the same
+Unknown	$444	10016	Maybe the weight of the character?
+Footstep walk impact	$454	230	Reference to an Impt file of level 0
+Footstep run impact	$4D6	230	Reference to an Impt file of level 0
+Footstep crouch impact	$558	230	Reference to an Impt file of level 0
+Fall slide impact	$5DA	230	Reference to an Impt file of level 0
+Fall land impact	$65C	230	Reference to an Impt file of level 0
+Fall land hard impact	$6DE	230	Reference to an Impt file of level 0
+Fall knockdown impact	$760	230	Reference to an Impt file of level 0
+Fall knockdown impact	$7E2	230	Reference to an Impt file of level 0
+Fall knockdown impact	$864	230	Reference to an Impt file of level 0
+Footstep turn impact	$8E6	230	Reference to an Impt file of level 0
+Footstep run start impact	$968	230	Reference to an Impt file of level 0
+Footstep single step impact	$9EA	230	Reference to an Impt file of level 0
+Footstep run stop impact	$A6C	230	Reference to an Impt file of level 0
+Footstep walk stop impact	$AEE	230	Reference to an Impt file of level 0
+Footstep run sprint impact	$B70	230	Reference to an Impt file of level 0
+Unknown	$BF2	2	Unknown; always the same; maybe only a filler
+Special death particles	$BF4	164	Reference to a 3Dparticle.BINA file of level 0; only the mad bomber use it
+Unknown	$C34	4	Unknown; maybe a canceled link; always the same
+Unknown	$C38	4	Unknown; maybe a canceled link; always the same
+TRBS-link	$C3C	12	Link to the Body Set
+TRMA-link	$C40	12	Link to the Texture Map Array
+CBPM-link	$C44	12	Link to the Body Part Material
+CBPI-link	$C48	12	Link to the Body Part Impacts
+Peace timer	$C4C	4	Peace timer in 1/60 seconds; after that time the character switches back from fight to peace mode
+First idle timer	$C50	4	First idle timer in 1/60 seconds; after that time Oni plays a special idle animation
+Second idle timer	$C54	4	Second idle timer in 1/60 seconds; after that time Oni plays a special idle animation
+Basic health	$C58	4	Extra health informations are stored in the Character.BINA files
+Basic health	$C5C	4	Unknown; always the same
+Minimal body size factor	$C60	9	Minimal body size factor
+Maximal body size factor	$C64	9	Maximal body size factor
+Unknown	$C68	9	Unknown; always the same
+Unknown	$C6C	9	Unknown; always the same
+Unknown	$C70	9	Unknown
+Unknown	$C74	9	Unknown
+Unknown	$C78	9	Unknown; always the same
+Unknown	$C7C	9	Unknown; always the same
+Unknown	$C80	9	Unknown; always the same
+Unknown	$C84	9	Unknown
+TRAC-link	$C88	12	Link to the Animation Collection
+TRSC-link	$C8C	12	Link to the Screen (Aiming) Collection
+Unknown	$C90	2	Unknown; always the same
+Unknown	$C92	2	Unknown; only the mad bomber use it
+Unknown	$C94	1	Unknown
+Unknown	$C95	1	Unknown
+Unknown	$C96	1	Unknown
+Unknown	$C97	1	Unknown
+Not useed	$C98	1008	Not used

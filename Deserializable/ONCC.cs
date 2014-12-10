@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 namespace Round2
 {
-   
     public class _ONCC
     {
         [XmlElement("ONCC")]
@@ -14,6 +13,27 @@ namespace Round2
 
     public class ONCC
     {
+        [XmlIgnore]
+        public List<AnimationClip> m_clips = new List<AnimationClip>();
+
+        static Dictionary<string, ONCC> m_nameToONCC = new Dictionary<string, ONCC>();
+
+        public static ONCC GetByName(string name)
+        {
+            if (m_nameToONCC.ContainsKey(name))
+            {
+                return m_nameToONCC[name];
+            }
+
+            return null;
+        }
+
+        public void SetName(string name)
+        {
+            Debug.Log("character:" + name);
+            m_nameToONCC.Add(name, this);
+        }
+
         public enum Bodyparts
         {
             /*
@@ -77,6 +97,59 @@ namespace Round2
             }
         }
 
+        [XmlIgnore]
+        Dictionary<string, Oni.Totoro.Animation> m_stateTree = new Dictionary<string, Oni.Totoro.Animation>();
+
+        public void AddAnimInfo(string name, object anim)
+        {
+            if (!m_stateTree.ContainsKey(name))
+            {
+                m_stateTree.Add(name, anim as Oni.Totoro.Animation);
+            }
+        }
+
+        public object GetAnimInfo(string name)
+        {
+            return m_stateTree.ContainsKey(name) ? m_stateTree[name] : null;
+        } 
+
         public _TRMA BodyTextures;
+
+        internal void TMP_InstallNewCharacter(Oni.InstanceFile level0)
+        {
+            List<Mesh> l_meshes = new List<Mesh>();
+            List<GameObject> l_parts = new List<GameObject>();
+
+            foreach (Links.M3GMLNK geomery in this.BodySet.TRBS.Elements[4].TRCM.Geometry.TRGA.Geometries)
+            {
+                l_meshes.Add(geomery.M3GM.UnityMesh);
+            }
+
+            for (int i = 0; i < this.BodySet.TRBS.Elements[4].TRCM.BodyPartCount; i++)
+            {
+                GameObject l_newest;
+                l_parts.Add(l_newest = GameObject.CreatePrimitive(PrimitiveType.Cube));
+                l_newest.name = ((ONCC.Bodyparts)i).ToString();
+                l_newest.GetComponent<MeshFilter>().mesh = l_meshes[i];
+                GameObject.Destroy(l_newest.collider);
+                l_newest.renderer.material.shader = Shader.Find("TwoSidedDiffuse");
+            }
+
+            for (int i = 0; i < this.BodySet.TRBS.Elements[4].TRCM.BodyPartCount; i++)
+            {
+                l_parts[i].transform.parent = l_parts[this.BodySet.TRBS.Elements[4].TRCM.Hierarchy.TRIA.Elements[i].Parent].transform;
+                Vector3 lpos = this.BodySet.TRBS.Elements[4].TRCM.Position.TRTA.Translations[i];
+                l_parts[i].transform.localPosition = new UnityEngine.Vector3(-lpos.Value.x, lpos.Value.y, lpos.Value.z);
+                Material l_m = l_parts[i].renderer.material;
+                Texture2DQuery.TexturePend(this.BodyTextures.TRMA.Textures[i].TXMP.id, u => l_m.mainTexture = u);
+            }
+
+            //l_parts[0].transform.parent = new GameObject("chr").transform;
+            Animation l_a = l_parts[0].gameObject.AddComponent<Animation>();
+            l_parts[0].AddComponent<GUIANIMCONTROL>();
+            l_parts[0].AddComponent<CharacterController>();
+            Camera.allCameras[0].transform.parent =
+            l_parts[0].transform;
+        }
     }
 }

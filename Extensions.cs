@@ -8,6 +8,36 @@ public static class Extensions
 {
     const string SMLSIG = "[ SML :: ";
 
+    internal static LinkedList<T2> ConvertAll<T1,T2> (this LinkedList<T1> @this, Func<T1,T2> predicate)
+    {
+        LinkedList<T2> l_newest = new LinkedList<T2>();
+
+        foreach (T1 val in @this)
+        {
+            l_newest.Add(predicate(val));
+        }
+
+        return l_newest;
+    }
+
+    internal static LinkedListNode<T> Add<T>(this LinkedList<T> lst, T value)
+    {
+       return lst.AddLast(value);
+    }
+
+    internal static T[] ToArray<T>(this LinkedList<T> lst)
+    {
+        T[] l_res = new T[lst.Count];
+        int i = 0;
+
+        foreach (T l_t in lst)
+        {
+            l_res[i++] = l_t;
+        }
+
+        return l_res;
+    }
+
     internal static object[] SmlToArray(this string data)
     {
         if (data.StartsWith(SMLSIG))
@@ -63,15 +93,18 @@ public static class Extensions
         return l_s + "]";
     }
 
-    internal static MemoryStream AsXmlStream(this Oni.InstanceDescriptor des)
+    internal static T Decode<T>(this Oni.InstanceDescriptor des)
     {
-        MemoryStream l_ms = new MemoryStream();
-        System.Xml.XmlWriter l_w = System.Xml.XmlWriter.Create(l_ms);
+        List<IGenericMemberAcessor> l_members = new List<IGenericMemberAcessor>();
+        T l_val = default(T);
+        l_members.Add(new MemberAcess<T>(u => l_val = u, () => l_val, typeof(T).Name));
         Oni.Action<Oni.InstanceDescriptor> l_ides = null;
+        System.Xml.XmlWriter l_w = new SWAGGYXmlWriter(l_members.GetEnumerator());
         l_ides = u =>
         {
             try
             {
+                Debug.LogWarning("complex object : " + u.Name);
                 Oni.Xml.GenericXmlWriter.Write(l_w, l_ides, u);
             }
             catch (System.Exception ee)
@@ -82,7 +115,48 @@ public static class Extensions
         };
         Oni.Xml.GenericXmlWriter.Write(l_w, l_ides, des);
         l_w.Flush();
+        return l_val;
+    }
+
+    internal static MemoryStream AsXmlStream(this Oni.InstanceDescriptor des)
+    {
+        DateTime l_dt = DateTime.Now;
+        Debug.LogWarning(des.DataSize);
+        MemoryStream l_ms = new MemoryStream(des.DataSize);
+        Round2.TXMP l_v = null;
+        List<IGenericMemberAcessor> l_stt = new List<IGenericMemberAcessor>();
+        l_stt.Add
+            (
+                new MemberAcess<Round2.TXMP>
+                    (
+                        u => 
+                            {
+                                l_v = u;
+                            },
+                        () => l_v,
+                        "TXMP"
+                    )
+             );
+
+        System.Xml.XmlWriter l_w = new SWAGGYXmlWriter(l_stt.GetEnumerator());//System.Xml.XmlWriter.Create(l_ms);
+        Oni.Action<Oni.InstanceDescriptor> l_ides = null;
+        l_ides = u =>
+        {
+            try
+            {
+                Oni.Xml.GenericXmlWriter.Write(l_w, l_ides, u);
+            }
+            catch (System.Exception ee)
+            {
+                throw;
+                //Debug.Log(ee);
+                //Debug.Log(des.IsPlaceholder);
+            }
+        };
+        Oni.Xml.GenericXmlWriter.Write(l_w, l_ides, des);
+        l_w.Flush();
         l_ms.Seek(0, SeekOrigin.Begin);
+        Debug.Log("ASXMLSTREAM : " + (DateTime.Now - l_dt));
         return l_ms;
     }
 }

@@ -1,0 +1,93 @@
+Oni Game Settings
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	9	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	9	Unknown
+Unknown	$18	9	Unknown
+Unknown	$1C	4	Unknown
+Unknown	$20	4	Unknown
+Unknown	$24	9	Unknown
+Unknown	$28	9	Unknown
+Unknown	$2C	9	Unknown
+Not used	$30	1048	Not used
+Unknown	$60	16	Unknown
+Unknown	$64	16	Unknown
+Unknown	$68	16	Unknown
+Unknown	$6C	16	Unknown
+Not used	$70	1048	Not used
+Ammo model reference	$A0	228	Reference to the ammo model
+Cell model reference	$120	228	Reference to the cell model
+Hypo model reference	$1A0	228	Reference to the hypo model
+Shield model reference	$220	228	Reference to the force shield model
+Invis model reference	$2A0	228	Reference to the phase cloak model
+Lsi model reference	$320	228	Reference to the lsi model
+Not used	$3A0	1128	Not used; maybe a canceled model reference
+Ammo texture reference	$420	228	Reference to the texture that surrounds the ammo
+Cell texture reference	$4A0	228	Reference to the texture that surrounds the cell
+Hypo texture reference	$520	228	Reference to the texture that surrounds the hypo
+Shield texture reference	$5A0	228	Reference to the texture that surrounds the force shield
+Invis texture reference	$620	228	Reference to the texture that surrounds the phase cloak
+Lsi texture reference	$6A0	228	Reference to the texture that surrounds the lsi
+Not used	$720	1128	Not used; maybe a canceled texture reference
+Unknown	$7A0	9	Unknown
+Unknown	$7A4	9	Unknown
+Unknown	$7A8	9	Unknown
+Unknown	$7AC	9	Unknown
+Unknown	$7B0	9	Unknown
+Unknown	$7B4	9	Unknown
+Unknown	$7B8	9	Unknown
+Unknown	$7BC	9	Unknown
+Unknown	$7C0	9	Unknown
+Unknown	$7C4	9	Unknown
+Unknown	$7C8	9	Unknown
+Unknown	$7CC	9	Unknown
+Not used	$7D0	1008	Not used
+Empty sound field	$7D8	132	Empty reference to an OSBD file
+Door fail sound	$7F8	132	Reference to the door_fail OSBD file
+Door lock sound	$818	132	Reference to the door_lock OSBD file
+Empty sound field	$838	132	Empty reference to an OSBD file
+Use hypo sound	$858	132	Reference to the use_hypo OSBD file
+Empty sound field	$878	132	Empty reference to an OSBD file
+Inventory fail sound	$898	132	Reference to the inventory_fail  OSBD file
+Receive ammo sound	$8B8	132	Reference to the receive_ammo OSBD file
+Receive cell sound	$8D8	132	Reference to the receive_cell OSBD file
+Receive hypo sound	$8F8	132	Reference to the receive_hypo OSBD file
+Receive lsi sound	$918	132	Reference to the receive_lsi OSBD file
+Compass sound	$938	132	Reference to the compass OSBD file
+Objective new sound	$958	132	Reference to the objective_new OSBD file
+Objective prompt sound	$978	132	Reference to the objective_prompt OSBD file
+Objective complete sound	$998	132	Reference to the objective_complete OSBD file
+Autosave sound	$9B8	132	Reference to the autosave OSBD file
+Empty sound field	$9D8	132	Empty reference to an OSBD file
+Empty sound field	$9F8	132	Empty reference to an OSBD file
+Health low sound	$A18	132	Reference to the health_low OSBD file
+Health over sound	$A38	132	Reference to the health_over OSBD file
+Shield sound	$A58	132	Reference to the shield  OSBD file
+Invis sound	$A78	132	Reference to the invisibility OSBD file
+Empty sound field	$A98	132	Empty reference to an OSBD file
+Unknown	$AB8	9	Unknown
+Unknown	$ABC	9	Unknown
+Unknown	$AC0	9	Unknown
+Unknown	$AC4	9	Unknown
+Unknown	$AC8	9	Unknown
+Unknown	$ACC	9	Unknown
+Unknown	$AD0	9	Unknown
+Unknown	$AD4	9	Unknown
+Unknown	$AD8	9	Unknown
+Unknown	$ADC	9	Unknown
+Unknown	$AE0	9	Unknown
+Unknown	$AE4	9	Unknown
+Unknown	$AE8	9	Unknown
+Unknown	$AEC	9	Unknown
+Unknown	$AF0	9	Unknown
+Unknown	$AF4	9	Unknown
+Unknown	$AF8	9	Unknown
+Unknown	$AFC	9	Unknown
+Packages	$B00	4	Amount of packages that follow
+*Package		$B04	$B00	4	68
+Item name	$00	10032	Name of the item
+First level	$20	2	First level with autoprompting
+Last level	$22	2	Last level with autoprompting
+Raw file anchor	$24	10032	Raw file anchor for the text message (it belongs to the SUBT file)

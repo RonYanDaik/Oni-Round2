@@ -1,0 +1,6 @@
+Weapon Page
+File id	$00	12	File id
+Level id	$04	17	Level id
+ONWC-link	$08	12	Link to the Oni Weapon Class
+IGPG-link	$0C	12	Link to the In-Game User Interface Page
+Not used	$10	1016	Not used

@@ -1,0 +1,9 @@
+Font Family
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1016	Not used
+TSFL-link	$18	12	Link to the Font Language
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	4
+TRAS-link	$00	12	Link to the Font
+

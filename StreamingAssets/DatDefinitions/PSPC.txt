@@ -1,0 +1,43 @@
+Particle Specification (coordinates of UI element in texture) (see pspc.png)
+
+ID	$00	12
+LevelID	$04	17
+LFT-LT	$08	2	LT Left
+TOP-LT	$0A	2	LT Top
+LFT-HL	$0C	2	HL Left (rubber)
+TOP-HL	$0E	2	HL Top (rubber)
+LFT-LB	$10	2	LB Left
+TOP-LB	$12	2	LB Top
+LFT-VT	$14	2	VT Left (rubber)
+TOP-VT	$16	2	VT Top (rubber)
+LFT-CC	$18	2	CC Left (rubber)
+TOP-CC	$1A	2	CC Top (rubber)
+LFT-VB	$1C	2	VB Left (rubber)
+TOP-VB	$1E	2	VB Top (rubber)
+LFT-RT	$20	2	RT Left
+TOP-RT	$22	2	RT Top
+LFT-HR	$24	2	HR Left (rubber)
+TOP-HR	$26	2	HR Top (rubber)
+LFT-RB	$28	2	RB Left
+TOP-RB	$2A	2	RB Top
+
+RGH-LT	$2C	2	LT Right
+BTM-LT	$2E	2	LT Bottom
+RGH-HL	$30	2	HL Right (rubber)
+BTM-HL	$32	2	HL Bottom (rubber)
+RGH-LB	$34	2	LB Right
+BTM-LB	$36	2	LB Bottom
+RGH-VT	$38	2	VT Right (rubber)
+BTM-VT	$3A	2	VT Bottom (rubber)
+RGH-CC	$3C	2	CC Right (rubber)
+BTM-CC	$3E	2	CC Bottom (rubber)
+RGH-VB	$40	2	VB Right (rubber)
+BTM-VB	$42	2	VB Bottom (rubber)
+RGH-RT	$44	2	RT Right
+BTM-RT	$46	2	RT Bottom
+RGH-HR	$48	2	HR Right (rubber)
+BTM-HR	$4A	2	HR Bottom (rubber)
+RGH-RB	$4C	2	RB Right
+BTM-RB	$4E	2	RB Bottom
+TXMP-Link	$50	12	Corresponding texture
+

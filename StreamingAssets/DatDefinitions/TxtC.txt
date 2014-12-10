@@ -1,0 +1,5 @@
+Text Console
+File id	$00	12	File id
+Level id	$04	17	Level id
+IGPA-link	$08	12	Link to the In-Game User Interface Page Array
+Not used	$0C	1020	Not used

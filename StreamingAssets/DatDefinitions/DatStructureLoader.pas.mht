@@ -1,0 +1,2067 @@
+From: <Saved by Maxthon>
+Subject: WebSVN - Oni2 - Rev 204 - /oup/current/Global/DatStructureLoader.pas
+Date: Mon, 7 Dec 2014 19:06:32 +0200
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_4456_0AB19927.FCAA706D"
+
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://websvn.chrilly.net/filedetails.php?repname=Oni2&path=%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><h=
+ead><meta charset=3D"UTF-8">
+ =20
+  <meta http-equiv=3D"generator" content=3D"WebSVN 2.3.2"> <!-- leave this =
+for stats -->
+  <link rel=3D"shortcut icon" type=3D"image/x-icon" href=3D"http://websvn.c=
+hrilly.net/templates/calm/images/favicon.ico">
+  <link type=3D"text/css" href=3D"http://websvn.chrilly.net/templates/calm/=
+styles.css" rel=3D"stylesheet" media=3D"screen">
+  <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"WebSVN RSS"=
+ href=3D"http://websvn.chrilly.net/rss.php?repname=3DOni2&amp;path=3D%2Foup=
+%2Fcurrent%2FGlobal%2FDatStructureLoader.pas&amp;">
+  <!--[if gte IE 5.5000]>
+  <script type=3D"text/javascript" src=3D"./templates/calm/png.js"></script=
+>
+  <style type=3D"text/css" media=3D"screen">
+  tbody tr td { padding:1px 0 }
+  #wrap h2 { padding:10px 5px 0 5px; margin-bottom:-8px }
+  </style>
+  <![endif]-->
+  <title>
+       WebSVN
+          - Oni2
+               - Rev 204
+            - /oup/current/Global/DatStructureLoader.pas
+  </title>
+ =20
+</head>
+<body id=3D"file">
+<div id=3D"container">
+	<div id=3D"select">
+		<form method=3D"get" action=3D"http://websvn.chrilly.net/filedetails.php?=
+repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pa=
+s" id=3D"project"><select name=3D"repname" onchange=3D"javascript:this.form=
+.submit();"><option value=3D"7dtd">7dtd</option><option value=3D"Oni2" sele=
+cted=3D"selected">Oni2</option></select></form>
+		<form method=3D"get" action=3D"http://websvn.chrilly.net/filedetails.php?=
+repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pa=
+s" id=3D"template"><input type=3D"hidden" name=3D"repname" value=3D"Oni2"><=
+input type=3D"hidden" name=3D"path" value=3D"/oup/current/Global/DatStructu=
+reLoader.pas"><select name=3D"template" onchange=3D"javascript:this.form.su=
+bmit();"><option value=3D"BlueGrey">BlueGrey</option><option value=3D"calm"=
+ selected=3D"selected">calm</option><option value=3D"Elegant">Elegant</opti=
+on></select></form>
+		<form method=3D"get" action=3D"http://websvn.chrilly.net/filedetails.php?=
+repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pa=
+s" id=3D"language"><input type=3D"hidden" name=3D"repname" value=3D"Oni2"><=
+input type=3D"hidden" name=3D"path" value=3D"/oup/current/Global/DatStructu=
+reLoader.pas"><select name=3D"language" onchange=3D"javascript:this.form.su=
+bmit();"><option value=3D"ca">Catal=C3=A0-Valenci=C3=A0 - Catalan</option><=
+option value=3D"zh-CN">=E4=B8=AD=E6=96=87 - Chinese (Simplified)</option><o=
+ption value=3D"zh-TW">=E4=B8=AD=E6=96=87 - Chinese (Traditional)</option><o=
+ption value=3D"cs">=C4=8Cesky - Czech</option><option value=3D"da">Dansk - =
+Danish</option><option value=3D"nl">Nederlands - Dutch</option><option valu=
+e=3D"en" selected=3D"selected">English - English</option><option value=3D"f=
+i">Suomi - Finnish</option><option value=3D"fr">Fran=C3=A7ais - French</opt=
+ion><option value=3D"de">Deutsch - German</option><option value=3D"he-IL">=
+=D7=A2=D7=91=D7=A8=D7=99=D7=AA - Hebrew</option><option value=3D"hin">=E0=
+=A4=B9=E0=A4=BF=E0=A4=82=E0=A4=A6=E0=A5=80 - Hindi</option><option value=3D=
+"hu">Magyar - Hungarian</option><option value=3D"id">Bahasa Indonesia - Ind=
+onesian</option><option value=3D"it">Italiano - Italian</option><option val=
+ue=3D"ja">=E6=97=A5=E6=9C=AC=E8=AA=9E - Japanese</option><option value=3D"k=
+o">=ED=95=9C=EA=B5=AD=EC=96=B4 - Korean</option><option value=3D"mk">=D0=9C=
+=D0=B0=D0=BA=D0=B5=D0=B4=D0=BE=D0=BD=D1=81=D0=BA=D0=B8 - Macedonian</option=
+><option value=3D"mr">=E0=A4=AE=E0=A4=B0=E0=A4=BE=E0=A4=A0=E0=A5=80 - Marat=
+hi</option><option value=3D"no">Norsk - Norwegian</option><option value=3D"=
+pl">Polski - Polish</option><option value=3D"pt">Portugu=C3=AAs - Portugues=
+e</option><option value=3D"pt-BR">Portugu=C3=AAs - Portuguese (Brazil)</opt=
+ion><option value=3D"ru">=D0=A0=D1=83=D1=81=D1=81=D0=BA=D0=B8=D0=B9 - Russi=
+an</option><option value=3D"sk">Sloven=C4=8Dina - Slovak</option><option va=
+lue=3D"sl">Sloven=C5=A1=C4=8Dina - Slovenian</option><option value=3D"es">E=
+spa=C3=B1ol - Spanish</option><option value=3D"sv">Svenska - Swedish</optio=
+n><option value=3D"tr">T=C3=BCrk=C3=A7e - Turkish</option><option value=3D"=
+uz">O=C3=ABzbekcha - Uzbek</option></select></form>
+	</div>
+	<h1><a href=3D"http://websvn.chrilly.net/?" title=3D"Subversion Repositori=
+es">Subversion Repositories</a>
+		<span><a href=3D"http://websvn.chrilly.net/listing.php?repname=3DOni2&amp=
+;">Oni2</a></span>
+	</h1>
+  <h2 id=3D"pathlinks"><a href=3D"http://websvn.chrilly.net/listing.php?rep=
+name=3DOni2&amp;path=3D%2F&amp;" class=3D"root"><span>(root)</span></a>/<a =
+href=3D"http://websvn.chrilly.net/listing.php?repname=3DOni2&amp;path=3D%2F=
+oup%2F&amp;#a2a028dce46b45519e50df7a0a401660c">oup</a>/<a href=3D"http://we=
+bsvn.chrilly.net/listing.php?repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2F&=
+amp;#a87c509f766b5e41a9f8e464df4957069">current</a>/<a href=3D"http://websv=
+n.chrilly.net/listing.php?repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlob=
+al%2F&amp;#a6a62ac308cf534d8ffe57c1e1099e6f6">Global</a>/<span class=3D"fil=
+e">DatStructureLoader.pas</span> - Rev 204</h2>
+  <div id=3D"revjump"><form method=3D"get" action=3D"http://websvn.chrilly.=
+net/filedetails.php?repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FD=
+atStructureLoader.pas" id=3D"revision"><input type=3D"hidden" name=3D"repna=
+me" value=3D"Oni2"><input type=3D"hidden" name=3D"path" value=3D"/oup/curre=
+nt/Global/DatStructureLoader.pas">Rev <input type=3D"text" size=3D"5" name=
+=3D"rev" placeholder=3D"HEAD"><span class=3D"submit"><input type=3D"submit"=
+ value=3D"Go"></span></form></div>
+  <p>
+    <span class=3D"prev"><a href=3D"http://websvn.chrilly.net/filedetails.p=
+hp?repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader=
+.pas&amp;rev=3D113">Rev 113</a></span> |
+    <span class=3D"blame"><a href=3D"http://websvn.chrilly.net/blame.php?re=
+pname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas&=
+amp;rev=3D204">Blame</a></span> |
+    <span class=3D"diff"><a href=3D"http://websvn.chrilly.net/diff.php?repn=
+ame=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas&am=
+p;rev=3D204">Compare with Previous</a></span> |
+    <span class=3D"changes"><a href=3D"http://websvn.chrilly.net/revision.p=
+hp?repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader=
+.pas&amp;rev=3D204">Last modification</a></span> |
+    <span class=3D"log"><a href=3D"http://websvn.chrilly.net/log.php?repnam=
+e=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas&amp;=
+rev=3D204">View Log</a></span>
+    | <span class=3D"compress"><a href=3D"http://websvn.chrilly.net/dl.php?=
+repname=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pa=
+s&amp;rev=3D204">Download</a></span>
+    | <span class=3D"feed"><a href=3D"http://websvn.chrilly.net/rss.php?rep=
+name=3DOni2&amp;path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas&a=
+mp;">RSS feed</a></span>
+  </p>
+  <div class=3D"listing">
+<span style=3D"color: #000000; font-weight: bold;">unit</span> DatStructure=
+Loader<span style=3D"color: #000066;">;</span><br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">interface</span><br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">type</span><br>
+&nbsp; TStructureEntry <span style=3D"color: #000066;">=3D</span> <span sty=
+le=3D"color: #000000; font-weight: bold;">record</span><br>
+&nbsp; &nbsp; Name<span style=3D"color: #000066;">:</span> &nbsp; &nbsp; <s=
+pan style=3D"color: #000066; font-weight: bold;">String</span><span style=
+=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; offset<span style=3D"color: #000066;">:</span> &nbsp; <span s=
+tyle=3D"color: #000066; font-weight: bold;">Integer</span><span style=3D"co=
+lor: #000066;">;</span><br>
+&nbsp; &nbsp; datatype<span style=3D"color: #000066;">:</span> <span style=
+=3D"color: #000066; font-weight: bold;">Word</span><span style=3D"color: #0=
+00066;">;</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 1..4 &nbsp;: Integer[1..4] dec</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 5..8 &nbsp;: Integer[1..4] hex</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 9 &nbsp; &nbsp; : float</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 10 &nbsp; &nbsp;: bitset</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 11 &nbsp; &nbsp;: raw-addr</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 12 &nbsp; &nbsp;: untyped-dat-file-ID-link</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 13..16: Signed Integer[1..4]</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 17 &nbsp; &nbsp;: level-ID</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 100..300: dat-file-name[0..200]</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 501..614: typed-dat-file-ID-link</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 1000..9999: Unused data[0-8999]</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #808080; font-style: italic;">//=
+ 10000+: string[0+]</span><br>
+&nbsp; &nbsp; description<span style=3D"color: #000066;">:</span> <span sty=
+le=3D"color: #000066; font-weight: bold;">String</span><span style=3D"color=
+: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<br>
+&nbsp; TStructDefSub <span style=3D"color: #000066;">=3D</span> <span style=
+=3D"color: #000000; font-weight: bold;">record</span><br>
+&nbsp; &nbsp; SubName<span style=3D"color: #000066;">:</span> <span style=
+=3D"color: #000066; font-weight: bold;">String</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; SubDesc<span style=3D"color: #000066;">:</span> <span style=
+=3D"color: #000066; font-weight: bold;">String</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; Entries<span style=3D"color: #000066;">:</span> <span style=
+=3D"color: #000000; font-weight: bold;">array</span> <span style=3D"color: =
+#000000; font-weight: bold;">of</span> TStructureEntry<span style=3D"color:=
+ #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<br>
+&nbsp; TStructDef <span style=3D"color: #000066;">=3D</span> <span style=3D=
+"color: #000000; font-weight: bold;">record</span><br>
+&nbsp; &nbsp; Data<span style=3D"color: #000066;">:</span> &nbsp; <span sty=
+le=3D"color: #000066; font-weight: bold;">Boolean</span><span style=3D"colo=
+r: #000066;">;</span><br>
+&nbsp; &nbsp; Global<span style=3D"color: #000066;">:</span> <span style=3D=
+"color: #000000; font-weight: bold;">array</span> <span style=3D"color: #00=
+0000; font-weight: bold;">of</span> TStructureEntry<span style=3D"color: #0=
+00066;">;</span><br>
+&nbsp; &nbsp; Subs<span style=3D"color: #000066;">:</span> &nbsp; <span sty=
+le=3D"color: #000000; font-weight: bold;">array</span> <span style=3D"color=
+: #000000; font-weight: bold;">of</span> TStructDefSub<span style=3D"color:=
+ #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> LoadStru=
+ctureDefinition<span style=3D"color: #000066;">(</span>ConnectionID<span st=
+yle=3D"color: #000066;">,</span> FileID<span style=3D"color: #000066;">:</s=
+pan> <span style=3D"color: #000066; font-weight: bold;">Integer</span><span=
+ style=3D"color: #000066;">)</span><span style=3D"color: #000066;">:</span>=
+ TStructDef<span style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> GetDataT=
+ype<span style=3D"color: #000066;">(</span>TypeID<span style=3D"color: #000=
+066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Word</spa=
+n><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">:=
+</span> <span style=3D"color: #000066; font-weight: bold;">String</span><sp=
+an style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> GetDataT=
+ypeLength<span style=3D"color: #000066;">(</span>DataType<span style=3D"col=
+or: #000066;">:</span> <span style=3D"color: #000066; font-weight: bold;">W=
+ord</span><span style=3D"color: #000066;">)</span><span style=3D"color: #00=
+0066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Word</sp=
+an><span style=3D"color: #000066;">;</span><br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">implementation</span><br=
+>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">uses</span><br>
+&nbsp; SysUtils<span style=3D"color: #000066;">,</span> Classes<span style=
+=3D"color: #000066;">,</span> Functions<span style=3D"color: #000066;">,</s=
+pan> ConnectionManager<span style=3D"color: #000066;">,</span> TypeDefs<spa=
+n style=3D"color: #000066;">,</span> Forms<span style=3D"color: #000066;">,=
+</span> StrUtils<span style=3D"color: #000066;">,</span> Data<span style=3D=
+"color: #000066;">;</span><br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">type</span><br>
+&nbsp; TStringArray <span style=3D"color: #000066;">=3D</span> <span style=
+=3D"color: #000000; font-weight: bold;">array</span> <span style=3D"color: =
+#000000; font-weight: bold;">of</span> <span style=3D"color: #000066; font-=
+weight: bold;">String</span><span style=3D"color: #000066;">;</span><br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> GetDataT=
+ypeLength<span style=3D"color: #000066;">(</span>DataType<span style=3D"col=
+or: #000066;">:</span> <span style=3D"color: #000066; font-weight: bold;">W=
+ord</span><span style=3D"color: #000066;">)</span><span style=3D"color: #00=
+0066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Word</sp=
+an><span style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">case</span> datat=
+ype <span style=3D"color: #000000; font-weight: bold;">of</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">1</span><span style=3D"color:=
+ #000066;">..</span><span style=3D"color: #0000ff;">4</span><span style=3D"=
+color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype<span style=3D"color: #000066;"=
+>;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">5</span><span style=3D"color:=
+ #000066;">..</span><span style=3D"color: #0000ff;">8</span><span style=3D"=
+color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype <span style=3D"color: #000066;=
+">-</span> <span style=3D"color: #0000ff;">4</span><span style=3D"color: #0=
+00066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">9</span><span style=3D"color:=
+ #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">4</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">10</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">1</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">11</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">4</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">12</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">4</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">13</span><span style=3D"color=
+: #000066;">..</span><span style=3D"color: #0000ff;">16</span><span style=
+=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype <span style=3D"color: #000066;=
+">-</span> <span style=3D"color: #0000ff;">12</span><span style=3D"color: #=
+000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">17</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">4</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">100</span><span style=3D"colo=
+r: #000066;">..</span><span style=3D"color: #0000ff;">300</span><span style=
+=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype <span style=3D"color: #000066;=
+">-</span> <span style=3D"color: #0000ff;">100</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">500</span><span style=3D"colo=
+r: #000066;">..</span><span style=3D"color: #0000ff;">614</span><span style=
+=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">4</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">1000</span><span style=3D"col=
+or: #000066;">..</span><span style=3D"color: #0000ff;">9999</span><span sty=
+le=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype <span style=3D"color: #000066;=
+">-</span> <span style=3D"color: #0000ff;">1000</span><span style=3D"color:=
+ #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">10000</span><span style=3D"co=
+lor: #000066;">..</span><span style=3D"color: #0000ff;">65535</span><span s=
+tyle=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> datatype <span style=3D"color: #000066;=
+">-</span> <span style=3D"color: #0000ff;">10000</span><span style=3D"color=
+: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">else</span><br>
+&nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span style=3D=
+"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">0</span><span =
+style=3D"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">end</span><span style=3D=
+"color: #000066;">;</span><br>
+<br>
+<br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> GetDataT=
+ype<span style=3D"color: #000066;">(</span>typeid<span style=3D"color: #000=
+066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Word</spa=
+n><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">:=
+</span> <span style=3D"color: #000066; font-weight: bold;">String</span><sp=
+an style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">case</span> typei=
+d <span style=3D"color: #000000; font-weight: bold;">of</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">1</span><span style=3D"color:=
+ #000066;">..</span><span style=3D"color: #0000ff;">4</span><span style=3D"=
+color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Int'</=
+span> <span style=3D"color: #000066;">+</span> <span style=3D"color: #00006=
+6;">IntToStr</span><span style=3D"color: #000066;">(</span>typeid <span sty=
+le=3D"color: #000066;">*</span> <span style=3D"color: #0000ff;">8</span><sp=
+an style=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</spa=
+n><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">5</span><span style=3D"color:=
+ #000066;">..</span><span style=3D"color: #0000ff;">8</span><span style=3D"=
+color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Int'</=
+span> <span style=3D"color: #000066;">+</span> <span style=3D"color: #00006=
+6;">IntToStr</span><span style=3D"color: #000066;">(</span><span style=3D"c=
+olor: #000066;">(</span>typeid <span style=3D"color: #000066;">-</span> <sp=
+an style=3D"color: #0000ff;">4</span><span style=3D"color: #000066;">)</spa=
+n> <span style=3D"color: #000066;">*</span> <span style=3D"color: #0000ff;"=
+>8</span><span style=3D"color: #000066;">)</span><span style=3D"color: #000=
+066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">9</span><span style=3D"color:=
+ #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Float'=
+</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">10</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'BitSet=
+'</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">11</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Raw-Ad=
+dress'</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">12</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'.dat-f=
+ile-ID'</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">13</span><span style=3D"color=
+: #000066;">..</span><span style=3D"color: #0000ff;">16</span><span style=
+=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Signed=
+Int'</span> <span style=3D"color: #000066;">+</span> <span style=3D"color: =
+#000066;">IntToStr</span><span style=3D"color: #000066;">(</span><span styl=
+e=3D"color: #000066;">(</span>typeid <span style=3D"color: #000066;">-</spa=
+n> <span style=3D"color: #0000ff;">12</span><span style=3D"color: #000066;"=
+>)</span> <span style=3D"color: #000066;">*</span> <span style=3D"color: #0=
+000ff;">8</span><span style=3D"color: #000066;">)</span><span style=3D"colo=
+r: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">17</span><span style=3D"color=
+: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'LevelI=
+D'</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">100</span><span style=3D"colo=
+r: #000066;">..</span><span style=3D"color: #0000ff;">300</span><span style=
+=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'.dat-f=
+ile-name('</span> <span style=3D"color: #000066;">+</span> <span style=3D"c=
+olor: #000066;">IntToStr</span><span style=3D"color: #000066;">(</span>type=
+id <span style=3D"color: #000066;">-</span> <span style=3D"color: #0000ff;"=
+>100</span><span style=3D"color: #000066;">)</span> <span style=3D"color: #=
+000066;">+</span> <span style=3D"color: #ff0000;">')'</span><span style=3D"=
+color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">1000</span><span style=3D"col=
+or: #000066;">..</span><span style=3D"color: #0000ff;">9999</span><span sty=
+le=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'Unused=
+('</span> <span style=3D"color: #000066;">+</span> <span style=3D"color: #0=
+00066;">IntToStr</span><span style=3D"color: #000066;">(</span>typeid <span=
+ style=3D"color: #000066;">-</span> <span style=3D"color: #0000ff;">1000</s=
+pan><span style=3D"color: #000066;">)</span> <span style=3D"color: #000066;=
+">+</span> <span style=3D"color: #ff0000;">')'</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #0000ff;">10000</span><span style=3D"co=
+lor: #000066;">..</span><span style=3D"color: #0000ff;">65535</span><span s=
+tyle=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; Result <span style=3D"color: #000066;">:</span><span s=
+tyle=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'String=
+('</span> <span style=3D"color: #000066;">+</span> <span style=3D"color: #0=
+00066;">IntToStr</span><span style=3D"color: #000066;">(</span>typeid <span=
+ style=3D"color: #000066;">-</span> <span style=3D"color: #0000ff;">10000</=
+span><span style=3D"color: #000066;">)</span> <span style=3D"color: #000066=
+;">+</span> <span style=3D"color: #ff0000;">')'</span><span style=3D"color:=
+ #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">end</span><span style=3D=
+"color: #000066;">;</span><br>
+<br>
+<br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> Explode<=
+span style=3D"color: #000066;">(</span>_string<span style=3D"color: #000066=
+;">:</span> <span style=3D"color: #000066; font-weight: bold;">String</span=
+><span style=3D"color: #000066;">;</span> delimiter<span style=3D"color: #0=
+00066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Char</s=
+pan><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;"=
+>:</span> TStringArray<span style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">var</span><br>
+&nbsp; start<span style=3D"color: #000066;">,</span> len<span style=3D"colo=
+r: #000066;">:</span> <span style=3D"color: #000066; font-weight: bold;">Wo=
+rd</span><span style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; <span style=3D"color: #000066;">SetLength</span><span style=3D"color=
+: #000066;">(</span>Result<span style=3D"color: #000066;">,</span> <span st=
+yle=3D"color: #0000ff;">0</span><span style=3D"color: #000066;">)</span><sp=
+an style=3D"color: #000066;">;</span><br>
+&nbsp; start <span style=3D"color: #000066;">:</span><span style=3D"color: =
+#000066;">=3D</span> <span style=3D"color: #0000ff;">1</span><span style=3D=
+"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">while</span> PosE=
+x<span style=3D"color: #000066;">(</span>delimiter<span style=3D"color: #00=
+0066;">,</span> _string<span style=3D"color: #000066;">,</span> start<span =
+style=3D"color: #000066;">)</span> &gt; <span style=3D"color: #0000ff;">0</=
+span> <span style=3D"color: #000000; font-weight: bold;">do</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000066;">SetLength</span><span style=
+=3D"color: #000066;">(</span>Result<span style=3D"color: #000066;">,</span>=
+ <span style=3D"color: #000066;">Length</span><span style=3D"color: #000066=
+;">(</span>Result<span style=3D"color: #000066;">)</span> <span style=3D"co=
+lor: #000066;">+</span> <span style=3D"color: #0000ff;">1</span><span style=
+=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; len <span style=3D"color: #000066;">:</span><span style=3D"co=
+lor: #000066;">=3D</span> PosEx<span style=3D"color: #000066;">(</span>deli=
+miter<span style=3D"color: #000066;">,</span> _string<span style=3D"color: =
+#000066;">,</span> start<span style=3D"color: #000066;">)</span> <span styl=
+e=3D"color: #000066;">-</span> start<span style=3D"color: #000066;">;</span=
+><br>
+&nbsp; &nbsp; Result<span style=3D"color: #000066;">[</span><span style=3D"=
+color: #000066;">High</span><span style=3D"color: #000066;">(</span>Result<=
+span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</s=
+pan> <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;=
+">=3D</span> MidStr<span style=3D"color: #000066;">(</span>_string<span sty=
+le=3D"color: #000066;">,</span> start<span style=3D"color: #000066;">,</spa=
+n> len<span style=3D"color: #000066;">)</span><span style=3D"color: #000066=
+;">;</span><br>
+&nbsp; &nbsp; start <span style=3D"color: #000066;">:</span><span style=3D"=
+color: #000066;">=3D</span> start <span style=3D"color: #000066;">+</span> =
+len <span style=3D"color: #000066;">+</span> <span style=3D"color: #0000ff;=
+">1</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000066;">SetLength</span><span style=3D"color=
+: #000066;">(</span>Result<span style=3D"color: #000066;">,</span> <span st=
+yle=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(</spa=
+n>Result<span style=3D"color: #000066;">)</span> <span style=3D"color: #000=
+066;">+</span> <span style=3D"color: #0000ff;">1</span><span style=3D"color=
+: #000066;">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; Result<span style=3D"color: #000066;">[</span><span style=3D"color: =
+#000066;">High</span><span style=3D"color: #000066;">(</span>Result<span st=
+yle=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</span> <s=
+pan style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</=
+span> MidStr<span style=3D"color: #000066;">(</span>_string<span style=3D"c=
+olor: #000066;">,</span> start<span style=3D"color: #000066;">,</span> <spa=
+n style=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(<=
+/span>_string<span style=3D"color: #000066;">)</span> <span style=3D"color:=
+ #000066;">-</span> start <span style=3D"color: #000066;">+</span> <span st=
+yle=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">)</span><sp=
+an style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">end</span><span style=3D=
+"color: #000066;">;</span><br>
+<br>
+<br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">function</span> LoadStru=
+ctureDefinition<span style=3D"color: #000066;">(</span>ConnectionID<span st=
+yle=3D"color: #000066;">,</span> FileID<span style=3D"color: #000066;">:</s=
+pan> <span style=3D"color: #000066; font-weight: bold;">Integer</span><span=
+ style=3D"color: #000066;">)</span><span style=3D"color: #000066;">:</span>=
+ TStructDef<span style=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">var</span><br>
+&nbsp; current_type<span style=3D"color: #000066;">:</span> <span style=3D"=
+color: #000066; font-weight: bold;">Byte</span><span style=3D"color: #00006=
+6;">;</span> <span style=3D"color: #808080; font-style: italic;">//0: Globa=
+l, 1: Undynamic, 2: Dynamic</span><br>
+&nbsp; current_base<span style=3D"color: #000066;">,</span> current_package=
+<span style=3D"color: #000066;">,</span> current_package_size<span style=3D=
+"color: #000066;">:</span> <span style=3D"color: #000066; font-weight: bold=
+;">Integer</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; packages<span style=3D"color: #000066;">:</span> <span style=3D"colo=
+r: #000066; font-weight: bold;">Integer</span><span style=3D"color: #000066=
+;">;</span><br>
+&nbsp; deffile<span style=3D"color: #000066;">:</span> Text<span style=3D"c=
+olor: #000066;">;</span><br>
+&nbsp; structentry<span style=3D"color: #000066;">:</span> TStructureEntry<=
+span style=3D"color: #000066;">;</span><br>
+&nbsp; fields<span style=3D"color: #000066;">:</span> TStringArray<span sty=
+le=3D"color: #000066;">;</span><br>
+&nbsp; filename<span style=3D"color: #000066;">:</span> <span style=3D"colo=
+r: #000066; font-weight: bold;">String</span><span style=3D"color: #000066;=
+">;</span><br>
+&nbsp; ext<span style=3D"color: #000066;">:</span> &nbsp; &nbsp;<span style=
+=3D"color: #000066; font-weight: bold;">String</span><span style=3D"color: =
+#000066;">[</span><span style=3D"color: #0000ff;">4</span><span style=3D"co=
+lor: #000066;">]</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; temps<span style=3D"color: #000066;">:</span> &nbsp;<span style=3D"c=
+olor: #000066; font-weight: bold;">String</span><span style=3D"color: #0000=
+66;">;</span><br>
+&nbsp; Data<span style=3D"color: #000066;">:</span> &nbsp; TByteData<span s=
+tyle=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; <span style=3D"color: #000066;">SetLength</span><span style=3D"color=
+: #000066;">(</span>Result<span style=3D"color: #000066;">.</span><span sty=
+le=3D"color: #006600;">Global</span><span style=3D"color: #000066;">,</span=
+> <span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;">)=
+</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000066;">SetLength</span><span style=3D"color=
+: #000066;">(</span>Result<span style=3D"color: #000066;">.</span><span sty=
+le=3D"color: #006600;">Subs</span><span style=3D"color: #000066;">,</span> =
+<span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;">)</=
+span><span style=3D"color: #000066;">;</span><br>
+&nbsp; Result<span style=3D"color: #000066;">.</span><span style=3D"color: =
+#006600;">Data</span> <span style=3D"color: #000066;">:</span><span style=
+=3D"color: #000066;">=3D</span> <span style=3D"color: #000000; font-weight:=
+ bold;">False</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; ext &nbsp; &nbsp; &nbsp;<span style=3D"color: #000066;">:</span><spa=
+n style=3D"color: #000066;">=3D</span> ConManager<span style=3D"color: #000=
+066;">.</span><span style=3D"color: #006600;">Connection</span><span style=
+=3D"color: #000066;">[</span>ConnectionID<span style=3D"color: #000066;">]<=
+/span><span style=3D"color: #000066;">.</span><span style=3D"color: #006600=
+;">GetFileInfo</span><span style=3D"color: #000066;">(</span>fileid<span st=
+yle=3D"color: #000066;">)</span><span style=3D"color: #000066;">.</span><sp=
+an style=3D"color: #006600;">Extension</span><span style=3D"color: #000066;=
+">;</span><br>
+&nbsp; filename <span style=3D"color: #000066;">:</span><span style=3D"colo=
+r: #000066;">=3D</span> <span style=3D"color: #000066;">ExtractFilePath</sp=
+an><span style=3D"color: #000066;">(</span>Application<span style=3D"color:=
+ #000066;">.</span><span style=3D"color: #006600;">ExeName</span><span styl=
+e=3D"color: #000066;">)</span> <span style=3D"color: #000066;">+</span> <sp=
+an style=3D"color: #ff0000;">'\StructDefs\'</span> <span style=3D"color: #0=
+00066;">+</span> ext <span style=3D"color: #000066;">+</span> <span style=
+=3D"color: #ff0000;">'.txt'</span><span style=3D"color: #000066;">;</span><=
+br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">if</span> <span s=
+tyle=3D"color: #000066;">FileExists</span><span style=3D"color: #000066;">(=
+</span>filename<span style=3D"color: #000066;">)</span> <span style=3D"colo=
+r: #000000; font-weight: bold;">then</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; ConManager<span style=3D"color: #000066;">.</span><span style=
+=3D"color: #006600;">Connection</span><span style=3D"color: #000066;">[</sp=
+an>ConnectionID<span style=3D"color: #000066;">]</span><span style=3D"color=
+: #000066;">.</span><span style=3D"color: #006600;">LoadDatFile</span><span=
+ style=3D"color: #000066;">(</span>FileID<span style=3D"color: #000066;">,<=
+/span> Data<span style=3D"color: #000066;">)</span><span style=3D"color: #0=
+00066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000066;">AssignFile</span><span style=
+=3D"color: #000066;">(</span>deffile<span style=3D"color: #000066;">,</span=
+> filename<span style=3D"color: #000066;">)</span><span style=3D"color: #00=
+0066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000066;">Reset</span><span style=3D"co=
+lor: #000066;">(</span>deffile<span style=3D"color: #000066;">)</span><span=
+ style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; current_type <span style=3D"color: #000066;">:</span><span st=
+yle=3D"color: #000066;">=3D</span> <span style=3D"color: #0000ff;">0</span>=
+<span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; Result<span style=3D"color: #000066;">.</span><span style=3D"=
+color: #006600;">Data</span> &nbsp;<span style=3D"color: #000066;">:</span>=
+<span style=3D"color: #000066;">=3D</span> <span style=3D"color: #000000; f=
+ont-weight: bold;">True</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">if</span> =
+<span style=3D"color: #000000; font-weight: bold;">not</span> <span style=
+=3D"color: #000066;">EOF</span><span style=3D"color: #000066;">(</span>deff=
+ile<span style=3D"color: #000066;">)</span> <span style=3D"color: #000000; =
+font-weight: bold;">then</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">begin</spa=
+n><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #000066;">ReadLn</span><span sty=
+le=3D"color: #000066;">(</span>deffile<span style=3D"color: #000066;">,</sp=
+an> temps<span style=3D"color: #000066;">)</span><span style=3D"color: #000=
+066;">;</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">whi=
+le</span> <span style=3D"color: #000000; font-weight: bold;">not</span> <sp=
+an style=3D"color: #000066;">EOF</span><span style=3D"color: #000066;">(</s=
+pan>deffile<span style=3D"color: #000066;">)</span> <span style=3D"color: #=
+000000; font-weight: bold;">do</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">beg=
+in</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000066;">ReadLn</span><s=
+pan style=3D"color: #000066;">(</span>deffile<span style=3D"color: #000066;=
+">,</span> temps<span style=3D"color: #000066;">)</span><span style=3D"colo=
+r: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bol=
+d;">if</span> <span style=3D"color: #000066;">(</span><span style=3D"color:=
+ #000066;">Length</span><span style=3D"color: #000066;">(</span>temps<span =
+style=3D"color: #000066;">)</span> &gt; <span style=3D"color: #0000ff;">0</=
+span><span style=3D"color: #000066;">)</span> <span style=3D"color: #000000=
+; font-weight: bold;">and</span> <span style=3D"color: #000066;">(</span>te=
+mps<span style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">=
+1</span><span style=3D"color: #000066;">]</span> &lt;&gt; <span style=3D"co=
+lor: #ff0000;">'#'</span><span style=3D"color: #000066;">)</span> <span sty=
+le=3D"color: #000000; font-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bol=
+d;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">if</span> temps<span style=3D"color: #000066;">[</span><span sty=
+le=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">]</span> <sp=
+an style=3D"color: #000066;">=3D</span> <span style=3D"color: #ff0000;">'*'=
+</span> <span style=3D"color: #000000; font-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fields <span style=3D"color: #000=
+066;">:</span><span style=3D"color: #000066;">=3D</span> Explode<span style=
+=3D"color: #000066;">(</span>temps<span style=3D"color: #000066;">,</span> =
+<span style=3D"color: #ff0000;">#9</span><span style=3D"color: #000066;">)<=
+/span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; fo=
+nt-weight: bold;">case</span> <span style=3D"color: #000066;">Length</span>=
+<span style=3D"color: #000066;">(</span>fields<span style=3D"color: #000066=
+;">)</span> <span style=3D"color: #000000; font-weight: bold;">of</span><br=
+>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+0ff;">1</span><span style=3D"color: #000066;">..</span><span style=3D"color=
+: #0000ff;">2</span><span style=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_type <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+> <span style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_base <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+> <span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000066;">SetLength</span><span style=3D"color: #000066;">(</span>Result=
+<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Sub=
+s</span><span style=3D"color: #000066;">,</span> <span style=3D"color: #000=
+066;">Length</span><span style=3D"color: #000066;">(</span>Result<span styl=
+e=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><s=
+pan style=3D"color: #000066;">)</span> <span style=3D"color: #000066;">+</s=
+pan> <span style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;=
+">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><sp=
+an style=3D"color: #000066;">[</span><span style=3D"color: #000066;">High</=
+span><span style=3D"color: #000066;">(</span>Result<span style=3D"color: #0=
+00066;">.</span><span style=3D"color: #006600;">Subs</span><span style=3D"c=
+olor: #000066;">)</span><span style=3D"color: #000066;">]</span><span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">SubName</span>=
+ <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=
+=3D</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MidStr<span =
+style=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">[</=
+span><span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;=
+">]</span><span style=3D"color: #000066;">,</span> <span style=3D"color: #0=
+000ff;">2</span><span style=3D"color: #000066;">,</span> <span style=3D"col=
+or: #000066;">Length</span><span style=3D"color: #000066;">(</span>fields<s=
+pan style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">0</sp=
+an><span style=3D"color: #000066;">]</span><span style=3D"color: #000066;">=
+)</span> <span style=3D"color: #000066;">-</span> <span style=3D"color: #00=
+00ff;">1</span><span style=3D"color: #000066;">)</span><span style=3D"color=
+: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">if</span> <span style=3D"color: #000066;">L=
+ength</span><span style=3D"color: #000066;">(</span>fields<span style=3D"co=
+lor: #000066;">)</span> <span style=3D"color: #000066;">=3D</span> <span st=
+yle=3D"color: #0000ff;">2</span> <span style=3D"color: #000000; font-weight=
+: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span =
+style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</spa=
+n><span style=3D"color: #000066;">[</span><span style=3D"color: #000066;">H=
+igh</span><span style=3D"color: #000066;">(</span>Result<span style=3D"colo=
+r: #000066;">.</span><span style=3D"color: #006600;">Subs</span><span style=
+=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</span><span =
+style=3D"color: #000066;">.</span><span style=3D"color: #006600;">SubDesc</=
+span> <span style=3D"color: #000066;">:</span><span style=3D"color: #000066=
+;">=3D</span> fields<span style=3D"color: #000066;">[</span><span style=3D"=
+color: #0000ff;">1</span><span style=3D"color: #000066;">]</span><span styl=
+e=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">end</span><span style=3D"color: #000066;">;</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+0ff;">3</span><span style=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_type <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+> <span style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_base <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+> <span style=3D"color: #000066;">StrToInt</span><span style=3D"color: #000=
+066;">(</span>fields<span style=3D"color: #000066;">[</span><span style=3D"=
+color: #0000ff;">2</span><span style=3D"color: #000066;">]</span><span styl=
+e=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000066;">SetLength</span><span style=3D"color: #000066;">(</span>Result=
+<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Sub=
+s</span><span style=3D"color: #000066;">,</span> <span style=3D"color: #000=
+066;">Length</span><span style=3D"color: #000066;">(</span>Result<span styl=
+e=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><s=
+pan style=3D"color: #000066;">)</span> <span style=3D"color: #000066;">+</s=
+pan> <span style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;=
+">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><sp=
+an style=3D"color: #000066;">[</span><span style=3D"color: #000066;">High</=
+span><span style=3D"color: #000066;">(</span>Result<span style=3D"color: #0=
+00066;">.</span><span style=3D"color: #006600;">Subs</span><span style=3D"c=
+olor: #000066;">)</span><span style=3D"color: #000066;">]</span><span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">SubName</span>=
+ <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=
+=3D</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MidStr<span =
+style=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">[</=
+span><span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;=
+">]</span><span style=3D"color: #000066;">,</span> <span style=3D"color: #0=
+000ff;">2</span><span style=3D"color: #000066;">,</span> <span style=3D"col=
+or: #000066;">Length</span><span style=3D"color: #000066;">(</span>fields<s=
+pan style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">0</sp=
+an><span style=3D"color: #000066;">]</span><span style=3D"color: #000066;">=
+)</span> <span style=3D"color: #000066;">-</span> <span style=3D"color: #00=
+00ff;">1</span><span style=3D"color: #000066;">)</span><span style=3D"color=
+: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><sp=
+an style=3D"color: #000066;">[</span><span style=3D"color: #000066;">High</=
+span><span style=3D"color: #000066;">(</span>Result<span style=3D"color: #0=
+00066;">.</span><span style=3D"color: #006600;">Subs</span><span style=3D"c=
+olor: #000066;">)</span><span style=3D"color: #000066;">]</span><span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">SubDesc</span>=
+ <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=
+=3D</span> fields<span style=3D"color: #000066;">[</span><span style=3D"col=
+or: #0000ff;">1</span><span style=3D"color: #000066;">]</span><span style=
+=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">end</span><span style=3D"color: #000066;">;</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+0ff;">6</span><span style=3D"color: #000066;">:</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_type &nbsp;=
+ &nbsp;<span style=3D"color: #000066;">:</span><span style=3D"color: #00006=
+6;">=3D</span> <span style=3D"color: #0000ff;">2</span><span style=3D"color=
+: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_base &nbsp;=
+ &nbsp;<span style=3D"color: #000066;">:</span><span style=3D"color: #00006=
+6;">=3D</span> <span style=3D"color: #000066;">StrToInt</span><span style=
+=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">[</span>=
+<span style=3D"color: #0000ff;">2</span><span style=3D"color: #000066;">]</=
+span><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;=
+">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_package <sp=
+an style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</s=
+pan> <span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;=
+">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current_package_siz=
+e <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=
+=3D</span> <span style=3D"color: #000066;">StrToInt</span><span style=3D"co=
+lor: #000066;">(</span>fields<span style=3D"color: #000066;">[</span><span =
+style=3D"color: #0000ff;">5</span><span style=3D"color: #000066;">]</span><=
+span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</s=
+pan><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">if</span> fields<span style=3D"color: #0000=
+66;">[</span><span style=3D"color: #0000ff;">4</span><span style=3D"color: =
+#000066;">]</span><span style=3D"color: #000066;">[</span><span style=3D"co=
+lor: #0000ff;">1</span><span style=3D"color: #000066;">]</span> &lt;&gt; <s=
+pan style=3D"color: #ff0000;">'$'</span> <span style=3D"color: #000000; fon=
+t-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">case</span> <span style=3D"color: #=
+000066;">StrToInt</span><span style=3D"color: #000066;">(</span>fields<span=
+ style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">4</span>=
+<span style=3D"color: #000066;">]</span><span style=3D"color: #000066;">)</=
+span> <span style=3D"color: #000000; font-weight: bold;">of</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">:</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; packages <span style=3D"color: #000066;">:</span><span style=3D"color: #0=
+00066;">=3D</span> Data<span style=3D"color: #000066;">[</span><span style=
+=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span=
+>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0000f=
+f;">3</span><span style=3D"color: #000066;">]</span><span style=3D"color: #=
+000066;">)</span><span style=3D"color: #000066;">]</span><span style=3D"col=
+or: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #0000ff;">2</span><span style=3D"color: #000066;">:</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; packages <span style=3D"color: #000066;">:</span><span style=3D"color: #0=
+00066;">=3D</span> Data<span style=3D"color: #000066;">[</span><span style=
+=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span=
+>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0000f=
+f;">3</span><span style=3D"color: #000066;">]</span><span style=3D"color: #=
+000066;">)</span><span style=3D"color: #000066;">]</span> <span style=3D"co=
+lor: #000066;">+</span> Data<span style=3D"color: #000066;">[</span><span s=
+tyle=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</=
+span>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0=
+000ff;">3</span><span style=3D"color: #000066;">]</span><span style=3D"colo=
+r: #000066;">)</span> <span style=3D"color: #000066;">+</span> <span style=
+=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">]</span> <span=
+ style=3D"color: #000066;">*</span> <span style=3D"color: #0000ff;">256</sp=
+an><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #0000ff;">4</span><span style=3D"color: #000066;">:</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; packages <span style=3D"color: #000066;">:</span><span style=3D"color: #0=
+00066;">=3D</span> Data<span style=3D"color: #000066;">[</span><span style=
+=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span=
+>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0000f=
+f;">3</span><span style=3D"color: #000066;">]</span><span style=3D"color: #=
+000066;">)</span><span style=3D"color: #000066;">]</span> <span style=3D"co=
+lor: #000066;">+</span> Data<span style=3D"color: #000066;">[</span><span s=
+tyle=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</=
+span>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0=
+000ff;">3</span><span style=3D"color: #000066;">]</span><span style=3D"colo=
+r: #000066;">)</span> <span style=3D"color: #000066;">+</span> <span style=
+=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">]</span> <span=
+ style=3D"color: #000066;">*</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; <span style=3D"color: #0000ff;">256</span> <span style=3D"color: #=
+000066;">+</span> Data<span style=3D"color: #000066;">[</span><span style=
+=3D"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span=
+>fields<span style=3D"color: #000066;">[</span><span style=3D"color: #0000f=
+f;">3</span><span style=3D"color: #000066;">]</span><span style=3D"color: #=
+000066;">)</span> <span style=3D"color: #000066;">+</span> <span style=3D"c=
+olor: #0000ff;">2</span><span style=3D"color: #000066;">]</span> <span styl=
+e=3D"color: #000066;">*</span> <span style=3D"color: #0000ff;">256</span> <=
+span style=3D"color: #000066;">*</span> <span style=3D"color: #0000ff;">256=
+</span> <span style=3D"color: #000066;">+</span> Data<span style=3D"color: =
+#000066;">[</span><span style=3D"color: #000066;">StrToInt</span><span styl=
+e=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">[</span=
+><span style=3D"color: #0000ff;">3</span><span style=3D"color: #000066;">]<=
+/span><span style=3D"color: #000066;">)</span> <span style=3D"color: #00006=
+6;">+</span> <span style=3D"color: #0000ff;">3</span><span style=3D"color: =
+#000066;">]</span> <span style=3D"color: #000066;">*</span> <span style=3D"=
+color: #0000ff;">256</span> <span style=3D"color: #000066;">*</span> <span =
+style=3D"color: #0000ff;">256</span> <span style=3D"color: #000066;">*</spa=
+n> <span style=3D"color: #0000ff;">256</span><span style=3D"color: #000066;=
+">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">end</span><span style=3D"color: #00=
+0066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">end</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; packages <sp=
+an style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</s=
+pan> <span style=3D"color: #000066;">StrToInt</span><span style=3D"color: #=
+000066;">(</span>fields<span style=3D"color: #000066;">[</span><span style=
+=3D"color: #0000ff;">4</span><span style=3D"color: #000066;">]</span><span =
+style=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</span><=
+br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">end</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000066;">SetLength</span><span style=3D"color: #000066;">(</span>Result=
+<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Sub=
+s</span><span style=3D"color: #000066;">,</span> <span style=3D"color: #000=
+066;">Length</span><span style=3D"color: #000066;">(</span>Result<span styl=
+e=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><s=
+pan style=3D"color: #000066;">)</span> <span style=3D"color: #000066;">+</s=
+pan> packages<span style=3D"color: #000066;">)</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">for</span> current_package <span style=3D"c=
+olor: #000066;">:</span><span style=3D"color: #000066;">=3D</span> <span st=
+yle=3D"color: #0000ff;">0</span> <span style=3D"color: #000000; font-weight=
+: bold;">to</span> packages <span style=3D"color: #000066;">-</span> <span =
+style=3D"color: #0000ff;">1</span> <span style=3D"color: #000000; font-weig=
+ht: bold;">do</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span =
+style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</spa=
+n><span style=3D"color: #000066;">[</span><span style=3D"color: #000066;">H=
+igh</span><span style=3D"color: #000066;">(</span>Result<span style=3D"colo=
+r: #000066;">.</span><span style=3D"color: #006600;">Subs</span><span style=
+=3D"color: #000066;">)</span> <span style=3D"color: #000066;">-</span> pack=
+ages <span style=3D"color: #000066;">+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; curre=
+nt_package <span style=3D"color: #000066;">+</span> <span style=3D"color: #=
+0000ff;">1</span><span style=3D"color: #000066;">]</span><span style=3D"col=
+or: #000066;">.</span><span style=3D"color: #006600;">SubName</span> <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MidSt=
+r<span style=3D"color: #000066;">(</span>fields<span style=3D"color: #00006=
+6;">[</span><span style=3D"color: #0000ff;">0</span><span style=3D"color: #=
+000066;">]</span><span style=3D"color: #000066;">,</span> <span style=3D"co=
+lor: #0000ff;">2</span><span style=3D"color: #000066;">,</span> <span style=
+=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(</span>f=
+ields<span style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;=
+">0</span><span style=3D"color: #000066;">]</span><span style=3D"color: #00=
+0066;">)</span> <span style=3D"color: #000066;">-</span> <span style=3D"col=
+or: #0000ff;">1</span><span style=3D"color: #000066;">)</span> <span style=
+=3D"color: #000066;">+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #ff0000;">'['</span> <span style=3D"color: #000066;">+</sp=
+an> <span style=3D"color: #000066;">IntToStr</span><span style=3D"color: #0=
+00066;">(</span>current_package<span style=3D"color: #000066;">)</span> <sp=
+an style=3D"color: #000066;">+</span> <span style=3D"color: #ff0000;">']'</=
+span> <span style=3D"color: #000066;">+</span> <span style=3D"color: #ff000=
+0;">'#'</span> <span style=3D"color: #000066;">+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000066;">IntToHex</span><span style=3D"color: #000066;">(=
+</span>current_base <span style=3D"color: #000066;">+</span> current_packag=
+e <span style=3D"color: #000066;">*</span> current_package_size<span style=
+=3D"color: #000066;">,</span> <span style=3D"color: #0000ff;">8</span><span=
+ style=3D"color: #000066;">)</span> <span style=3D"color: #000066;">+</span=
+><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #ff0000;">'#'</span> <span style=3D"color: #000066;">+</sp=
+an> <span style=3D"color: #000066;">IntToHex</span><span style=3D"color: #0=
+00066;">(</span>current_package_size<span style=3D"color: #000066;">,</span=
+> <span style=3D"color: #0000ff;">8</span><span style=3D"color: #000066;">)=
+</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Result<span =
+style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</spa=
+n><span style=3D"color: #000066;">[</span><span style=3D"color: #000066;">H=
+igh</span><span style=3D"color: #000066;">(</span>Result<span style=3D"colo=
+r: #000066;">.</span><span style=3D"color: #006600;">Subs</span><span style=
+=3D"color: #000066;">)</span> <span style=3D"color: #000066;">-</span> pack=
+ages <span style=3D"color: #000066;">+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; curre=
+nt_package <span style=3D"color: #000066;">+</span> <span style=3D"color: #=
+0000ff;">1</span><span style=3D"color: #000066;">]</span><span style=3D"col=
+or: #000066;">.</span><span style=3D"color: #006600;">SubDesc</span> <span =
+style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span=
+><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; field=
+s<span style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">1<=
+/span><span style=3D"color: #000066;">]</span><span style=3D"color: #000066=
+;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">end</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">end</span><span style=3D"color: #000066;">;</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; fo=
+nt-weight: bold;">end</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">end</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fields <span style=3D"color: #000=
+066;">:</span><span style=3D"color: #000066;">=3D</span> Explode<span style=
+=3D"color: #000066;">(</span>temps<span style=3D"color: #000066;">,</span> =
+<span style=3D"color: #ff0000;">#9</span><span style=3D"color: #000066;">)<=
+/span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; fo=
+nt-weight: bold;">if</span> <span style=3D"color: #000066;">(</span><span s=
+tyle=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(</sp=
+an>fields<span style=3D"color: #000066;">)</span> <span style=3D"color: #00=
+0066;">=3D</span> <span style=3D"color: #0000ff;">3</span><span style=3D"co=
+lor: #000066;">)</span> <span style=3D"color: #000000; font-weight: bold;">=
+or</span> <span style=3D"color: #000066;">(</span><span style=3D"color: #00=
+0066;">Length</span><span style=3D"color: #000066;">(</span>fields<span sty=
+le=3D"color: #000066;">)</span> <span style=3D"color: #000066;">=3D</span> =
+<span style=3D"color: #0000ff;">4</span><span style=3D"color: #000066;">)</=
+span> <span style=3D"color: #000000; font-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; fo=
+nt-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">if</span> <span style=3D"color: #000000; font-weig=
+ht: bold;">not</span> AppSettings<span style=3D"color: #000066;">.</span><s=
+pan style=3D"color: #006600;">HideUnusedData</span> <span style=3D"color: #=
+000000; font-weight: bold;">or</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000066;">(</span><span style=3D"color: #000066;">(</span><span style=3D=
+"color: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span>fi=
+elds<span style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;"=
+>2</span><span style=3D"color: #000066;">]</span><span style=3D"color: #000=
+066;">)</span> &lt; <span style=3D"color: #0000ff;">1000</span><span style=
+=3D"color: #000066;">)</span> <span style=3D"color: #000000; font-weight: b=
+old;">or</span> <span style=3D"color: #000066;">(</span><span style=3D"colo=
+r: #000066;">StrToInt</span><span style=3D"color: #000066;">(</span>fields<=
+span style=3D"color: #000066;">[</span><span style=3D"color: #0000ff;">2</s=
+pan><span style=3D"color: #000066;">]</span><span style=3D"color: #000066;"=
+>)</span> &gt; <span style=3D"color: #0000ff;">9999</span><span style=3D"co=
+lor: #000066;">)</span><span style=3D"color: #000066;">)</span> <span style=
+=3D"color: #000000; font-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; structentry<span st=
+yle=3D"color: #000066;">.</span><span style=3D"color: #006600;">Name</span>=
+ &nbsp; &nbsp; <span style=3D"color: #000066;">:</span><span style=3D"color=
+: #000066;">=3D</span> fields<span style=3D"color: #000066;">[</span><span =
+style=3D"color: #0000ff;">0</span><span style=3D"color: #000066;">]</span><=
+span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; structentry<span st=
+yle=3D"color: #000066;">.</span><span style=3D"color: #006600;">datatype</s=
+pan> <span style=3D"color: #000066;">:</span><span style=3D"color: #000066;=
+">=3D</span> <span style=3D"color: #000066;">StrToInt</span><span style=3D"=
+color: #000066;">(</span>fields<span style=3D"color: #000066;">[</span><spa=
+n style=3D"color: #0000ff;">2</span><span style=3D"color: #000066;">]</span=
+><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">;<=
+/span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">if</span> <span style=3D"color: #000066;">L=
+ength</span><span style=3D"color: #000066;">(</span>fields<span style=3D"co=
+lor: #000066;">)</span> <span style=3D"color: #000066;">=3D</span> <span st=
+yle=3D"color: #0000ff;">4</span> <span style=3D"color: #000000; font-weight=
+: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; structentry<=
+span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">desc=
+ription</span> <span style=3D"color: #000066;">:</span><span style=3D"color=
+: #000066;">=3D</span> fields<span style=3D"color: #000066;">[</span><span =
+style=3D"color: #0000ff;">3</span><span style=3D"color: #000066;">]</span><=
+br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; structentry<=
+span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">desc=
+ription</span> <span style=3D"color: #000066;">:</span><span style=3D"color=
+: #000066;">=3D</span> <span style=3D"color: #ff0000;">''</span><span style=
+=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">if</span> current_type <span style=3D"color=
+: #000000; font-weight: bold;">in</span> <span style=3D"color: #000066;">[<=
+/span><span style=3D"color: #0000ff;">0</span><span style=3D"color: #000066=
+;">,</span> <span style=3D"color: #0000ff;">1</span><span style=3D"color: #=
+000066;">]</span> <span style=3D"color: #000000; font-weight: bold;">then</=
+span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; structentry<=
+span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">offs=
+et</span> <span style=3D"color: #000066;">:</span><span style=3D"color: #00=
+0066;">=3D</span> <span style=3D"color: #000066;">StrToInt</span><span styl=
+e=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">[</span=
+><span style=3D"color: #0000ff;">1</span><span style=3D"color: #000066;">]<=
+/span><span style=3D"color: #000066;">)</span> <span style=3D"color: #00006=
+6;">+</span> current_base<span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">if</span> <span style=3D"color: #00=
+0066;">Length</span><span style=3D"color: #000066;">(</span>Result<span sty=
+le=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><=
+span style=3D"color: #000066;">)</span> <span style=3D"color: #000066;">=3D=
+</span> <span style=3D"color: #0000ff;">0</span> <span style=3D"color: #000=
+000; font-weight: bold;">then</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000066;">SetLength</span><span style=3D"color: #000066;">=
+(</span>Result<span style=3D"color: #000066;">.</span><span style=3D"color:=
+ #006600;">Global</span><span style=3D"color: #000066;">,</span> <span styl=
+e=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(</span>=
+Result<span style=3D"color: #000066;">.</span><span style=3D"color: #006600=
+;">Global</span><span style=3D"color: #000066;">)</span> <span style=3D"col=
+or: #000066;">+</span> <span style=3D"color: #0000ff;">1</span><span style=
+=3D"color: #000066;">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Resul=
+t<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Gl=
+obal</span><span style=3D"color: #000066;">[</span><span style=3D"color: #0=
+00066;">High</span><span style=3D"color: #000066;">(</span>Result<span styl=
+e=3D"color: #000066;">.</span><span style=3D"color: #006600;">Global</span>=
+<span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</=
+span> <span style=3D"color: #000066;">:</span><span style=3D"color: #000066=
+;">=3D</span> structentry<span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">end</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000066;">SetLength</span><span style=3D"color: #000066;">=
+(</span>Result<span style=3D"color: #000066;">.</span><span style=3D"color:=
+ #006600;">Subs</span><span style=3D"color: #000066;">[</span><span style=
+=3D"color: #000066;">High</span><span style=3D"color: #000066;">(</span>Res=
+ult<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">=
+Subs</span><span style=3D"color: #000066;">)</span><span style=3D"color: #0=
+00066;">]</span><span style=3D"color: #000066;">.</span><span style=3D"colo=
+r: #006600;">Entries</span><span style=3D"color: #000066;">,</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; <span style=3D"color: #000066;">Length</span><span style=3D"color: #00006=
+6;">(</span>Result<span style=3D"color: #000066;">.</span><span style=3D"co=
+lor: #006600;">Subs</span><span style=3D"color: #000066;">[</span><span sty=
+le=3D"color: #000066;">High</span><span style=3D"color: #000066;">(</span>R=
+esult<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;=
+">Subs</span><span style=3D"color: #000066;">)</span><span style=3D"color: =
+#000066;">]</span><span style=3D"color: #000066;">.</span><span style=3D"co=
+lor: #006600;">Entries</span><span style=3D"color: #000066;">)</span> <span=
+ style=3D"color: #000066;">+</span> <span style=3D"color: #0000ff;">1</span=
+><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">;<=
+/span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Resul=
+t<span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Su=
+bs</span><span style=3D"color: #000066;">[</span><span style=3D"color: #000=
+066;">High</span><span style=3D"color: #000066;">(</span>Result<span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><sp=
+an style=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</spa=
+n><span style=3D"color: #000066;">.</span><span style=3D"color: #006600;">E=
+ntries</span><span style=3D"color: #000066;">[</span><span style=3D"color: =
+#000066;">High</span><span style=3D"color: #000066;">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; Result<span style=3D"color: #000066;">.</span><span style=3D"color: #0066=
+00;">Subs</span><span style=3D"color: #000066;">[</span><span style=3D"colo=
+r: #000066;">High</span><span style=3D"color: #000066;">(</span>Result<span=
+ style=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</sp=
+an><span style=3D"color: #000066;">)</span><span style=3D"color: #000066;">=
+]</span><span style=3D"color: #000066;">.</span><span style=3D"color: #0066=
+00;">Entries</span><span style=3D"color: #000066;">)</span><span style=3D"c=
+olor: #000066;">]</span> <span style=3D"color: #000066;">:</span><span styl=
+e=3D"color: #000066;">=3D</span> structentry<span style=3D"color: #000066;"=
+>;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">end</span><span style=3D"color: #00=
+0066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">end</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">else</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">for</span> current_package <span st=
+yle=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</span> =
+<span style=3D"color: #0000ff;">0</span> <span style=3D"color: #000000; fon=
+t-weight: bold;">to</span> packages <span style=3D"color: #000066;">-</span=
+> <span style=3D"color: #0000ff;">1</span> <span style=3D"color: #000000; f=
+ont-weight: bold;">do</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; struc=
+tentry<span style=3D"color: #000066;">.</span><span style=3D"color: #006600=
+;">offset</span> <span style=3D"color: #000066;">:</span><span style=3D"col=
+or: #000066;">=3D</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; current_base <span style=3D"color: #000066;">+</span> current_package <sp=
+an style=3D"color: #000066;">*</span> current_package_size <span style=3D"c=
+olor: #000066;">+</span> <span style=3D"color: #000066;">StrToInt</span><sp=
+an style=3D"color: #000066;">(</span>fields<span style=3D"color: #000066;">=
+[</span><span style=3D"color: #0000ff;">1</span><span style=3D"color: #0000=
+66;">]</span><span style=3D"color: #000066;">)</span><span style=3D"color: =
+#000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000000; font-weight: bold;">with</span> Result<span style=
+=3D"color: #000066;">.</span><span style=3D"color: #006600;">Subs</span><sp=
+an style=3D"color: #000066;">[</span><span style=3D"color: #000066;">High</=
+span><span style=3D"color: #000066;">(</span>Result<span style=3D"color: #0=
+00066;">.</span><span style=3D"color: #006600;">Subs</span><span style=3D"c=
+olor: #000066;">)</span> <span style=3D"color: #000066;">-</span> packages =
+<span style=3D"color: #000066;">+</span> current_package <span style=3D"col=
+or: #000066;">+</span> <span style=3D"color: #0000ff;">1</span><span style=
+=3D"color: #000066;">]</span> <span style=3D"color: #000000; font-weight: b=
+old;">do</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000000; font-weight: bold;">begin</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; <span style=3D"color: #000066;">SetLength</span><span style=3D"color: #00=
+0066;">(</span>Entries<span style=3D"color: #000066;">,</span> <span style=
+=3D"color: #000066;">Length</span><span style=3D"color: #000066;">(</span>E=
+ntries<span style=3D"color: #000066;">)</span> <span style=3D"color: #00006=
+6;">+</span> <span style=3D"color: #0000ff;">1</span><span style=3D"color: =
+#000066;">)</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; Entries<span style=3D"color: #000066;">[</span><span style=3D"color: #000=
+066;">High</span><span style=3D"color: #000066;">(</span>Entries<span style=
+=3D"color: #000066;">)</span><span style=3D"color: #000066;">]</span> <span=
+ style=3D"color: #000066;">:</span><span style=3D"color: #000066;">=3D</spa=
+n> structentry<span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span=
+ style=3D"color: #000000; font-weight: bold;">end</span><span style=3D"colo=
+r: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=
+=3D"color: #000000; font-weight: bold;">end</span><span style=3D"color: #00=
+0066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"colo=
+r: #000000; font-weight: bold;">end</span><span style=3D"color: #000066;">;=
+</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000=
+000; font-weight: bold;">end</span><span style=3D"color: #000066;">;</span>=
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; fo=
+nt-weight: bold;">end</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weig=
+ht: bold;">end</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bol=
+d;">end</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">end=
+</span><span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span>=
+<span style=3D"color: #000066;">;</span><br>
+&nbsp; &nbsp; <span style=3D"color: #000066;">CloseFile</span><span style=
+=3D"color: #000066;">(</span>deffile<span style=3D"color: #000066;">)</span=
+><span style=3D"color: #000066;">;</span><br>
+&nbsp; <span style=3D"color: #000000; font-weight: bold;">end</span><span s=
+tyle=3D"color: #000066;">;</span><br>
+<span style=3D"color: #000000; font-weight: bold;">end</span><span style=3D=
+"color: #000066;">;</span><br>
+<br>
+<br>
+<span style=3D"color: #000000; font-weight: bold;">end</span><span style=3D=
+"color: #000066;">.</span>  </div>
+</div>
+<div id=3D"footer">
+  <p style=3D"padding:0; margin:0"><small>Powered by <a href=3D"http://www.=
+websvn.info/">WebSVN</a> 2.3.2 and <a href=3D"http://subversion.tigris.org/=
+">Subversion</a> 1.6.12 &nbsp; &nbsp; =E2=9C=93 <a href=3D"http://validator=
+.w3.org/check?uri=3Dhttp://websvn.chrilly.net/filedetails.php?repname=3DOni=
+2%26path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas%26template=3D=
+%26language=3Den">XHTML</a> &amp; <a href=3D"http://jigsaw.w3.org/css-valid=
+ator/validator?uri=3Dhttp://websvn.chrilly.net/filedetails.php?repname=3DOn=
+i2%26path=3D%2Foup%2Fcurrent%2FGlobal%2FDatStructureLoader.pas%26template=
+=3D%26language=3Den">CSS</a></small></p>
+</div>
+
+
+</body></html>
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/cube_green.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAbUExURaa/epS2TanAgvX56Li3re731MLh
+Z3SYO////97s320AAAAJdFJOU///////////AFNPeBIAAABVSURBVHjalM9BEsAgCENRWgPx/ieu
+EKsdd2Xj/Ldg0PoxpodjPkDe7iayytbcJ1nPFCQlRLyQiwoGKTdEkD/gOgAsUiMPQ1El5ulJyvU5
+QLlgzyPAAHS7BpCeIA9bAAAAAElFTkSuQmCC
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/textbg.png
+
+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
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/submitbg.png
+
+iVBORw0KGgoAAAANSUhEUgAAAAQAAAATCAIAAAA4QDsKAAAABGdBTUEAALGPC/xhBQAAAEZJREFU
+eJyVjMEJACEQA2dlSxD7r2/xcdhAfNwJig/PfJIhISaJocQk/9ccwTDAEYAQ4K99sylfXm+gtbFl
+1p4WNUouUaMDPUI2q6SigUIAAAAASUVORK5CYII=
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/page_white_edit.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH8SURBVDjLjZPfS1NhGMdXf0VEQhDUhdCN
+4X0IYT8ghIJQM0KoC4vushZddLELKyRhQQkSFIKEGEkUCI2oxVhepG5zi1xbc0u3cDs7Z+ec/ezT
++x62scmmHvhwDrzP93Pe57znsQE2cR0SdAm6d+GwYL/M1LBVBV35fF4plUqVcrlMK8Q6TqdzYruk
+JuiW4Vwuh67rdbLZLJlMhmQyaUnigVlC05f4+dbB0tQplp92DsnwPimQBaZpUigUrLtE0zQURSGV
+SqHF37DhGkVZeQdagszKLJ7HvZtNAhmuIQWGYaCqKps/ZkivPqCwPs/Gp0cYvjnKUTe+F9fMJoFo
+o96zfJZ9K+sLpP33qRhujPANtr7dJPhqmO/PBxX3+PljTYLtqImPpH13qZge9LUrmLEB1FU7sZd9
+jJw5MljNthYk/KLnxdFqeAjzdz9Z/z3Ck2fRE36qx9pakAjME1y4Lbb9GTMyTD52GUXsZO3ZadTk
+L6umrSD4ZZrAezvLH54Q915EjwywtXSH8FQf+t+I9V12FLwe6wE1SmjyAi77Qb6Kt3rGe9H+hKzw
+rgLH9eMUPE4K3gm8jpPMjRwlHfNTLBbr7Cjo7znA2NVOXA/PsThzi2wyah1pI+0E/9rNQQsqMtM4
+CyfE36fLhb2ERa0mB7BR0CElexjnGnL0O2T2PyFunSz8jchwAAAAAElFTkSuQmCC
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/log.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHISURBVDjLpVPNK0RRFP+9D98syMwUspHk
+m9I0YkFZWBFKkZ0s7a3Ewh+ilChK7FgoZCJFKYlYKB8zk2+Z5t0P577He29kQU7dd+6575zf+d1z
+ztWklPiPmOozt/U4SThjXIoyIQS4AJjSXO0lGGlvcXAm6Vzsz4xUhm0AIeX4QLig+C+ZpxbOG1wG
+hGYHr1zMUmZGWRgs0ha3PE1nX/8mWmdgWTzLB+DUYbhm9FfZ35IEyrhXA3VXJfPbsV8B9LQUIeUH
+YJ8ASobag1jcucNgW8g9W4reYSDi2YnnZDoDiwCokDANct6NwTB0LEdj0HRA/wxa2SN25JNBEdWl
+uUhZ366gqmAaGvrCAXKOozccTGPgt8+vn8GYSGcgyTYp3dpBnBg42nbQPRBTo5bTvqYkmxL6AQhN
+TWQGBXY3B7BxlEBXozcW64dxRKoKUZBju+P06gl5WaaviMJBM3TNDlbypemIZgHYOnlwASsCmW7n
+HADGnBoQ3c76YmweJ9BR5zFYjsbRHwm4tmJg6PhWA7pCXXk+bu7fURHKweXtq/sWaksz7SC/CCGF
+rwtyZ3r+rCnFRZ7qr1qc6mLZj4f9OEyPL8lVpbX/PucPv5QPKHB1TdEAAAAASUVORK5CYII=
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/blame.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJ3SURBVDjLpZNtSNNRFIcNKunF1rZWBMJq
+KaSiX9RP1dClsjldA42slW0q5oxZiuHrlqllLayoaJa2jbm1Lc3QUZpKFmmaTMsaRp+kMgjBheSm
+TL2//kqMBJlFHx44XM7vOfdyuH4A/P6HFQ9zo7cpa/mM6RvCrVDzaVDy6C5JJKv6rwSnIhlFd0R0
+Up/GwF2KWyl01CTSkM/dQoQRzAurCjRCGnRUUE2FaoSL0HExiYVzsQwcj6RNrSqo4W5Gh6Yc4+1q
+DDTkIy+GhYK4nTgdz0H2PrrHUJzs71NQn86enPn+CVN9GnzruoYR63mMPbkC59gQzDl7pt7rc9f7
+FNyUhPY6Bx9gwt4E9zszhWWpdg6ZcS8j3O7zCTuEpnXB+3MNZkUUZu0NmHE8XsL91oSWwiiEc3Me
+seLrN6woYCWa/Zl8ozyQ3w3Hl2lYy0SwlCUvsVi/Gv2JwITnYPDun2Hy6jYuEzAF1jUBCVYpO6kX
+o+NuGMeBAgcgfwNkvgBOPgUqXgKvP7rBFvRhE1crp8Vq1noFYSlacVyqGk0D86gbART9BDk9BFnP
+CNJbCY5aCFL1Cyhtp0RWAp74MsKSrkq9guHyvfMTtmLc1togpZoyqYmyNoITzVTYRJCiXYBIQ3Cw
+Fqi83o3JDhX6C0M8XsGIMoQ4OyuRlq1DdZcLkmbgGDX1iIEKNxAcbgTEOqC4ZRaJ6Ub86K7CYFEo
+8Qo+GBQlQyXBczLZpbloaQ9k1NUz/kD2myBBKxRZpa5hVcQslalatoUxizxAVVrN3CW21bFj9F85
+8Q9dnIRmDyeuybM71uxmH9BNBB1q6zybV7H9s1Ue4PM3/gu/AEbfqfWy2twsAAAAAElFTkSuQmCC
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/previous.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0
+U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEXSURBVDjLY/j//z8DJZiBLgZkz37Ynjrz
+4ReyDEideb89afrDf5ET7v4n2YCEqXf7qpY9/T9r76v/Xu03STMgasLteaVLHv+fufvl/6k7X/y3
+qrlCvAHBvTeXFC54ANbctv7p/95Nz/5rFZ0nzoCAzpuPsuc++D91x4v/jasf/y9aeP9/89rH/6VT
+TxJngGPDtc3xU+/879789H/5kgf/02fd+V+17OF/yZhjxBmgVXCaRT3v7BqP1mv/a1Y+/J824/b/
+woX3/osHHSAtECVjjqy0Lb/wP2/+3f+Zs+/8F3XfS3o0inntXWSeffJ/0tRb/0Ucdv4nKyEJW25Z
+YBh/5L+w5fb/ZCdlQYMNs4WMt/wfuMyEDwMA0Irn/pDRT58AAAAASUVORK5CYII=
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/compress.png
+
+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
+RK5CYII=
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/xml.gif
+
+R0lGODlhDAAMAOYAAP7z5v7nzviYOPqbOfeXOPudOvujRvuuXvmrXfuvX/mxavq3dvq4dvu6d/zA
+g/u/g/7y5v/58/748vOPNvaUN/WVO/WWPvSTPfeZP/abROGYVOCXVParaPeydfi5gfq9g/nHmv3q
+2f3x5vGKNPOONvGPOfKPPPSSPfScT/jEmvjFmuuAMe6FM++GNPCLO+6GOu6HOvGMPPCNQPGVTduM
+UPOkZv3w5ut+Mul+N+uAOeuDOeyHPtmIT+2aY/CdZfO2i/3v5eVzLuh5MOd2MOZ6M+h7N/GxivS8
+mPrl2ONvLuV2Nu6mfeBpLN9qMONyNeFuNN1jK+OAU9teKv///////wAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAEAAFQALAAAAAAMAAwAAAeNgFQ0ODowLiYXFhUagkE9OywjExQCAwUbREJTUzYgGZUFBCc6KzUq
+IVMQB6EkMTAsKRwUDBERCCQtLy4jmxANCREiMjc5JhMZDwBTCx1TP0NFFxQKDgYQIi1ASElKFgIR
+Ux8eUz5HU0xOGAMBEigzU0ZLU1FNGqwtN0NJTFBSPFQbSsR4kaOIEidP/gUCADs=
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://websvn.chrilly.net/templates/calm/images/diff.png
+
+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
+------=_NextPart_000_4456_0AB19927.FCAA706D
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://websvn.chrilly.net/templates/calm/styles.css
+
+html, body { background-color: rgb(255, 255, 255); color: gray; font-family=
+: 'Trebuchet MS', Verdana, sans-serif; font-size: 13px; line-height: 1.3em;=
+ margin: 0px; padding: 0px; text-align: center; height: 95%; background-pos=
+ition: initial initial; background-repeat: initial initial; }
+
+#container { position: relative; min-height: 100%; padding-bottom: 40px; }
+
+* html #container { height: 95%; }
+
+#footer { height: 40px; position: relative; margin: -40px 0px 0px; padding:=
+ 0px; }
+
+a { color: rgb(0, 0, 0); text-decoration: none; outline: none !important; }
+
+a:hover { background-color: rgb(240, 230, 140); }
+
+a img { border: 0px; }
+
+#select { margin: 1em 2% 0px; text-align: right; padding: 10px 10px 0px; he=
+ight: 2em; }
+
+#select form, #select div { display: inline; }
+
+#revjump { margin: -3.7em 2% 0px; text-align: right; height: 2em; padding: =
+10px 10px 0px; }
+
+#wrap { margin: 0px 2% 0px 32%; text-align: left; background-color: rgb(255=
+, 255, 255); width: 65%; padding: 5px 0px; background-position: initial ini=
+tial; background-repeat: initial initial; }
+
+#index #wrap tr { border-top-width: 1px; border-top-style: dotted; border-t=
+op-color: rgb(211, 211, 211); }
+
+#index #wrap tr:first-child { border-width: 0px; }
+
+#index #wrap td, #index #wrap th { border-width: 0px; padding: 4px; text-al=
+ign: right; white-space: pre; }
+
+#index #wrap td.project { text-align: left; width: 100%; }
+
+#index #wrap td.project a { background-image: url(http://websvn.chrilly.net=
+/templates/calm/images/cube_green.png); background-position: 2px 50%; backg=
+round-repeat: no-repeat no-repeat; }
+
+#index #wrap td.project a, #index #wrap td.group { padding-left: 22px; }
+
+#index #wrap th { background-color: white; padding-left: 26px; text-align: =
+left; background-position: 6px 50%; background-repeat: no-repeat no-repeat;=
+ }
+
+#index #wrap th.closed { background-image: url(http://websvn.chrilly.net/te=
+mplates/calm/images/toggleup.png); }
+
+#index #wrap th.open { background-image: url(http://websvn.chrilly.net/temp=
+lates/calm/images/toggledown.png); }
+
+#index #info dl { margin: 2px 0px; }
+
+#index #info dl dd:first-child { border-width: 0px; }
+
+#info { float: left; width: 28%; margin-left: 2%; text-align: left; padding=
+: 5px 0px; }
+
+h1, h2 { color: gray; text-align: left; text-transform: uppercase; line-hei=
+ght: 1em; font-weight: normal; }
+
+h1 { line-height: 1.7em; font-size: 1.7em; border-bottom-width: 1px; border=
+-bottom-style: solid; border-bottom-color: gray; padding: 10px 5px; margin:=
+ -1.7em 2% 1em; text-align: left; font-weight: normal; letter-spacing: -0.0=
+18em; }
+
+h1 span { padding-left: 22px; background-image: url(http://websvn.chrilly.n=
+et/templates/calm/images/cube_green.png); background-position: 0px 50%; bac=
+kground-repeat: no-repeat no-repeat; }
+
+h1 span a, h1 span a:link { color: gray; }
+
+h2 a { background-color: rgb(255, 255, 255); margin: 0px; background-positi=
+on: initial initial; background-repeat: initial initial; }
+
+h2 a:link, h2 a:visited { font-weight: normal; letter-spacing: -0.018em; co=
+lor: rgb(187, 0, 0); }
+
+h2 a:hover { background-color: rgb(242, 242, 242); background-position: ini=
+tial initial; background-repeat: initial initial; }
+
+h2 { font-weight: normal; letter-spacing: -0.018em; color: rgb(102, 102, 10=
+2); padding: 0px 0.1em; }
+
+#info h2 { border-bottom-width: 1px; border-bottom-style: solid; border-bot=
+tom-color: gray; padding: 0px 5px 10px; margin: 0px; text-align: left; font=
+-size: 1.7em; font-weight: normal; letter-spacing: -0.018em; }
+
+#wrap h2 { padding: 0px 0px 10px; margin: 0px; text-align: left; font-size:=
+ 1.7em; text-transform: none; letter-spacing: -0.018em; }
+
+#wrap h2.regular { padding: 0px 5px 10px; margin: 0px; text-align: left; fo=
+nt-size: 1.7em; text-transform: uppercase; border-bottom-width: 1px; border=
+-bottom-style: solid; border-bottom-color: gray; }
+
+#wrap h2.regular .links { float: right; padding: 0px 5px 10px; margin: 0px;=
+ text-align: right; font-size: 13px; text-transform: none; }
+
+#wrap h2.regular .links a { color: rgb(0, 0, 0); font-weight: normal; lette=
+r-spacing: 0px; }
+
+input, select { padding: 1px; margin: 1px; font-family: 'Trebuchet MS', 'Lu=
+cida Grande', Verdana, Arial, sans-serif; border-width: 1px; border-style: =
+solid; border-color: rgb(178, 178, 178) rgb(0, 0, 0) rgb(0, 0, 0) rgb(178, =
+178, 178); background-color: rgb(255, 248, 220); }
+
+input { padding: 2px 5px; font-size: 1.1em; background-color: rgb(255, 255,=
+ 255); background-image: url(http://websvn.chrilly.net/templates/calm/image=
+s/textbg.png); border: 1px solid rgb(178, 178, 178); background-position: 0=
+px 100%; background-repeat: repeat no-repeat; }
+
+input:hover, input:active, input:focus { border: 1px solid rgb(102, 102, 10=
+2); background-color: rgb(255, 255, 255); }
+
+#info ul li input { background-color: rgb(255, 255, 255); background-image:=
+ url(http://websvn.chrilly.net/templates/calm/images/textbg.png); border: 1=
+px solid rgb(178, 178, 178); background-position: 0px 100%; background-repe=
+at: repeat no-repeat; }
+
+span.submit input, #info span.submit input, #info p.submit input, #wrap p.s=
+ubmit input { background-image: url(http://websvn.chrilly.net/templates/cal=
+m/images/submitbg.png); }
+
+#info table tr td input { font-size: 1em; width: 92%; background-image: url=
+(http://websvn.chrilly.net/templates/calm/images/textbg.png); background-co=
+lor: rgb(255, 255, 255); background-position: 0px 0px; background-repeat: r=
+epeat no-repeat; }
+
+#info table tr td.revcomp input { width: 50px; }
+
+#info table tr td.all input { width: auto; }
+
+select { padding: 2px 2px 2px 21px; border: 1px solid rgb(204, 204, 204); b=
+ackground-color: rgb(255, 255, 255); background-image: url(http://websvn.ch=
+rilly.net/templates/calm/images/cube_green.png); background-position: 2px 5=
+0%; background-repeat: no-repeat no-repeat; }
+
+select:hover, select:active, select:focus { border: 1px solid rgb(102, 102,=
+ 102); background-color: rgb(245, 245, 220); background-image: url(http://w=
+ebsvn.chrilly.net/templates/calm/images/cube_green.png); background-positio=
+n: 2px 50%; background-repeat: no-repeat no-repeat; }
+
+option, option:hover, option:focus, option:active { padding-left: 25px; bac=
+kground-image: url(http://websvn.chrilly.net/templates/calm/images/cube_gre=
+en.png); background-position: 2px 50%; background-repeat: no-repeat no-repe=
+at; }
+
+#index #projectform { display: none; }
+
+#info dl { margin-left: 0px; }
+
+#info dt, #wrap dt { margin: 0px; padding: 0px 0px 5px; }
+
+#info dd, #wrap dd { margin: 0px; padding: 3px 0px 5px 10px; border-top-wid=
+th: 1px; border-top-style: dotted; border-top-color: rgb(211, 211, 211); }
+
+#info ul { list-style-type: none; padding: 0px; margin: 0px; }
+
+#info ul li { padding: 5px; margin: 3px 0px; border-bottom-width: 1px; bord=
+er-bottom-style: dotted; border-bottom-color: rgb(211, 211, 211); overflow:=
+ hidden; }
+
+li.mod a, li.new a, #info li.del { padding: 5px 5px 5px 26px; margin: 2px 0=
+px 2px -2px; background-position: 5px 50%; background-repeat: no-repeat no-=
+repeat; }
+
+li.mod a { display: block; color: rgb(84, 84, 0); border: 1px solid rgb(242=
+, 242, 199); background-color: rgb(255, 255, 224); background-image: url(ht=
+tp://websvn.chrilly.net/templates/calm/images/page_white_edit.png); }
+
+li.mod a:hover { color: rgb(0, 0, 0); border: 1px solid rgb(189, 183, 107);=
+ background-color: rgb(240, 230, 140); }
+
+li.new a { display: block; color: rgb(84, 84, 0); border: 1px solid rgb(213=
+, 242, 199); background-color: rgb(242, 255, 217); background-image: url(ht=
+tp://websvn.chrilly.net/templates/calm/images/page_white_add.png); }
+
+li.new a:hover { color: rgb(0, 0, 0); border: 1px solid rgb(102, 153, 0); b=
+ackground-color: rgb(154, 205, 50); }
+
+#info ul li.del { display: block; color: rgb(188, 143, 143); border: 1px so=
+lid rgb(188, 143, 143); padding: 5px 5px 5px 26px; margin: 5px; background-=
+color: rgb(255, 239, 213); background-image: url(http://websvn.chrilly.net/=
+templates/calm/images/page_white_delete.png); text-align: left; background-=
+position: 5px 5px; }
+
+#info ul li a { overflow: hidden; }
+
+table { border-collapse: collapse; width: 100%; }
+
+td { padding: 0px; text-align: left; }
+
+th { text-align: center; }
+
+td, th { border: 1px solid rgb(238, 238, 238); }
+
+#info th, #info td { border: none; text-align: left; }
+
+#diff td, #blame td, table.diff td { vertical-align: top; }
+
+thead th a { color: white; }
+
+thead th a:hover { text-decoration: underline; color: white; background-ima=
+ge: none; background-position: initial initial; background-repeat: initial =
+initial; }
+
+thead tr { background-color: rgb(77, 77, 77); background-position: initial =
+initial; background-repeat: initial initial; }
+
+thead th { background-color: rgb(77, 77, 77); border-bottom-width: 2px; bor=
+der-bottom-style: solid; border-bottom-color: rgb(0, 0, 0); border-top-widt=
+h: 2px; border-top-style: solid; border-top-color: rgb(128, 128, 128); bord=
+er-right-width: 1px; border-right-style: solid; border-right-color: rgb(128=
+, 128, 128); color: rgb(255, 255, 255); margin: 3px 2px; padding: 3px 5px; =
+background-position: initial initial; background-repeat: initial initial; }
+
+thead th.path { text-align: left; width: 50%; }
+
+thead th.collno, thead th.colrev, thead th.colauth { width: 6%; }
+
+thead th.colcode { width: 73%; }
+
+tbody th { background-color: rgb(221, 221, 221); }
+
+tbody th.info { background-color: rgb(208, 223, 234); }
+
+tr td.code { text-align: left; }
+
+td.code, td td.diff { border: 1px solid rgb(238, 238, 238); }
+
+tr td.code pre { padding: 1px 2px 0px; background-color: rgb(248, 248, 248)=
+; }
+
+tr:hover td.code pre { background-color: rgb(232, 232, 232); }
+
+tr:hover td.code { background-color: rgb(255, 255, 255); }
+
+tr td.path, tr th.path { text-align: left; width: 100%; }
+
+tr td.path { padding: 0px; }
+
+tr.row0 td { background-color: rgb(240, 240, 240); }
+
+tr.row1 td { background-color: rgb(248, 248, 248); }
+
+tr.row0:hover td, tr.row1:hover td { background-color: rgb(232, 232, 232); =
+}
+
+span.listing a, a.listing { padding-left: 22px; background-image: url(http:=
+//websvn.chrilly.net/templates/calm/images/sitemap_color.png); background-p=
+osition: 3px 50%; background-repeat: no-repeat no-repeat; }
+
+span.detail a { padding-left: 22px; background-image: url(http://websvn.chr=
+illy.net/templates/calm/images/file.png); background-position: 3px 50%; bac=
+kground-repeat: no-repeat no-repeat; }
+
+span.changes a { padding-left: 22px; background-image: url(http://websvn.ch=
+rilly.net/templates/calm/images/page_white_edit.png); background-position: =
+3px 50%; background-repeat: no-repeat no-repeat; }
+
+span.compact a { padding-left: 22px; background-image: url(http://websvn.ch=
+rilly.net/templates/calm/images/arrow_in.png); background-position: 3px 50%=
+; background-repeat: no-repeat no-repeat; }
+
+span.full a { padding-left: 22px; background-image: url(http://websvn.chril=
+ly.net/templates/calm/images/arrow_out.png); background-position: 3px 50%; =
+background-repeat: no-repeat no-repeat; }
+
+span.ignorews a { padding-left: 22px; background-image: url(http://websvn.c=
+hrilly.net/templates/calm/images/pilcrow_delete.png); background-position: =
+3px 50%; background-repeat: no-repeat no-repeat; }
+
+span.regardws a { padding-left: 22px; background-image: url(http://websvn.c=
+hrilly.net/templates/calm/images/pilcrow.png); background-position: 3px 50%=
+; background-repeat: no-repeat no-repeat; }
+
+span.log a, td.log a { padding-left: 22px; background-image: url(http://web=
+svn.chrilly.net/templates/calm/images/log.png); background-position: 3px 50=
+%; background-repeat: no-repeat no-repeat; }
+
+span.blame a, td.blame a { padding-left: 22px; background-image: url(http:/=
+/websvn.chrilly.net/templates/calm/images/blame.png); background-position: =
+3px 50%; background-repeat: no-repeat no-repeat; }
+
+span.mime a, td.mime a { padding-left: 22px; background-image: url(http://w=
+ebsvn.chrilly.net/templates/calm/images/eye.png); background-position: 3px =
+50%; background-repeat: no-repeat no-repeat; }
+
+span.svn a, td.svn a { padding-left: 22px; background-image: url(http://web=
+svn.chrilly.net/templates/calm/images/link.png); background-position: 3px 5=
+0%; background-repeat: no-repeat no-repeat; }
+
+span.next a, td.next a { padding-left: 15px; background-image: url(http://w=
+ebsvn.chrilly.net/templates/calm/images/next.png); background-position: 0px=
+ 50%; background-repeat: no-repeat no-repeat; }
+
+span.prev a, td.prev a { padding-left: 15px; background-image: url(http://w=
+ebsvn.chrilly.net/templates/calm/images/previous.png); background-position:=
+ 0px 50%; background-repeat: no-repeat no-repeat; }
+
+li.compress a, span.compress a, tr td.compress a:link, tr td.compress a:vis=
+ited, tr td.compress a:link { padding-left: 22px; background-image: url(htt=
+p://websvn.chrilly.net/templates/calm/images/compress.png); background-posi=
+tion: 3px 50%; background-repeat: no-repeat no-repeat; }
+
+li.feed a, span.feed a, tr td.feed a, tr td.feed a:link, tr td.feed a:visit=
+ed, tr td.feed a:link { padding-left: 22px; background-image: url(http://we=
+bsvn.chrilly.net/templates/calm/images/xml.gif); background-position: 3px 5=
+0%; background-repeat: no-repeat no-repeat; }
+
+.goyoungest a { color: rgb(226, 95, 83); padding-left: 22px; background-ima=
+ge: url(http://websvn.chrilly.net/templates/calm/images/exclamation.png); b=
+ackground-position: 3px 50%; background-repeat: no-repeat no-repeat; }
+
+.goyoungest a:hover { background-color: rgb(250, 212, 200); color: rgb(0, 0=
+, 0); }
+
+.icon { vertical-align: middle; }
+
+h2#pathlinks { text-transform: none; margin: 0px 2% 15px; }
+
+div.listing { overflow: auto; border: 1px solid rgb(211, 211, 211); text-al=
+ign: left; margin: 0px 2%; padding: 3px 20px 20px 3px; background-color: rg=
+b(248, 248, 248); background-position: initial initial; background-repeat: =
+initial initial; }
+
+pre a, td.code pre a { color: blue; font-style: italic; }
+
+pre { margin: 0px; white-space: pre-wrap; }
+
+code, pre, table.diff td, #file div.listing { font-family: Consolas, monosp=
+ace; }
+
+.new a { color: green; }
+
+.del a { color: red; }
+
+.toggleup a:link, .toggleup a:visited, .toggleup a:focus { padding-left: 22=
+px; background-image: url(http://websvn.chrilly.net/templates/calm/images/t=
+oggleup.png); background-position: 2px 50%; background-repeat: no-repeat no=
+-repeat; }
+
+.toggleup a:hover { background-image: url(http://websvn.chrilly.net/templat=
+es/calm/images/toggleup.png); background-color: rgb(240, 230, 140); backgro=
+und-position: 2px 50%; background-repeat: no-repeat no-repeat; }
+
+.toggledown a:link, .toggledown a:visited, .toggledown a:focus { padding-le=
+ft: 22px; background-image: url(http://websvn.chrilly.net/templates/calm/im=
+ages/toggledown.png); background-position: 2px 50%; background-repeat: no-r=
+epeat no-repeat; }
+
+.toggledown a:hover { background-image: url(http://websvn.chrilly.net/templ=
+ates/calm/images/toggledown.png); background-color: rgb(240, 230, 140); bac=
+kground-position: 2px 50%; background-repeat: no-repeat no-repeat; }
+
+span.diff a:link, span.diff a:visited, span.diff a:focus { padding-left: 22=
+px; background-image: url(http://websvn.chrilly.net/templates/calm/images/d=
+iff.png); background-position: 2px 50%; background-repeat: no-repeat no-rep=
+eat; }
+
+span.diff a:hover { background-image: url(http://websvn.chrilly.net/templat=
+es/calm/images/diff.png); background-color: rgb(240, 230, 140); background-=
+position: 2px 50%; background-repeat: no-repeat no-repeat; }
+
+.geshi a:link, .geshi a:visited, .geshi a:focus, .geshi a:hover { padding-l=
+eft: 0px; background-image: none; background-position: initial initial; bac=
+kground-repeat: initial initial; }
+
+.geshi a:hover { text-decoration: underline; }
+
+tr td.lineno { text-align: right; vertical-align: top; padding: 0px 2px; }
+
+tr td.row1 { padding: 3px; border: none; }
+
+tr td code, tr td pre { display: block; height: 100%; }
+
+table.diff { margin: 10px 0px 20px; border-spacing: 0px; border-collapse: s=
+eparate; }
+
+table.diff td { color: black; padding: 0px; margin: 0px; border-color: rgb(=
+240, 240, 240); }
+
+table.diff td, table td pre { padding-left: 16px; white-space: pre-wrap; ba=
+ckground-position: 0px 0px; background-repeat: no-repeat no-repeat; }
+
+table td pre { border: 1px solid white; }
+
+table tr:hover { background-color: white; background-position: initial init=
+ial; background-repeat: initial initial; }
+
+td.diffempty { background-color: rgb(248, 248, 248); }
+
+table tr:hover td.diff, table tr:hover td.diffempty { background-color: rgb=
+(232, 232, 232); }
+
+table td.diff pre { background-position: 2px 50%; background-repeat: no-rep=
+eat no-repeat; }
+
+table.diff td.diffdeleted, table td.diffdeleted pre { background-color: rgb=
+(248, 228, 204); background-image: url(http://websvn.chrilly.net/templates/=
+calm/images/bullet_delete.png); border: 1px solid rgb(232, 212, 188); }
+
+table.diff tr:hover td.diffdeleted, table tr:hover td.diffdeleted pre { bac=
+kground-color: rgb(255, 204, 170); border-color: rgb(187, 153, 119); }
+
+table.diff td.diffadded, table td.diffadded pre { border: 1px solid rgb(205=
+, 240, 205); background-color: rgb(221, 255, 221); background-image: url(ht=
+tp://websvn.chrilly.net/templates/calm/images/bullet_add.png); }
+
+table.diff tr:hover td.diffadded, table tr:hover td.diffadded pre { backgro=
+und-color: rgb(187, 255, 187); border-color: rgb(136, 187, 136); }
+
+table td.diffchanged pre { border: 1px solid rgb(240, 240, 188); background=
+-color: rgb(255, 255, 204); background-image: url(http://websvn.chrilly.net=
+/templates/calm/images/bullet_yellow.png); }
+
+table tr:hover td.diffchanged pre { background-color: rgb(255, 255, 153); b=
+order-color: rgb(187, 187, 85); }
+
+ins { background-color: rgb(187, 255, 187); text-decoration: none; }
+
+tr:hover ins { background-color: rgb(153, 255, 153); }
+
+del { background-color: rgb(255, 204, 170); text-decoration: none; }
+
+tr:hover del { background-color: rgb(255, 170, 136); }
+
+code { white-space: pre-wrap; }
+
+* html code, :first-child + html code { white-space: pre; }
+
+* html table.diff td, :first-child + html table.diff td { white-space: pre;=
+ }
+
+table tr td.logmsg { text-align: left; padding: 3px 0px 3px 3px; }
+
+#info table tr td, #info table tr th { background-color: rgb(255, 255, 255)=
+; padding: 0px; margin: 0px; font-weight: normal; background-position: init=
+ial initial; background-repeat: initial initial; }
+
+#info table tr:hover td, #info table tr:hover th { background-color: rgb(25=
+5, 255, 255); padding: 0px; margin: 0px; background-position: initial initi=
+al; background-repeat: initial initial; }
+
+div.blame-popup { position: absolute; text-align: left; padding: 5px; borde=
+r: 1px solid rgb(189, 183, 107); background-color: rgb(240, 230, 140); max-=
+width: 600px; }
+
+div.blame-popup .date { font-weight: bold; }
+
+#wrap td.log, #wrap td.feed { white-space: nowrap; }
+
+#wrap td.age, #wrap td.date { padding-left: 3px; padding-right: 8px; }
+
+#wrap td.age, #wrap td.date, #wrap td.rev { text-align: right; white-space:=
+ nowrap; }
+
+#wrap p.pagelinks > * { padding: 0px 3px; }
+
+div#error, div#warning { font-weight: bold; display: table; padding: 5px; m=
+argin: 0px auto; border: 1px solid; }
+
+div#error { border-color: rgb(203, 101, 101); background-color: rgb(255, 22=
+6, 226); }
+
+div#warning { border-color: rgb(213, 206, 0); background-color: rgb(255, 25=
+5, 221); }
+
+table td { vertical-align: top; padding: 2px; }
+
+div#wrap table td.changes div { padding-left: 18px; background-repeat: no-r=
+epeat no-repeat; }
+
+td.changes .add { background-image: url(http://websvn.chrilly.net/templates=
+/calm/images/add.png); }
+
+td.changes .del { background-image: url(http://websvn.chrilly.net/templates=
+/calm/images/delete.png); }
+
+td.changes .mod { background-image: url(http://websvn.chrilly.net/templates=
+/calm/images/page_white_edit.png); }
+
+#blame table td { text-align: right; padding-right: 4px; border-color: whit=
+e; }
+
+#blame table td.code { text-align: left; padding: 0px; border-color: rgb(23=
+8, 238, 238); }
+
+#blame table td.code pre { border: none; }
+
+#revision td.path a { padding-left: 26px; top: 2px; position: relative; bac=
+kground-position: 5px 50%; background-repeat: no-repeat no-repeat; }
+
+#revision td.path a.notinpath { color: rgb(187, 0, 0); }
+
+#revision tr.M td.path a { background-image: url(http://websvn.chrilly.net/=
+templates/calm/images/page_white_edit.png); }
+
+#revision tr.A td.path a { background-image: url(http://websvn.chrilly.net/=
+templates/calm/images/page_white_add.png); }
+
+#revision tr.D td.path a { background-image: url(http://websvn.chrilly.net/=
+templates/calm/images/page_white_delete.png); }
+
+#revision del { padding-left: 26px; background-image: none; background-posi=
+tion: initial initial; background-repeat: initial initial; }
+------=_NextPart_000_4456_0AB19927.FCAA706D--

@@ -1,0 +1,13 @@
+Totoro Aiming Screen
+File id	$00	12	File id
+Level id	$04	17	Level id
+TRAM-link	$08	12	Link to the Aiming Animation
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	2	Unknown
+Unknown	$16	2	Unknown
+Unknown	$18	9	Unknown
+Unknown	$1C	9	Unknown
+Unknown	$20	2	Unknown
+Unknown	$22	2	Unknown
+Not used	$24	1028	Not used

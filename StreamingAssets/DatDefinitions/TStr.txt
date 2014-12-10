@@ -1,0 +1,5 @@
+String
+File id	$00	12	File id
+Level id	$04	17	Level id
+Animation string	$08	10128	Animation string
+Not used	$88	1024	Not used

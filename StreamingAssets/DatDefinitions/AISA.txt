@@ -1,0 +1,27 @@
+AI Character Setup Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	352
+Unknown	$00	10032	unknown; always zero; maybe space for notes
+Charcter id	$20	2	Id of the character, which you can spawn with the script command "chr_create"
+Flag id	$22	2	Od of the flag, where Oni spawns the character (works only, if the flag exits; look to Flag.BINA for a flag list)
+Unknown	$24	2	Unknown
+Unknown	$26	2	Unknown
+ONCC-link	$28	12	Link to the Character Class
+Unknown	$2C	4	Unknown; always the same
+Unknown	$30	10032	Unknown; never used in Oni
+Spawn function	$50	10032	Name of the function, which is called up when Oni spawns the character
+Lose function	$70	10032	Name of the function, which is called up when the character dies
+Alert function	$90	10032	Name of the function, which is called up when the character notices the player
+Unknown	$B0	10032	Unknown; never used in Oni
+Hit function	$D0	10032	Name of the function, which is called up when someone hits the character the first time
+Health = 1 function	$F0	10032	Name of the function, which is called up when the health of the character is equal 1
+Reload function	$110	10032	Name of the function, which is called up when the character reloads its weapon with its last ammo/cell; works only, if the character has some ammo/cells when Oni spawns it
+Unknown	$130	10032	Unknown; never used in Oni
+ONWC-link	$150	12	Link to the Weapon Class; used to give the charcater a weapon
+Unknown	$154	2	Unknown
+Unknown	$156	14	Unknown; always the same
+Unknown	$158	4	Unknown; always the same
+Unknown	$15C	4	Unknown; always the same

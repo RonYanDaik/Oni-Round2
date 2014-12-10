@@ -1,0 +1,28 @@
+Environment
+File id	$00	12	File id
+Level id	$04	17	Level id
+PNTA-link	$08	12	Link to the 3D Point Array
+PLEA-link	$0C	12	Link to the Plane Equation Array
+TXCA-link	$10	12	Link to the Texture Coordinate Array
+AGQG-link	$14	12	Link to the Gunk Quad General Array
+AGQR-link	$18	12	Link to the Gunk Quad Render Array
+AGQC-link	$1C	12	Link to the Gunk Quad Collision Array
+AGDB-link	$20	12	Link to the Gunk Quad Debug Array
+TXMA-link	$24	12	Link to the Texture Map Array
+AKVA-link	$28	12	Link to the BNV Node Array
+AKBA-link	$2C	12	Link to the Side Array
+IDXA-link	$30	12	Link to the Index Array
+IDXA-link	$34	12	Link to the Index Array
+AKBP-link	$38	12	Link to the BSP Node Array
+ABNA-link	$3C	12	Link to the BSP Tree Node Array
+AKOT-link	$40	12	Link to the Oct Tree
+AKAA-link	$44	12	Link to the Adjacency Array
+AKDA-link	$48	12	Link to the Door Frame Array
+Neg. x-coordinate	$4C	9	Maximal negative x-coordinate of the level model
+Neg. y-coordinate	$50	9	Maximal negative y-coordinate of the level model
+Neg. z-coordinate	$54	9	Maximal negative z-coordinate (height) of the level model
+Pos. x-coordinate	$58	9	Maximal positive x-coordinate of the level model
+Pos. y-coordinate	$5C	9	Maximal positive y-coordinate (height) of the level model
+Pos. z-coordinate	$60	9	Maximal positive z-coordinate of the level model
+Not used	$64	1024	Not used
+Unknown	$7C	9	Unknown; maybe the tolerance

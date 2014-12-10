@@ -1,0 +1,9 @@
+Oct Tree
+File id	$00	12	File id
+Level id	$04	17	Level id
+OTIT-link	$08	12	Link to the Oct Tree Interior Node Array
+OTLF-link	$0C	12	Link to the Oct Tree Leaf Node Array
+QTNA-link	$10	12	Link to the Quad Tree Node Array
+IDXA-link	$14	12	Link to the Index Array
+IDXA-link	$18	12	Link to the Index Array
+Not used	$1C	1004	Not used

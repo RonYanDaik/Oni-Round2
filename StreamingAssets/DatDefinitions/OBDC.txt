@@ -1,0 +1,12 @@
+Door Class Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	24
+Unknown	$00	4	Unknown
+OBAN-link	$04	12	Link to the Object Animation
+Unknown	$08	4	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	4	Unknown
+Unknown	$14	4	Unknown

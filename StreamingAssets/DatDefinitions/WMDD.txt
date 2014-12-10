@@ -1,0 +1,33 @@
+Window Menu Dialog Data
+File id	$00	12	File id
+Level id	$04	4	Level id
+Window title	$08	10256	Title of the main-window
+Window id	$108	4	Id of the main-window
+Window status	$10C	4	Status of the main-window
+Window design	$110	2	Design of the main-window
+Window position	$112	6	Position of the main-window
+Unknown	$114	4	Unknown; always the same
+Width	$118	2	x-dimension of the main-window
+Height	$11A	2	y-dimension of the main-window
+Packages	$11C	4	Amount of packages that follow
+
+*Package		$120	$11C	4	292
+Caption	$0	10256	Caption of the sub-window
+Type	$100	2	Type
+Target id	$102	2	Id of the target
+Option	$104	2	Option
+Unknown	$106	2	Unknown
+Window design	$108	2	Design of the sub-window
+Visible option	$10A	2	Visible option of the sub-window
+x-position	$10C	2	x-position of the sub-window (from the upper left corner of the main-window)
+y-position	$10E	2	y-position of the sub-window (from the upper left corner of the main-window)
+Width	$110	2	x-dimension of the sub-window
+Height	$112	2	y-dimension of the sub-window
+TSFF-link	$114	12	Link to the Font Family
+Font option	$118	4	Font option
+Font color B	$11C	1	Font color - blue part
+Font color G	$11D	1	Font color - green part
+Font color R	$11E	1	Font color - red part
+Unknown	$11F	1	Unknown
+Unknown	$120	2	Unknown; always the same
+Font size	$122	2	Font size

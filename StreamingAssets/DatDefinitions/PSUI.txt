@@ -1,0 +1,48 @@
+Part Specifications UI (User Interface)
+File id	$00	12	File id
+Level id	$04	17	Level id
+PSpc-link	$08	12	Link to the Part Specification
+PSpc-link	$0C	12	Link to the Part Specification
+PSpc-link	$10	12	Link to the Part Specification
+PSpc-link	$14	12	Link to the Part Specification
+PSpc-link	$18	12	Link to the Part Specification
+PSpc-link	$1C	12	Link to the Part Specification
+PSpc-link	$20	12	Link to the Part Specification
+PSpc-link	$24	12	Link to the Part Specification
+PSpc-link	$28	12	Link to the Part Specification
+PSpc-link	$2C	12	Link to the Part Specification
+PSpc-link	$30	12	Link to the Part Specification
+PSpc-link	$34	12	Link to the Part Specification
+PSpc-link	$38	12	Link to the Part Specification
+PSpc-link	$3C	12	Link to the Part Specification
+PSpc-link	$40	12	Link to the Part Specification
+PSpc-link	$44	12	Link to the Part Specification
+PSpc-link	$48	12	Link to the Part Specification
+PSpc-link	$4C	12	Link to the Part Specification
+PSpc-link	$50	12	Link to the Part Specification
+PSpc-link	$54	12	Link to the Part Specification
+PSpc-link	$58	12	Link to the Part Specification
+PSpc-link	$5C	12	Link to the Part Specification
+PSpc-link	$60	12	Link to the Part Specification
+PSpc-link	$64	12	Link to the Part Specification
+PSpc-link	$68	12	Link to the Part Specification
+PSpc-link	$6C	12	Link to the Part Specification
+PSpc-link	$70	12	Link to the Part Specification
+PSpc-link	$74	12	Link to the Part Specification
+PSpc-link	$78	12	Link to the Part Specification
+PSpc-link	$7C	12	Link to the Part Specification
+PSpc-link	$80	12	Link to the Part Specification
+PSpc-link	$84	12	Link to the Part Specification
+PSpc-link	$88	12	Link to the Part Specification
+PSpc-link	$8C	12	Link to the Part Specification
+PSpc-link	$90	12	Link to the Part Specification
+PSpc-link	$94	12	Link to the Part Specification
+PSpc-link	$98	12	Link to the Part Specification
+PSpc-link	$9C	12	Link to the Part Specification
+PSpc-link	$A0	12	Link to the Part Specification
+PSpc-link	$A4	12	Link to the Part Specification
+PSpc-link	$A8	12	Link to the Part Specification
+PSpc-link	$AC	12	Link to the Part Specification
+PSpc-link	$B0	12	Link to the Part Specification
+PSpc-link	$B4	12	Link to the Part Specification
+Not used	$B8	1008	Not used

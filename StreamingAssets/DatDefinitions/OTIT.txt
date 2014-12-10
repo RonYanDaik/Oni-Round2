@@ -1,0 +1,22 @@
+Oct Tree Leaf Node Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	32
+1st child pointer	$00	3	Pointer to the 1st child
+High bit	$03	1	High bit
+2nd child pointer	$04	3	Pointer to the 2nd child
+High bit	$07	1	High bit
+3rd child pointer	$08	3	Pointer to the 3rd child
+High bit	$0B	1	High bit
+4th child pointer	$0C	3	Pointer to the 4th child
+High bit	$0F	1	High bit
+5th child pointer	$10	3	Pointer to the 5th child
+High bit	$13	1	High bit
+6th child pointer	$14	3	Pointer to the 6th child
+High bit	$17	1	High bit
+7th child pointer	$18	3	Pointer to the 7th child
+High bit	$1B	1	High bit
+8th child pointer	$1C	3	Pointer to the 8th child
+High bit	$1F	1	High bit

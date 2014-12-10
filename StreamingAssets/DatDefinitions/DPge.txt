@@ -1,0 +1,8 @@
+Diary Page
+File id	$00	12	File id
+Level id	$04	17	Level id
+Level	$08	2	Level
+Page	$0A	2	Page
+Not used	$0C	1052	Not used
+IGPG-link	$40	12	Link to the In-Game User Interface Page
+Not used	$44	1028	Not used

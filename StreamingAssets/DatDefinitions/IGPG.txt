@@ -1,0 +1,15 @@
+IGUI (In-Game User Interface) Page
+File id	$00	12	File id
+Level id	$04	17	Level id
+TSFF-link	$08	12	Link to the Font Family
+Font option	$0C	4	Font option
+Font color B	$10	1	Font color - blue part
+Font color G	$11	1	Font color - green part
+Font color R	$12	1	Font color - red part
+Unknown	$13	1	Unknown
+Font size	$14	2	Font size of the text; maybe the minimal font size in connection to the screen resolution
+Enabler	$16	2	Enables the previous entries; it's a bitset
+PSpc-link	$18	12	Link to the Part Specification
+IGSA-link	$1C	12	Link to the In-Game User Interface String Array
+IGSA-link	$20	12	Link to the In-Game User Interface String Array
+Not used	$24	1028	Not used

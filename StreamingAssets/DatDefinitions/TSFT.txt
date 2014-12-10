@@ -1,0 +1,15 @@
+Font
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1006	Not used
+Unknown	$0E	2	Unknown
+Unknown	$10	4	Unknown
+Unknown	$14	2	Unknown
+Unknown	$16	2	Unknown
+Unknown	$18	2	Unknown
+Unknown	$1A	2	Unknown
+TSGA-link	$1C	12	Link to the Glyph Array
+Not used	$20	2020	Not used
+Packages	$41C	4	Amount of packages that follow
+*Package		$420	$41C	4	4
+Unknown	$00	8	Unknown

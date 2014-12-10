@@ -1,0 +1,35 @@
+BNV Node Array
+File ID	$00	12
+Level ID	$04	4
+Unused	$08	1020
+Packages	$1C	4
+*Package		$20	$1C	4	116
+AKBP index	$00	4	BSP tree for this BNV
+AKVA index	$04	4	index of this BNV
+AKBA index	$08	4	"side" range start
+AKBA index	$0C	4	"side" range end
+AKVA index	$10	4	first child BNV
+AKVA index	$14	4	next sibling BNV
+Unknown	$18	4	always -1
+X-tiles	$1C	4	size of pathfinding grid
+Y-tiles	$20	4	size of pathfinding grid
+RAW offset	$24	11	offset of grid data
+RAW size	$28	4	size of grid data
+Tile size	$2C	9	usually 4 world units
+AABB X-	$30	9	BNV AABB
+AABB Y-	$34	9	BNV AABB
+AABB Z-	$38	9	BNV AABB
+AABB X+	$3C	9	BNV AABB
+AABB Y+	$40	9	BNV AABB
+AABB Z+	$44	9	BNV AABB
+Unknown	$48	2	always -2
+Unknown	$4A	2	always -2
+AKVA index	$4C	4	index of this BNV again
+Unknown	$50	4	always 0
+Unknown	$54	4	always 0
+Unknown	$58	4	always 0 (was a RAW offset once?)
+Bitset	$5C	4	1Plane X	$60	9	floor and ceiling normal
+Plane Y	$64	9	floor and ceiling normal
+Plane Z	$68	9	floor and ceiling normal
+Plane D	$6C	9	distance of floor to origin
+Plane D	$70	9	distance of ceiling to origin

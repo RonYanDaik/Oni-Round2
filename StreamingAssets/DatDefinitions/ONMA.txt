@@ -1,0 +1,13 @@
+Imported Marker Node Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	88
+Light name	$00	10064	Name of the light
+x-position	$40	9	x-position of the light
+y-position	$44	9	y-position (height) of the light
+z-position	$48	9	z-position of the light
+Unknown	$4C	9	Unknown
+Unknown	$50	9	Unknown
+Unknown	$54	9	Unknown

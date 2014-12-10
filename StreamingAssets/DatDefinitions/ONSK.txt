@@ -1,0 +1,39 @@
+Oni Sky Class
+File id	$00	12	File id
+Level id	$04	17	Level id
+TXMP-link	$08	12	Link to the top texture
+TXMP-link	$0C	12	Link to the left texture
+TXMP-link	$10	12	Link to the right texture
+TXMP-link	$14	12	Link to the front texture
+TXMP-link	$18	12	Link to the back texture
+Not used	$1C	1004	Not used; maybe a canceled link
+TXMP-link	$20	12	Link to the sun texture (not used in the game)
+Not used	$24	1004	Not used; maybe a canceled link
+Not used	$28	1004	Not used; maybe a canceled link
+Not used	$2C	1004	Not used; maybe a canceled link
+Not used	$30	1004	Not used; maybe a canceled link
+Not used	$34	1004	Not used; maybe a canceled link
+Not used	$38	1004	Not used; maybe a canceled link
+Not used	$3C	1004	Not used; maybe a canceled link
+Not used	$40	1004	Not used; maybe a canceled link
+TXMP-link	$44	12	Link to the lensflare texture (not used in the game)
+Not used	$48	1004	Not used; maybe a canceled link
+Not used	$4C	1004	Not used; maybe a canceled link
+Not used	$50	1004	Not used; maybe a canceled link
+Not used	$54	1004	Not used; maybe a canceled link
+Unknown	$58	4	Unknown
+Unknown	$5C	16	Unknown
+Unknown	$60	9	Unknown
+Not used	$64	1028	Not used
+Unknown	$80	9	Unknown
+Not used	$84	1028	Not used
+Unknown	$A0	9	Unknown
+Not used	$A4	1028	Not used
+Unknown	$C0	9	Unknown
+Not used	$C4	1028	Not used
+Unknown	$E0	9	Unknown
+Unknown	$E4	9	Unknown
+Unknown	$E8	9	Unknown
+Unknown	$EC	4	Unknown
+Unknown	$F0	4	Unknown
+Not used	$F4	1012	Not used

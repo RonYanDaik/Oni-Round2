@@ -1,0 +1,9 @@
+Totoro Quaternion Body Translation Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	12
+x-position	$00	9	x-postition of the bodypart in connection to the TRIA file
+y-position	$04	9	y-postition of the bodypart in connection to the TRIA file
+z-position	$08	9	z-postition of the bodypart in connection to the TRIA file

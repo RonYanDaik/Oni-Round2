@@ -1,0 +1,23 @@
+Character Body Part Material
+File id	$00	12	File id
+Level id	$04	17	Level id
+Mtrl-link	$08	12	Link to the Material
+Mtrl-link	$0C	12	Link to the Material
+Mtrl-link	$10	12	Link to the Material
+Mtrl-link	$14	12	Link to the Material
+Mtrl-link	$18	12	Link to the Material
+Mtrl-link	$1C	12	Link to the Material
+Mtrl-link	$20	12	Link to the Material
+Mtrl-link	$24	12	Link to the Material
+Mtrl-link	$28	12	Link to the Material
+Mtrl-link	$2C	12	Link to the Material
+Mtrl-link	$30	12	Link to the Material
+Mtrl-link	$34	12	Link to the Material
+Mtrl-link	$38	12	Link to the Material
+Mtrl-link	$3C	12	Link to the Material
+Mtrl-link	$40	12	Link to the Material
+Mtrl-link	$44	12	Link to the Material
+Mtrl-link	$48	12	Link to the Material
+Mtrl-link	$4C	12	Link to the Material
+Mtrl-link	$50	12	Link to the Material
+Not used	$54	1012	Not used

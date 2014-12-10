@@ -1,0 +1,2 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LoadingScreen type="LoadingScreen" style="form" anchors="1010" x="0" y="0" width="1*" height="1*" name="LoadingScreen" disabledColor="(1.1,1.1,1.1,1)" id="26bb51c9-08ec-4cc2-9fb2-ffc7f28d24e0" text="LoadingScreen" />

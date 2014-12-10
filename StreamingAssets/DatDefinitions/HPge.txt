@@ -1,0 +1,6 @@
+Help Page
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1004	Not used
+IGPG-link	$0C	12	Link to the In-Game User Interface Page
+Not used	$10	1016	Not used

@@ -1,0 +1,7 @@
+Impact Tree
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	14	Unknown
+Not used	$0A	1006	Not used
+Impt-link	$10	12	Link to the next higher Impact Tree
+Not used	$14	1012	Not used

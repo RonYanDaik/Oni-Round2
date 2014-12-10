@@ -1,0 +1,122 @@
+Totoro Animation Sequence (Totoro is the name of the character animation engine.)
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	4	Unknown; always zero
+Raw link	$0C	11	Address of the y-position data in the .raw-file
+Raw link	$10	11	Address of the x-z-position data in the .raw-file
+Raw link	$14	11	Address of the attack data in the .raw-file
+Raw link	$18	11	Address of the damage data in the .raw-file
+Raw link	$1C	11	Address of the motion blur data in the .raw-file
+Raw link	$20	11	Address of the shortcut data in the .raw-file
+Raw link	$24	11	Address of the throw data in the .raw-file
+Raw link	$28	11	Address of the footstep data in the .raw-file
+Raw link	$2C	11	Address of the particle data in the .raw-file
+Raw link	$30	11	Address of the position data in the .raw-file
+Raw link	$34	11	Address of the bodypart animation data in the .raw-file
+Raw link	$38	11	Address of the sound data in the .raw-file
+Flags 1	$3C	10	Flags 1 in connection to the anim_flags.StNA file
+Flags 2	$3D	10	Flags 2 in connection to the anim_flags.StNA file
+Flags 3	$3E	10	Flags 3 in connection to the anim_flags.StNA file
+Unknown	$3F	1	Unknown; always the same
+TRAM link	$40	12	First direct animation link; this animation follows after a left mouse click (punch)
+TRAM link	$44	12	Second direct animation link; this animation follows after a right mouse click (kick)
+Used parts	$48	4	Used parts; used for weapon animations like recoil, reload, draw weapon, etc.
+Replace parts	$4C	4	Replace parts; used for weapon animations like recoil, reload, draw weapon, etc.
+Final rotation	$50	9	Final rotation; stored as multiples of the number "pi" (3.141592...)
+Move direction	$54	2	Move direction
+Attack voice sound	$56	14	Attack voice sound (f.e. Konokos "Rising fury!")
+Unknown	$58	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$5C	9	Unknown; always 1,000,000,000 if the attack part doesn't exist
+Unknown	$60	9	Unknown; always -1,000,000,000 if the attack part doesn't exist
+Unknown	$64	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$68	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$6C	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$70	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$74	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$78	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$7C	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$80	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$84	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$88	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$8C	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$90	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$94	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$98	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$9C	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$A0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$A4	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$A8	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$AC	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$B0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$B4	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$B8	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$BC	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$C0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$C4	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$C8	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$CC	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$D0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$D4	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$D8	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$DC	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$E0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$E4	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$E8	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$EC	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$F0	9	Unknown; always zero if the attack part doesn't exist
+Unknown	$F4	14	Unknown; always -1 if the attack part doesn't exist
+Unknown	$F6	2	Unknown; always zero
+Unknown	$F8	9	Unknown
+Unknown	$FC	9	Unknown
+Unknown	$100	9	Unknown
+Unknown	$104	9	Unknown
+Unknown	$108	9	Unknown
+Unknown	$10C	9	Unknown
+Unknown	$110	9	Unknown
+Unknown	$114	14	Unknown
+Unknown	$116	1	Unknown
+Unknown	$117	1	Unknown
+Unknown	$118	9	Unknown
+Unknown	$11C	9	Unknown
+Unknown	$120	9	Unknown
+Unknown	$124	9	Unknown
+Unknown	$128	9	Unknown
+Unknown	$12C	9	Unknown
+Unknown	$130	9	Unknown
+Unknown	$134	8	Unknown; always zero
+Extent packages	$138	4	Amount of packages of the extent data
+Raw link	$13C	11	Address of the extent data in the .raw-file
+Attack sound	$140	116	Reference to an attack sound (f.e. "slap") of level 0
+Hard pause	$150	2	Hard pause in 1/60 seconds
+Soft pause	$152	2	Soft pause in 1/60 seconds
+Unknown	$154	2	Unknown; it seems that it belongs to the sound part
+Unknown	$156	2	Unknown
+Unknown	$158	2	Unknown
+Unknown	$15A	2	Unknown
+Unknown	$15C	2	Unknown
+Frames	$15E	2	Frames per second
+Compression	$160	2	Compression size
+Type	$162	2	ID for the animation of the opponent
+Animation Type	$164	2	ID for the animation of the opponent
+From state	$166	2	From state
+To state	$168	2	To state
+Bodyparts	$16A	2	Amount of bodyparts
+Frames	$16C	2	Animation length in frames
+Duration	$16E	2	Duration of the animation in frames
+Varient	$170	2	Varient; It seems that Oni read it as 2 byte string from left to right; I would read it as 2 seperate bitsets or as a short
+Varient end	$172	2	Varient end; It seems that Oni read it as 2 byte string from left to right; I would read it as a short
+Atomic start	$174	2	Atomic start
+Atomic end	$176	2	Atomic end
+End interpolation	$178	2	End interpolation
+Maximal interpolation	$17A	2	Maximal interpolation
+Action frame	$17C	14	Action frame; at this frame starts the "real" animation
+First level	$17E	2	First level; the level where you can use this animation the first time
+Unknown	$180	1	Unknown
+Unknown	$181	1	Unknown
+Attack packages	$182	1	Amount of packages of the attack data
+Damage packages	$183	1	Amount of packages of the damage data
+Motion blur packages	$184	1	Amount of packages of the motion blur data
+Shortcut packages	$185	1	Amount of packages of the shortcut data
+Footstep packages	$186	1	Amount of packages of the footstep data
+Particle packages	$187	1	Amount of packages of the particle data
+Not used	$188	10024	Not used

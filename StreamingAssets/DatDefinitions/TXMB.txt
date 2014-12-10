@@ -1,0 +1,13 @@
+Texture Map Big
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1008	Not used
+Width	$10	2	Width of the complete texture
+Height	$12	2	Height of the complete texture
+Unknown	$14	4	Unknown; all to zero or FF works too
+Unknown	$18	2	Unknown; maybe the number of columns; all to zero or FF works too
+Unknown	$1A	2	Unknown; maybe the number of rows; all to zero or FF works too
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	4
+TXMP-link	$00	12	Link to the Texture
+

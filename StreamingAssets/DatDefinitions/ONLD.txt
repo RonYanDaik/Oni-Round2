@@ -1,0 +1,7 @@
+Oni Level Descriptor
+File id	$00	12	File id
+Level id	$04	17	Level id
+Current level	$08	2	Id of current level
+Next level	$0A	2	Id of the level that follows
+Level name	$0C	10064	Name of the level; you'll find it in the list, when you load a level
+Not used	$4C	1020	Not used

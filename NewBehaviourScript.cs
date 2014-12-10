@@ -22,7 +22,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
     void ConstructBodypart(Oni.Motoko.Geometry geo, Transform obj, Oni.Motoko.Texture texture)
     {
         Mesh m = new Mesh();
-        m.vertices = new List<Oni.Vector3>(geo.Points).ConvertAll<UnityEngine.Vector3>(u => Quaternion.Euler(0,0,0) * new Vector3(u.X, u.Y, u.Z)).ToArray();
+        m.vertices = new List<Oni.Vector3>(geo.Points).ConvertAll<UnityEngine.Vector3>(u => Quaternion.Euler(0, 0, 0) * new Vector3(u.X, u.Y, u.Z)).ToArray();
         List<int> m_trisres = new List<int>();
         List<int> m_trisl = new List<int>();
 
@@ -59,9 +59,9 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         }
 
         t.SetPixels32(colors.ToArray());
-        
+
         t.Apply(true);
-        (obj.gameObject.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"))).mainTexture = t ;
+        (obj.gameObject.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"))).mainTexture = t;
     }
 
     void ValidateChildrens(Oni.Totoro.BodyNode parentNode, Dictionary<string, Transform> nameToTransform, string rootNodeName)
@@ -70,7 +70,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         {
             ValidateChildrens(child, nameToTransform, rootNodeName);
             nameToTransform[child.Name].parent = nameToTransform[parentNode.Name];
-            nameToTransform[child.Name].localPosition = Quaternion.Euler(0,0,0) * new Vector3(child.Translation.X,  child.Translation.Y,  child.Translation.Z);
+            nameToTransform[child.Name].localPosition = Quaternion.Euler(0, 0, 0) * new Vector3(child.Translation.X, child.Translation.Y, child.Translation.Z);
         }
     }
 
@@ -78,7 +78,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
     {
         if (t.parent != null)
         {
-            return  GetPath(t.parent, t.name) + (!string.IsNullOrEmpty(node) ? "/" + node : "");
+            return GetPath(t.parent, t.name) + (!string.IsNullOrEmpty(node) ? "/" + node : "");
         }
         else
         {
@@ -136,21 +136,21 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         {
             m_ivrts.Add(v1);
 
-            if(v1.index == -1)
+            if (v1.index == -1)
             {
                 v1.index = m_ivrts.Count - 1;
             }
 
             m_ivrts.Add(v2);
 
-            if(v2.index == -1)
+            if (v2.index == -1)
             {
                 v2.index = m_ivrts.Count - 1;
             }
 
             m_ivrts.Add(v3);
 
-            if(v3.index == -1)
+            if (v3.index == -1)
             {
                 v3.index = m_ivrts.Count - 1;
             }
@@ -158,29 +158,29 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
 
         public int[] GetTriangleStrip()
         {
-            return m_ivrts.ConvertAll<int> ( u=> u.index).ToArray();
+            return m_ivrts.ConvertAll<int>(u => u.index).ToArray();
         }
 
         public Vector3[] GetVertexStrip()
         {
-            return m_ivrts.ConvertAll<Vector3> ( u=> u.pos).ToArray();
+            return m_ivrts.ConvertAll<Vector3>(u => u.pos).ToArray();
         }
 
         public Vector2[] GetUvStrip()
         {
-            return m_ivrts.ConvertAll<Vector2> ( u=> u.uv).ToArray();
+            return m_ivrts.ConvertAll<Vector2>(u => u.uv).ToArray();
         }
     }
 
     static GameObject m_levelRoot;
     public Shader m_c1;
 
-    void InstallAKEV(Oni.InstanceDescriptor AKEV )
+    void InstallAKEV(Oni.InstanceDescriptor AKEV)
     {
         GameObject go = m_levelRoot = new GameObject(AKEV.Name);
         Oni.Akira.PolygonMesh mesh = Oni.Akira.AkiraDatReader.Read(AKEV);
         Mesh floorCollider = new Mesh();
-        
+
         Debug.Log(mesh.Doors.Count + ">>>>>>>>>>>>>>>>>");//door amount
         {
             List<Vector3> floorV = new List<Vector3>();
@@ -188,7 +188,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
 
             foreach (Oni.Akira.Room r in mesh.Rooms)
             {
-                
+
                 {
                     foreach (Oni.Vector3[] _v in r.GetFloorPolygons())
                     {
@@ -232,7 +232,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         List<int> trs = new List<int>();
         Oni.Akira.Material m = null;
         Dictionary<string, int> nameToId = new Dictionary<string, int>();
-        
+
         foreach (Oni.Akira.Polygon mp in mesh.Polygons)
         {
             if ((mp.Flags & Oni.Akira.GunkFlags.DoorFrame) != 0 || (mp.Flags & Oni.Akira.GunkFlags.Furniture) != 0 || m_objectONOAs.ContainsKey(mp.ObjectId) /*i bet, i don't need onoas statics*/)
@@ -345,7 +345,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
 
                 #region object flags
                 bool showInvisible = Application.isEditor;
-                bool transparent = (_m.Flags & Oni.Akira.GunkFlags.Transparent ) != Oni.Akira.GunkFlags.None; //(names & Names.Susan) != Names.None;
+                bool transparent = (_m.Flags & Oni.Akira.GunkFlags.Transparent) != Oni.Akira.GunkFlags.None; //(names & Names.Susan) != Names.None;
                 bool noCollisions = (_m.Flags & Oni.Akira.GunkFlags.NoCollision) != Oni.Akira.GunkFlags.None; //(names & Names.Susan) != Names.None;
                 bool invisble = (_m.Flags & Oni.Akira.GunkFlags.Invisible) != Oni.Akira.GunkFlags.None;
                 bool twoSided = (_m.Flags & Oni.Akira.GunkFlags.TwoSided) != Oni.Akira.GunkFlags.None;
@@ -373,7 +373,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
                         {
                             localTrisLst.Push(trsi);
 
-                            if(localTrisLst.Count == 3)
+                            if (localTrisLst.Count == 3)
                             {
                                 newTris.Add(localTrisLst.Pop());
                                 newTris.Add(localTrisLst.Pop());
@@ -389,7 +389,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
 
                     //if (isLighting)
                     //{
-                       
+
                     //}
                     //else
                     {
@@ -400,8 +400,8 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
                         }
                     }
                     mmf.mesh = me;
-                    mmf.gameObject.name += "|" + _m.Flags.ToString(); 
-                    
+                    mmf.gameObject.name += "|" + _m.Flags.ToString();
+
                     //if(!noCollisions)
                     {
                         MeshCollider mc =
@@ -415,7 +415,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
 
         //vMesh.mesh = new Mesh() { vertices = vrts.ToArray(), triangles = trs.ToArray(), normals =  normals.ToArray(), uv = uvs.ToArray() };
         //lvMesh.mesh.RecalculateNormals();
-        
+
         /*
 
         //mesh.Points
@@ -629,13 +629,13 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         ms.Dispose();
         ms.Close();
 
-       
+
         /*
         byte[] b_bytes = reader.ReadBytes(2);
         Debug.Log(((byte)oban.Name[0]).ToString("X"));
         Debug.Log(b_bytes[0].ToString("X") + b_bytes[1].ToString("X"));*/
 
-        
+
     }
 
     public Dictionary<int, OBAN> m_obans = new Dictionary<int, OBAN>();
@@ -719,7 +719,7 @@ env_setanim 109 ForkLift09
     [System.Serializable]
     public class IDXA
     {
-        [System.Xml.Serialization.XmlArray("Indices" )]
+        [System.Xml.Serialization.XmlArray("Indices")]
         [System.Xml.Serialization.XmlArrayItem(ElementName = "Int32")]
         public System.Int32[] Indices;
         [System.Xml.Serialization.XmlAttribute("id")]
@@ -739,8 +739,8 @@ env_setanim 109 ForkLift09
         public int _RealObjectId;
 
         public enum ObjectKind
-        { 
-            character = 0x01, 
+        {
+            character = 0x01,
             patrol_path,
             door,
             flag,
@@ -811,9 +811,9 @@ env_setanim 109 ForkLift09
         {
             get
             {
-                string[] s = Position.Split(new char[]{' '});
+                string[] s = Position.Split(new char[] { ' ' });
                 return new Vector3(float.Parse(s[0]), float.Parse(s[1]), float.Parse(s[2]));
-            }    
+            }
         }
 
 
@@ -851,18 +851,18 @@ env_setanim 109 ForkLift09
 
 
     public class PNTA
-    { 
-        
+    {
+
     }
 
     public class BoundingBox
-    { 
-        
+    {
+
     }
 
     public class BoundingSphere
-    { 
-        
+    {
+
     }
 
     public class VCRA
@@ -910,9 +910,9 @@ env_setanim 109 ForkLift09
                     MemoryStream ms = ODump(id);
                     ms.Seek(0, SeekOrigin.Begin);
 
-                    foreach(ONOAElement el in (new System.Xml.Serialization.XmlSerializer(typeof(ONOA)).Deserialize(ms) as ONOA).Elements)
+                    foreach (ONOAElement el in (new System.Xml.Serialization.XmlSerializer(typeof(ONOA)).Deserialize(ms) as ONOA).Elements)
                     {
-                        
+
                         if (el.RealObjectId != -1)
                         {
                             //m_objectONOAs.Add(el.RealObjectId, el);
@@ -920,11 +920,12 @@ env_setanim 109 ForkLift09
                     }
                 }
                 catch (System.Exception ee)
-                { 
-                   /* MemoryStream ms = new MemoryStream();
-                    new System.Xml.Serialization.XmlSerializer(typeof(IDXA)).Serialize(ms, new IDXA() { Indices = new int[] {1,2,3}}); 
-                    Debug.Log(System.Text.UTF8Encoding.UTF8.GetString(ms.GetBuffer()));
-                  */  Debug.Log(ee.ToString());
+                {
+                    /* MemoryStream ms = new MemoryStream();
+                     new System.Xml.Serialization.XmlSerializer(typeof(IDXA)).Serialize(ms, new IDXA() { Indices = new int[] {1,2,3}}); 
+                     Debug.Log(System.Text.UTF8Encoding.UTF8.GetString(ms.GetBuffer()));
+                   */
+                    Debug.Log(ee.ToString());
                 }
                 break;
             case Oni.TemplateTag.IDXA:
@@ -936,9 +937,9 @@ env_setanim 109 ForkLift09
                     Debug.Log(new System.Xml.Serialization.XmlSerializer(typeof(IDXA)).Deserialize(ms));
                 }
                 catch (System.Exception ee)
-                { 
+                {
                     MemoryStream ms = new MemoryStream();
-                    new System.Xml.Serialization.XmlSerializer(typeof(IDXA)).Serialize(ms, new IDXA() { Indices = new int[] {1,2,3}}); 
+                    new System.Xml.Serialization.XmlSerializer(typeof(IDXA)).Serialize(ms, new IDXA() { Indices = new int[] { 1, 2, 3 } });
                     Debug.Log(System.Text.UTF8Encoding.UTF8.GetString(ms.GetBuffer()));
                     Debug.Log(ee.ToString());
                 }
@@ -947,15 +948,15 @@ env_setanim 109 ForkLift09
     }
 
     void FileDump(Oni.InstanceFile _if)
-    { 
-        
+    {
+
     }
 
     MemoryStream ODump(Oni.InstanceDescriptor des, bool discwrite = false)
     {
         MemoryStream ms = new MemoryStream();
         System.Xml.XmlWriter w = System.Xml.XmlWriter.Create(ms);
-        
+
         Oni.Action<Oni.InstanceDescriptor> ides = null;
         ides = u =>
             {
@@ -1020,7 +1021,7 @@ env_setanim 109 ForkLift09
             }
             catch (System.Exception ee)
             {
-                Debug.LogError( "TXCA id : " + txca.Index + "\nName:" + txca.Name + "\n" + ee.ToString());
+                Debug.LogError("TXCA id : " + txca.Index + "\nName:" + txca.Name + "\n" + ee.ToString());
                 return null;
             }
 
@@ -1640,11 +1641,11 @@ env_setanim 109 ForkLift09
        
         */
             #endregion
-            
+
             Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
             Oni.InstanceFile level0 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
             Oni.InstanceFile level1 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
-            
+
             /*:D*/
             //D:\ONI\Edition\GlobalDataFolder\ONCCTCTF_lite_2.oni
             Oni.InstanceFile ONCCKONOKO;// = fm.OpenFile(@"D:\ONI\Edition\GlobalDataFolder\ONCCKonoko_generic.oni");
@@ -1657,7 +1658,7 @@ env_setanim 109 ForkLift09
 
             {
                 int couc = 0;
-                
+
                 //Debug.LogError(fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat" + @"\BINACJBOTrigger.oni"));
                 //Debug.Log(fm.FindInstance("CJBODoor", level1));
                 MemoryStream ms = new MemoryStream();
@@ -1667,7 +1668,7 @@ env_setanim 109 ForkLift09
                 Oni.Xml.ObjcXmlExporter.Export(fm.FindInstance("BINACJBODOOR.oni", level1).Descriptors[0].OpenRead(), xw);
                 xw.Flush();
                 System.IO.File.WriteAllBytes("D:\\odump.xml", ms.GetBuffer());*/
-                
+
 
                 /*
                 foreach (Oni.InstanceDescriptor desc in fm.FindInstance("hjgasdhj", level1).Descriptors)
@@ -1696,7 +1697,7 @@ env_setanim 109 ForkLift09
                         yield return null;
                     }
 
-                    
+
                     switch (desc.Template.Tag)
                     {
                         case Oni.TemplateTag.DOOR:
@@ -1728,7 +1729,7 @@ env_setanim 109 ForkLift09
                     {
                         case Oni.TemplateTag.TXMP:
                             {
-                                Texture2D[] l_tex = new Texture2D[]{ ObtainTXFrom(desc) };
+                                Texture2D[] l_tex = new Texture2D[] { ObtainTXFrom(desc) };
                                 m_textureObtainer.Add(desc.Index, () => l_tex[0]);
                             }
                             break;
@@ -1747,12 +1748,12 @@ env_setanim 109 ForkLift09
                             //Debug.Log(desc.Name + ";;;;");
                             InstallONOA(desc);
                             //ODump(desc);
-                            
+
                             break;
 
-                       
+
                         case Oni.TemplateTag.OBDC:
-                            
+
                             //Debug.Log("OBDC" + desc.Name + "|" + desc.Index);
                             break;
 
@@ -1767,14 +1768,14 @@ env_setanim 109 ForkLift09
 
                         case Oni.TemplateTag.BINA:
                             //Debug.LogError(desc.Name + "{}{}{");
-                           
+
                             if (desc.Name.Contains("Door"))
                             {
                                 InitializeDoors(desc);
                             }
 
                             break;
-                        
+
                         case Oni.TemplateTag.ONLV:
                             level_01_ONLV = desc;
                             //ODump(desc, true);
@@ -1785,7 +1786,7 @@ env_setanim 109 ForkLift09
             }
 
             System.DateTime dt1 = System.DateTime.Now;
-            
+
             {
                 int couc = 0;
                 foreach (Oni.InstanceDescriptor de in level_01_ONLV.GetReferencedDescriptors())
@@ -1943,8 +1944,8 @@ env_setanim 109 ForkLift09
                     float[] degrees = new float[count];
                     float[] y = new float[count];
                     float[] z = new float[count];
-
                     int duration = 0;
+
                     for (int num = 0; num < keyFrames.Count; num++)
                     {
                         Oni.Totoro.KeyFrame keyFrame = keyFrames[num];
@@ -1977,13 +1978,13 @@ env_setanim 109 ForkLift09
                     for (int _i = 0; _i < degrees.Length; _i++)
                     {
                         Oni.Quaternion qq =
-                        //Oni.Quaternion.CreateFromEulerXYZ(z[_i], y[_i], degrees[_i]);
-                        //Oni.Quaternion.CreateFromEulerXYZ(z[_i], degrees[_i], y[_i]);
-                        //Oni.Quaternion.CreateFromEulerXYZ(y[_i], z[_i], degrees[_i]);
-                        //Oni.Quaternion.CreateFromEulerXYZ(y[_i], degrees[_i], z[_i]);
-                        //Oni.Quaternion.CreateFromEulerXYZ(degrees[_i], z[_i], y[_i]);
+                            //Oni.Quaternion.CreateFromEulerXYZ(z[_i], y[_i], degrees[_i]);
+                            //Oni.Quaternion.CreateFromEulerXYZ(z[_i], degrees[_i], y[_i]);
+                            //Oni.Quaternion.CreateFromEulerXYZ(y[_i], z[_i], degrees[_i]);
+                            //Oni.Quaternion.CreateFromEulerXYZ(y[_i], degrees[_i], z[_i]);
+                            //Oni.Quaternion.CreateFromEulerXYZ(degrees[_i], z[_i], y[_i]);
                         Oni.Quaternion.CreateFromEulerXYZ(degrees[_i], y[_i], z[_i]);
-                        Quaternion val = Quaternion.Euler(0,0,0) * new Quaternion(qq.X, qq.Y, qq.Z, qq.W);
+                        Quaternion val = Quaternion.Euler(0, 0, 0) * new Quaternion(qq.X, qq.Y, qq.Z, qq.W);
                         kflX.Add(new Keyframe(singleArray[_i], val.x));
                         kflY.Add(new Keyframe(singleArray[_i], val.y));
                         kflZ.Add(new Keyframe(singleArray[_i], val.z));
@@ -2171,7 +2172,7 @@ env_setanim 109 ForkLift09
         //OBOA o = new System.Xml.Serialization.XmlSerializer(typeof(OBOA)).Deserialize(ms) as OBOA;
 
         Round2.OBOA l_oboa = new System.Xml.Serialization.XmlSerializer(typeof(Round2.OBOA)).Deserialize(ms) as Round2.OBOA;
-        
+
         /*
         MemoryStream ms2 = new MemoryStream();
         new System.Xml.Serialization.XmlSerializer(typeof(Round2.OBOA)).Serialize(ms2, l_oboa);
@@ -2185,10 +2186,10 @@ env_setanim 109 ForkLift09
         reader.Read();
         Debug.Log(reader.NodeType);
         System.Xml.XmlReader subreader = reader.ReadSubtree();
-        
+
         System.Xml.Linq.XDocument doc = null;
         doc = System.Xml.Linq.XDocument.Load(reader);
-        
+
         foreach (System.Xml.Linq.XElement node in doc.Elements())
         {
             foreach (System.Xml.Linq.XElement objects in node.Elements())
@@ -2234,7 +2235,7 @@ env_setanim 109 ForkLift09
                         int m3gaid = int.Parse(m3ga.FirstAttribute.Value);
                         usedObject.name = "M3GA:" + m3gaid;
                         System.Xml.Linq.XElement m3gaGeoColliection = new LinkedList<System.Xml.Linq.XElement>(m3ga.Elements()).First.Value;
-                        
+
                         foreach (System.Xml.Linq.XElement m3ga_el in m3gaGeoColliection.Elements())
                         {
                             System.Xml.Linq.XElement m3gm_el = new LinkedList<System.Xml.Linq.XElement>(m3ga_el.Elements()).First.Value;
@@ -2315,7 +2316,7 @@ env_setanim 109 ForkLift09
         //OBOA o = new System.Xml.Serialization.XmlSerializer(typeof(OBOA)).Deserialize(ms) as OBOA;
 
         Round2.DOOR l_DOOR = new System.Xml.Serialization.XmlSerializer(typeof(Round2.DOOR)).Deserialize(ms) as Round2.DOOR;
-        Debug.Log("|::|>>" +l_DOOR.id + ":doorname | " + desc.Name);
+        Debug.Log("|::|>>" + l_DOOR.id + ":doorname | " + desc.Name);
         Round2.DOOR.m_doorClasses.Add(desc.Name, l_DOOR);
     }
 
@@ -2374,16 +2375,16 @@ env_setanim 109 ForkLift09
             }
         }
 
-        
+
     }
 
     public static bool EndFlag = false;
 
-	// Update is called once per frame
-	void Update () 
+    // Update is called once per frame
+    void Update()
     {
-	
-	}
+
+    }
 
     void OnTriggerHit(Collider other)
     {

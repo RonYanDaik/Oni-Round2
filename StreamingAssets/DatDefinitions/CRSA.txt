@@ -1,0 +1,244 @@
+Corpse Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1012	Not used
+Packages available	$14	4	Amount of packages that are available
+Packages	$18	4	Amount of packages that follow
+Packages possible	$1C	4	Amount of packages that are possible
+*Package		$20	$18	4	1100
+Old file name	$00	10160	Old file name
+ONCC-link	$A0	12	Link to the Character Class
+1st point x-coordinate	$A4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$A8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$AC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$B0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$B4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$B8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$BC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$C0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$C4	9	z-position of the 3rd point of an equilateral triangle
+Pelvis x-position	$C8	9	x-position of the pelvis
+Pelvis y-position	$CC	9	y-position (height) of the pelvis
+Pelvis z-position	$D0	9	z-position of the pelvis
+1st point x-coordinate	$D4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$D8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$DC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$E0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$E4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$E8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$EC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$F0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$F4	9	z-position of the 3rd point of an equilateral triangle
+Left thigh x-position	$F8	9	x-position of the left thigh
+Left thigh y-position	$FC	9	y-position (height) of the left thigh
+Left thigh z-position	$100	9	z-position of the left thigh
+1st point x-coordinate	$104	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$108	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$10C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$110	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$114	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$118	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$11C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$120	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$124	9	z-position of the 3rd point of an equilateral triangle
+Left calf x-position	$128	9	x-position of the left calf
+Left calf y-position	$12C	9	y-position (height) of the left calf
+Left calf z-position	$130	9	z-position of the left calf
+1st point x-coordinate	$134	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$138	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$13C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$140	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$144	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$148	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$14C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$150	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$154	9	z-position of the 3rd point of an equilateral triangle
+Left foot x-position	$158	9	x-position of the left foot
+Left foot y-position	$15C	9	y-position (height) of the left foot
+Left foot z-position	$160	9	z-position of the left foot
+1st point x-coordinate	$164	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$168	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$16C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$170	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$174	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$178	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$17C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$180	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$184	9	z-position of the 3rd point of an equilateral triangle
+Right thigh x-position	$188	9	x-position of the right thigh
+Right thigh y-position	$18C	9	y-position (height) of the right thigh
+Right thigh z-position	$190	9	z-position of the right thigh
+1st point x-coordinate	$194	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$198	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$19C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$1A0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$1A4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$1A8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$1AC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$1B0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$1B4	9	z-position of the 3rd point of an equilateral triangle
+Right calf x-position	$1B8	9	x-position of the right calf
+Right calf y-position	$1BC	9	y-position (height) of the right calf
+Right calf z-position	$1C0	9	z-position of the right calf
+1st point x-coordinate	$1C4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$1C8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$1CC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$1D0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$1D4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$1D8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$1DC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$1E0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$1E4	9	z-position of the 3rd point of an equilateral triangle
+Right foot x-position	$1E8	9	x-position of the right foot
+Right foot y-position	$1EC	9	y-position (height) of the right foot
+Right foot z-position	$1F0	9	z-position of the right foot
+1st point x-coordinate	$1F4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$1F8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$1FC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$200	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$204	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$208	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$20C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$210	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$214	9	z-position of the 3rd point of an equilateral triangle
+Mid x-position	$218	9	x-position of the mid
+Mid y-position	$21C	9	y-position (height) of the mid
+Mid z-position	$220	9	z-position of the mid
+1st point x-coordinate	$224	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$228	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$22C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$230	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$234	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$238	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$23C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$240	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$244	9	z-position of the 3rd point of an equilateral triangle
+Chest x-position	$248	9	x-position of the chest
+Chest y-position	$24C	9	y-position (height) of the chest
+Chest z-position	$250	9	z-position of the chest
+1st point x-coordinate	$254	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$258	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$25C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$260	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$264	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$268	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$26C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$270	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$274	9	z-position of the 3rd point of an equilateral triangle
+Neck x-position	$278	9	x-position of the neck
+Neck y-position	$27C	9	y-position (height) of the neck
+Neck z-position	$280	9	z-position of the neck
+1st point x-coordinate	$284	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$288	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$28C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$290	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$294	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$298	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$29C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$2A0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$2A4	9	z-position of the 3rd point of an equilateral triangle
+Head x-position	$2A8	9	x-position of the head
+Head y-position	$2AC	9	y-position (height) of the head
+Head z-position	$2B0	9	z-position of the head
+1st point x-coordinate	$2B4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$2B8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$2BC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$2C0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$2C4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$2C8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$2CC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$2D0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$2D4	9	z-position of the 3rd point of an equilateral triangle
+Left shoulder x-position	$2D8	9	x-position of the left shoulder
+Left shoulder y-position	$2DC	9	y-position (height) of the left shoulder
+Left shoulder z-position	$2E0	9	z-position of the left shoulder
+1st point x-coordinate	$2E4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$2E8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$2EC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$2F0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$2F4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$2F8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$2FC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$300	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$304	9	z-position of the 3rd point of an equilateral triangle
+Left bicep x-position	$308	9	x-position of the left bicep
+Left bicep y-position	$30C	9	y-position (height) of the left bicep
+Left bicep z-position	$310	9	z-position of the left bicep
+1st point x-coordinate	$314	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$318	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$31C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$320	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$324	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$328	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$32C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$330	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$334	9	z-position of the 3rd point of an equilateral triangle
+Left wrist x-position	$338	9	x-position of the left wrist
+Left wrist y-position	$33C	9	y-position (height) of the left wrist
+Left wrist z-position	$340	9	z-position of the left wrist
+1st point x-coordinate	$344	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$348	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$34C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$350	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$354	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$358	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$35C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$360	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$364	9	z-position of the 3rd point of an equilateral triangle
+Left hand x-position	$368	9	x-position of the left hand
+Left hand y-position	$36C	9	y-position (height) of the left hand
+Left hand z-position	$370	9	z-position of the left hand
+1st point x-coordinate	$374	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$378	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$37C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$380	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$384	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$388	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$38C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$390	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$394	9	z-position of the 3rd point of an equilateral triangle
+Right shoulder x-position	$398	9	x-position of the right shoulder
+Right shoulder y-position	$39C	9	y-position (height) of the right shoulder
+Right shoulder z-position	$3A0	9	z-position of the right shoulder
+1st point x-coordinate	$3A4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$3A8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$3AC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$3B0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$3B4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$3B8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$3BC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$3C0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$3C4	9	z-position of the 3rd point of an equilateral triangle
+Right bicep x-position	$3C8	9	x-position of the right bicep
+Right bicep y-position	$3CC	9	y-position (height) of the right bicep
+Right bicep z-position	$3D0	9	z-position of the right bicep
+1st point x-coordinate	$3D4	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$3D8	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$3DC	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$3E0	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$3E4	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$3E8	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$3EC	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$3F0	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$3F4	9	z-position of the 3rd point of an equilateral triangle
+Right wrist x-position	$3F8	9	x-position of the right wrist
+Right wrist y-position	$3FC	9	y-position (height) of the right wrist
+Right wrist z-position	$400	9	z-position of the right wrist
+1st point x-coordinate	$404	9	x-position of the 1st point of an equilateral triangle
+1st point y-coordinate	$408	9	y-position (height) of the 1st point of an equilateral triangle
+1st point z-coordinate	$40C	9	z-position of the 1st point of an equilateral triangle
+2nd point x-coordinate	$410	9	x-position of the 2nd point of an equilateral triangle
+2nd point y-coordinate	$414	9	y-position (height) of the 2nd point of an equilateral triangle
+2nd point z-coordinate	$418	9	z-position of the 2nd point of an equilateral triangle
+3rd point x-coordinate	$41C	9	x-position of the 3rd point of an equilateral triangle
+3rd point y-coordinate	$420	9	y-position (height) of the 3rd point of an equilateral triangle
+3rd point z-coordinate	$424	9	z-position of the 3rd point of an equilateral triangle
+Right hand x-position	$428	9	x-position of the right hand
+Right hand y-position	$42C	9	y-position (height) of the right hand
+Right hand z-position	$430	9	z-position of the right hand
+Minimal x-coordinate	$434	9	Minimal x-coordinate of the bounding box
+Minimal y-coordinate	$438	9	Minimal y-coordinate (height) of the bounding box
+Minimal z-coordinate	$43C	9	Minimal z-coordinate of the bounding box
+Maximal x-coordinate	$440	9	Maximal x-coordinate of the bounding box
+Maximal y-coordinate	$444	9	Maximal y-coordinate (height) of the bounding box
+Maximal z-coordinate	$448	9	Maximal z-coordinate of the bounding box

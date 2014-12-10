@@ -1,0 +1,19 @@
+Door Frame Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	52
+Unknown	$00	4	Unknown
+Low left x-coordinate	$04	9	x-coordinate of the lower left point of the doorframe
+Low left y-coordinate	$08	9	y-coordinate (height) of the lower left point of the doorframe
+Low left z-coordinate	$0C	9	z-coordinate of the lower left point of the doorframe
+Up right x-coordinate	$10	9	x-coordinate of the upper right point of the doorframe
+Up right y-coordinate	$14	9	y-coordinate (height) of the upper right point of the doorframe
+Up right z-coordinate	$18	9	z-coordinate of the upper right point of the doorframe
+Center x-coordinate	$1C	9	x-coordinate of the center point of the doorframe
+Center y-coordinate	$20	9	y-coordinate (height) of the center point of the doorframe
+Center z-coordinate	$24	9	z-coordinate of the center point of the doorframe
+Depth	$28	9	Depth of the doorframe
+Width	$2C	9	Width of the doorframe
+Height	$30	9	Height of the doorframe

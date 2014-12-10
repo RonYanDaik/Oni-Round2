@@ -1,0 +1,20 @@
+Oni Level Descriptor
+File id	$00	12	File id
+Level id	$04	17	Level id
+Level name	$08	10064	Name of the level
+AKEV-Link	$48	12	Link to the Environment
+OBOA-Link	$4C	12	Link to the Starting Object Array
+ONMA-Link	$50	12	Link to the Imported Marker Node Array
+ONFA-Link	$54	12	Link to the Imported Flag Node Array
+ONTA-Link	$58	12	Link to the Trigger Array
+ONSK-Link	$5C	12	Link to the Sky Class
+Unknown	$60	12	Unknown; maybe a canceled link; always the same
+AISA-Link	$64	12	Link to the AI Character Setup Array
+AITR-Link	$68	12	Link to the AI Script Trigger Array
+ONSA-Link	$6C	12	Link to the Imported Spawn Array
+OBDC-Link	$70	12	Link to the Door Class Array
+ONOA-Link	$74	12	Link to the Object Gunk Array
+ENVP-Link	$78	12	Link to the Environment Particle Array
+Not used	$7C	1644	Not used
+CRSA-Link	$300	12	Link to the Corpse Array
+Not used	$304	1028	Not used

@@ -1,0 +1,44 @@
+Object Animation
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	4	Unknown
+Unknown	$0C	4	Unknown
+Unknown	$10	4	Unknown
+Unknown	$14	4	Unknown
+Unknown	$18	9	Unknown
+Unknown	$1C	9	Unknown
+Unknown	$20	9	Unknown
+Unknown	$24	9	Unknown
+Unknown	$28	9	Unknown
+Unknown	$2C	9	Unknown
+Unknown	$30	9	Unknown
+Unknown	$34	9	Unknown
+Unknown	$38	9	Unknown
+x-position	$3C	9	x-position of the start point
+y-position	$40	9	y-position (height) of the start point
+z-position	$44	9	z-position of the start point
+Unknown	$48	9	Unknown
+Unknown	$4C	9	Unknown
+Unknown	$50	9	Unknown
+Unknown	$54	9	Unknown
+Unknown	$58	9	Unknown
+Unknown	$5C	9	Unknown
+Unknown	$60	9	Unknown
+Unknown	$64	9	Unknown
+Unknown	$68	9	Unknown
+Unknown	$6C	9	Unknown
+Unknown	$70	9	Unknown
+Unknown	$74	9	Unknown
+Frames	$78	2	Number of frames
+Animation time	$7A	2	Animation time in 1/60 seconds
+Unknown	$7C	2	Unknown
+Packages	$7E	2	Amount of packages that follow
+*Package		$80	$7E	2	32
+Unknown	$00	9	Unknown
+Unknown	$04	9	Unknown
+Unknown	$08	9	Unknown
+Unknown	$0C	9	Unknown
+x-position	$10	9	x-position
+y-position	$14	9	y-position
+z-position	$18	9	z-position
+Passed time	$1C	4	Passed time in 1/60 seconds

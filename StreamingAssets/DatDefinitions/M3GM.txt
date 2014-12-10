@@ -1,0 +1,13 @@
+Geometry
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	4	Unknown; not used
+PNTA-link	$0C	12	Link to the 3D Point Array
+VCRA-link	$10	12	Link to the 3D Vector Array
+VCRA-link	$14	12	Link to the 3D Vector Array
+TXCA-link	$18	12	Link to the Texture Coordinate Array
+IDXA-link	$1C	12	Link to the Index Array
+IDXA-link	$20	12	Link to the Index Array
+TXMP-link	$24	12	Link to the Texture
+Unknown	$28	4	Unknown; not used
+Not used	$2C	1020	Not used

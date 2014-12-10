@@ -41,7 +41,7 @@ namespace Round2
     }
     
     [XmlType("AKEV")]
-    public class AKEV
+    public class AKEV //: IXmlSerializable
     {
         [XmlAttribute("id")]
         public int id;
@@ -94,6 +94,21 @@ namespace Round2
                 Debug.LogError(value.TXMA.Textures[0].TXMP.id);
                 m_txma = value;
             }
+        }
+
+        public System.Xml.Schema.XmlSchema GetSchema()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void ReadXml(System.Xml.XmlReader reader)
+        {
+            //throw new System.NotImplementedException();
+        }
+
+        public void WriteXml(System.Xml.XmlWriter writer)
+        {
+            //throw new System.NotImplementedException();
         }
     }
 }

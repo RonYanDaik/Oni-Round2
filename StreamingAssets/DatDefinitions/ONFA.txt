@@ -1,0 +1,25 @@
+Imported Flag Node Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1020	Not used
+Packages	$1C	2	Amount of packages that follow
+Packages possible	$1E	2	Amount of packages that are possible
+*Package		$20	$1C	2	68
+Unknown	$00	9	Unknown
+Unknown	$04	9	Unknown
+Unknown	$08	9	Unknown
+Unknown	$0C	9	Unknown
+Unknown	$10	9	Unknown
+Unknown	$14	9	Unknown
+Unknown	$18	9	Unknown
+Unknown	$1C	9	Unknown
+Unknown	$20	9	Unknown
+x-position	$24	9	x-position
+y-position	$28	9	y-position (height)
+z-position	$2C	9	z-position
+x-position again	$30	9	x-position again
+y-position again	$34	9	y-position (height) again
+z-position again	$38	9	z-position again
+Unknown	$3C	9	Unknown
+Flag node id	$40	2	Id of the flag node
+Unknown	$42	2	Unknown

@@ -1,0 +1,10 @@
+BSP Node Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1022	Not used
+Packages	$1E	2	Amount of packages that follow
+*Package		$20	$1E	2	12
+Unknown	$00	3	Unknown
+High bit	$03	1	High bit
+Unknown	$04	4	Unknown
+Unknown	$08	4	Unknown; always the same

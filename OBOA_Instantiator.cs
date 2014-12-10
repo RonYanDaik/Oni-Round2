@@ -105,8 +105,12 @@ public class OBOA_Instantiator : MonoBehaviour, IOnTriggerHit
         GameObject l_ch = GameObject.CreatePrimitive(PrimitiveType.Plane);
         l_ch.AddComponent<Animation>();
         Destroy(l_ch.collider);
-        ;
-        l_ch.renderer.material.mainTexture = m_tex;
+
+        Texture2DQuery.TexturePend(m_obj.Geometry.M3GA.Geometries[0].M3GM.Texture.TXMP.id, tex =>
+           {
+               l_ch.renderer.material.mainTexture = m_tex = tex;
+           });
+
         l_ch.transform.parent = transform;
         l_ch.transform.localPosition = UnityEngine.Vector3.zero;
         l_ch.transform.localRotation = UnityEngine.Quaternion.identity;
@@ -218,8 +222,7 @@ public class OBOA_Instantiator : MonoBehaviour, IOnTriggerHit
         if (m_obj.Geometry != null && m_obj.Geometry.M3GA != null)
         {
             flags = m_obj.Flags;
-            //Debug.Log(m_obj.Geometry.M3GA.id);
-            m_tex = m_obj.Geometry.M3GA.Geometries[0].M3GM.Texture.TXMP.UnityTexture;
+           
             m_id = m_obj.Geometry.M3GA.Geometries[0].M3GM.TriangleStrips.IDXA.id;
             door_id = m_obj.DoorId << 24 >> 24;
 

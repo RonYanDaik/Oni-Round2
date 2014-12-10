@@ -1,0 +1,9 @@
+3D Vector Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1018	Not used
+Packages	$1C	4	Amount of packages that follow
+*Package		$20	$1C	4	12
+x-coordinate	$00	9	x-coordinate of the vector
+y-coordinate	$04	9	y-coordinate (height) of the vector
+z-coordinate	$08	9	z-coordinate of the vector

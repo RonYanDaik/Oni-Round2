@@ -1,0 +1,15 @@
+IGUI (In-Game User Interface) HUD (Head-Up Display) Help
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1028	Not used
+TXMP-link	$24	12	Link to the left HUD image
+TXMP-link	$28	12	Link to the right HUD image
+Left image position	$2C	4	The left HUD image starts 55 pixel from the left screen border
+Right image position	$30	4	The right HUD image starts 42 pixel from the right screen border (65535 - 65493 = 42)
+Left words	$34	4	Number of words on the left side
+Right words	$38	4	Number of words on the right side
+Packages	$3C	4	Amount of word-packages that follow
+*Package		$40	$3C	4	68
+Text field	$00	10064	Text field (all entries after the fist 00 are useless)
+Text x-position	$40	2	x-position of the text (from the left/right border of the HUD image)
+Text y-position	$42	2	y-position of the text (from the top border of the HUD image)

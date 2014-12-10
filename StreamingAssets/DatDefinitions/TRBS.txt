@@ -1,0 +1,10 @@
+Totoro Body Set
+File id	$00	12	File id
+Level id	$04	17	Level id
+TRCM-link	$08	12	Link to the extra low detailed body array
+TRCM-link	$0C	12	Link to the low detailed body array
+TRCM-link	$10	12	Link to the medium detailed body array
+TRCM-link	$14	12	Link to the high detailed body array
+TRCM-link	$18	12	Link to the extra high detailed body array
+Not used	$1C	1004	Not used
+

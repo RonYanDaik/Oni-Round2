@@ -1,0 +1,25 @@
+Turret
+File id	$00	12	File id
+Level id	$04	17	Level id
+Turret name	$08	10064	Name of the turret
+Unknown	$48	4	Unknown; always the same
+Not used	$4C	1008	Not used
+Unknown	$54	2	Unknown; always the same
+Packages used	$56	2	Amount of used packages (the file contains space for 16 packages)
+Unknown	$58	2	Unknown; always the same
+Not used	$5A	1006	Not used
+M3GM-link	$60	12	Link to the Geometry
+Unknown	$64	4	Unknown; always the same; maybe a canceled link
+Unknown	$68	4	Unknown; always the same; maybe a canceled link
+M3GM-link	$6C	12	Link to the Geometry
+Unknown	$70	4	Unknown; always the same; maybe a canceled link
+M3GM-link	$74	12	Link to the Geometry
+Unknown	$78	4	Unknown; always the same; maybe a canceled link
+Unknown	$7C	9	Unknown; always the same if it's a floor turret
+Unknown	$80	9	Unknown; always the same if it's a floor turret
+Unknown	$84	9	Unknown; always the same if it's a floor turret
+Unknown	$88	9	Unknown; always the same
+Unknown	$8C	9	Unknown; always the same
+Unknown	$90	9	Unknown; always the same
+
+

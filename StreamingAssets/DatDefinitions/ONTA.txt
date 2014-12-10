@@ -1,0 +1,8 @@
+Trigger Array
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1016	Not used
+Packages	$18	4	Amount of packages that follow
+Packages possible	$1C	4	Amount of packages that are possible
+*Package		$20	$18	4	416
+Unknown	$00	1416	Unknown; never used in Oni

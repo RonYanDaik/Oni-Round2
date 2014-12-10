@@ -7,6 +7,7 @@ public class TMPSCNLDR : MonoBehaviour
 {
     static T DeserializeAs<T>(System.IO.MemoryStream ms) where T : new()
     {
+        Debug.Log("asgdaskgdhk");
         return (T)new System.Xml.Serialization.XmlSerializer(typeof(T)).Deserialize(ms);
     }
 
@@ -25,10 +26,14 @@ public class TMPSCNLDR : MonoBehaviour
     public List<TMP_TX_ENTRY> m_txs = new List<TMP_TX_ENTRY>();
 
     static void UseONLV(Oni.InstanceDescriptor ides)
-    {
-        Round2.ONLV l_onlv;
-        Debug.Log((l_onlv = DeserializeAs<Round2.ONLV>(ides.AsXmlStream())).Environment.AKEV.Quads.AGQG.Quads[0].Points.Length);
-        l_onlv.InitEnv();
+    {   
+        Round2.ONLV l_onlv = ides.Decode<Round2.ONLV>();
+        Debug.Log(l_onlv);
+        Debug.Log(l_onlv.Environment);
+        Debug.Break();
+        Debug.DebugBreak();
+        //Debug.Log((l_onlv = DeserializeAs<Round2.ONLV>(ides.AsXmlStream())).Environment.AKEV.Quads.AGQG.Quads[0].Points.Length);
+        //l_onlv.InitEnv();
     }
 
     static void UseAKEV(Oni.InstanceDescriptor ides)
@@ -42,14 +47,121 @@ public class TMPSCNLDR : MonoBehaviour
         Debug.Log(des.id);
     }
 
+    static void UseTXMP(Oni.InstanceDescriptor ides)
+    {
+        Texture2D l_tex = null;
+
+        if ((l_tex = ObtainTXFrom(ides)) != null)
+        {
+            Texture2DQuery.Loaded(ides.Index, l_tex);
+            Debug.Log(ides.Decode<Round2.TXMP>());
+            //DeserializeAs<Round2.TXMP>(ides.AsXmlStream());
+        }
+
+        //Debug.Log(ides.Name);
+    }
+
+    static void UseONCC(Oni.InstanceDescriptor ides)
+    {
+        DateTime l_n = DateTime.Now;
+        ides.AsXmlStream();
+        /*
+        Round2.ONCC l_chr = DeserializeAs<Round2.ONCC>(ides.AsXmlStream());
+        l_chr.SetName(ides.Name);
+        Debug.Log(l_chr.BodySet.TRBS.id);
+        Oni.Game.CharacterClass l_oncc = Oni.Game.CharacterClass.Read(ides);
+
+        foreach (Oni.InstanceDescriptor animdes in l_oncc.Animations)
+        {
+            Oni.Totoro.Animation l_tram = Oni.Totoro.AnimationDatReader.Read(animdes);
+            l_chr.AddAnimInfo(animdes.Name, l_tram);
+            string l_clipname = animdes.Name;
+
+            if (l_tram.FrameSize != 6)//TODO: fix?
+            {
+                continue;
+            }
+
+            AnimationClipHolder.Hold(animdes.Name, controller => 
+            {
+                bool frameSize = l_tram.FrameSize == 6;
+                AnimationClip l_clip = new AnimationClip();
+                l_clip.name = l_clipname;
+
+                for (int i = 0; i < l_tram.Rotations.Count; i++)
+                {
+                    Keyframe[] l_kFrx = new Keyframe[l_tram.Rotations[i].Count];
+                    Keyframe[] l_kFry = new Keyframe[l_tram.Rotations[i].Count];
+                    Keyframe[] l_kFrz = new Keyframe[l_tram.Rotations[i].Count];
+                    Keyframe[] l_kFrw = new Keyframe[l_tram.Rotations[i].Count];
+                    int l_duration = 0;
+
+                    for (int j = 0; j < l_tram.Rotations[i].Count; j++)
+                    {
+                        UnityEngine.Quaternion _l_q;
+
+                        if (!frameSize)
+                        {
+                            Oni.Quaternion l_q = new Oni.Quaternion(l_tram.Rotations[i][j].Rotation);
+                            _l_q = Quaternion.Euler(Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().X), Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().Y), Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().Z));
+                        }
+                        else
+                        {
+                            Oni.Quaternion qq = Oni.Quaternion.CreateFromEulerXYZ(l_tram.Rotations[i][j].Rotation.X, -l_tram.Rotations[i][j].Rotation.Y, -l_tram.Rotations[i][j].Rotation.Z);
+                            _l_q = new Quaternion(qq.X, qq.Y, qq.Z, qq.W);
+                        }
+
+                        l_kFrx[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.x);
+                        l_kFry[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.y);
+                        l_kFrz[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.z);
+                        l_kFrw[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.w);
+                        
+                        l_duration = l_duration + l_tram.Rotations[i][j].Duration;
+                    }
+
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                    string l_path = "";
+                    l_path = "";
+                    sb.Remove(0, sb.Length);
+                    sb.Append(i == 0 ? "" : ((Round2.ONCC.Bodyparts)i).ToString());
+                    l_path = "";
+
+                    for (int _i = l_chr.BodySet.TRBS.Elements[0].TRCM.Hierarchy.TRIA.Elements[i].Parent; _i != l_chr.BodySet.TRBS.Elements[0].TRCM.Hierarchy.TRIA.Elements[_i].Parent; _i = l_chr.BodySet.TRBS.Elements[0].TRCM.Hierarchy.TRIA.Elements[_i].Parent)
+                    {
+                        sb.Insert(0, '/');
+                        sb.Insert(0, ((Round2.ONCC.Bodyparts)_i).ToString());
+                    }
+
+                    l_path = sb.ToString();
+                    l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.x", new AnimationCurve(l_kFrx));
+                    l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.y", new AnimationCurve(l_kFry));
+                    l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.z", new AnimationCurve(l_kFrz));
+                    l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.w", new AnimationCurve(l_kFrw));
+                }
+
+                l_clip.AddEvent(new AnimationEvent() { objectReferenceParameter = controller, functionName = "OnActionFrame", time = (0.0166666675f * l_tram.Velocities.Count) - 1 / 60f, stringParameter = l_clipname });
+                l_clip.EnsureQuaternionContinuity();
+                l_clip.wrapMode = WrapMode.ClampForever;
+                //l_chr.m_clips.Add(l_clip);
+                return l_clip;
+            });
+
+        }
+        
+        */
+        Debug.Log("finished in " + (DateTime.Now - l_n).TotalSeconds);
+    }
+
     static Dictionary<Oni.TemplateTag, Action<Oni.InstanceDescriptor>> m_installers = new Dictionary<Oni.TemplateTag, Action<Oni.InstanceDescriptor>>
     {
-         { Oni.TemplateTag.ONLV, UseONLV },
+         //{Oni.TemplateTag.TXMP, UseTXMP},
+         {Oni.TemplateTag.ONLV, UseONLV },
+         //{ Oni.TemplateTag.ONCC, UseONCC }
          //{ Oni.TemplateTag.AKEV, UseAKEV },
          //{ Oni.TemplateTag.DOOR, UseDOOR },
     };
 
-    internal Texture2D ObtainTXFrom(Oni.InstanceDescriptor txca)
+    static internal Texture2D ObtainTXFrom(Oni.InstanceDescriptor txca)
     {
         //Debug.Log(txca.Index);
         {
@@ -86,75 +198,73 @@ public class TMPSCNLDR : MonoBehaviour
         }
     }
 
+    int m_descriptorsLeft;
+    List<Oni.InstanceDescriptor> m_descriptors;
+
+    void Start()
+    {
+        Application.RegisterLogCallback
+        (
+            new Func<System.IO.StreamWriter, Application.LogCallback>
+                    (
+                        writer => (u1, u2, u3) => 
+                        {
+                            writer.WriteLine(u1 + "\n" + u2 + "\n" + "\n" + u3);
+                        }
+                    )
+                    (
+                        System.IO.File.AppendText("D:\\log.txt")
+                    )
+        );
+        m_singleton = this;
+       
+        StartCoroutine(_Start());
+    }
+
+    void OnGUI()
+    {
+        GUILayout.Label(m_descriptorsLeft.ToString());
+    }
+
+    void TryInvoke(Action act)
+    {
+        try
+        {
+            act();
+        }
+        catch (Exception ee)
+        {
+            Debug.Log(ee);
+        }
+    }
+
 	// Use this for initialization
-	void Start () 
+	public IEnumerator _Start () 
     {
         //Debug.Log((new System.Object[] { 113, 123, "asd" }).ArrayAsSml());
         //Debug.Log((new System.Object[] { 113, 123, "asd", Round2.GunkFlags.Danger }).ArrayAsSml().SmlToArray());
         //return;
-        m_singleton = this;
+        yield return null;
         Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
         Oni.InstanceFile level0 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
         Oni.InstanceFile level1 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
-        
-        foreach (Oni.InstanceDescriptor desc in level1.GetNamedDescriptors())
+        m_descriptors = level1.GetNamedDescriptors();
+        m_descriptorsLeft = m_descriptors.Count;
+
+        foreach (Oni.InstanceDescriptor desc in m_descriptors)
         {
             if (m_installers.ContainsKey(desc.Template.Tag))
             {
-                m_installers[desc.Template.Tag](desc);
-            }
-        }
-
-        List<int> l_txIndArray = new List<int>(Texture2DQuery.TexturesToLoad);
-
-
-        foreach (Oni.InstanceDescriptor desc in level1.Descriptors)
-        {
-            switch (desc.Template.Tag)
-            {
-                case Oni.TemplateTag.TXMP:
-                    {
-                        //Debug.Log("idxt:" + desc.Index);
-                        if (l_txIndArray.Contains(desc.Index))
-                        {
-                            Texture2D l_tex = null;
-
-                            if ((l_tex = ObtainTXFrom(desc)) != null)
-                            {
-                                Texture2DQuery.Loaded(desc.Index, l_tex);
-                                //Debug.Log(l_tex, l_tex);
-                            }
-                        }
-                    }
-                    break;
-            }
-        }
-
-        Round2.AISACharacter.GetByName("Konoko")[0].TMP_InstallNewCharacter();
-
-        /*
-        foreach (int id in Texture2DQuery.TexturesToLoad)
-        {
-            Debug.Log(id);
-            Oni.InstanceDescriptor l_ides = level0.GetDescriptor(id);
-            Texture2D l_tex = null;
-
-            if (l_ides != null)
-            {
-                Debug.Log(l_ides.Index == id);
-
-                if (l_ides != null && (l_tex = ObtainTXFrom(l_ides)) != null)
+                yield return null;
+                TryInvoke(() =>
                 {
-                    Texture2DQuery.Loaded(id, l_tex);
-                    Debug.Log(l_tex, l_tex);
-                }
+                    m_installers[desc.Template.Tag](desc);
+                });
             }
-        }*/
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
+
+            m_descriptorsLeft--;
+        }
+
+        Round2.ONCC.GetByName("konoko_generic").TMP_InstallNewCharacter(level0);
 	}
 }

@@ -1,0 +1,15 @@
+Totoro Quaternion Body
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	4	Unknown
+Bodyparts	$0C	2	Number of bodyparts
+Not used	$0E	1002	Not used
+Internal file name	$10	10064	Internal file name
+Not used	$50	1004	Old offset link; you can set it to zero if you want
+Not used	$54	1004	Old offset link; you can set it to zero if you want
+Not used	$58	1004	Old offset link; you can set it to zero if you want
+TRGA-link	$5C	12	Link to the Body Geometry Array
+TRTA-link	$60	12	Link to the Body Translation Array
+TRIA-link	$64	12	Link to the Body Index Array
+Not used	$68	1024	Not used
+

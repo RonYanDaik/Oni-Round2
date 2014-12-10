@@ -1,0 +1,6 @@
+Item Page
+File id	$00	12	File id
+Level id	$04	17	Level id
+Unknown	$08	4	Unknown
+Impt-link	$0C	12	Link to the In-Game User Interface Page
+Not used	$10	1016	Not used

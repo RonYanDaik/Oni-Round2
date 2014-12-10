@@ -1,0 +1,15 @@
+Texture
+ID	$00	12	ID of this file
+LevelID	$04	17	ID of the level this file is in
+FileName	$08	10128	Name of the texture
+MIP Mapping	$88	10	MIP Mapping Bitset
+Depth	$89	10	Depth-Bitset
+Unknown	$8A	2	Unknown; always zero
+Width	$8C	2	x-resolution of image
+Height	$8E	2	y-resolution of image
+Storetype	$90	10	Storetype-Bitset
+TXAN-Link	$94	12	Link to the TXAN-file; only used if the texture is the first image of an texture animation
+TXMP-Link	$98	12	Link to another TXMP-file; only used in connection with shade vertex effects
+Raw-Link	$9C	11	Address of the image data in the .raw-file (only for PC-dat-files)
+Raw-Link	$A0	11	Address of the image data in the .raw-file (only for MAC-dat-files)
+Not used	$A4	1028	Not used

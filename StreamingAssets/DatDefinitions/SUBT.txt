@@ -1,0 +1,8 @@
+Subtitles
+File id	$00	12	File id
+Level id	$04	17	Level id
+Not used	$08	1016	Not used
+Raw-Link	$18	11	Address of the subtitle data in the .raw-file
+Packages	$1C	4	Amount of packages that follow
+*Packages		$20	$1C	4	4
+Raw-link	$0	11	Start position of the subtitle in the raw file

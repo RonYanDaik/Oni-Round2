@@ -1,0 +1,9 @@
+Font Language
+File id	$00	12	File id
+Level id	$04	17	Level id
+Char block 1	$08	10064	Char block 1
+Char block 2	$48	10064	Char block 2
+Char block 3	$88	10064	Char block 3
+Char block 4	$C8	10064	Char block 4
+Char block 5	$108	10064	Char block 5
+Not used	$148	1024	Not used

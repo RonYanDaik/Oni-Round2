@@ -1,0 +1,6 @@
+Binary Data
+File id	$00	12	File id
+Level id	$04	17	Level id
+Size	$08	4	Size of the part in the raw file
+Offset	$0C	11	At this position starts the part in the raw/sep file
+Not used	$10	1016	Not used

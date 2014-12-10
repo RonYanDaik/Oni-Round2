@@ -1,6 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Xml.Serialization;
+using System.Collections.Generic;
+
+interface IGenericMemberAccessorCollection
+{
+    List<IGenericMemberAcessor> Members
+    {
+        get;
+    }
+}
 
 namespace Round2
 {
@@ -12,11 +21,11 @@ namespace Round2
     /// <summary>
     /// Does not uses animation, data offset or envmap. See comments section to discover more
     /// </summary>
-    public class TXMP
+    public class TXMP : IXmlSerializable
     {
         int m_id;
 
-        [XmlAttribute("id")]
+        [XmlAttribute("_id")]
         public int id
         {
             get 
@@ -35,18 +44,12 @@ namespace Round2
         public int Width;
         public int Height;
         public string Format;
-
         UnityEngine.Texture2D m_tex = null;
 
-        [XmlIgnore]
-        public Texture2D UnityTexture
+        public override string ToString()
         {
-            get
-            {
-                return NewBehaviourScript.m_textureCache.ContainsKey(id) ? NewBehaviourScript.m_textureCache[id] : m_tex;
-            }
+            return id + "|" + Flags + "|" + Width + "|" + Height + "|" + Format;
         }
-
 
         /*<Flags>HasMipMaps SwapBytes</Flags>
                     <Width>64</Width>
@@ -55,5 +58,21 @@ namespace Round2
                     <Animation></Animation>
                     <EnvMap></EnvMap>
                     <DataOffset>79520</DataOffset>*/
+
+        System.Xml.Schema.XmlSchema IXmlSerializable.GetSchema()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void IXmlSerializable.ReadXml(System.Xml.XmlReader reader)
+        {
+            
+        }
+
+        void IXmlSerializable.WriteXml(System.Xml.XmlWriter writer)
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }

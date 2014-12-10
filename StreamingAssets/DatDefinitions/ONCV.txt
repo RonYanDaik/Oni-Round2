@@ -1,0 +1,7 @@
+Oni Character Variant
+File id	$00	12	File id
+Level id	$04	17	Level id
+ONCV-link	$08	12	Link to the next higher Character Variant
+Basic character type	$0C	132	Basic character type
+Upgrade character type	$2C	132	Upgrade character type; used when you play on hard and the "upgrade difficulty" bit in the Character.BINA file is set
+Not used	$4C	1020	Not used
