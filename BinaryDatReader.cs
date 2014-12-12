@@ -127,9 +127,9 @@ public class BinaryDatReader : MonoBehaviour
 
     static Dictionary<int, Round2.BinaryInitializable> m_descriptors = new Dictionary<int, Round2.BinaryInitializable>();
 
-    public static T GetById<T>(int id) where T : Round2.BinaryInitializable
+    internal static T GetById<T>(int id) where T : Round2.BinaryInitializable
     {
-        return m_descriptors[id];
+        return (T)m_descriptors[id];
     }
 
     static T Construct<T>(int id, Oni.InstanceDescriptor ides) where T: Round2.BinaryInitializable,  new()
@@ -454,11 +454,11 @@ namespace Round2
     {
         namespace Binary
         {
-            public class Link<T> where T : Round2.BinaryInitializable
+            internal class Link<T> where T : Round2.BinaryInitializable
             {
                 int m_lnkId;
 
-                public static explicit operator Link<T>(object lnkid)
+                public static explicit operator Link<T>(int lnkid)
                 {
                     return new Link<T>() { m_lnkId = (int)lnkid };
                 }
