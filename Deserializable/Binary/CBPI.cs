@@ -13,231 +13,231 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_8;
+      public Link<Impt> m_Impt_link_8 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_C;
+      public Link<Impt> m_Impt_link_C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_10;
+      public Link<Impt> m_Impt_link_10 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_14;
+      public Link<Impt> m_Impt_link_14 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_18;
+      public Link<Impt> m_Impt_link_18 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_1C;
+      public Link<Impt> m_Impt_link_1C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_20;
+      public Link<Impt> m_Impt_link_20 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_24;
+      public Link<Impt> m_Impt_link_24 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_28;
+      public Link<Impt> m_Impt_link_28 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_2C;
+      public Link<Impt> m_Impt_link_2C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_30;
+      public Link<Impt> m_Impt_link_30 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_34;
+      public Link<Impt> m_Impt_link_34 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_38;
+      public Link<Impt> m_Impt_link_38 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_3C;
+      public Link<Impt> m_Impt_link_3C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_40;
+      public Link<Impt> m_Impt_link_40 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_44;
+      public Link<Impt> m_Impt_link_44 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_48;
+      public Link<Impt> m_Impt_link_48 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_4C;
+      public Link<Impt> m_Impt_link_4C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_50;
+      public Link<Impt> m_Impt_link_50 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_54;
+      public Link<Impt> m_Impt_link_54 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_58;
+      public Link<Impt> m_Impt_link_58 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_5C;
+      public Link<Impt> m_Impt_link_5C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_60;
+      public Link<Impt> m_Impt_link_60 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_64;
+      public Link<Impt> m_Impt_link_64 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_68;
+      public Link<Impt> m_Impt_link_68 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_6C;
+      public Link<Impt> m_Impt_link_6C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_70;
+      public Link<Impt> m_Impt_link_70 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_74;
+      public Link<Impt> m_Impt_link_74 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_78;
+      public Link<Impt> m_Impt_link_78 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_7C;
+      public Link<Impt> m_Impt_link_7C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_80;
+      public Link<Impt> m_Impt_link_80 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_84;
+      public Link<Impt> m_Impt_link_84 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_88;
+      public Link<Impt> m_Impt_link_88 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_8C;
+      public Link<Impt> m_Impt_link_8C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_90;
+      public Link<Impt> m_Impt_link_90 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_94;
+      public Link<Impt> m_Impt_link_94 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_98;
+      public Link<Impt> m_Impt_link_98 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_9C;
+      public Link<Impt> m_Impt_link_9C =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_A0;
+      public Link<Impt> m_Impt_link_A0 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_A4;
+      public Link<Impt> m_Impt_link_A4 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_A8;
+      public Link<Impt> m_Impt_link_A8 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_AC;
+      public Link<Impt> m_Impt_link_AC =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_B0;
+      public Link<Impt> m_Impt_link_B0 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_B4;
+      public Link<Impt> m_Impt_link_B4 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_B8;
+      public Link<Impt> m_Impt_link_B8 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_BC;
+      public Link<Impt> m_Impt_link_BC =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_C0;
+      public Link<Impt> m_Impt_link_C0 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_C4;
+      public Link<Impt> m_Impt_link_C4 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_C8;
+      public Link<Impt> m_Impt_link_C8 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_CC;
+      public Link<Impt> m_Impt_link_CC =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_D0;
+      public Link<Impt> m_Impt_link_D0 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_D4;
+      public Link<Impt> m_Impt_link_D4 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_D8;
+      public Link<Impt> m_Impt_link_D8 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_DC;
+      public Link<Impt> m_Impt_link_DC =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_E0;
+      public Link<Impt> m_Impt_link_E0 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_E4;
+      public Link<Impt> m_Impt_link_E4 =  new Link<Impt>();
       /// <summary>
       ///Link to the Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_E8;
+      public Link<Impt> m_Impt_link_E8 =  new Link<Impt>();
       /// <summary>
       ///Not used
       /// </summary>

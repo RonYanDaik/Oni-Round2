@@ -97,7 +97,7 @@ public class Package
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_4;
+      public Link<IDXA> m_IDXA_link_4 =  new Link<IDXA>();
 }
 
   }

@@ -101,7 +101,7 @@ public class Package
       /// <summary>
       ///Image which is used for the texture animation
       /// </summary>
-      public System.Int32 m_TXMP_link_0;
+      public Link<TXMP> m_TXMP_link_0 =  new Link<TXMP>();
 }
 
   }

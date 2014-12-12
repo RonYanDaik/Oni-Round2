@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the next higher Character Variant
       /// </summary>
-      public System.Int32 m_ONCV_link_8;
+      public Link<ONCV> m_ONCV_link_8 =  new Link<ONCV>();
       /// <summary>
       ///Basic character type
       /// </summary>

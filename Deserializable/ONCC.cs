@@ -8,17 +8,18 @@ namespace Round2
     public class _ONCC
     {
         [XmlElement("ONCC")]
-        public ONCC @ONCC;
+        public __ONCC @ONCC;
     }
 
-    public class ONCC
+    [XmlType("ONCC")]
+    public class __ONCC
     {
         [XmlIgnore]
         public List<AnimationClip> m_clips = new List<AnimationClip>();
 
-        static Dictionary<string, ONCC> m_nameToONCC = new Dictionary<string, ONCC>();
+        static Dictionary<string, __ONCC> m_nameToONCC = new Dictionary<string, __ONCC>();
 
-        public static ONCC GetByName(string name)
+        public static __ONCC GetByName(string name)
         {
             if (m_nameToONCC.ContainsKey(name))
             {
@@ -129,7 +130,7 @@ namespace Round2
             {
                 GameObject l_newest;
                 l_parts.Add(l_newest = GameObject.CreatePrimitive(PrimitiveType.Cube));
-                l_newest.name = ((ONCC.Bodyparts)i).ToString();
+                l_newest.name = ((__ONCC.Bodyparts)i).ToString();
                 l_newest.GetComponent<MeshFilter>().mesh = l_meshes[i];
                 GameObject.Destroy(l_newest.collider);
                 l_newest.renderer.material.shader = Shader.Find("TwoSidedDiffuse");

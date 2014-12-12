@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Font Family
       /// </summary>
-      public System.Int32 m_TSFF_link_8;
+      public Link<TSFF> m_TSFF_link_8 =  new Link<TSFF>();
       /// <summary>
       ///Font option
       /// </summary>
@@ -45,15 +45,15 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Part Specification
       /// </summary>
-      public System.Int32 m_PSpc_link_18;
+      public Link<PSPC> m_PSPC_link_18 =  new Link<PSPC>();
       /// <summary>
       ///Link to the In-Game User Interface String Array
       /// </summary>
-      public System.Int32 m_IGSA_link_1C;
+      public Link<IGSA> m_IGSA_link_1C =  new Link<IGSA>();
       /// <summary>
       ///Link to the In-Game User Interface String Array
       /// </summary>
-      public System.Int32 m_IGSA_link_20;
+      public Link<IGSA> m_IGSA_link_20 =  new Link<IGSA>();
       /// <summary>
       ///Not used
       /// </summary>
@@ -116,7 +116,7 @@ namespace Round2.Generated.Binary
          {
              l_bytes[i] = data[i + 24];
          }
-         this.m_PSpc_link_18 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+         this.m_PSPC_link_18 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 28];

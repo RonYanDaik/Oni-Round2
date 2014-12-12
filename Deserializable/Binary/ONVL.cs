@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the Character Variant
       /// </summary>
-      public System.Int32 m_ONCV_link_0;
+      public Link<ONCV> m_ONCV_link_0 =  new Link<ONCV>();
 }
 
   }

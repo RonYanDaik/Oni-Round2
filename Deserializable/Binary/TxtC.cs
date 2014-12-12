@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the In-Game User Interface Page Array
       /// </summary>
-      public System.Int32 m_IGPA_link_8;
+      public Link<IGPA> m_IGPA_link_8 =  new Link<IGPA>();
       /// <summary>
       ///Not used
       /// </summary>

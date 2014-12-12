@@ -13,23 +13,23 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Oct Tree Interior Node Array
       /// </summary>
-      public System.Int32 m_OTIT_link_8;
+      public Link<OTIT> m_OTIT_link_8 =  new Link<OTIT>();
       /// <summary>
       ///Link to the Oct Tree Leaf Node Array
       /// </summary>
-      public System.Int32 m_OTLF_link_C;
+      public Link<OTLF> m_OTLF_link_C =  new Link<OTLF>();
       /// <summary>
       ///Link to the Quad Tree Node Array
       /// </summary>
-      public System.Int32 m_QTNA_link_10;
+      public Link<QTNA> m_QTNA_link_10 =  new Link<QTNA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_14;
+      public Link<IDXA> m_IDXA_link_14 =  new Link<IDXA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_18;
+      public Link<IDXA> m_IDXA_link_18 =  new Link<IDXA>();
       /// <summary>
       ///Not used
       /// </summary>

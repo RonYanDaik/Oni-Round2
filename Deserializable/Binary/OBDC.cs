@@ -129,7 +129,7 @@ public class Package
       /// <summary>
       ///Link to the Object Animation
       /// </summary>
-      public System.Int32 m_OBAN_link_4;
+      public Link<OBAN> m_OBAN_link_4 =  new Link<OBAN>();
       /// <summary>
       ///Unknown
       /// </summary>

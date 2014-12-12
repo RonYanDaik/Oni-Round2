@@ -17,7 +17,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to a shared Animation Collection
       /// </summary>
-      public System.Int32 m_TRAC_link_18;
+      public Link<TRAC> m_TRAC_link_18 =  new Link<TRAC>();
       /// <summary>
       ///Unknown
       /// </summary>
@@ -115,7 +115,7 @@ public class Package
       /// <summary>
       ///Link to the Animation
       /// </summary>
-      public System.Int32 m_TRAM_link_8;
+      public Link<TRAM> m_TRAM_link_8 =  new Link<TRAM>();
 }
 
   }

@@ -41,19 +41,19 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the TXAN-file; only used if the texture is the first image of an texture animation
       /// </summary>
-      public System.Int32 m_TXAN_Link_94;
+      public Link<TXAN> m_TXAN_Link_94 =  new Link<TXAN>();
       /// <summary>
       ///Link to another TXMP-file; only used in connection with shade vertex effects
       /// </summary>
-      public System.Int32 m_TXMP_Link_98;
+      public Link<TXMP> m_TXMP_Link_98 =  new Link<TXMP>();
       /// <summary>
       ///Address of the image data in the .raw-file (only for PC-dat-files)
       /// </summary>
-      public System.Int32 m_Raw_Link_9C;
+      public Link<Raw> m_Raw_Link_9C =  new Link<Raw>();
       /// <summary>
       ///Address of the image data in the .raw-file (only for MAC-dat-files)
       /// </summary>
-      public System.Int32 m_Raw_Link_A0;
+      public Link<Raw> m_Raw_Link_A0 =  new Link<Raw>();
       /// <summary>
       ///Not used
       /// </summary>

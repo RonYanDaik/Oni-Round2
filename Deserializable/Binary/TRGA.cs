@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the body geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_0;
+      public Link<M3GM> m_M3GM_link_0 =  new Link<M3GM>();
 }
 
   }

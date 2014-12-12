@@ -1301,7 +1301,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             {
                 from = animation[m_clipname];
                 to = animation[name];
-                old = ((Oni.Totoro.Animation)Round2.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
+                old = ((Oni.Totoro.Animation)Round2.__ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
             }
             /*
             NewBehaviourScript.m_events[name].stringParameter = NewBehaviourScript.m_events[name].stringParameter.Replace("|DONOTUSE", "");
@@ -1316,7 +1316,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             }*/
 
             m_clipname = name;
-            @new = ((Oni.Totoro.Animation)Round2.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).FromState;
+            @new = ((Oni.Totoro.Animation)Round2.__ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).FromState;
             adds2 = "mixstate: " + (old != @new).ToString();
             
             {

@@ -17,27 +17,27 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Environment
       /// </summary>
-      public System.Int32 m_AKEV_Link_48;
+      public Link<AKEV> m_AKEV_Link_48 =  new Link<AKEV>();
       /// <summary>
       ///Link to the Starting Object Array
       /// </summary>
-      public System.Int32 m_OBOA_Link_4C;
+      public Link<OBOA> m_OBOA_Link_4C =  new Link<OBOA>();
       /// <summary>
       ///Link to the Imported Marker Node Array
       /// </summary>
-      public System.Int32 m_ONMA_Link_50;
+      public Link<ONMA> m_ONMA_Link_50 =  new Link<ONMA>();
       /// <summary>
       ///Link to the Imported Flag Node Array
       /// </summary>
-      public System.Int32 m_ONFA_Link_54;
+      public Link<ONFA> m_ONFA_Link_54 =  new Link<ONFA>();
       /// <summary>
       ///Link to the Trigger Array
       /// </summary>
-      public System.Int32 m_ONTA_Link_58;
+      public Link<ONTA> m_ONTA_Link_58 =  new Link<ONTA>();
       /// <summary>
       ///Link to the Sky Class
       /// </summary>
-      public System.Int32 m_ONSK_Link_5C;
+      public Link<ONSK> m_ONSK_Link_5C =  new Link<ONSK>();
       /// <summary>
       ///Unknown; maybe a canceled link; always the same
       /// </summary>
@@ -45,27 +45,27 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the AI Character Setup Array
       /// </summary>
-      public System.Int32 m_AISA_Link_64;
+      public Link<AISA> m_AISA_Link_64 =  new Link<AISA>();
       /// <summary>
       ///Link to the AI Script Trigger Array
       /// </summary>
-      public System.Int32 m_AITR_Link_68;
+      public Link<AITR> m_AITR_Link_68 =  new Link<AITR>();
       /// <summary>
       ///Link to the Imported Spawn Array
       /// </summary>
-      public System.Int32 m_ONSA_Link_6C;
+      public Link<ONSA> m_ONSA_Link_6C =  new Link<ONSA>();
       /// <summary>
       ///Link to the Door Class Array
       /// </summary>
-      public System.Int32 m_OBDC_Link_70;
+      public Link<OBDC> m_OBDC_Link_70 =  new Link<OBDC>();
       /// <summary>
       ///Link to the Object Gunk Array
       /// </summary>
-      public System.Int32 m_ONOA_Link_74;
+      public Link<ONOA> m_ONOA_Link_74 =  new Link<ONOA>();
       /// <summary>
       ///Link to the Environment Particle Array
       /// </summary>
-      public System.Int32 m_ENVP_Link_78;
+      public Link<ENVP> m_ENVP_Link_78 =  new Link<ENVP>();
       /// <summary>
       ///Not used
       /// </summary>
@@ -73,7 +73,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Corpse Array
       /// </summary>
-      public System.Int32 m_CRSA_Link_300;
+      public Link<CRSA> m_CRSA_Link_300 =  new Link<CRSA>();
       /// <summary>
       ///Not used
       /// </summary>

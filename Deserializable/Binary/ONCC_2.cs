@@ -49,7 +49,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the shadow texture
       /// </summary>
-      public System.Int32 m_TXMP_link_28;
+      public Link<TXMP> m_TXMP_link_28 =  new Link<TXMP>();
       /// <summary>
       ///Height, where the shadow fades out completely
       /// </summary>
@@ -825,15 +825,15 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Character Varient
       /// </summary>
-      public System.Int32 m_ONCV_link_434;
+      public Link<ONCV> m_ONCV_link_434 =  new Link<ONCV>();
       /// <summary>
       ///Link to the Character Particle Array
       /// </summary>
-      public System.Int32 m_ONCP_link_438;
+      public Link<ONCP> m_ONCP_link_438 =  new Link<ONCP>();
       /// <summary>
       ///Link to the Character Impact Array
       /// </summary>
-      public System.Int32 m_ONIA_link_43C;
+      public Link<ONIA> m_ONIA_link_43C =  new Link<ONIA>();
       /// <summary>
       ///Unknown; maybe a canceled link; always the same
       /// </summary>
@@ -921,19 +921,19 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Body Set
       /// </summary>
-      public System.Int32 m_TRBS_link_C3C;
+      public Link<TRBS> m_TRBS_link_C3C =  new Link<TRBS>();
       /// <summary>
       ///Link to the Texture Map Array
       /// </summary>
-      public System.Int32 m_TRMA_link_C40;
+      public Link<TRMA> m_TRMA_link_C40 =  new Link<TRMA>();
       /// <summary>
       ///Link to the Body Part Material
       /// </summary>
-      public System.Int32 m_CBPM_link_C44;
+      public Link<CBPM> m_CBPM_link_C44 =  new Link<CBPM>();
       /// <summary>
       ///Link to the Body Part Impacts
       /// </summary>
-      public System.Int32 m_CBPI_link_C48;
+      public Link<CBPI> m_CBPI_link_C48 =  new Link<CBPI>();
       /// <summary>
       ///Peace timer in 1/60 seconds; after that time the character switches back from fight to peace mode
       /// </summary>
@@ -997,11 +997,11 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Animation Collection
       /// </summary>
-      public System.Int32 m_TRAC_link_C88;
+      public Link<TRAC> m_TRAC_link_C88 =  new Link<TRAC>();
       /// <summary>
       ///Link to the Screen (Aiming) Collection
       /// </summary>
-      public System.Int32 m_TRSC_link_C8C;
+      public Link<TRSC> m_TRSC_link_C8C =  new Link<TRSC>();
       /// <summary>
       ///Unknown; always the same
       /// </summary>

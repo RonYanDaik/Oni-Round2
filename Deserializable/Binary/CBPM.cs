@@ -13,79 +13,79 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_8;
+      public Link<Mtrl> m_Mtrl_link_8 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_C;
+      public Link<Mtrl> m_Mtrl_link_C =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_10;
+      public Link<Mtrl> m_Mtrl_link_10 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_14;
+      public Link<Mtrl> m_Mtrl_link_14 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_18;
+      public Link<Mtrl> m_Mtrl_link_18 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_1C;
+      public Link<Mtrl> m_Mtrl_link_1C =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_20;
+      public Link<Mtrl> m_Mtrl_link_20 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_24;
+      public Link<Mtrl> m_Mtrl_link_24 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_28;
+      public Link<Mtrl> m_Mtrl_link_28 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_2C;
+      public Link<Mtrl> m_Mtrl_link_2C =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_30;
+      public Link<Mtrl> m_Mtrl_link_30 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_34;
+      public Link<Mtrl> m_Mtrl_link_34 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_38;
+      public Link<Mtrl> m_Mtrl_link_38 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_3C;
+      public Link<Mtrl> m_Mtrl_link_3C =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_40;
+      public Link<Mtrl> m_Mtrl_link_40 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_44;
+      public Link<Mtrl> m_Mtrl_link_44 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_48;
+      public Link<Mtrl> m_Mtrl_link_48 =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_4C;
+      public Link<Mtrl> m_Mtrl_link_4C =  new Link<Mtrl>();
       /// <summary>
       ///Link to the Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_50;
+      public Link<Mtrl> m_Mtrl_link_50 =  new Link<Mtrl>();
       /// <summary>
       ///Not used
       /// </summary>

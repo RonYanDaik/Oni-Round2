@@ -67,7 +67,7 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_PSpc_link_4 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_PSPC_link_4 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
 
@@ -81,7 +81,7 @@ public class Package
       /// <summary>
       ///Link to the Part Specification
       /// </summary>
-      public System.Int32 m_PSpc_link_4;
+      public Link<PSPC> m_PSPC_link_4 =  new Link<PSPC>();
 }
 
   }

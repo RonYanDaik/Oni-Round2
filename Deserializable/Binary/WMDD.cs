@@ -388,7 +388,7 @@ public class Package
       /// <summary>
       ///Link to the Font Family
       /// </summary>
-      public System.Int32 m_TSFF_link_114;
+      public Link<TSFF> m_TSFF_link_114 =  new Link<TSFF>();
       /// <summary>
       ///Font option
       /// </summary>

@@ -240,18 +240,6 @@ l_pkg.m_Unknown_130 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
-{         for(int i=0; i<4; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 352+336];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_ONWC_link_150 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1E];
-for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
              l_bytes[i] = data[i + 32+j * 352+340];
@@ -325,7 +313,7 @@ public class Package
       /// <summary>
       ///Link to the Character Class
       /// </summary>
-      public System.Int32 m_ONCC_link_28;
+      public Link<ONCC> m_ONCC_link_28 =  new Link<ONCC>();
       /// <summary>
       ///Unknown; always the same
       /// </summary>
@@ -366,10 +354,6 @@ public class Package
       ///Unknown; never used in Oni
       /// </summary>
       public System.String m_Unknown_130;
-      /// <summary>
-      ///Link to the Weapon Class; used to give the charcater a weapon
-      /// </summary>
-      public System.Int32 m_ONWC_link_150;
       /// <summary>
       ///Unknown
       /// </summary>

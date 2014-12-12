@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the In-Game User Interface String
       /// </summary>
-      public System.Int32 m_IGSt_link_0;
+      public Link<IGSt> m_IGSt_link_0 =  new Link<IGSt>();
 }
 
   }

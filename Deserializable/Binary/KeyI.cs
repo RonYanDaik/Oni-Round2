@@ -13,43 +13,43 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the punch texture
       /// </summary>
-      public System.Int32 m_TXMP_link_8;
+      public Link<TXMP> m_TXMP_link_8 =  new Link<TXMP>();
       /// <summary>
       ///Link to the kick texture
       /// </summary>
-      public System.Int32 m_TXMP_link_C;
+      public Link<TXMP> m_TXMP_link_C =  new Link<TXMP>();
       /// <summary>
       ///Link to the forward texture
       /// </summary>
-      public System.Int32 m_TXMP_link_10;
+      public Link<TXMP> m_TXMP_link_10 =  new Link<TXMP>();
       /// <summary>
       ///Link to the backward texture
       /// </summary>
-      public System.Int32 m_TXMP_link_14;
+      public Link<TXMP> m_TXMP_link_14 =  new Link<TXMP>();
       /// <summary>
       ///Link to the left texture
       /// </summary>
-      public System.Int32 m_TXMP_link_18;
+      public Link<TXMP> m_TXMP_link_18 =  new Link<TXMP>();
       /// <summary>
       ///Link to the right texture
       /// </summary>
-      public System.Int32 m_TXMP_link_1C;
+      public Link<TXMP> m_TXMP_link_1C =  new Link<TXMP>();
       /// <summary>
       ///Link to the crouch texture
       /// </summary>
-      public System.Int32 m_TXMP_link_20;
+      public Link<TXMP> m_TXMP_link_20 =  new Link<TXMP>();
       /// <summary>
       ///Link to the jump texture
       /// </summary>
-      public System.Int32 m_TXMP_link_24;
+      public Link<TXMP> m_TXMP_link_24 =  new Link<TXMP>();
       /// <summary>
       ///Link to the hold texture
       /// </summary>
-      public System.Int32 m_TXMP_link_28;
+      public Link<TXMP> m_TXMP_link_28 =  new Link<TXMP>();
       /// <summary>
       ///Link to the plus texture
       /// </summary>
-      public System.Int32 m_TXMP_link_2C;
+      public Link<TXMP> m_TXMP_link_2C =  new Link<TXMP>();
       /// <summary>
       ///Not used
       /// </summary>

@@ -20,7 +20,6 @@ Hit function	$D0	10032	Name of the function, which is called up when someone hit
 Health = 1 function	$F0	10032	Name of the function, which is called up when the health of the character is equal 1
 Reload function	$110	10032	Name of the function, which is called up when the character reloads its weapon with its last ammo/cell; works only, if the character has some ammo/cells when Oni spawns it
 Unknown	$130	10032	Unknown; never used in Oni
-ONWC-link	$150	12	Link to the Weapon Class; used to give the charcater a weapon
 Unknown	$154	2	Unknown
 Unknown	$156	14	Unknown; always the same
 Unknown	$158	4	Unknown; always the same

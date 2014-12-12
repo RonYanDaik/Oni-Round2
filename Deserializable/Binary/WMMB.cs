@@ -74,7 +74,7 @@ public class Package
       /// <summary>
       ///Link to the Window Menu
       /// </summary>
-      public System.Int32 m_WMM__link_0;
+      public Link<WMM_> m_WMM__link_0 =  new Link<WMM_>();
 }
 
   }

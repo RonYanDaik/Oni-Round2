@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the Aiming Screen
       /// </summary>
-      public System.Int32 m_TRAS_link_0;
+      public Link<TRAS> m_TRAS_link_0 =  new Link<TRAS>();
 }
 
   }

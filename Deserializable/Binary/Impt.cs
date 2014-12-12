@@ -21,7 +21,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the next higher Impact Tree
       /// </summary>
-      public System.Int32 m_Impt_link_10;
+      public Link<Impt> m_Impt_link_10 =  new Link<Impt>();
       /// <summary>
       ///Not used
       /// </summary>

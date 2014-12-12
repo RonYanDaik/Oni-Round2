@@ -17,7 +17,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Address of the subtitle data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_Link_18;
+      public Link<Raw> m_Raw_Link_18 =  new Link<Raw>();
       /// <summary>
       ///Amount of packages that follow
       /// </summary>
@@ -74,7 +74,7 @@ public class Package
       /// <summary>
       ///Start position of the subtitle in the raw file
       /// </summary>
-      public System.Int32 m_Raw_link_0;
+      public Link<Raw> m_Raw_link_0 =  new Link<Raw>();
 }
 
   }

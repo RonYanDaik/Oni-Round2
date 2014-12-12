@@ -13,23 +13,23 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the top texture
       /// </summary>
-      public System.Int32 m_TXMP_link_8;
+      public Link<TXMP> m_TXMP_link_8 =  new Link<TXMP>();
       /// <summary>
       ///Link to the left texture
       /// </summary>
-      public System.Int32 m_TXMP_link_C;
+      public Link<TXMP> m_TXMP_link_C =  new Link<TXMP>();
       /// <summary>
       ///Link to the right texture
       /// </summary>
-      public System.Int32 m_TXMP_link_10;
+      public Link<TXMP> m_TXMP_link_10 =  new Link<TXMP>();
       /// <summary>
       ///Link to the front texture
       /// </summary>
-      public System.Int32 m_TXMP_link_14;
+      public Link<TXMP> m_TXMP_link_14 =  new Link<TXMP>();
       /// <summary>
       ///Link to the back texture
       /// </summary>
-      public System.Int32 m_TXMP_link_18;
+      public Link<TXMP> m_TXMP_link_18 =  new Link<TXMP>();
       /// <summary>
       ///Not used; maybe a canceled link
       /// </summary>
@@ -37,7 +37,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the sun texture (not used in the game)
       /// </summary>
-      public System.Int32 m_TXMP_link_20;
+      public Link<TXMP> m_TXMP_link_20 =  new Link<TXMP>();
       /// <summary>
       ///Not used; maybe a canceled link
       /// </summary>
@@ -73,7 +73,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the lensflare texture (not used in the game)
       /// </summary>
-      public System.Int32 m_TXMP_link_44;
+      public Link<TXMP> m_TXMP_link_44 =  new Link<TXMP>();
       /// <summary>
       ///Not used; maybe a canceled link
       /// </summary>

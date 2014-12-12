@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Font Family
       /// </summary>
-      public System.Int32 m_TSFF_link_8;
+      public Link<TSFF> m_TSFF_link_8 =  new Link<TSFF>();
       /// <summary>
       ///Font option
       /// </summary>

@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the Texture
       /// </summary>
-      public System.Int32 m_TXMP_link_0;
+      public Link<TXMP> m_TXMP_link_0 =  new Link<TXMP>();
 }
 
   }

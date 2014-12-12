@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Object Furn Geom Array
       /// </summary>
-      public System.Int32 m_OFGA_link_8;
+      public Link<OFGA> m_OFGA_link_8 =  new Link<OFGA>();
       /// <summary>
       ///Unknown; maybe a canceled link; always the same
       /// </summary>
@@ -21,7 +21,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Object Animation
       /// </summary>
-      public System.Int32 m_OBAN_link_10;
+      public Link<OBAN> m_OBAN_link_10 =  new Link<OBAN>();
       /// <summary>
       ///Unknown; always the same
       /// </summary>

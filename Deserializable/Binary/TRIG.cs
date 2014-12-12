@@ -29,7 +29,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_18;
+      public Link<M3GM> m_M3GM_link_18 =  new Link<M3GM>();
       /// <summary>
       ///Unknown; always the same
       /// </summary>
@@ -45,11 +45,11 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Trigger Emitter
       /// </summary>
-      public System.Int32 m_TRGE_link_24;
+      public Link<TRGE> m_TRGE_link_24 =  new Link<TRGE>();
       /// <summary>
       ///Link to the Object Animation
       /// </summary>
-      public System.Int32 m_OBAN_link_28;
+      public Link<OBAN> m_OBAN_link_28 =  new Link<OBAN>();
       /// <summary>
       ///Reference to an OSBD file
       /// </summary>

@@ -37,7 +37,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_20;
+      public Link<M3GM> m_M3GM_link_20 =  new Link<M3GM>();
       /// <summary>
       ///Unknown; maybe a canceled link
       /// </summary>

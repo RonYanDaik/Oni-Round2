@@ -5,4 +5,4 @@ Not used	$08	1020	Not used
 Packages	$1C	4	Amount of packages that follow
 *Package		$20	$1C	4	8
 Unknown	$00	4	Unknown; do not change it, Oni won't start if you do that
-PSpc-link	$04	12	Link to the Part Specification
+PSPC-link	$04	12	Link to the Part Specification

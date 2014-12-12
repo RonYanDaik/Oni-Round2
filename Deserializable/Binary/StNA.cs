@@ -65,7 +65,7 @@ public class Package
       /// <summary>
       ///Link to the String
       /// </summary>
-      public System.Int32 m_TStr_link_0;
+      public Link<TStr> m_TStr_link_0 =  new Link<TStr>();
 }
 
   }

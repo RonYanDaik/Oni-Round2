@@ -17,31 +17,31 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the 3D Point Array
       /// </summary>
-      public System.Int32 m_PNTA_link_C;
+      public Link<PNTA> m_PNTA_link_C =  new Link<PNTA>();
       /// <summary>
       ///Link to the 3D Vector Array
       /// </summary>
-      public System.Int32 m_VCRA_link_10;
+      public Link<VCRA> m_VCRA_link_10 =  new Link<VCRA>();
       /// <summary>
       ///Link to the 3D Vector Array
       /// </summary>
-      public System.Int32 m_VCRA_link_14;
+      public Link<VCRA> m_VCRA_link_14 =  new Link<VCRA>();
       /// <summary>
       ///Link to the Texture Coordinate Array
       /// </summary>
-      public System.Int32 m_TXCA_link_18;
+      public Link<TXCA> m_TXCA_link_18 =  new Link<TXCA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_1C;
+      public Link<IDXA> m_IDXA_link_1C =  new Link<IDXA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_20;
+      public Link<IDXA> m_IDXA_link_20 =  new Link<IDXA>();
       /// <summary>
       ///Link to the Texture
       /// </summary>
-      public System.Int32 m_TXMP_link_24;
+      public Link<TXMP> m_TXMP_link_24 =  new Link<TXMP>();
       /// <summary>
       ///Unknown; not used
       /// </summary>

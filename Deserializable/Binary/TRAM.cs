@@ -13,51 +13,51 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Address of the y-position data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_C;
+      public Link<Raw> m_Raw_link_C =  new Link<Raw>();
       /// <summary>
       ///Address of the x-z-position data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_10;
+      public Link<Raw> m_Raw_link_10 =  new Link<Raw>();
       /// <summary>
       ///Address of the attack data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_14;
+      public Link<Raw> m_Raw_link_14 =  new Link<Raw>();
       /// <summary>
       ///Address of the damage data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_18;
+      public Link<Raw> m_Raw_link_18 =  new Link<Raw>();
       /// <summary>
       ///Address of the motion blur data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_1C;
+      public Link<Raw> m_Raw_link_1C =  new Link<Raw>();
       /// <summary>
       ///Address of the shortcut data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_20;
+      public Link<Raw> m_Raw_link_20 =  new Link<Raw>();
       /// <summary>
       ///Address of the throw data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_24;
+      public Link<Raw> m_Raw_link_24 =  new Link<Raw>();
       /// <summary>
       ///Address of the footstep data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_28;
+      public Link<Raw> m_Raw_link_28 =  new Link<Raw>();
       /// <summary>
       ///Address of the particle data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_2C;
+      public Link<Raw> m_Raw_link_2C =  new Link<Raw>();
       /// <summary>
       ///Address of the position data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_30;
+      public Link<Raw> m_Raw_link_30 =  new Link<Raw>();
       /// <summary>
       ///Address of the bodypart animation data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_34;
+      public Link<Raw> m_Raw_link_34 =  new Link<Raw>();
       /// <summary>
       ///Address of the sound data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_38;
+      public Link<Raw> m_Raw_link_38 =  new Link<Raw>();
       /// <summary>
       ///Flags; it seems that Oni read it as 4 byte string from left to right; I would read it as 4 seperate bitsets
       /// </summary>
@@ -65,11 +65,11 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///First direct animation link; this animation follows after a left mouse click (punch)
       /// </summary>
-      public System.Int32 m_TRAM_link_40;
+      public Link<TRAM> m_TRAM_link_40 =  new Link<TRAM>();
       /// <summary>
       ///Second direct animation link; this animation follows after a right mouse click (kick)
       /// </summary>
-      public System.Int32 m_TRAM_link_44;
+      public Link<TRAM> m_TRAM_link_44 =  new Link<TRAM>();
       /// <summary>
       ///Used parts; used for weapon animations like recoil, reload, draw weapon, etc.
       /// </summary>
@@ -97,7 +97,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Address of the extent data in the .raw-file
       /// </summary>
-      public System.Int32 m_Raw_link_13C;
+      public Link<Raw> m_Raw_link_13C =  new Link<Raw>();
       /// <summary>
       ///Reference to an attack sound (f.e. "slap") of level 0
       /// </summary>

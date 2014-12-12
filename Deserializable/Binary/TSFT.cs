@@ -39,10 +39,6 @@ namespace Round2.Generated.Binary
       /// </summary>
       public System.Int16 m_Unknown_1A;
       /// <summary>
-      ///Link to the Glyph Array
-      /// </summary>
-      public System.Int32 m_TSGA_link_1C;
-      /// <summary>
       ///Not used
       /// </summary>
       public System.Int32 m_Not_used_20;
@@ -103,11 +99,6 @@ namespace Round2.Generated.Binary
              l_bytes[i] = data[i + 26];
          }
          this.m_Unknown_1A = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-         for(int i=0; i<4; i++)
-         {
-             l_bytes[i] = data[i + 28];
-         }
-         this.m_TSGA_link_1C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32];

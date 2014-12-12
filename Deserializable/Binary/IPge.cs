@@ -17,7 +17,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the In-Game User Interface Page
       /// </summary>
-      public System.Int32 m_Impt_link_C;
+      public Link<Impt> m_Impt_link_C =  new Link<Impt>();
       /// <summary>
       ///Not used
       /// </summary>

@@ -41,15 +41,15 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Body Geometry Array
       /// </summary>
-      public System.Int32 m_TRGA_link_5C;
+      public Link<TRGA> m_TRGA_link_5C =  new Link<TRGA>();
       /// <summary>
       ///Link to the Body Translation Array
       /// </summary>
-      public System.Int32 m_TRTA_link_60;
+      public Link<TRTA> m_TRTA_link_60 =  new Link<TRTA>();
       /// <summary>
       ///Link to the Body Index Array
       /// </summary>
-      public System.Int32 m_TRIA_link_64;
+      public Link<TRIA> m_TRIA_link_64 =  new Link<TRIA>();
       /// <summary>
       ///Not used
       /// </summary>

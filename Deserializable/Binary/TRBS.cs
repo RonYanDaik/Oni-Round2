@@ -13,23 +13,23 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the extra low detailed body array
       /// </summary>
-      public System.Int32 m_TRCM_link_8;
+      public Link<TRCM> m_TRCM_link_8 =  new Link<TRCM>();
       /// <summary>
       ///Link to the low detailed body array
       /// </summary>
-      public System.Int32 m_TRCM_link_C;
+      public Link<TRCM> m_TRCM_link_C =  new Link<TRCM>();
       /// <summary>
       ///Link to the medium detailed body array
       /// </summary>
-      public System.Int32 m_TRCM_link_10;
+      public Link<TRCM> m_TRCM_link_10 =  new Link<TRCM>();
       /// <summary>
       ///Link to the high detailed body array
       /// </summary>
-      public System.Int32 m_TRCM_link_14;
+      public Link<TRCM> m_TRCM_link_14 =  new Link<TRCM>();
       /// <summary>
       ///Link to the extra high detailed body array
       /// </summary>
-      public System.Int32 m_TRCM_link_18;
+      public Link<TRCM> m_TRCM_link_18 =  new Link<TRCM>();
       /// <summary>
       ///Not used
       /// </summary>

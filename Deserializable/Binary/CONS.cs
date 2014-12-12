@@ -41,11 +41,11 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Object Furn Geom Array
       /// </summary>
-      public System.Int32 m_OFGA_link_24;
+      public Link<OFGA> m_OFGA_link_24 =  new Link<OFGA>();
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_28;
+      public Link<M3GM> m_M3GM_link_28 =  new Link<M3GM>();
       /// <summary>
       ///Unknown; always the same
       /// </summary>

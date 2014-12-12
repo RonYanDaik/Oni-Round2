@@ -13,7 +13,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Aiming Animation
       /// </summary>
-      public System.Int32 m_TRAM_link_8;
+      public Link<TRAM> m_TRAM_link_8 =  new Link<TRAM>();
       /// <summary>
       ///Unknown
       /// </summary>

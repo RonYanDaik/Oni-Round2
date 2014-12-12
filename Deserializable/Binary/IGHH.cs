@@ -17,11 +17,11 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the left HUD image
       /// </summary>
-      public System.Int32 m_TXMP_link_24;
+      public Link<TXMP> m_TXMP_link_24 =  new Link<TXMP>();
       /// <summary>
       ///Link to the right HUD image
       /// </summary>
-      public System.Int32 m_TXMP_link_28;
+      public Link<TXMP> m_TXMP_link_28 =  new Link<TXMP>();
       /// <summary>
       ///The left HUD image starts 55 pixel from the left screen border
       /// </summary>

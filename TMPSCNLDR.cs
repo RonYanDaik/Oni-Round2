@@ -265,6 +265,6 @@ public class TMPSCNLDR : MonoBehaviour
             m_descriptorsLeft--;
         }
 
-        Round2.ONCC.GetByName("konoko_generic").TMP_InstallNewCharacter(level0);
+        Round2.__ONCC.GetByName("konoko_generic").TMP_InstallNewCharacter(level0);
 	}
 }

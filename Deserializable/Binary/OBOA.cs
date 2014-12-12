@@ -413,15 +413,15 @@ public class Package
       /// <summary>
       ///Link to the Geometry Array
       /// </summary>
-      public System.Int32 m_M3GA_link_0;
+      public Link<M3GA> m_M3GA_link_0 =  new Link<M3GA>();
       /// <summary>
       ///Link to the Object Animation
       /// </summary>
-      public System.Int32 m_OBAN_link_4;
+      public Link<OBAN> m_OBAN_link_4 =  new Link<OBAN>();
       /// <summary>
       ///Link to the Environment Particle Array
       /// </summary>
-      public System.Int32 m_ENVP_link_8;
+      public Link<ENVP> m_ENVP_link_8 =  new Link<ENVP>();
       /// <summary>
       ///Unknown
       /// </summary>

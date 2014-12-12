@@ -104,14 +104,11 @@ public class BinaryDatReader : MonoBehaviour
         m_typesDict.Add(2, new FieldData() { m_fldType = typeof(System.Int16), DoConvert = l_int16, m_strln = 2 });
         m_typesDict.Add(3, new FieldData() { m_fldType = typeof(int), DoConvert = l_int24, m_strln = 3 });
         m_typesDict.Add(4, new FieldData() { m_fldType = typeof(int), DoConvert = l_int32, m_strln = 4 });
-
         m_typesDict.Add(5, new FieldData() { m_fldType = typeof(byte), DoConvert = l_int8, m_strln = 1 });
         m_typesDict.Add(6, new FieldData() { m_fldType = typeof(System.Int16), DoConvert = l_int16, m_strln = 2 });
         m_typesDict.Add(7, new FieldData() { m_fldType = typeof(int), DoConvert = l_int24, m_strln = 3 });
         m_typesDict.Add(8, new FieldData() { m_fldType = typeof(int), DoConvert = l_int32, m_strln = 4 });
-
         m_typesDict.Add(9, new FieldData() { m_fldType = typeof(float), DoConvert = l_float, m_strln = sizeof(float) });
-
         m_typesDict.Add(10, new FieldData() { m_fldType = typeof(int), DoConvert = l_int32, m_strln = 4 });
         m_typesDict.Add(11, new FieldData() { m_fldType = typeof(int), DoConvert = l_int32, m_strln = 4 });
         m_typesDict.Add(12, new FieldData() { m_fldType = typeof(int), DoConvert = l_int32, m_strln = 4 });
@@ -125,49 +122,123 @@ public class BinaryDatReader : MonoBehaviour
         m_typesDict.Add(10000, new FieldData() { m_fldType = typeof(string), DoConvert = l_str, m_strln = 0 });
     }
 
-    static Dictionary<int, Round2.BinaryInitializable> m_descriptors = new Dictionary<int, Round2.BinaryInitializable>();
+    static Dictionary<int, System.Func<Round2.BinaryInitializable>> m_descriptors = new Dictionary<int, System.Func<Round2.BinaryInitializable>>();
+
+    internal static T GetByLinkId<T>(int id) where T : Round2.BinaryInitializable
+    {
+        return GetById<T>(l_currentFile.GetDescriptor(id).Index);
+    }
 
     internal static T GetById<T>(int id) where T : Round2.BinaryInitializable
     {
-        return (T)m_descriptors[id];
+        if (typeof(T) == typeof(Round2.Generated.Binary.Raw))
+        {
+            return (T)((Round2.BinaryInitializable)new Round2.Generated.Binary.Raw() { l_addr = id });    
+        }
+
+        Debug.Log("pending key " + id);
+        return (T)m_descriptors[id]();
     }
 
-    static T Construct<T>(int id, Oni.InstanceDescriptor ides) where T: Round2.BinaryInitializable,  new()
+    static System.Func<Round2.BinaryInitializable> InitializeLoader(int id, Oni.InstanceDescriptor ides, string resultTypeName)
     {
-        if (m_descriptors.ContainsKey(id))
+        try
         {
-            return (T)m_descriptors[id];
+            using (Oni.BinaryReader reader = ides.OpenRead())
+            {
+                List<byte> l_bytes = new List<byte>(System.BitConverter.GetBytes(ides.Index));
+                l_bytes.AddRange(System.BitConverter.GetBytes(-1));//re-define for current level usage
+                l_bytes.AddRange(ides.OpenRead().ReadBytes(ides.DataSize));
+                System.Type l_t = typeof(Round2.BinaryInitializable).Assembly.GetType(resultTypeName);//add Round2.Generated.Binary. before typename!
+                object l_res = System.Activator.CreateInstance(l_t);
+
+                System.Func<Round2.BinaryInitializable> l_resultingLoader = () =>
+                    {
+                        (l_res as Round2.BinaryInitializable).Convert(l_bytes.ToArray());
+                        m_descriptors.Remove(id);
+                        m_descriptors.Add(id, () => l_res as Round2.BinaryInitializable);
+                        return l_res as Round2.BinaryInitializable;
+                    };
+
+                m_descriptors.Add(id, l_resultingLoader);
+            }
+
+        }
+        catch (System.Exception ee)
+        {
+            Debug.Log("Exception at id : " + id + "\n" + ee.ToString());
         }
 
-        using (Oni.BinaryReader reader = ides.OpenRead())
-        {
-            List<byte> l_bytes = new List<byte>(System.BitConverter.GetBytes(ides.Index));
-            l_bytes.AddRange(System.BitConverter.GetBytes(-1));//re-define for current level usage
-            l_bytes.AddRange(ides.OpenRead().ReadBytes(ides.DataSize));
-            T l_obj = new T();
-            l_obj.Convert(l_bytes.ToArray());
-            m_descriptors.Add(id, l_obj);
-            return l_obj;
-        }
+        return null;
     }
-
-    
 
     void Start()
     {
-        StartCoroutine(_Start());
+        _Start();
     }
 
-    IEnumerator _Start()
+    static Oni.InstanceFile l_currentFile;
+
+    void _Start()
     {
         Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
-        Oni.InstanceFile level0 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
-        Oni.InstanceFile level1 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
+        //Oni.InstanceFile level0 = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
+        l_currentFile = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
+        System.DateTime l_dt = System.DateTime.Now;
+        foreach (Oni.InstanceDescriptor ides in l_currentFile.Descriptors)
+        {
+            InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + ides.Template.Tag);
+            switch (ides.Template.Tag)
+            { 
+                case Oni.TemplateTag.BINA:
+                    break;
+            }
+            /*switch (ides.Template.Tag)
+            {
+                
+                case Oni.TemplateTag.ONLV:
+                    Debug.Log(ides.DataSize);
+                    System.DateTime l_dt = System.DateTime.Now;
+                    Round2.Generated.Binary.ONLV l_lvl = Construct<Round2.Generated.Binary.ONLV>(ides.Index, ides);
+                    Debug.Log("loaded in" + (System.DateTime.Now - l_dt));
+                    Debug.Log(l_lvl.m_File_id_0);
+                    Debug.Log(ides.Index);
+                    Debug.Log(l_lvl.m_Level_name_8);
+                    Debug.Log(l_lvl.m_AKEV_Link_48.Value);
+                    return;
+            }
+             * */
+        }
 
+        foreach (Oni.InstanceDescriptor ides in l_currentFile.Descriptors)
+        {
+            switch (ides.Template.Tag)
+            {
+
+                case Oni.TemplateTag.AKEV:
+                    Debug.Log(ides.Index);
+                    Debug.Log(ides.DataOffset);
+                    break;
+                case Oni.TemplateTag.ONLV:
+                    Debug.Log(ides.DataSize);
+                    
+                    Round2.Generated.Binary.ONLV l_lvl = GetById<Round2.Generated.Binary.ONLV>(ides.Index);
+                    Debug.Log(l_lvl.m_AKEV_Link_48.Value.m_File_id_0);
+                   
+                    break;
+            }
+        }
+
+        Debug.Log("initialization is over in " + (System.DateTime.Now -  l_dt).Milliseconds + " ms");
+    }
+
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Round2/Draw binary readers")]
+#endif
+    private static void DrawBinaryReaders()
+    {
         foreach (string s in System.IO.Directory.GetFiles(System.IO.Path.Combine(Application.streamingAssetsPath, "DatDefinitions"), "*.txt"))
         {
-            yield return null;
-
             Debug.Log(s);
             List<string> l_lines = System.IO.File.ReadAllLines(s).ToList();
             l_lines.Add("");
@@ -184,7 +255,7 @@ public class BinaryDatReader : MonoBehaviour
             l_sourceMaker.Append(l_typename);
             l_sourceMaker.AppendLine(": Round2.BinaryInitializable");
             l_sourceMaker.AppendLine("  {");
-           
+
             int l_biggestBytesNeeded = 0;
             bool l_pkgMode = false;
             int l_pkgOffset = 0;
@@ -203,7 +274,7 @@ public class BinaryDatReader : MonoBehaviour
                 if (currStr[0] == '*')
                 {
                     l_pkgMode = true;
-                    Debug.Log(">>"+l_definition.Length);
+                    Debug.Log(">>" + l_definition.Length);
                     l_pkgOffset = int.Parse(l_definition[2].Remove(0, 1), System.Globalization.NumberStyles.HexNumber);
                     Debug.Log(l_typename);
                     l_pkgsize = int.Parse(l_definition[5]);
@@ -227,7 +298,7 @@ public class BinaryDatReader : MonoBehaviour
                 {
                     Debug.Log(currStr);
                     string l_fldName = ConvertName(l_definition[0]);
-                    
+
                     int l_fldOffset = int.Parse(l_definition[1].Remove(0, 1), System.Globalization.NumberStyles.HexNumber);
 
                     if (l_fldName == "Packages")
@@ -271,7 +342,7 @@ public class BinaryDatReader : MonoBehaviour
 
                         if (l_pkgMode)
                         {
-                            l_convertionSource.Append( l_pkgOffset );
+                            l_convertionSource.Append(l_pkgOffset);
                             l_convertionSource.Append("+");
                             l_convertionSource.Append("j * ");
                             l_convertionSource.Append(l_pkgsize);
@@ -346,29 +417,13 @@ public class BinaryDatReader : MonoBehaviour
             l_sourceMaker.AppendLine("}");
             Debug.Log(l_sourceMaker.ToString());
             string l_filepath = "";
-            l_filepath = System.IO.Path.Combine( System.IO.Path.Combine(System.IO.Path.Combine(Application.dataPath, "Deserializable"), "Binary"), System.IO.Path.GetFileNameWithoutExtension(s)) + ".cs";
+            l_filepath = System.IO.Path.Combine(System.IO.Path.Combine(System.IO.Path.Combine(Application.dataPath, "Deserializable"), "Binary"), System.IO.Path.GetFileNameWithoutExtension(s)) + ".cs";
             System.IO.File.WriteAllText(l_filepath, l_sourceMaker.ToString());
             //UnityEditor.AssetDatabase.Refresh(UnityEditor.ImportAssetOptions.ForceUpdate);
             //Debug.Log(l_convertionSource.ToString());
         }
 
-        /*
-        foreach (Oni.InstanceDescriptor ides in level1.Descriptors)
-        {
-            switch (ides.Template.Tag)
-            {
-                case Oni.TemplateTag.M3GA:
-                    Debug.Log(ides.DataSize);
-                    
-                    Round2.Generated.Binary.M3GA M3GA = Construct<Round2.Generated.Binary.M3GA>(ides.Index, ides);
-                    Debug.Log(M3GA.File_id_0);
-                    Debug.Log(M3GA.m_pkg_20[0].M3GM_link_0);
-                    Debug.Log(ides.Name);
-                    Debug.Log(level1.GetDescriptor(M3GA.m_pkg_20[0].M3GM_link_0).Name);
-                    Debug.Log(ides.Index);
-                    break;
-            }
-        }*/
+        Debug.Log("Drawing is over");
     }
 
     private static void WriteStructField(StringBuilder l_sourceMaker, string l_fldName, int l_fldOffset, string l_fldType, string l_fldComment, bool isLocal = false, string initialization = null)
@@ -377,27 +432,58 @@ public class BinaryDatReader : MonoBehaviour
         l_sourceMaker.Append("      ///");
         l_sourceMaker.AppendLine(l_fldComment);
         l_sourceMaker.AppendLine("      /// </summary>");
+        bool l_lnkFlag = false;
+        string l_lnkType = "";
 
-        if(!isLocal)
+        if (!l_fldName.EndsWith("link") && (!l_fldName.EndsWith("Link")))
         {
-            l_sourceMaker.Append("      public System.");
+            if (!isLocal)
+            {
+                l_sourceMaker.Append("      public System.");
+            }
+            else
+            {
+                l_sourceMaker.Append("      public ");
+            }
+
+            l_sourceMaker.Append(l_fldType);
         }
         else
         {
-            l_sourceMaker.Append("      public ");
+            l_lnkFlag = true;
+            l_sourceMaker.Append("      public Link<");
+            l_lnkType = l_fldName.Split('_')[0];
+
+            if (l_fldName.Count(c => c == '_') > 1)//hack for WMM_ filetype
+            {
+                l_lnkType += "_";
+            }
+
+            l_sourceMaker.Append(l_lnkType);
+            l_sourceMaker.Append(">");
         }
 
-        l_sourceMaker.Append(l_fldType);
         l_sourceMaker.Append(" ");
         l_sourceMaker.Append("m_");
         l_sourceMaker.Append(l_fldName);
         l_sourceMaker.Append("_");
         l_sourceMaker.Append(l_fldOffset.ToString("X"));
 
-        if (initialization != null)
+        if (l_lnkFlag)
         {
             l_sourceMaker.Append(" = ");
-            l_sourceMaker.Append(initialization);
+            l_sourceMaker.Append(" new ");
+            l_sourceMaker.Append("Link<");
+            l_sourceMaker.Append(l_lnkType);
+            l_sourceMaker.Append(">()");
+        }
+        else
+        {
+            if (initialization != null)
+            {
+                l_sourceMaker.Append(" = ");
+                l_sourceMaker.Append(initialization);
+            }
         }
 
         l_sourceMaker.AppendLine(";");
@@ -447,6 +533,25 @@ namespace Round2
     }
 }
 
+namespace Round2
+{
+    namespace Generated
+    {
+        namespace Binary
+        {
+            internal class Raw : Round2.BinaryInitializable
+            {
+                public int l_addr;
+
+                public void Convert(byte[] data)
+                {
+                    //shouldn't be called anyway, huh?
+                    throw new System.Exception("Don't forget to not use this stuff!");
+                }
+            }
+        }
+    }
+}
 
 namespace Round2
 {
@@ -456,9 +561,9 @@ namespace Round2
         {
             internal class Link<T> where T : Round2.BinaryInitializable
             {
-                int m_lnkId;
+                public int m_lnkId;
 
-                public static explicit operator Link<T>(int lnkid)
+                public static implicit operator Link<T>(int lnkid)
                 {
                     return new Link<T>() { m_lnkId = (int)lnkid };
                 }
@@ -467,7 +572,7 @@ namespace Round2
                 {
                     get
                     { 
-                        return BinaryDatReader.GetById<T>(m_lnkId);
+                        return BinaryDatReader.GetByLinkId<T>(m_lnkId);
                     }
                 }
             }

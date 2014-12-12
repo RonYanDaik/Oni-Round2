@@ -13,71 +13,71 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the 3D Point Array
       /// </summary>
-      public System.Int32 m_PNTA_link_8;
+      public Link<PNTA> m_PNTA_link_8 =  new Link<PNTA>();
       /// <summary>
       ///Link to the Plane Equation Array
       /// </summary>
-      public System.Int32 m_PLEA_link_C;
+      public Link<PLEA> m_PLEA_link_C =  new Link<PLEA>();
       /// <summary>
       ///Link to the Texture Coordinate Array
       /// </summary>
-      public System.Int32 m_TXCA_link_10;
+      public Link<TXCA> m_TXCA_link_10 =  new Link<TXCA>();
       /// <summary>
       ///Link to the Gunk Quad General Array
       /// </summary>
-      public System.Int32 m_AGQG_link_14;
+      public Link<AGQG> m_AGQG_link_14 =  new Link<AGQG>();
       /// <summary>
       ///Link to the Gunk Quad Render Array
       /// </summary>
-      public System.Int32 m_AGQR_link_18;
+      public Link<AGQR> m_AGQR_link_18 =  new Link<AGQR>();
       /// <summary>
       ///Link to the Gunk Quad Collision Array
       /// </summary>
-      public System.Int32 m_AGQC_link_1C;
+      public Link<AGQC> m_AGQC_link_1C =  new Link<AGQC>();
       /// <summary>
       ///Link to the Gunk Quad Debug Array
       /// </summary>
-      public System.Int32 m_AGDB_link_20;
+      public Link<AGDB> m_AGDB_link_20 =  new Link<AGDB>();
       /// <summary>
       ///Link to the Texture Map Array
       /// </summary>
-      public System.Int32 m_TXMA_link_24;
+      public Link<TXMA> m_TXMA_link_24 =  new Link<TXMA>();
       /// <summary>
       ///Link to the BNV Node Array
       /// </summary>
-      public System.Int32 m_AKVA_link_28;
+      public Link<AKVA> m_AKVA_link_28 =  new Link<AKVA>();
       /// <summary>
       ///Link to the Side Array
       /// </summary>
-      public System.Int32 m_AKBA_link_2C;
+      public Link<AKBA> m_AKBA_link_2C =  new Link<AKBA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_30;
+      public Link<IDXA> m_IDXA_link_30 =  new Link<IDXA>();
       /// <summary>
       ///Link to the Index Array
       /// </summary>
-      public System.Int32 m_IDXA_link_34;
+      public Link<IDXA> m_IDXA_link_34 =  new Link<IDXA>();
       /// <summary>
       ///Link to the BSP Node Array
       /// </summary>
-      public System.Int32 m_AKBP_link_38;
+      public Link<AKBP> m_AKBP_link_38 =  new Link<AKBP>();
       /// <summary>
       ///Link to the BSP Tree Node Array
       /// </summary>
-      public System.Int32 m_ABNA_link_3C;
+      public Link<ABNA> m_ABNA_link_3C =  new Link<ABNA>();
       /// <summary>
       ///Link to the Oct Tree
       /// </summary>
-      public System.Int32 m_AKOT_link_40;
+      public Link<AKOT> m_AKOT_link_40 =  new Link<AKOT>();
       /// <summary>
       ///Link to the Adjacency Array
       /// </summary>
-      public System.Int32 m_AKAA_link_44;
+      public Link<AKAA> m_AKAA_link_44 =  new Link<AKAA>();
       /// <summary>
       ///Link to the Door Frame Array
       /// </summary>
-      public System.Int32 m_AKDA_link_48;
+      public Link<AKDA> m_AKDA_link_48 =  new Link<AKDA>();
       /// <summary>
       ///Maximal negative x-coordinate of the level model
       /// </summary>

@@ -17,7 +17,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Font Language
       /// </summary>
-      public System.Int32 m_TSFL_link_18;
+      public Link<TSFL> m_TSFL_link_18 =  new Link<TSFL>();
       /// <summary>
       ///Amount of packages that follow
       /// </summary>
@@ -74,7 +74,7 @@ public class Package
       /// <summary>
       ///Link to the Font
       /// </summary>
-      public System.Int32 m_TRAS_link_0;
+      public Link<TRAS> m_TRAS_link_0 =  new Link<TRAS>();
 }
 
   }

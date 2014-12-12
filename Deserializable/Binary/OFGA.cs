@@ -109,7 +109,7 @@ public class Package
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_4;
+      public Link<M3GM> m_M3GM_link_4 =  new Link<M3GM>();
       /// <summary>
       ///Unknown
       /// </summary>

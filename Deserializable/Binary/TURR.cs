@@ -41,7 +41,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_60;
+      public Link<M3GM> m_M3GM_link_60 =  new Link<M3GM>();
       /// <summary>
       ///Unknown; always the same; maybe a canceled link
       /// </summary>
@@ -53,7 +53,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_6C;
+      public Link<M3GM> m_M3GM_link_6C =  new Link<M3GM>();
       /// <summary>
       ///Unknown; always the same; maybe a canceled link
       /// </summary>
@@ -61,7 +61,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the Geometry
       /// </summary>
-      public System.Int32 m_M3GM_link_74;
+      public Link<M3GM> m_M3GM_link_74 =  new Link<M3GM>();
       /// <summary>
       ///Unknown; always the same; maybe a canceled link
       /// </summary>

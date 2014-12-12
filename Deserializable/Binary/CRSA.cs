@@ -2907,7 +2907,7 @@ public class Package
       /// <summary>
       ///Link to the Character Class
       /// </summary>
-      public System.Int32 m_ONCC_link_A0;
+      public Link<ONCC> m_ONCC_link_A0 =  new Link<ONCC>();
       /// <summary>
       ///x-position of the 1st point of an equilateral triangle
       /// </summary>

@@ -21,7 +21,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Link to the next higher Material
       /// </summary>
-      public System.Int32 m_Mtrl_link_10;
+      public Link<Mtrl> m_Mtrl_link_10 =  new Link<Mtrl>();
       /// <summary>
       ///Not used
       /// </summary>

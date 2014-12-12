@@ -157,7 +157,7 @@ namespace Round2.Generated.Binary
       /// <summary>
       ///Corresponding texture
       /// </summary>
-      public System.Int32 m_TXMP_Link_50;
+      public Link<TXMP> m_TXMP_Link_50 =  new Link<TXMP>();
 
       public void Convert(byte[] data)
       {
