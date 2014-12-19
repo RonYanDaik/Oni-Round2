@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class VCRA: Round2.BinaryInitializable
+  internal partial class VCRA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_x_coordinate_0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -70,7 +69,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_y_coordinate_4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -84,7 +82,7 @@ l_pkg.m_z_coordinate_8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///x-coordinate of the vector

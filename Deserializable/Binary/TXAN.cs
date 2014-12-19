@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class TXAN: Round2.BinaryInitializable
+  internal partial class TXAN: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -96,7 +96,7 @@ l_pkg.m_TXMP_link_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Image which is used for the texture animation

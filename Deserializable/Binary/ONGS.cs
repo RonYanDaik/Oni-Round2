@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONGS: Round2.BinaryInitializable
+  internal partial class ONGS: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -805,7 +805,6 @@ l_pkg = m_pkg_B04[j] == null ?  m_pkg_B04[j] = new Package() :   m_pkg_B04[j];
 l_pkg.m_Item_name_0 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_B04 = new Package[this.m_Packages_B00];
 for (int j=0;j<this.m_Packages_B00;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -817,7 +816,6 @@ l_pkg = m_pkg_B04[j] == null ?  m_pkg_B04[j] = new Package() :   m_pkg_B04[j];
 l_pkg.m_First_level_20 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_B04 = new Package[this.m_Packages_B00];
 for (int j=0;j<this.m_Packages_B00;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -829,7 +827,6 @@ l_pkg = m_pkg_B04[j] == null ?  m_pkg_B04[j] = new Package() :   m_pkg_B04[j];
 l_pkg.m_Last_level_22 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_B04 = new Package[this.m_Packages_B00];
 for (int j=0;j<this.m_Packages_B00;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -843,7 +840,7 @@ l_pkg.m_Raw_file_anchor_24 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Name of the item

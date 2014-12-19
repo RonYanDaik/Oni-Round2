@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONMA: Round2.BinaryInitializable
+  internal partial class ONMA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Light_name_0 = (System.String)BinaryDatReader.l_str(l_bytes, 64);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -70,7 +69,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_x_position_40 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -82,7 +80,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_y_position_44 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -94,7 +91,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_z_position_48 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -106,7 +102,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_4C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -118,7 +113,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_50 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -132,7 +126,7 @@ l_pkg.m_Unknown_54 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Name of the light

@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONCP: Round2.BinaryInitializable
+  internal partial class ONCP: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Particle_name_0 = (System.String)BinaryDatReader.l_str(l_bytes, 16);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -70,7 +69,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Particle_reference_10 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -82,7 +80,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Bodypart_50 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -94,7 +91,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_52 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -108,7 +104,7 @@ l_pkg.m_Unknown_54 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Name of the particle (all entries after the first 00 are useless)

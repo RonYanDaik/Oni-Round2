@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class FILM: Round2.BinaryInitializable
+  internal partial class FILM: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -148,7 +148,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Camera_angle_0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -160,7 +159,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Character_rotation_4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -172,7 +170,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Unknown_8 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -184,7 +181,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Movement_A = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -196,7 +192,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Unknown_B = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -208,7 +203,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Unknown_C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -220,7 +214,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Frames_to_go_10 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -232,7 +225,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Unknown_14 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -246,7 +238,7 @@ l_pkg.m_Unknown_16 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Camera angle in degrees (up / down)

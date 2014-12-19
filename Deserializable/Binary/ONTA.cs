@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONTA: Round2.BinaryInitializable
+  internal partial class ONTA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -69,7 +69,7 @@ l_pkg.m_Unknown_0 = (System.Int32)BinaryDatReader.ConverterStub(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Unknown; never used in Oni

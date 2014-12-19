@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class AISA: Round2.BinaryInitializable
+  internal partial class AISA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_0 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -70,7 +69,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Charcter_id_20 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -82,7 +80,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Flag_id_22 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -94,7 +91,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_24 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -106,7 +102,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_26 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -118,7 +113,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_ONCC_link_28 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -130,7 +124,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_2C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -142,7 +135,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_30 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -154,7 +146,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Spawn_function_50 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -166,7 +157,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Lose_function_70 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -178,7 +168,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Alert_function_90 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -190,7 +179,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_B0 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -202,7 +190,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Hit_function_D0 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -214,7 +201,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Health___1_function_F0 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -226,7 +212,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Reload_function_110 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<32; i++)
          {
@@ -238,7 +223,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_130 = (System.String)BinaryDatReader.l_str(l_bytes, 32);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -250,7 +234,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_154 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -262,7 +245,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_156 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -274,7 +256,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_158 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -288,7 +269,7 @@ l_pkg.m_Unknown_15C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///unknown; always zero; maybe space for notes

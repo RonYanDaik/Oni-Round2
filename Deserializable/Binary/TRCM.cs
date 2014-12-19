@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class TRCM: Round2.BinaryInitializable
+  internal partial class TRCM: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id

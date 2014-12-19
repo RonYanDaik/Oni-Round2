@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class TRAC: Round2.BinaryInitializable
+  internal partial class TRAC: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -76,7 +76,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -88,7 +87,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Not_used_4 = (System.Int32)BinaryDatReader.ConverterStub(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -102,7 +100,7 @@ l_pkg.m_TRAM_link_8 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Unknown

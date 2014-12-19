@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class CBPI: Round2.BinaryInitializable
+  internal partial class CBPI: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id

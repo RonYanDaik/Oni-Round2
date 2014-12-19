@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class TRAM: Round2.BinaryInitializable
+  internal partial class TRAM: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id

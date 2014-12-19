@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class IGHH: Round2.BinaryInitializable
+  internal partial class IGHH: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -112,7 +112,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Text_field_0 = (System.String)BinaryDatReader.l_str(l_bytes, 64);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -124,7 +123,6 @@ l_pkg = m_pkg_40[j] == null ?  m_pkg_40[j] = new Package() :   m_pkg_40[j];
 l_pkg.m_Text_x_position_40 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_40 = new Package[this.m_Packages_3C];
 for (int j=0;j<this.m_Packages_3C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -138,7 +136,7 @@ l_pkg.m_Text_y_position_42 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Text field (all entries after the fist 00 are useless)

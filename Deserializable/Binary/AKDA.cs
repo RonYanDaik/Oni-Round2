@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class AKDA: Round2.BinaryInitializable
+  internal partial class AKDA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Unknown_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -70,7 +69,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Low_left_x_coordinate_4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -82,7 +80,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Low_left_y_coordinate_8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -94,7 +91,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Low_left_z_coordinate_C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -106,7 +102,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Up_right_x_coordinate_10 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -118,7 +113,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Up_right_y_coordinate_14 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -130,7 +124,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Up_right_z_coordinate_18 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -142,7 +135,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Center_x_coordinate_1C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -154,7 +146,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Center_y_coordinate_20 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -166,7 +157,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Center_z_coordinate_24 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -178,7 +168,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Depth_28 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -190,7 +179,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Width_2C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -204,7 +192,7 @@ l_pkg.m_Height_30 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Unknown

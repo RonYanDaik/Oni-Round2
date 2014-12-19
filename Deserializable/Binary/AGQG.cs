@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class AGQG: Round2.BinaryInitializable
+  internal partial class AGQG: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -55,10 +55,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_pnta_id_1_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -67,10 +66,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_4 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_pnta_id_2_4 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -79,10 +77,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_8 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_pnta_id_3_8 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -91,10 +88,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_pnta_id_4_C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -103,10 +99,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_10 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_txca_id_1_10 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -115,10 +110,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_14 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_txca_id_2_14 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -127,10 +121,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_18 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_txca_id_3_18 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -139,106 +132,53 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_1C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_txca_id_4_1C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32+j * 56+32];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_20 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_argb_vrtx_color_1_20 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 56+34];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_22 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1C];
-for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32+j * 56+36];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_24 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_argb_vrtx_color_2_24 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 56+38];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_26 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1C];
-for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32+j * 56+40];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_28 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_argb_vrtx_color_3_28 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 56+42];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_2A = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1C];
-for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32+j * 56+44];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_2C = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_argb_vrtx_color_4_2C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
-for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 56+46];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_2E = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -247,113 +187,80 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_30 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_flags_30 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<2; i++)
-         {
-             l_bytes[i] = data[i + 32+j * 56+50];
-         }
-{
-Package l_pkg;
-l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_32 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
-}
-}
-m_pkg_20 = new Package[this.m_Packages_1C];
-for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32+j * 56+52];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_34 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_obj_id_34 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
-      ///Unknown
+      ///pnta id of first vertex
       /// </summary>
-      public System.Int32 m_Unknown_0;
+      public System.Int32 m_pnta_id_1_0;
       /// <summary>
-      ///Unknown
+      ///pnta id of second vertex
       /// </summary>
-      public System.Int32 m_Unknown_4;
+      public System.Int32 m_pnta_id_2_4;
       /// <summary>
-      ///Unknown
+      ///pnta id of third vertex
       /// </summary>
-      public System.Int32 m_Unknown_8;
+      public System.Int32 m_pnta_id_3_8;
       /// <summary>
-      ///Unknown
+      ///pnta id of fourth vertex
       /// </summary>
-      public System.Int32 m_Unknown_C;
+      public System.Int32 m_pnta_id_4_C;
       /// <summary>
-      ///Unknown
+      ///txca id of first vertex
       /// </summary>
-      public System.Int32 m_Unknown_10;
+      public System.Int32 m_txca_id_1_10;
       /// <summary>
-      ///Unknown
+      ///txca id of second vertex
       /// </summary>
-      public System.Int32 m_Unknown_14;
+      public System.Int32 m_txca_id_2_14;
       /// <summary>
-      ///Unknown
+      ///txca id of third vertex
       /// </summary>
-      public System.Int32 m_Unknown_18;
+      public System.Int32 m_txca_id_3_18;
       /// <summary>
-      ///Unknown
+      ///txca id of fourth vertex
       /// </summary>
-      public System.Int32 m_Unknown_1C;
+      public System.Int32 m_txca_id_4_1C;
       /// <summary>
-      ///Unknown
+      ///color of vertex 1
       /// </summary>
-      public System.Int16 m_Unknown_20;
+      public System.Int32 m_argb_vrtx_color_1_20;
       /// <summary>
-      ///Unknown
+      ///color of vertex 2
       /// </summary>
-      public System.Int16 m_Unknown_22;
+      public System.Int32 m_argb_vrtx_color_2_24;
       /// <summary>
-      ///Unknown
+      ///color of vertex 3
       /// </summary>
-      public System.Int16 m_Unknown_24;
+      public System.Int32 m_argb_vrtx_color_3_28;
       /// <summary>
-      ///Unknown
+      ///color of vertex 4
       /// </summary>
-      public System.Int16 m_Unknown_26;
+      public System.Int32 m_argb_vrtx_color_4_2C;
       /// <summary>
-      ///Unknown
+      ///flags (see definition at http://wiki.oni2.net/OBD:AGQG)
       /// </summary>
-      public System.Int16 m_Unknown_28;
+      public System.Int16 m_flags_30;
       /// <summary>
-      ///Unknown
+      ///id of ONOA object belong to (if -1 then belongs to satan or something)
       /// </summary>
-      public System.Int16 m_Unknown_2A;
-      /// <summary>
-      ///Unknown
-      /// </summary>
-      public System.Int16 m_Unknown_2C;
-      /// <summary>
-      ///Unknown
-      /// </summary>
-      public System.Int16 m_Unknown_2E;
-      /// <summary>
-      ///Unknown
-      /// </summary>
-      public System.Int16 m_Unknown_30;
-      /// <summary>
-      ///Unknown
-      /// </summary>
-      public System.Int16 m_Unknown_32;
-      /// <summary>
-      ///Unknown
-      /// </summary>
-      public System.Int32 m_Unknown_34;
+      public System.Int16 m_obj_id_34;
 }
 
   }

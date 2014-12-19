@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class PSPC: Round2.BinaryInitializable
+  internal partial class PSPC: Round2.BinaryInitializable
   {
       /// <summary>
       ///Empty comment

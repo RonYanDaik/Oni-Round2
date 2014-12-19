@@ -8,7 +8,24 @@ public static class Extensions
 {
     const string SMLSIG = "[ SML :: ";
 
-    internal static LinkedList<T2> ConvertAll<T1,T2> (this LinkedList<T1> @this, Func<T1,T2> predicate)
+    internal static bool Contains<T1, T2>(this Dictionary<T1, T2> dict, T1 key, T2 value)
+    {
+        return dict.ContainsKey(key) && (object)dict[key] == (object)value;
+    }
+
+    internal static T2[] ConvertAll<T1, T2>(this T1[] @this, Func<T1, T2> predicate)
+    { 
+        T2[] l_res = new T2[@this.Length];
+
+        for (int i = 0; i < l_res.Length; i++)
+        {
+            l_res[i] = predicate(@this[i]);
+        }
+
+        return l_res;
+    }
+
+    internal static LinkedList<T2> ConvertAll<T1, T2>(this LinkedList<T1> @this, Func<T1, T2> predicate)
     {
         LinkedList<T2> l_newest = new LinkedList<T2>();
 

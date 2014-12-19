@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class IDXA: Round2.BinaryInitializable
+  internal partial class IDXA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -58,7 +58,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Index_id_0 = (System.Int32)BinaryDatReader.l_int24(l_bytes, 3);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -72,7 +71,7 @@ l_pkg.m_High_bit_3 = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Index id

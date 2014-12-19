@@ -4,22 +4,17 @@ Level id	$04	17	Level id
 Not used	$08	1020	Not used
 Packages	$1C	4	Amount of packages that follow
 *Package		$20	$1C	4	56
-Unknown	$00	4	Unknown
-Unknown	$04	4	Unknown
-Unknown	$08	4	Unknown
-Unknown	$0C	4	Unknown
-Unknown	$10	4	Unknown
-Unknown	$14	4	Unknown
-Unknown	$18	4	Unknown
-Unknown	$1C	4	Unknown
-Unknown	$20	2	Unknown
-Unknown	$22	2	Unknown
-Unknown	$24	2	Unknown
-Unknown	$26	2	Unknown
-Unknown	$28	2	Unknown
-Unknown	$2A	2	Unknown
-Unknown	$2C	2	Unknown
-Unknown	$2E	2	Unknown
-Unknown	$30	2	Unknown
-Unknown	$32	2	Unknown
-Unknown	$34	4	Unknown
+pnta_id_1	$00	4	pnta id of first vertex
+pnta_id_2	$04	4	pnta id of second vertex
+pnta_id_3	$08	4	pnta id of third vertex
+pnta_id_4	$0C	4	pnta id of fourth vertex
+txca_id_1	$10	4	txca id of first vertex
+txca_id_2	$14	4	txca id of second vertex
+txca_id_3	$18	4	txca id of third vertex
+txca_id_4	$1C	4	txca id of fourth vertex
+argb_vrtx_color_1	$20	4	color of vertex 1
+argb_vrtx_color_2	$24	4	color of vertex 2
+argb_vrtx_color_3	$28	4	color of vertex 3
+argb_vrtx_color_4	$2C	4	color of vertex 4
+flags	$30	2	flags (see definition at http://wiki.oni2.net/OBD:AGQG)
+obj_id	$34	2	id of ONOA object belong to (if -1 then belongs to satan or something)

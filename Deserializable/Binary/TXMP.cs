@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class TXMP: Round2.BinaryInitializable
+  internal partial class TXMP: Round2.BinaryInitializable
   {
       /// <summary>
       ///ID of this file

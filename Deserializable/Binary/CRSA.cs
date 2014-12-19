@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class CRSA: Round2.BinaryInitializable
+  internal partial class CRSA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -76,7 +76,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Old_file_name_0 = (System.String)BinaryDatReader.l_str(l_bytes, 160);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -88,7 +87,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_ONCC_link_A0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -100,7 +98,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -112,7 +109,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_A8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -124,7 +120,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_AC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -136,7 +131,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_B0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -148,7 +142,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_B4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -160,7 +153,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_B8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -172,7 +164,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_BC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -184,7 +175,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_C0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -196,7 +186,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_C4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -208,7 +197,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Pelvis_x_position_C8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -220,7 +208,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Pelvis_y_position_CC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -232,7 +219,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Pelvis_z_position_D0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -244,7 +230,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_D4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -256,7 +241,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_D8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -268,7 +252,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_DC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -280,7 +263,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_E0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -292,7 +274,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_E4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -304,7 +285,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_E8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -316,7 +296,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_EC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -328,7 +307,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_F0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -340,7 +318,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_F4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -352,7 +329,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_thigh_x_position_F8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -364,7 +340,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_thigh_y_position_FC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -376,7 +351,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_thigh_z_position_100 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -388,7 +362,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_104 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -400,7 +373,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_108 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -412,7 +384,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_10C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -424,7 +395,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_110 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -436,7 +406,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_114 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -448,7 +417,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_118 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -460,7 +428,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_11C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -472,7 +439,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_120 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -484,7 +450,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_124 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -496,7 +461,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_calf_x_position_128 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -508,7 +472,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_calf_y_position_12C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -520,7 +483,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_calf_z_position_130 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -532,7 +494,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_134 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -544,7 +505,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_138 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -556,7 +516,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_13C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -568,7 +527,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_140 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -580,7 +538,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_144 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -592,7 +549,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_148 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -604,7 +560,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_14C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -616,7 +571,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_150 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -628,7 +582,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_154 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -640,7 +593,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_foot_x_position_158 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -652,7 +604,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_foot_y_position_15C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -664,7 +615,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_foot_z_position_160 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -676,7 +626,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_164 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -688,7 +637,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_168 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -700,7 +648,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_16C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -712,7 +659,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_170 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -724,7 +670,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_174 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -736,7 +681,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_178 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -748,7 +692,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_17C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -760,7 +703,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_180 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -772,7 +714,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_184 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -784,7 +725,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_thigh_x_position_188 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -796,7 +736,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_thigh_y_position_18C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -808,7 +747,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_thigh_z_position_190 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -820,7 +758,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_194 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -832,7 +769,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_198 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -844,7 +780,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_19C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -856,7 +791,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_1A0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -868,7 +802,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_1A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -880,7 +813,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_1A8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -892,7 +824,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_1AC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -904,7 +835,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_1B0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -916,7 +846,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_1B4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -928,7 +857,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_calf_x_position_1B8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -940,7 +868,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_calf_y_position_1BC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -952,7 +879,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_calf_z_position_1C0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -964,7 +890,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_1C4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -976,7 +901,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_1C8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -988,7 +912,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_1CC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1000,7 +923,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_1D0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1012,7 +934,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_1D4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1024,7 +945,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_1D8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1036,7 +956,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_1DC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1048,7 +967,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_1E0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1060,7 +978,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_1E4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1072,7 +989,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_foot_x_position_1E8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1084,7 +1000,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_foot_y_position_1EC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1096,7 +1011,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_foot_z_position_1F0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1108,7 +1022,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_1F4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1120,7 +1033,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_1F8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1132,7 +1044,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_1FC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1144,7 +1055,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_200 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1156,7 +1066,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_204 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1168,7 +1077,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_208 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1180,7 +1088,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_20C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1192,7 +1099,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_210 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1204,7 +1110,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_214 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1216,7 +1121,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Mid_x_position_218 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1228,7 +1132,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Mid_y_position_21C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1240,7 +1143,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Mid_z_position_220 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1252,7 +1154,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_224 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1264,7 +1165,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_228 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1276,7 +1176,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_22C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1288,7 +1187,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_230 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1300,7 +1198,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_234 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1312,7 +1209,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_238 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1324,7 +1220,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_23C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1336,7 +1231,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_240 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1348,7 +1242,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_244 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1360,7 +1253,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Chest_x_position_248 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1372,7 +1264,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Chest_y_position_24C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1384,7 +1275,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Chest_z_position_250 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1396,7 +1286,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_254 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1408,7 +1297,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_258 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1420,7 +1308,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_25C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1432,7 +1319,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_260 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1444,7 +1330,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_264 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1456,7 +1341,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_268 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1468,7 +1352,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_26C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1480,7 +1363,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_270 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1492,7 +1374,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_274 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1504,7 +1385,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Neck_x_position_278 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1516,7 +1396,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Neck_y_position_27C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1528,7 +1407,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Neck_z_position_280 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1540,7 +1418,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_284 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1552,7 +1429,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_288 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1564,7 +1440,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_28C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1576,7 +1451,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_290 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1588,7 +1462,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_294 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1600,7 +1473,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_298 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1612,7 +1484,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_29C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1624,7 +1495,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_2A0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1636,7 +1506,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_2A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1648,7 +1517,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Head_x_position_2A8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1660,7 +1528,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Head_y_position_2AC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1672,7 +1539,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Head_z_position_2B0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1684,7 +1550,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_2B4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1696,7 +1561,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_2B8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1708,7 +1572,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_2BC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1720,7 +1583,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_2C0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1732,7 +1594,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_2C4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1744,7 +1605,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_2C8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1756,7 +1616,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_2CC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1768,7 +1627,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_2D0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1780,7 +1638,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_2D4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1792,7 +1649,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_shoulder_x_position_2D8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1804,7 +1660,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_shoulder_y_position_2DC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1816,7 +1671,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_shoulder_z_position_2E0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1828,7 +1682,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_2E4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1840,7 +1693,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_2E8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1852,7 +1704,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_2EC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1864,7 +1715,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_2F0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1876,7 +1726,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_2F4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1888,7 +1737,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_2F8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1900,7 +1748,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_2FC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1912,7 +1759,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_300 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1924,7 +1770,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_304 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1936,7 +1781,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_bicep_x_position_308 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1948,7 +1792,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_bicep_y_position_30C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1960,7 +1803,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_bicep_z_position_310 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1972,7 +1814,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_314 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1984,7 +1825,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_318 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -1996,7 +1836,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_31C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2008,7 +1847,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_320 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2020,7 +1858,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_324 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2032,7 +1869,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_328 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2044,7 +1880,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_32C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2056,7 +1891,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_330 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2068,7 +1902,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_334 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2080,7 +1913,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_wrist_x_position_338 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2092,7 +1924,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_wrist_y_position_33C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2104,7 +1935,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_wrist_z_position_340 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2116,7 +1946,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_344 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2128,7 +1957,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_348 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2140,7 +1968,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_34C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2152,7 +1979,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_350 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2164,7 +1990,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_354 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2176,7 +2001,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_358 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2188,7 +2012,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_35C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2200,7 +2023,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_360 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2212,7 +2034,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_364 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2224,7 +2045,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_hand_x_position_368 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2236,7 +2056,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_hand_y_position_36C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2248,7 +2067,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Left_hand_z_position_370 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2260,7 +2078,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_374 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2272,7 +2089,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_378 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2284,7 +2100,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_37C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2296,7 +2111,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_380 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2308,7 +2122,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_384 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2320,7 +2133,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_388 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2332,7 +2144,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_38C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2344,7 +2155,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_390 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2356,7 +2166,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_394 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2368,7 +2177,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_shoulder_x_position_398 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2380,7 +2188,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_shoulder_y_position_39C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2392,7 +2199,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_shoulder_z_position_3A0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2404,7 +2210,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_3A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2416,7 +2221,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_3A8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2428,7 +2232,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_3AC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2440,7 +2243,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_3B0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2452,7 +2254,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_3B4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2464,7 +2265,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_3B8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2476,7 +2276,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_3BC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2488,7 +2287,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_3C0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2500,7 +2298,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_3C4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2512,7 +2309,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_bicep_x_position_3C8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2524,7 +2320,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_bicep_y_position_3CC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2536,7 +2331,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_bicep_z_position_3D0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2548,7 +2342,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_3D4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2560,7 +2353,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_3D8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2572,7 +2364,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_3DC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2584,7 +2375,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_3E0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2596,7 +2386,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_3E4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2608,7 +2397,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_3E8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2620,7 +2408,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_3EC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2632,7 +2419,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_3F0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2644,7 +2430,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_3F4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2656,7 +2441,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_wrist_x_position_3F8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2668,7 +2452,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_wrist_y_position_3FC = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2680,7 +2463,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_wrist_z_position_400 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2692,7 +2474,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_x_coordinate_404 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2704,7 +2485,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_y_coordinate_408 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2716,7 +2496,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_1st_point_z_coordinate_40C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2728,7 +2507,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_x_coordinate_410 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2740,7 +2518,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_y_coordinate_414 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2752,7 +2529,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_2nd_point_z_coordinate_418 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2764,7 +2540,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_x_coordinate_41C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2776,7 +2551,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_y_coordinate_420 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2788,7 +2562,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_3rd_point_z_coordinate_424 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2800,7 +2573,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_hand_x_position_428 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2812,7 +2584,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_hand_y_position_42C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2824,7 +2595,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Right_hand_z_position_430 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2836,7 +2606,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Minimal_x_coordinate_434 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2848,7 +2617,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Minimal_y_coordinate_438 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2860,7 +2628,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Minimal_z_coordinate_43C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2872,7 +2639,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Maximal_x_coordinate_440 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2884,7 +2650,6 @@ l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
 l_pkg.m_Maximal_y_coordinate_444 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_18];
 for (int j=0;j<this.m_Packages_18;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -2898,7 +2663,7 @@ l_pkg.m_Maximal_z_coordinate_448 = (System.Single)BinaryDatReader.l_float(l_byte
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Old file name

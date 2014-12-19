@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONSA: Round2.BinaryInitializable
+  internal partial class ONSA: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -60,7 +60,7 @@ l_pkg.m_Unknown_0 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Unknown

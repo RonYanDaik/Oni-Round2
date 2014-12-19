@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class ONCV: Round2.BinaryInitializable
+  internal partial class ONCV: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id

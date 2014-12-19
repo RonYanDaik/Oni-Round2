@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class WMDD: Round2.BinaryInitializable
+  internal partial class WMDD: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -121,7 +121,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Caption_0 = (System.String)BinaryDatReader.l_str(l_bytes, 256);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -133,7 +132,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Type_100 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -145,7 +143,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Target_id_102 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -157,7 +154,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Option_104 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -169,7 +165,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Unknown_106 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -181,7 +176,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Window_design_108 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -193,7 +187,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Visible_option_10A = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -205,7 +198,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_x_position_10C = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -217,7 +209,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_y_position_10E = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -229,7 +220,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Width_110 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -241,7 +231,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Height_112 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -253,7 +242,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_TSFF_link_114 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -265,7 +253,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Font_option_118 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -277,7 +264,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Font_color_B_11C = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -289,7 +275,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Font_color_G_11D = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -301,7 +286,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Font_color_R_11E = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<1; i++)
          {
@@ -313,7 +297,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Unknown_11F = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -325,7 +308,6 @@ l_pkg = m_pkg_120[j] == null ?  m_pkg_120[j] = new Package() :   m_pkg_120[j];
 l_pkg.m_Unknown_120 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_120 = new Package[this.m_Packages_11C];
 for (int j=0;j<this.m_Packages_11C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -339,7 +321,7 @@ l_pkg.m_Font_size_122 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Caption of the sub-window

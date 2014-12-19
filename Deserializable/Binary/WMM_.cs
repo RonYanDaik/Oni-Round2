@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class WMM_: Round2.BinaryInitializable
+  internal partial class WMM_: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -76,7 +76,6 @@ l_pkg = m_pkg_60[j] == null ?  m_pkg_60[j] = new Package() :   m_pkg_60[j];
 l_pkg.m_Menu_type_0 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_60 = new Package[this.m_Packages_5C];
 for (int j=0;j<this.m_Packages_5C;j++)
 {         for(int i=0; i<2; i++)
          {
@@ -88,7 +87,6 @@ l_pkg = m_pkg_60[j] == null ?  m_pkg_60[j] = new Package() :   m_pkg_60[j];
 l_pkg.m_Return_number_2 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_60 = new Package[this.m_Packages_5C];
 for (int j=0;j<this.m_Packages_5C;j++)
 {         for(int i=0; i<64; i++)
          {
@@ -102,7 +100,7 @@ l_pkg.m_Menu_entry_4 = (System.String)BinaryDatReader.l_str(l_bytes, 64);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
       ///Type of the menu

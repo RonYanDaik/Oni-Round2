@@ -1,6 +1,6 @@
 namespace Round2.Generated.Binary
 {
-  internal class AGQR: Round2.BinaryInitializable
+  internal partial class AGQR: Round2.BinaryInitializable
   {
       /// <summary>
       ///File id
@@ -55,10 +55,9 @@ for (int j=0;j<this.m_Packages_1C;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_0 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_TXMA_id_0 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 }
 }
-m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
 {         for(int i=0; i<4; i++)
          {
@@ -72,14 +71,14 @@ l_pkg.m_Not_used_2 = (System.Int32)BinaryDatReader.ConverterStub(l_bytes, 4);
 }
 
      }
-public class Package
+public partial class Package
 {
       /// <summary>
-      ///Unknown
+      ///TXMA element number
       /// </summary>
-      public System.Int16 m_Unknown_0;
+      public System.Int16 m_TXMA_id_0;
       /// <summary>
-      ///Not used
+      ///Used at runtime
       /// </summary>
       public System.Int32 m_Not_used_2;
 }
