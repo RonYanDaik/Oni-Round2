@@ -136,7 +136,7 @@ public class BinaryDatReader : MonoBehaviour
             return (T)((Round2.BinaryInitializable)new Round2.Generated.Binary.Raw() { l_addr = id });    
         }
 
-        Debug.Log("pending key " + id);
+        //Debug.Log("pending key " + id);
         return m_descriptors.ContainsKey(id) ? (T)m_descriptors[id]() : default(T);
     }
 
@@ -158,7 +158,6 @@ public class BinaryDatReader : MonoBehaviour
     }
 
     static int m_bytesUsed = 0;
-
     static Dictionary<int, System.Func<int, Oni.BinaryReader>> m_sepReaders = new Dictionary<int, System.Func<int, Oni.BinaryReader>>();
 
     static System.Func<Round2.BinaryInitializable> InitializeLoader(int id, Oni.InstanceDescriptor ides, string resultTypeName)
@@ -166,13 +165,19 @@ public class BinaryDatReader : MonoBehaviour
         try
         {
             m_instances.Add(id, ides);
+            
+            if (ides.IsPlaceholder)
+            {
+                return null;
+            }
 
-            using (Oni.BinaryReader reader = ides.OpenRead())
+            Oni.BinaryReader reader = ides.OpenRead();
+            //using ()
             {
                 List<byte> l_bytes = new List<byte>(System.BitConverter.GetBytes(ides.Index));
                 l_bytes.AddRange(System.BitConverter.GetBytes(-1));//re-define for current level usage
-                Oni.BinaryReader l_reader = null;
-                l_bytes.AddRange( (l_reader = ides.OpenRead()).ReadBytes(ides.DataSize));
+                //Oni.BinaryReader l_reader = null;
+                l_bytes.AddRange(reader.ReadBytes(ides.DataSize));
                 System.Type l_t = typeof(Round2.BinaryInitializable).Assembly.GetType(resultTypeName);//add Round2.Generated.Binary. before typename!
                 object l_res = System.Activator.CreateInstance(l_t);
                 m_bytesUsed += l_bytes.Count;
@@ -186,13 +191,13 @@ public class BinaryDatReader : MonoBehaviour
                     };
 
                 m_descriptors.Add(id, l_resultingLoader);
-                l_reader.Dispose();
+                return l_resultingLoader;
             }
-
+            reader.Dispose();
         }
         catch (System.Exception ee)
         {
-            Debug.Log("Exception at id : " + id + "\n" + ee.ToString());
+            Debug.Log("Exception at id : " + id + "\n" + ee.ToString() + "\n" + ee.InnerException);
         }
 
         return null;
@@ -206,6 +211,19 @@ public class BinaryDatReader : MonoBehaviour
     static Oni.InstanceFile l_0File;
     static Oni.InstanceFile l_currentFile;
 
+    internal static Dictionary<string, Oni.InstanceDescriptor> m_level0instances = new Dictionary<string, Oni.InstanceDescriptor>();
+
+    static void ZeroRegistryPush(Oni.InstanceDescriptor ides)
+    {
+        m_level0instances.Add(ides.Name + "|" + ides.Template.Tag, ides);
+    }
+
+    static Oni.InstanceDescriptor ZeroRegistryPull(Oni.InstanceDescriptor ides)
+    {
+        string l_name = ides.Name + "|" + ides.Template.Tag;
+        return m_level0instances.ContainsKey(l_name) ? m_level0instances[l_name] : null;
+    }
+
     void _Start()
     {
         Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
@@ -213,10 +231,41 @@ public class BinaryDatReader : MonoBehaviour
         l_currentFile = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
         System.DateTime l_dt = System.DateTime.Now;
 
+        foreach (Oni.InstanceDescriptor ides in l_0File.Descriptors)
+        {
+            try
+            {
+                if (ides.IsPlaceholder)
+                {
+                    Debug.LogError("placeholder in 0 file " + ides.Template.Tag);
+                    continue;
+                }
+
+                ZeroRegistryPush(ides);
+            }
+            catch (System.Exception ee)
+            {
+                Debug.LogError("cant add " + ides.Name + " beause of " + ee.ToString());
+            }
+        }
+
         foreach (Oni.InstanceDescriptor ides in l_currentFile.Descriptors)
         {
-            InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + ides.Template.Tag);
-           
+            Oni.InstanceDescriptor l_chooseDescriptor = ides;
+
+            if (ides.IsPlaceholder)
+            {
+                l_chooseDescriptor = ZeroRegistryPull(ides);
+
+                if (l_chooseDescriptor == null)
+                {
+                    Debug.LogError("Cant locate valid instance id :" + ides.Index + " :: " + ides.Template.Tag);
+                    continue;
+                }
+            }
+
+            System.Delegate o = InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + ides.Template.Tag);
+
             /*switch (ides.Template.Tag)
             {
                 
@@ -245,6 +294,15 @@ public class BinaryDatReader : MonoBehaviour
                     Round2.Generated.Binary.ONLV l_lvl = GetById<Round2.Generated.Binary.ONLV>(ides.Index);
                     Debug.Log(l_lvl.m_AKEV_Link_48.Value.m_File_id_0);
                     l_lvl.Build();
+
+                    foreach (Round2.Generated.Binary.AISA.Package pkg in l_lvl.m_AISA_Link_64.Value.m_pkg_20)
+                    {
+                        Debug.LogWarning(pkg.m_ONCC_link_28.m_lnkId);
+
+                        Debug.Log(l_currentFile.GetDescriptor(pkg.m_ONCC_link_28.m_lnkId).Template.Tag);
+                        Debug.Log(pkg.m_ONCC_link_28.Value);
+                        pkg.m_ONCC_link_28.Value.BuildONCC();
+                    }
                     break;
             }
         }

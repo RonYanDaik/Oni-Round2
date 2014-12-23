@@ -23,7 +23,6 @@ namespace Round2.Generated.Binary
             //m_bldr = new GeometryBuilder(this.m_Level_name_8, this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array, this.m_AKEV_Link_48.Value.m_TXCA_link_10.Value.Array);
             l_lvlObj = new GameObject(this.m_Level_name_8);
             l_lvlObj.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"));
-            Debug.Log(this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20.Length + "|" + this.m_AKEV_Link_48.Value.m_AGQG_link_14.Value.m_pkg_20.Length);
 
             foreach (AGQR.Package renderInfo in this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20)
             {
