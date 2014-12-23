@@ -209,7 +209,7 @@ public class BinaryDatReader : MonoBehaviour
     }
 
     static Oni.InstanceFile l_0File;
-    static Oni.InstanceFile l_currentFile;
+    internal static Oni.InstanceFile l_currentFile;
 
     internal static Dictionary<string, Oni.InstanceDescriptor> m_level0instances = new Dictionary<string, Oni.InstanceDescriptor>();
 

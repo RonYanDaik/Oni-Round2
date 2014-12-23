@@ -126,17 +126,42 @@ namespace Round2.Generated.Binary
 
                 foreach (TRTA.Package pkg in this.m_TRBS_link_C3C.Value.m_TRCM_link_18.Value.m_TRTA_link_60.Value.m_pkg_20)
                 {
-                    l_gs[l_i++].transform.localPosition = new UnityEngine.Vector3(pkg.m_x_position_0, pkg.m_y_position_4, pkg.m_z_position_8);
+                    l_gs[l_i++].transform.localPosition = new UnityEngine.Vector3(-pkg.m_x_position_0, pkg.m_y_position_4, pkg.m_z_position_8);
                 }
-
-                Debug.Log(this.m_File_id_0);
 
                 Oni.InstanceDescriptor l_TRAC = BinaryDatReader.GetByIndex(this.m_File_id_0);
                 Oni.Game.CharacterClass l_oncc = Oni.Game.CharacterClass.Read(l_TRAC);
-                
+
                 foreach (Oni.InstanceDescriptor animdes in l_oncc.Animations)
                 {
                     //Debug.Log(animdes.Name);
+                    Oni.Totoro.Animation l_tram = Oni.Totoro.AnimationDatReader.Read(animdes);
+                    AddAnimInfo(animdes.Name, l_tram);
+                    string l_clipname = animdes.Name;
+
+                    if (l_tram.FrameSize != 6)//TODO: fix?
+                    {
+                        continue;
+                    }
+
+
+                    AnimationClipHolder.Hold(animdes.Name, controller =>
+                    {
+                        AnimationClip l_clip = null;
+                        l_clip.name = l_clipname;
+
+                        for (int i = 0; i < l_tram.Rotations.Count; i++)
+                        {
+                            Keyframe[] l_kFrx = new Keyframe[l_tram.Rotations[i].Count];
+                            Keyframe[] l_kFry = new Keyframe[l_tram.Rotations[i].Count];
+                            Keyframe[] l_kFrz = new Keyframe[l_tram.Rotations[i].Count];
+                            Keyframe[] l_kFrw = new Keyframe[l_tram.Rotations[i].Count];
+                            int l_duration = 0;
+
+                        }
+
+                        return l_clip;
+                    });
                 }
             }
         }

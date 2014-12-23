@@ -183,9 +183,24 @@ public class GeometryBuilder
 
                 CombineInstance l_ci = new CombineInstance();
                 Mesh l_mesh = new UnityEngine.Mesh();
-                l_mesh.vertices = l_vrts.ToArray();
+                l_mesh.vertices = l_vrts.ConvertAll<UnityEngine.Vector3>( u => new Vector3(-u.x, u.y, u.z)).ToArray();
                 l_mesh.uv = l_uvs.ToArray();
-                l_mesh.triangles = l_indices.ToArray();
+                List<int> l_indicesRealigned = new List<int>();
+                List<int> l_indicesBuffer = new List<int>(3);
+
+                foreach (int index in l_indices)
+                {
+                    l_indicesBuffer.Add(index);
+
+                    if (l_indicesBuffer.Count > 2)
+                    {
+                        l_indicesBuffer.Reverse();
+                        l_indicesRealigned.AddRange(l_indicesBuffer);
+                        l_indicesBuffer.Clear();
+                    }
+                }
+
+                l_mesh.triangles = l_indicesRealigned.ToArray();
                 l_ci.mesh = l_mesh;
                 l_ci.transform = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, Vector3.one);
                 l_internalList.Add(l_ci);
