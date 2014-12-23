@@ -1301,7 +1301,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             {
                 from = animation[m_clipname];
                 to = animation[name];
-                old = ((Oni.Totoro.Animation)Round2.__ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
+                old = (Round2.Generated.Binary.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
             }
             /*
             NewBehaviourScript.m_events[name].stringParameter = NewBehaviourScript.m_events[name].stringParameter.Replace("|DONOTUSE", "");
@@ -1316,7 +1316,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             }*/
 
             m_clipname = name;
-            @new = ((Oni.Totoro.Animation)Round2.__ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).FromState;
+            @new = Round2.Generated.Binary.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname).FromState;
             adds2 = "mixstate: " + (old != @new).ToString();
             
             {
@@ -1408,7 +1408,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             }
         }
 
-        CollisionFlags flags = GetComponentInChildren<CharacterController>().Move(transform.rotation * (m_motionVector + Physics.gravity + m_rememberedSpeed + new Vector3(0, m_jumpStart != 0 ? Mathf.Sqrt(Mathf.Abs(m_jumpVal - (Time.time - m_jumpStart))) * Mathf.Sign((m_jumpVal - (Time.time - m_jumpStart))) * (m_travelDist * (Input.GetKey(KeyCode.Space) ? 1.3f : 1)) : 0, 0)) * Time.deltaTime);
+        CollisionFlags flags = GetComponentInChildren<CharacterController>().Move( transform.rotation * (m_motionVector + Physics.gravity + m_rememberedSpeed + new Vector3(0, m_jumpStart != 0 ? Mathf.Sqrt(Mathf.Abs(m_jumpVal - (Time.time - m_jumpStart))) * Mathf.Sign((m_jumpVal - (Time.time - m_jumpStart))) * (m_travelDist * (Input.GetKey(KeyCode.Space) ? 1.3f : 1)) : 0, 0)) * Time.deltaTime);
         //rigidbody.MovePosition(Vector3.up);
         //rigidbody.MovePosition(Vector3.down);
         {

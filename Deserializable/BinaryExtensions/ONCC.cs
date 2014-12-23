@@ -8,6 +8,11 @@ namespace Round2.Generated.Binary
     {
         Dictionary<string, Oni.Totoro.Animation> m_stateTree = new Dictionary<string, Oni.Totoro.Animation>();
 
+        /// <summary>
+        /// TODO : refactor. goal : add multiple ONCC's support
+        /// </summary>
+        static ONCC m_singleton;
+
         public enum Bodyparts
         {
             /*
@@ -60,11 +65,26 @@ namespace Round2.Generated.Binary
             }
         }
 
+        internal Oni.Totoro.Animation GetAnimInfo(string name)
+        { 
+            return m_stateTree.ContainsKey(name) ? m_stateTree[name] : null;
+        }
+
+        internal static ONCC GetByName(string name)
+        {
+            return m_singleton;
+        }
+
+        internal static void SetName(string name, ONCC @this)
+        {
+            //TODO : implement
+        }
+
         public void BuildONCC()
         {
             M3GM[] l_bodyParts = new M3GM[19];
             GameObject[] l_gs = new GameObject[19];
-
+            m_singleton = this;
             {
                 int l_i = 0;
 
@@ -134,7 +154,7 @@ namespace Round2.Generated.Binary
 
                 foreach (Oni.InstanceDescriptor animdes in l_oncc.Animations)
                 {
-                    //Debug.Log(animdes.Name);
+                    Debug.LogWarning( "building clip : " + animdes.Name);
                     Oni.Totoro.Animation l_tram = Oni.Totoro.AnimationDatReader.Read(animdes);
                     AddAnimInfo(animdes.Name, l_tram);
                     string l_clipname = animdes.Name;
@@ -144,10 +164,10 @@ namespace Round2.Generated.Binary
                         continue;
                     }
 
-
                     AnimationClipHolder.Hold(animdes.Name, controller =>
                     {
-                        AnimationClip l_clip = null;
+                        bool frameSize = l_tram.FrameSize == 6;
+                        AnimationClip l_clip = new AnimationClip();
                         l_clip.name = l_clipname;
 
                         for (int i = 0; i < l_tram.Rotations.Count; i++)
@@ -158,12 +178,114 @@ namespace Round2.Generated.Binary
                             Keyframe[] l_kFrw = new Keyframe[l_tram.Rotations[i].Count];
                             int l_duration = 0;
 
+                            for (int j = 0; j < l_tram.Rotations[i].Count; j++)
+                            {
+                                UnityEngine.Quaternion _l_q;
+
+                                if (!frameSize)
+                                {
+                                    Oni.Quaternion l_q = new Oni.Quaternion(l_tram.Rotations[i][j].Rotation);
+                                    _l_q = UnityEngine.Quaternion.Euler(Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().X), Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().Y), Oni.MathHelper.ToDegrees(l_q.ToEulerXYZ().Z));
+                                }
+                                else
+                                {
+                                    Oni.Quaternion qq = Oni.Quaternion.CreateFromEulerXYZ(l_tram.Rotations[i][j].Rotation.X, -l_tram.Rotations[i][j].Rotation.Y, -l_tram.Rotations[i][j].Rotation.Z);
+                                    _l_q = new UnityEngine.Quaternion(qq.X, qq.Y, qq.Z, qq.W);
+                                }
+
+                                l_kFrx[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.x);
+                                l_kFry[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.y);
+                                l_kFrz[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.z);
+                                l_kFrw[j] = new Keyframe(l_duration * 0.0166666675f, _l_q.w);
+
+                                l_duration = l_duration + l_tram.Rotations[i][j].Duration;
+                            }
+
+                            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                            string l_path = "";
+                            l_path = "";
+                            sb.Remove(0, sb.Length);
+                            sb.Append(((Bodyparts)i).ToString());
+                            l_path = "";
+
+                            for (Transform _i = l_gs[i].transform.parent; _i.parent != null; _i = _i.transform.parent)
+                            {
+                                sb.Insert(0, '/');
+                                sb.Insert(0, _i.name);
+                            }
+
+                            l_path = sb.ToString();
+                            l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.x", new AnimationCurve(l_kFrx));
+                            l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.y", new AnimationCurve(l_kFry));
+                            l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.z", new AnimationCurve(l_kFrz));
+                            l_clip.SetCurve(l_path, typeof(Transform), "m_LocalRotation.w", new AnimationCurve(l_kFrw));
                         }
 
+                        List<float> posXList = new List<float>();
+                        List<float> posYList = new List<float>();
+                        List<float> posZList = new List<float>();
+
+                        for (int k = 0; k < l_tram.Velocities.Count; k++)
+                        {
+                            posXList.Add(-l_tram.Velocities[k].X);
+                            if (l_tram.Heights.Count <= k)
+                            {
+                                posYList.Add(0);
+                            }
+                            else
+                            {
+                                posYList.Add(l_tram.Heights[k]);
+                            }
+                            posZList.Add(l_tram.Velocities[k].Y);
+                        }
+
+                        {
+                            float _iien = 0;
+                            float timer = 0;
+                            l_clip.SetCurve("", typeof(GUIANIMCONTROL), "m_motionVector.x", new AnimationCurve(posXList.ConvertAll<Keyframe>(frame =>
+                            {
+                                Keyframe res = new Keyframe(timer += 0.0166666675f, frame / 0.0166666675f);
+                                return res;
+                            }).ToArray()));
+                        }
+
+                        {
+                            float _iien = 0;
+                            float timer = 0;
+                            l_clip.SetCurve("pelvis", typeof(Transform), "m_LocalPosition.y", new AnimationCurve(posYList.ConvertAll<Keyframe>(frame =>
+                            {
+                                Keyframe res = new Keyframe(timer += 0.0166666675f, frame);
+                                _iien = frame;
+                                return res;
+                            }).ToArray()));
+                        }
+
+                        {
+                            float _iien = 0;
+                            float timer = 0;
+                            l_clip.SetCurve("", typeof(GUIANIMCONTROL), "m_motionVector.z", new AnimationCurve(posZList.ConvertAll<Keyframe>(frame =>
+                            {
+                                Keyframe res = new Keyframe(timer += 0.0166666675f, frame / 0.0166666675f);
+                                return res;
+                            }).ToArray()));
+                            AnimationEvent ev = null;
+                            l_clip.AddEvent(ev = new AnimationEvent() { objectReferenceParameter = controller, functionName = "OnActionFrame", time = timer - 1 / 60f, stringParameter = l_clipname });
+                            // m_events.Add(desc.Name, ev);
+                        }
+                        
+                        l_clip.EnsureQuaternionContinuity();
+                        l_clip.wrapMode = WrapMode.ClampForever;
                         return l_clip;
                     });
                 }
             }
+
+            GameObject l_parent = new GameObject();
+            l_gs[0].transform.parent = l_parent.transform;
+            Debug.Log("added", l_parent.AddComponent<GUIANIMCONTROL>());
+            Camera.allCameras[0].transform.parent = l_parent.transform;
+            l_parent.AddComponent<CharacterController>();
+            l_parent.AddComponent<Animation>();
         }
     }
 }

@@ -86,6 +86,18 @@ namespace Round2.Generated.Binary
                     }
 
                     l_g.AddComponent<MeshFilter>().mesh = m_fullRenderInfo[txid][flags].Mesh;
+
+                    GunkFlags l_quadFlags = (GunkFlags)flags;
+
+                    if ((l_quadFlags & GunkFlags.Ghost) != 0 || (l_quadFlags & GunkFlags.StairsUp) != 0 || (l_quadFlags & GunkFlags.StairsDown) != 0 || (l_quadFlags & GunkFlags.DoorFrame) != 0 || (l_quadFlags & GunkFlags.Furniture) != 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+
+                        l_g.AddComponent<MeshCollider>().mesh = m_fullRenderInfo[txid][flags].Mesh;
+                    }
                 }
             }
 
