@@ -22,7 +22,6 @@ public class TMPSCNLDR : MonoBehaviour
     public static TMPSCNLDR m_singleton;
     public Texture2D m_targeted_query_texture;
     public List<Mesh> m_meshLst = new List<Mesh>();
-
     public List<TMP_TX_ENTRY> m_txs = new List<TMP_TX_ENTRY>();
 
     static void UseONLV(Oni.InstanceDescriptor ides)

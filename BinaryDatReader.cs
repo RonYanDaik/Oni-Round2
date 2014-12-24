@@ -298,7 +298,6 @@ public class BinaryDatReader : MonoBehaviour
                     foreach (Round2.Generated.Binary.AISA.Package pkg in l_lvl.m_AISA_Link_64.Value.m_pkg_20)
                     {
                         Debug.LogWarning(pkg.m_ONCC_link_28.m_lnkId);
-
                         Debug.Log(l_currentFile.GetDescriptor(pkg.m_ONCC_link_28.m_lnkId).Template.Tag);
                         Debug.Log(pkg.m_ONCC_link_28.Value);
                         pkg.m_ONCC_link_28.Value.BuildONCC();

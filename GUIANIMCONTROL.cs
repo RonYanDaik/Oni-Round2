@@ -204,13 +204,13 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
                         break;
                     }
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
 
                         break;
                     }
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
                         break;
@@ -235,13 +235,13 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     if (!Input.GetKey(KeyCode.W))
                     {
-                        if (Input.GetKey(KeyCode.D))
+                        if (Input.GetKey(KeyCode.A))
                         {
                             m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
                             break;
                         }
 
-                        if (Input.GetKey(KeyCode.A))
+                        if (Input.GetKey(KeyCode.D))
                         {
                             m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
                             break;
@@ -284,13 +284,13 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     if (!Input.GetKey(KeyCode.W))
                     {
-                        if (Input.GetKey(KeyCode.D))
+                        if (Input.GetKey(KeyCode.A))
                         {
                             m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
                             break;
                         }
 
-                        if (Input.GetKey(KeyCode.A))
+                        if (Input.GetKey(KeyCode.D))
                         {
                             m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
                             break;
@@ -347,13 +347,13 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     if (!Input.GetKey(KeyCode.S))
                     {
-                        if (Input.GetKey(KeyCode.D))
+                        if (Input.GetKey(KeyCode.A))
                         {
                             m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_lt;
                             break;
                         }
 
-                        if (Input.GetKey(KeyCode.A))
+                        if (Input.GetKey(KeyCode.D))
                         {
                             m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_rt;
                             break;
@@ -397,13 +397,13 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     if (!Input.GetKey(KeyCode.S))
                     {
-                        if (Input.GetKey(KeyCode.D))
+                        if (Input.GetKey(KeyCode.A))
                         {
                             m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_lt;
                             break;
                         }
 
-                        if (Input.GetKey(KeyCode.A))
+                        if (Input.GetKey(KeyCode.D))
                         {
                             m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_rt;
                             break;
@@ -460,7 +460,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             //end of backward
             case AnimFlags.ss_lt | AnimFlags.lt:
                 {
-                    if (!Input.GetKey(KeyCode.D))
+                    if (!Input.GetKey(KeyCode.A))
                     {   
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
                     }
@@ -475,7 +475,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
                     }
 
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
                     }
@@ -492,7 +492,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             case AnimFlags.ss_lt | AnimFlags.rt:
                 {
-                    if (!Input.GetKey(KeyCode.D))
+                    if (!Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
                     }
@@ -507,7 +507,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
                     }
 
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
                     }
@@ -525,7 +525,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             //end of ss_lt
             case AnimFlags.ss_rt | AnimFlags.lt:
                 {
-                    if (!Input.GetKey(KeyCode.A))
+                    if (!Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
                     }
@@ -540,7 +540,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
                     }
 
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
                     }
@@ -557,7 +557,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             case AnimFlags.ss_rt | AnimFlags.rt:
                 {
-                    if (!Input.GetKey(KeyCode.A))
+                    if (!Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
                     }
@@ -572,7 +572,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
                     }
 
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
                     }
@@ -769,7 +769,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             //end of crouching block
             case AnimFlags.jump_lt | AnimFlags.land:
             case AnimFlags.jump_lt | AnimFlags.land | AnimFlags.lt:
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.A))
                 {
                     m_lastFlags = AnimFlags.ss_lt | AnimFlags.rt;
                 }
@@ -788,7 +788,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             //end of jump lt
             case AnimFlags.jump_rt | AnimFlags.land:
             case AnimFlags.jump_rt | AnimFlags.land | AnimFlags.rt:
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.D))
                 {
                     m_lastFlags = AnimFlags.ss_rt | AnimFlags.lt;
                 }
@@ -862,14 +862,14 @@ public class GUIANIMCONTROL : MonoBehaviour
                 }
                 else
                 {
-                    if (Input.GetKey(KeyCode.D))
+                    if (Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
 
                         break;
                     }
 
-                    if (Input.GetKey(KeyCode.A))
+                    if (Input.GetKey(KeyCode.D))
                     {
                         m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
                         break;
@@ -925,7 +925,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of backward
             case AnimFlags.ss_lt | AnimFlags.stepa:
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.A))
                 {
                     m_lastFlags = AnimFlags.ss_lt | AnimFlags.start;
                 }
@@ -951,7 +951,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of ss_lt
             case AnimFlags.ss_rt | AnimFlags.stepa:
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.D))
                 {
                     m_lastFlags = AnimFlags.ss_rt | AnimFlags.start;
                 }
@@ -978,7 +978,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             //end if ss_rt
 
             case AnimFlags.run | AnimFlags.ss_lt:
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.A))
                 {
                     m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
                 }
@@ -989,7 +989,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of transition forward to ss_lt
             case AnimFlags.run | AnimFlags.ss_rt:
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.D))
                 {
                     m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
                 }
@@ -1022,7 +1022,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of transition ss_rt to run
             case AnimFlags.run_bk | AnimFlags.ss_lt :
-                if (Input.GetKey(KeyCode.D))
+                if (Input.GetKey(KeyCode.A))
                 {
                     m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
                 }
@@ -1033,7 +1033,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of transition run_bk to ss_lt
             case AnimFlags.run_bk | AnimFlags.ss_rt:
-                if (Input.GetKey(KeyCode.A))
+                if (Input.GetKey(KeyCode.D))
                 {
                     m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
                 }
