@@ -716,7 +716,7 @@ public class GUIANIMCONTROL : MonoBehaviour
         }
 
         m_upperVector = 0;
-        m_jumpStart = 0;
+        m_jumpStart = -1;
         m_waitingForLanding = false;
         m_rememberedSpeed = Vector3.zero;
     }
@@ -1246,6 +1246,7 @@ public class GUIANIMCONTROL : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
+        transform.position += Vector3.up * 2;
         Vector3 angles = transform.eulerAngles;
         m_camera = GetComponentInChildren<Camera>().transform;
         m_camera.transform.parent = null;
@@ -1355,12 +1356,11 @@ public class GUIANIMCONTROL : MonoBehaviour
     }
 
     bool m_waitingForLanding = false;
-
     CollisionFlags m_lastCollisionFlags;
-    float m_jumpStart = 0;
-    public float m_travelDist = 0.5f;
-     float m_travelSpd = 55;
-    
+    float m_jumpStart = -1f;
+    public float m_travelDist = 0.7f;
+    public float m_longerTravelDist = 1f;
+    public float m_travelSpd = 0.3f;
     Vector3 m_rememberedSpeed = Vector3.zero;
     float m_x = 0;
     float m_y = 0;
@@ -1408,7 +1408,8 @@ public class GUIANIMCONTROL : MonoBehaviour
             }
         }
 
-        CollisionFlags flags = GetComponentInChildren<CharacterController>().Move( transform.rotation * (m_motionVector + Physics.gravity + m_rememberedSpeed + new Vector3(0, m_jumpStart != 0 ? Mathf.Sqrt(Mathf.Abs(m_jumpVal - (Time.time - m_jumpStart))) * Mathf.Sign((m_jumpVal - (Time.time - m_jumpStart))) * (m_travelDist * (Input.GetKey(KeyCode.Space) ? 1.3f : 1)) : 0, 0)) * Time.deltaTime);
+        Vector3 l_jw = new Vector3(0, m_jumpStart != 0 ? (-Mathf.Clamp((Time.time - m_jumpStart) / m_travelSpd - Mathf.PI, 0, 1)) + (Mathf.Cos(Mathf.Clamp((Time.time - m_jumpStart) / m_travelSpd, -Mathf.PI, Mathf.PI))) * (Input.GetKey(KeyCode.Space) ? m_longerTravelDist : m_travelDist) : 0, 0);
+        CollisionFlags flags = GetComponentInChildren<CharacterController>().Move((transform.rotation * (m_motionVector + m_rememberedSpeed + l_jw * 100) + Physics.gravity) * Time.deltaTime);
         //rigidbody.MovePosition(Vector3.up);
         //rigidbody.MovePosition(Vector3.down);
         {
@@ -1438,18 +1439,25 @@ public class GUIANIMCONTROL : MonoBehaviour
         else
         {
             //if just lifted off
-
-            if ((m_lastCollisionFlags & CollisionFlags.CollidedBelow) != 0 && (flags & CollisionFlags.CollidedBelow) == 0)
+            if ((flags & CollisionFlags.CollidedBelow) == 0)
             {
-                if (m_jumpStart == 0)
+                if ((m_lastCollisionFlags & CollisionFlags.CollidedBelow) != 0)
                 {
-                    m_jumpStart = Time.time - m_jumpVal;
-                    m_rememberedSpeed = m_motionVector;
-                    Debug.Log("FALL LIFTOFF");
-                    m_waitingForLanding = true;
-                    m_lastFlags = AnimFlags.jump | AnimFlags.idle;
+                    if (m_jumpStart == -1)
+                    {
+                        RaycastHit l_botLH = new RaycastHit();
+                        Debug.DrawRay(transform.position + 1 * Vector3.up, Vector3.down, Color.red, 15f);
+                        if (!Physics.Raycast(new Ray() { origin = transform.position + 1 * Vector3.up, direction = Vector3.down }, out l_botLH, 1.25f))
+                        {
+                            m_jumpStart = Time.time - Mathf.PI * m_travelSpd;
+                            m_rememberedSpeed = m_motionVector;
+                            Debug.Log("FALL LIFTOFF");
+                            m_waitingForLanding = true;
+                            m_lastFlags = AnimFlags.jump | AnimFlags.idle;
+                        }
+                    }
+                    //m_jumpStart = Time.time;
                 }
-                //m_jumpStart = Time.time;
             }
         }
 
