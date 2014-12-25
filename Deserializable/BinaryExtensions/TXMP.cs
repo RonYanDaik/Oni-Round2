@@ -26,8 +26,6 @@ namespace Round2.Generated.Binary
                 if (m_tex == null)
                 {
                     //Debug.Log(BinaryDatReader.GetByIndex(this.m_ID_0).Template.Tag);
-                    Debug.LogError(this.m_ID_0);
-
                     if (this.m_FileName_8.StartsWith("NONE") || this.m_FileName_8.StartsWith("EYE"))
                     {
                         return null;

@@ -38,19 +38,22 @@ namespace Round2.Generated.Binary
 
             foreach (ONOA.Package pkg in this.m_ONOA_Link_74.Value.m_pkg_20)
             {
-                try
+                if (pkg.m_High_bit_3 == 0x03)//let's search only for doors
                 {
-                    foreach (IDXA.Package index in pkg.m_IDXA_link_4.Value.m_pkg_20)
+                    if (pkg.m_IDXA_link_4.m_lnkId != 0)
                     {
-                        l_ignoreQuadLst.Add(index.m_Index_id_0);
+                        foreach (IDXA.Package index in pkg.m_IDXA_link_4.Value.m_pkg_20)
+                        {
+
+                            Debug.LogError("ignore : " + index.m_Index_id_0);
+                            l_ignoreQuadLst.Add(index.m_Index_id_0);
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("IDXA LINK = 0");
                     }
                 }
-                catch (System.Exception ee)
-                {
-                    
-                }
-
-                //pkg.m_Unknown_0
             }
 
             List<int>.Enumerator l_renderKeysEnumerator = new List<int>( this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20.ConvertAll<AGQR.Package, int>( u => u.m_TXMA_id_0)).GetEnumerator();
@@ -68,7 +71,7 @@ namespace Round2.Generated.Binary
                     m_fullRenderInfo[l_renderKeysEnumerator.Current].Add(quad.m_flags_30, new GeometryBuilder(l_tx == null ? "unknown texture" : l_tx.m_FileName_8, this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array, this.m_AKEV_Link_48.Value.m_TXCA_link_10.Value.Array));
                 }
 
-                //if (!l_doNotLoad.Contains(quad.m_obj_id_34))//i bet nobody needs additional vertices for onoa's
+                if (!l_ignoreQuadLst.Contains(l_quadID++))//i bet nobody needs additional vertices for doors
                 {
                     Debug.DrawLine(this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_1_0], this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_2_4], Color.green, 15f);
                     Debug.DrawLine(this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_2_4], this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_3_8], Color.green, 15f);

@@ -4,6 +4,6 @@ Level id	$04	17	Level id
 Not used	$08	1020	Not used
 Packages	$1C	4	Amount of packages that follow
 *Package		$20	$1C	4	8
-Unknown	$00	14	Unknown
-Unknown	$02	14	Unknown
+obj_id	$00	3	object id
+High bit	$03	1	High bit (obj type, see http://wiki.oni2.net/ONOA and http://wiki.oni2.net/OBD:BINA/OBJC#OBJC_types for more info)
 IDXA-link	$04	12	Link to the Index Array

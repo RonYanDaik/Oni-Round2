@@ -48,25 +48,25 @@ namespace Round2.Generated.Binary
          this.m_Packages_1C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 m_pkg_20 = new Package[this.m_Packages_1C];
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<3; i++)
          {
              l_bytes[i] = data[i + 32+j * 8+0];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_0 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_obj_id_0 = (System.Int32)BinaryDatReader.l_int24(l_bytes, 3);
 }
 }
 for (int j=0;j<this.m_Packages_1C;j++)
-{         for(int i=0; i<2; i++)
+{         for(int i=0; i<1; i++)
          {
-             l_bytes[i] = data[i + 32+j * 8+2];
+             l_bytes[i] = data[i + 32+j * 8+3];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_2 = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
+l_pkg.m_High_bit_3 = (System.Byte)BinaryDatReader.l_int8(l_bytes, 1);
 }
 }
 for (int j=0;j<this.m_Packages_1C;j++)
@@ -85,13 +85,13 @@ l_pkg.m_IDXA_link_4 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 public partial class Package
 {
       /// <summary>
-      ///Unknown
+      ///object id
       /// </summary>
-      public System.Int16 m_Unknown_0;
+      public System.Int32 m_obj_id_0;
       /// <summary>
-      ///Unknown
+      ///High bit (obj type, see http://wiki.oni2.net/ONOA and http://wiki.oni2.net/OBD:BINA/OBJC#OBJC_types for more info)
       /// </summary>
-      public System.Int16 m_Unknown_2;
+      public System.Byte m_High_bit_3;
       /// <summary>
       ///Link to the Index Array
       /// </summary>

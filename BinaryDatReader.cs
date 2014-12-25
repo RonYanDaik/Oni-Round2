@@ -139,8 +139,6 @@ public class BinaryDatReader : MonoBehaviour
     {
         Oni.InstanceDescriptor ides = 
         l_currentFile.ResolveLink(link);
-        Debug.LogError(link);
-        Debug.LogError(ides);
         return ides;
     }
 
