@@ -26,7 +26,14 @@ namespace Round2.Generated.Binary
                 if (m_tex == null)
                 {
                     //Debug.Log(BinaryDatReader.GetByIndex(this.m_ID_0).Template.Tag);
-                    byte[] l_bytes = Oni.Motoko.TextureDatReader.Read(BinaryDatReader.GetByIndex(this.m_ID_0)).Surfaces[0].Convert(SurfaceFormat.RGBA).Data;
+                    Debug.LogError(this.m_ID_0);
+
+                    if (this.m_FileName_8.StartsWith("NONE") || this.m_FileName_8.StartsWith("EYE"))
+                    {
+                        return null;
+                    }
+
+                    byte[] l_bytes = Oni.Motoko.TextureDatReader.Read(BinaryDatReader.ResolveInstanceByLink(this.m_ID_0 << 8)).Surfaces[0].Convert(SurfaceFormat.RGBA).Data;
                     List<Color32> l_colors = new List<Color32>();
 
                     for (int i = 0; i < m_Width_8C * m_Height_8E; i ++)

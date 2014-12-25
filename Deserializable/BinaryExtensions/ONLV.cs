@@ -32,8 +32,31 @@ namespace Round2.Generated.Binary
                 }
             }
 
+            HashSet<int> l_ignoreQuadLst = new HashSet<int>();
+
+            Debug.LogError(this.m_ONOA_Link_74.Value.m_pkg_20.Length);
+
+            foreach (ONOA.Package pkg in this.m_ONOA_Link_74.Value.m_pkg_20)
+            {
+                try
+                {
+                    foreach (IDXA.Package index in pkg.m_IDXA_link_4.Value.m_pkg_20)
+                    {
+                        l_ignoreQuadLst.Add(index.m_Index_id_0);
+                    }
+                }
+                catch (System.Exception ee)
+                {
+                    
+                }
+
+                //pkg.m_Unknown_0
+            }
+
             List<int>.Enumerator l_renderKeysEnumerator = new List<int>( this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20.ConvertAll<AGQR.Package, int>( u => u.m_TXMA_id_0)).GetEnumerator();
-            
+
+            int l_quadID = 0;
+
             foreach(AGQG.Package quad in this.m_AKEV_Link_48.Value.m_AGQG_link_14.Value.m_pkg_20)
             {
                 l_renderKeysEnumerator.MoveNext();
@@ -45,18 +68,15 @@ namespace Round2.Generated.Binary
                     m_fullRenderInfo[l_renderKeysEnumerator.Current].Add(quad.m_flags_30, new GeometryBuilder(l_tx == null ? "unknown texture" : l_tx.m_FileName_8, this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array, this.m_AKEV_Link_48.Value.m_TXCA_link_10.Value.Array));
                 }
 
-                if (quad.m_obj_id_34 == -1)//i bet nobody needs additional vertices for objects with geometry
+                //if (!l_doNotLoad.Contains(quad.m_obj_id_34))//i bet nobody needs additional vertices for onoa's
                 {
                     Debug.DrawLine(this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_1_0], this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_2_4], Color.green, 15f);
                     Debug.DrawLine(this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_2_4], this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_3_8], Color.green, 15f);
 
-                    
                     {
                         if (quad.m_pnta_id_3_8 == quad.m_pnta_id_4_C)
                         {
-
                             m_fullRenderInfo[l_renderKeysEnumerator.Current][quad.m_flags_30].Triangle(quad.m_pnta_id_1_0, quad.m_pnta_id_2_4, quad.m_pnta_id_3_8, quad.m_txca_id_1_10, quad.m_txca_id_2_14, quad.m_txca_id_3_18);
-                        
                             //m_bldr.Triangle(quad.m_pnta_id_1_0, quad.m_pnta_id_2_4, quad.m_pnta_id_3_8, quad.m_txca_id_1_10, quad.m_txca_id_2_14, quad.m_txca_id_3_18);
                             Debug.DrawLine(this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_3_8], this.m_AKEV_Link_48.Value.m_PNTA_link_8.Value.Array[quad.m_pnta_id_1_0], Color.green, 15f);
                         }
@@ -86,7 +106,6 @@ namespace Round2.Generated.Binary
                     }
 
                     l_g.AddComponent<MeshFilter>().mesh = m_fullRenderInfo[txid][flags].Mesh;
-
                     GunkFlags l_quadFlags = (GunkFlags)flags;
 
                     if ((l_quadFlags & GunkFlags.Ghost) != 0 || (l_quadFlags & GunkFlags.StairsUp) != 0 || (l_quadFlags & GunkFlags.StairsDown) != 0 || (l_quadFlags & GunkFlags.DoorFrame) != 0 || (l_quadFlags & GunkFlags.Furniture) != 0)
@@ -95,7 +114,6 @@ namespace Round2.Generated.Binary
                     }
                     else
                     {
-
                         l_g.AddComponent<MeshCollider>().mesh = m_fullRenderInfo[txid][flags].Mesh;
                     }
                 }

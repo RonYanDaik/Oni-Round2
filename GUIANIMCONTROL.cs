@@ -877,8 +877,6 @@ public class GUIANIMCONTROL : MonoBehaviour
 
                     m_lastFlags = AnimFlags.run | AnimFlags.stepb;
                 }
-
-                
                 break;
             case AnimFlags.run | AnimFlags.stepb:
                 m_lastFlags = AnimFlags.idle1;

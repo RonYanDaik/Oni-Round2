@@ -80,7 +80,7 @@ namespace Round2.Generated.Binary
             //TODO : implement
         }
 
-        public void BuildONCC()
+        public void BuildONCC(Oni.InstanceDescriptor l__oncc)
         {
             M3GM[] l_bodyParts = new M3GM[19];
             GameObject[] l_gs = new GameObject[19];
@@ -149,12 +149,13 @@ namespace Round2.Generated.Binary
                     l_gs[l_i++].transform.localPosition = new UnityEngine.Vector3(-pkg.m_x_position_0, pkg.m_y_position_4, pkg.m_z_position_8);
                 }
 
-                Oni.InstanceDescriptor l_TRAC = BinaryDatReader.GetByIndex(this.m_File_id_0);
-                Oni.Game.CharacterClass l_oncc = Oni.Game.CharacterClass.Read(l_TRAC);
+                int stub = this.m_TRAC_link_C88.Value.m_pkg_20.Length;
+
+                Oni.Game.CharacterClass l_oncc = Oni.Game.CharacterClass.Read(l__oncc);
 
                 foreach (Oni.InstanceDescriptor animdes in l_oncc.Animations)
                 {
-                    Debug.LogWarning( "building clip : " + animdes.Name);
+                    
                     Oni.Totoro.Animation l_tram = Oni.Totoro.AnimationDatReader.Read(animdes);
                     AddAnimInfo(animdes.Name, l_tram);
                     string l_clipname = animdes.Name;
@@ -166,6 +167,7 @@ namespace Round2.Generated.Binary
 
                     AnimationClipHolder.Hold(animdes.Name, controller =>
                     {
+                        Debug.LogWarning("building clip : " + l_clipname);
                         bool frameSize = l_tram.FrameSize == 6;
                         AnimationClip l_clip = new AnimationClip();
                         l_clip.name = l_clipname;
