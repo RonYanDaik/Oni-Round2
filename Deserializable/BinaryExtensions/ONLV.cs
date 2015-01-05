@@ -44,8 +44,6 @@ namespace Round2.Generated.Binary
                     {
                         foreach (IDXA.Package index in pkg.m_IDXA_link_4.Value.m_pkg_20)
                         {
-
-                            Debug.LogError("ignore : " + index.m_Index_id_0);
                             l_ignoreQuadLst.Add(index.m_Index_id_0);
                         }
                     }
@@ -56,8 +54,25 @@ namespace Round2.Generated.Binary
                 }
             }
 
-            List<int>.Enumerator l_renderKeysEnumerator = new List<int>( this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20.ConvertAll<AGQR.Package, int>( u => u.m_TXMA_id_0)).GetEnumerator();
+            foreach (OBOA.Package pkg in this.m_OBOA_Link_4C.Value.m_pkg_20)
+            {
+                if (pkg.m_OBAN_link_4.m_lnkId != 0)
+                {
+                    string l_objname = pkg.m_Name_70;
+                    UnityEngine.Vector3 l_pos = new UnityEngine.Vector3(-pkg.m_OBAN_link_4.Value.m_x_position_3C, pkg.m_OBAN_link_4.Value.m_y_position_40, pkg.m_OBAN_link_4.Value.m_z_position_44);
+                    GameObject l_g = new GameObject(l_objname);
+                    l_g.transform.position = l_pos;
+                    l_g.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"));
+                    l_g.AddComponent<MeshFilter>().mesh = pkg.m_M3GA_link_0.Value.m_pkg_20[0].m_M3GM_link_0.Value.UnityMesh;
+                    l_g.AddComponent<MeshCollider>().mesh = pkg.m_M3GA_link_0.Value.m_pkg_20[0].m_M3GM_link_0.Value.UnityMesh;
+                }
+                else
+                {
+                    Debug.LogError("OBAN LINK = 0");
+                }
+            }
 
+            List<int>.Enumerator l_renderKeysEnumerator = new List<int>( this.m_AKEV_Link_48.Value.m_AGQR_link_18.Value.m_pkg_20.ConvertAll<AGQR.Package, int>( u => u.m_TXMA_id_0)).GetEnumerator();
             int l_quadID = 0;
 
             foreach(AGQG.Package quad in this.m_AKEV_Link_48.Value.m_AGQG_link_14.Value.m_pkg_20)

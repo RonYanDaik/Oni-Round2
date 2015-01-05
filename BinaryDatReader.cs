@@ -124,12 +124,101 @@ public class BinaryDatReader : MonoBehaviour
 
     static Dictionary<Oni.InstanceDescriptor, System.Func<Round2.BinaryInitializable>> m_descriptors = new Dictionary<Oni.InstanceDescriptor, System.Func<Round2.BinaryInitializable>>();
 
+    static void ParseBINA(Round2.BinaryInitializable obj, Oni.InstanceDescriptor ides)
+    {
+        Round2.Generated.Binary.BINA l_bina = (Round2.Generated.Binary.BINA)obj;
+
+        using(Oni.BinaryReader l_rawReader = ides.GetRawReader(l_bina.m_Offset_C))
+        {
+            byte[] l_data = new byte[l_bina.m_Size_8];
+            l_rawReader.Read(l_data, 0, l_bina.m_Size_8);
+            Debug.LogError("BINA size : " + l_bina.m_Size_8 + " :: id " + l_bina.m_File_id_0);
+            byte[] l_bytes = new byte[l_data.Length];
+
+            for (int i = 0; i < 4; i++)//read teh damn tag
+            {
+                l_bytes[i] = l_data[i + 0];
+            }
+
+            Oni.Metadata.BinaryTag l_tag = (Oni.Metadata.BinaryTag)l_int32(l_bytes, 4);
+            Debug.LogError("Binary tag : " + l_tag + "|" + ((int)l_tag).ToString("X"));
+
+            switch (l_tag)
+            {
+                case Oni.Metadata.BinaryTag.OBJC:
+                    {
+                        for (int i = 0; i < 4; i++)//read teh damn size
+                        {
+                            l_bytes[i] = l_data[i + 0x04];
+                        }
+
+                        int l_size = (int)l_int32(l_bytes, 4);
+                        Debug.LogWarning(l_size);
+
+                        for (int i = 0; i < 4; i++)//read teh damn version
+                        {
+                            l_bytes[i] = l_data[i + 0x08];
+                        }
+
+                        int l_ver = (int)l_int32(l_bytes, 4);
+                        Debug.LogWarning(l_ver);
+
+                        for (int i = 0; i < 4; i++)//read teh damn first obj size
+                        {
+                            l_bytes[i] = l_data[i + 0x0c];
+                        }
+
+                        int l_nextSize = (int)l_int32(l_bytes, 4);
+                        Debug.LogWarning(l_nextSize);
+                        List<byte> l_data2 = new List<byte>(l_data);
+                        l_data2.RemoveRange(0, 0x10);
+
+                        for (; l_data2.Count > 0 && l_nextSize > 0; )
+                        {
+                            TryParseOBJCMember(l_data2.ToArray(), l_nextSize);
+                            l_data2.RemoveRange(0, l_nextSize);
+
+                            for (int i = 0; i < 4; i++)//read teh damn obj size
+                            {
+                                l_bytes[i] = l_data2[i];
+                            }
+
+                            l_nextSize = (int)l_int32(l_bytes, 4);
+                            l_data2.RemoveRange(0, 0x4);
+                        }
+                    }
+                    break;
+
+                default:
+                    Debug.LogError("Cannot handle this tag yet : " + l_tag);
+                    break;
+            }
+        }
+    }
+
+    static void TryParseOBJCMember(byte[] data, int len)
+    {
+        string l_tag = new string(new char[] { (char)data[3], (char)data[2], (char)data[1], (char)data[0] });
+
+        switch (l_tag)
+        { 
+            case "DOOR":
+
+                break;
+        }
+    }
+
     internal static T ConvertInstance<T>(Oni.InstanceDescriptor ides)
          where T : Round2.BinaryInitializable
     {
         if (!m_descriptors.ContainsKey(ides))
         {
-            InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + typeof(T).Name);
+            System.Func<Round2.BinaryInitializable> l_initilizer = InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + typeof(T).Name);
+
+            if (ides.Template.Tag == Oni.TemplateTag.BINA)
+            {
+                ParseBINA(l_initilizer(), ides);
+            }
         }
     
         return (T)m_descriptors[ides]();
@@ -254,6 +343,10 @@ public class BinaryDatReader : MonoBehaviour
         {
             switch (ides.Template.Tag)
             {
+                case Oni.TemplateTag.BINA:
+                    ConvertInstance<Round2.Generated.Binary.BINA>(ides);
+                    break;
+
                 case Oni.TemplateTag.AKEV:
                     Debug.Log(ides.Index);
                     break;
@@ -565,7 +658,7 @@ namespace Round2
 {
     interface BinaryInitializable
     {
-        void Convert(byte[] data);
+       void Convert(byte[] data);
     }
 }
 
