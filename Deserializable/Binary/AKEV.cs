@@ -111,7 +111,7 @@ namespace Round2.Generated.Binary
       /// </summary>
       public System.Single m_Unknown_7C;
 
-      public void Convert(byte[] data)
+      public override void Convert(byte[] data)
       {
           byte[] l_bytes = new byte[4];
          for(int i=0; i<4; i++)

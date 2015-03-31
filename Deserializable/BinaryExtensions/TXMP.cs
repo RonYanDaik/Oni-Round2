@@ -31,7 +31,7 @@ namespace Round2.Generated.Binary
                         return null;
                     }
 
-                    byte[] l_bytes = Oni.Motoko.TextureDatReader.Read(BinaryDatReader.ResolveInstanceByLink(this.m_ID_0 << 8)).Surfaces[0].Convert(SurfaceFormat.RGBA).Data;
+                    byte[] l_bytes = Oni.Motoko.TextureDatReader.Read(BinaryDatReader.ResolveInstanceByLink(this.m_ID_0 << 8, this.m_sourceFile)).Surfaces[0].Convert(SurfaceFormat.RGBA).Data;
                     List<Color32> l_colors = new List<Color32>();
 
                     for (int i = 0; i < m_Width_8C * m_Height_8E; i ++)

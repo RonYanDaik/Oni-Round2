@@ -143,7 +143,7 @@ namespace Round2.Generated.Binary
       /// </summary>
       public Package[] m_pkg_80;
 
-      public void Convert(byte[] data)
+      public override void Convert(byte[] data)
       {
           byte[] l_bytes = new byte[4];
          for(int i=0; i<4; i++)

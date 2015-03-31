@@ -487,7 +487,7 @@ namespace Round2.Generated.Binary
       /// </summary>
       public System.String m_Not_used_188;
 
-      public void Convert(byte[] data)
+      public override void Convert(byte[] data)
       {
           byte[] l_bytes = new byte[24];
          for(int i=0; i<4; i++)

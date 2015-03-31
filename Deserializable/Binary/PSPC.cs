@@ -159,7 +159,7 @@ namespace Round2.Generated.Binary
       /// </summary>
       public Link<TXMP> m_TXMP_Link_50 =  new Link<TXMP>();
 
-      public void Convert(byte[] data)
+      public override void Convert(byte[] data)
       {
           byte[] l_bytes = new byte[4];
          for(int i=0; i<4; i++)

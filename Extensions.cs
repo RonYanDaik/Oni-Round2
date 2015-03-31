@@ -13,6 +13,18 @@ public static class Extensions
         return dict.ContainsKey(key) && (object)dict[key] == (object)value;
     }
 
+    internal static byte[] ReverseBytes(this byte[] @this)
+    {
+        byte[] l_res = new byte[@this.Length];
+
+        for (int i = 0; i < @this.Length; i++)
+        {
+            l_res[i] = @this[@this.Length - 1 - i];
+        }
+
+        return l_res;
+    }
+
     internal static T2[] ConvertAll<T1, T2>(this T1[] @this, Func<T1, T2> predicate)
     { 
         T2[] l_res = new T2[@this.Length];

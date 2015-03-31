@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Round2.Generated.Binary
 {
-    internal partial class ONLV
+    internal partial class ONLV 
     {
         GameObject l_lvlObj = null;
         //GeometryBuilder m_bldr;
@@ -34,7 +34,11 @@ namespace Round2.Generated.Binary
 
             HashSet<int> l_ignoreQuadLst = new HashSet<int>();
 
-            Debug.LogError(this.m_ONOA_Link_74.Value.m_pkg_20.Length);
+            /*
+            foreach (OBOA.Package pkg in this.m_OBOA_Link_4C.Value.m_pkg_20)
+            {
+                OBJCInst.BindOBOAPKG(pkg);
+            }*/
 
             foreach (ONOA.Package pkg in this.m_ONOA_Link_74.Value.m_pkg_20)
             {

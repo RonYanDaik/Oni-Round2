@@ -3,6 +3,8 @@ using System.Collections;
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System;
 
 public class BinaryDatReader : MonoBehaviour
 {
@@ -127,85 +129,74 @@ public class BinaryDatReader : MonoBehaviour
     static void ParseBINA(Round2.BinaryInitializable obj, Oni.InstanceDescriptor ides)
     {
         Round2.Generated.Binary.BINA l_bina = (Round2.Generated.Binary.BINA)obj;
-
+        
         using(Oni.BinaryReader l_rawReader = ides.GetRawReader(l_bina.m_Offset_C))
         {
-            byte[] l_data = new byte[l_bina.m_Size_8];
-            l_rawReader.Read(l_data, 0, l_bina.m_Size_8);
-            Debug.LogError("BINA size : " + l_bina.m_Size_8 + " :: id " + l_bina.m_File_id_0);
-            byte[] l_bytes = new byte[l_data.Length];
+            int l_tag = l_rawReader.ReadInt32();
 
-            for (int i = 0; i < 4; i++)//read teh damn tag
-            {
-                l_bytes[i] = l_data[i + 0];
-            }
-
-            Oni.Metadata.BinaryTag l_tag = (Oni.Metadata.BinaryTag)l_int32(l_bytes, 4);
-            Debug.LogError("Binary tag : " + l_tag + "|" + ((int)l_tag).ToString("X"));
-
-            switch (l_tag)
+            switch ((Oni.Metadata.BinaryTag)l_tag)
             {
                 case Oni.Metadata.BinaryTag.OBJC:
                     {
-                        for (int i = 0; i < 4; i++)//read teh damn size
+                        int l_size = l_rawReader.ReadInt32();
+                        int l_version = l_rawReader.ReadInt32();
+
+                        for (int l_nextSize = l_rawReader.ReadInt32(); l_nextSize != 0; l_nextSize = l_rawReader.ReadInt32())
                         {
-                            l_bytes[i] = l_data[i + 0x04];
-                        }
+                            int l_npos = l_rawReader.Position + l_nextSize;//calculate next position
+                            string l_objType = (string)l_str(l_rawReader.ReadBytes(4).ReverseBytes(), 4);
+                            int l_objID = l_rawReader.ReadInt32();
+                            int l_flags = l_rawReader.ReadInt32();
+                            float l_xPos = l_rawReader.ReadSingle();
+                            float l_yPos = l_rawReader.ReadSingle();
+                            float l_zPos = l_rawReader.ReadSingle();
+                            float l_xRot = l_rawReader.ReadSingle();
+                            float l_yRot = l_rawReader.ReadSingle();
+                            float l_zRot = l_rawReader.ReadSingle();
+                            Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM l_obj = ParseOBJCMember(l_objType, l_npos, l_rawReader, l_objID);
 
-                        int l_size = (int)l_int32(l_bytes, 4);
-                        Debug.LogWarning(l_size);
-
-                        for (int i = 0; i < 4; i++)//read teh damn version
-                        {
-                            l_bytes[i] = l_data[i + 0x08];
-                        }
-
-                        int l_ver = (int)l_int32(l_bytes, 4);
-                        Debug.LogWarning(l_ver);
-
-                        for (int i = 0; i < 4; i++)//read teh damn first obj size
-                        {
-                            l_bytes[i] = l_data[i + 0x0c];
-                        }
-
-                        int l_nextSize = (int)l_int32(l_bytes, 4);
-                        Debug.LogWarning(l_nextSize);
-                        List<byte> l_data2 = new List<byte>(l_data);
-                        l_data2.RemoveRange(0, 0x10);
-
-                        for (; l_data2.Count > 0 && l_nextSize > 0; )
-                        {
-                            TryParseOBJCMember(l_data2.ToArray(), l_nextSize);
-                            l_data2.RemoveRange(0, l_nextSize);
-
-                            for (int i = 0; i < 4; i++)//read teh damn obj size
+                            if (l_obj != null)
                             {
-                                l_bytes[i] = l_data2[i];
+                                l_obj.m_header.m_type = l_objType;
+                                l_obj.m_header.m_id = l_objID;
+                                l_obj.m_header.m_flags = l_flags;
+                                l_obj.m_header.m_pos = new Vector3(l_xPos, l_yPos, l_zPos);
+                                l_obj.m_header.m_rot = new Vector3(l_xRot, l_yRot, l_zRot);
+                                Debug.LogWarning(l_nextSize + ":" + l_objType + ":" + ides.GetHashCode() + "{" + l_obj.m_header.m_pos + "}" + "[" + l_obj.m_header.m_rot + "]");
                             }
 
-                            l_nextSize = (int)l_int32(l_bytes, 4);
-                            l_data2.RemoveRange(0, 0x4);
+                            l_rawReader.Position = l_npos;
                         }
                     }
                     break;
 
-                default:
-                    Debug.LogError("Cannot handle this tag yet : " + l_tag);
+                default :
+                    Debug.LogWarning("Cannot handle this tag yet");
                     break;
             }
         }
     }
 
-    static void TryParseOBJCMember(byte[] data, int len)
+    private static Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM ParseOBJCMember(string objType, int npos, Oni.BinaryReader rawReader, int objID)
     {
-        string l_tag = new string(new char[] { (char)data[3], (char)data[2], (char)data[1], (char)data[0] });
+        Round2.Generated.Binary.Namespaces.IDXA.OBJC.Header l_objh = new Round2.Generated.Binary.Namespaces.IDXA.OBJC.Header();
 
-        switch (l_tag)
-        { 
+        switch (objType)
+        {
             case "DOOR":
+                {
+                    Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM l_res = new Round2.Generated.Binary.Namespaces.IDXA.OBJC.DOOR() { m_header = l_objh };
+                    l_res.ContinueParse(npos, rawReader);
+                    return l_res;
+                }
+                break;
 
+            default:
+                Debug.LogWarning("[UNSUPPORTED TAG : " + objType + "]");
                 break;
         }
+
+        return null;
     }
 
     internal static T ConvertInstance<T>(Oni.InstanceDescriptor ides)
@@ -213,40 +204,45 @@ public class BinaryDatReader : MonoBehaviour
     {
         if (!m_descriptors.ContainsKey(ides))
         {
-            System.Func<Round2.BinaryInitializable> l_initilizer = InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + typeof(T).Name);
+            System.Func<Round2.BinaryInitializable> l_initializer = InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + typeof(T).Name);
 
+            
             if (ides.Template.Tag == Oni.TemplateTag.BINA)
             {
-                ParseBINA(l_initilizer(), ides);
+                try
+                {
+                    //ParseBINA2(l_initializer(), ides);
+                    ParseBINA(l_initializer(), ides);
+                }
+                catch (System.Exception ee)
+                {
+                    Debug.LogError(ee.ToString());
+                }
             }
         }
     
         return (T)m_descriptors[ides]();
     }
 
-    internal static Oni.InstanceDescriptor ResolveInstanceByLink(int link)
+
+    internal static Oni.InstanceDescriptor ResolveInstanceByLink(int link, Oni.InstanceFile srcFile)
     {
-        Oni.InstanceDescriptor ides = 
-        l_currentFile.ResolveLink(link);
+        Oni.InstanceDescriptor ides =
+        srcFile.ResolveLink(link);
         return ides;
     }
 
-    internal static T GetByLinkId<T>(int linkId) 
+    //this one breaks links to file0. Resolve somehow ffs
+    internal static T GetByLinkId<T>(int linkId, Oni.InstanceFile srcFile) 
         where T : Round2.BinaryInitializable
     {
-        Oni.InstanceDescriptor l_located = l_currentFile.ResolveLink(linkId);
+        Oni.InstanceDescriptor l_located = srcFile.ResolveLink(linkId);
         return ConvertInstance<T>(l_located);
     }
-
 
     internal static Oni.InstanceDescriptor GetInstance0(int id)
     {
         return l_0File.GetDescriptor(id);
-    }
-
-    internal static Oni.InstanceDescriptor GetInstance(int id)
-    {
-        return l_currentFile.GetDescriptor(id);
     }
 
     static int m_bytesUsed = 0;
@@ -262,6 +258,7 @@ public class BinaryDatReader : MonoBehaviour
             }
 
             Oni.BinaryReader reader = ides.OpenRead();
+            Oni.InstanceFile l_file = ides.File;
             //using ()
             {
                 List<byte> l_bytes = new List<byte>(System.BitConverter.GetBytes(ides.Index));
@@ -271,13 +268,26 @@ public class BinaryDatReader : MonoBehaviour
                 System.Type l_t = typeof(Round2.BinaryInitializable).Assembly.GetType(resultTypeName);//add Round2.Generated.Binary. before typename!
                 object l_res = System.Activator.CreateInstance(l_t);
                 m_bytesUsed += l_bytes.Count;
+                (l_res as Round2.BinaryInitializable).m_sourceFile = l_file;
 
                 System.Func<Round2.BinaryInitializable> l_resultingLoader = () =>
                     {
-                        (l_res as Round2.BinaryInitializable).Convert(l_bytes.ToArray());
-                        m_descriptors.Remove(ides);
-                        m_descriptors.Add(ides, () => l_res as Round2.BinaryInitializable);
-                        return l_res as Round2.BinaryInitializable;
+                        try
+                        {
+                            (l_res as Round2.BinaryInitializable).Convert(l_bytes.ToArray());
+                            m_descriptors.Remove(ides);
+                            m_descriptors.Add(ides, () => l_res as Round2.BinaryInitializable);
+                            return l_res as Round2.BinaryInitializable;
+                        }
+                        catch (System.Exception ee)
+                        {
+                            if (ee is System.IndexOutOfRangeException)
+                            {
+                                Debug.LogError("! bytes[" + l_bytes.Count + "]");
+                            }
+                           
+                            throw;
+                        }
                     };
 
                 m_descriptors.Add(ides, l_resultingLoader);
@@ -291,6 +301,191 @@ public class BinaryDatReader : MonoBehaviour
         }
 
         return null;
+    }
+
+    internal class I_BINA : InitializationVisitor<I_BINA>
+    {
+        public int m_dataSize;
+        public int m_unk;
+
+        IVRecv[] m_recvs;
+
+        public I_BINA()
+        {
+            m_recvs = new IVRecv[] 
+            {
+                (type, reader) =>  m_dataSize = reader.ReadInt32() ,
+                (type, reader) =>  m_unk = reader.ReadInt32() 
+            };
+        }
+
+        protected override InitializationVisitor<I_BINA>.IVRecv[] Receivers
+        {
+            get 
+            {
+                return m_recvs;
+            }
+        }
+    }
+
+    internal abstract class InitializationVisitor<T> : Oni.Metadata.IMetaTypeVisitor
+        where T : InitializationVisitor<T>, new()
+    {
+        public InitializationVisitor()
+        { 
+            
+        }
+
+        Oni.BinaryReader m_reader;
+        int m_index;
+        Oni.InstanceDescriptor m_reference;
+
+        protected delegate void IVRecv(Oni.Metadata.MetaType type, Oni.BinaryReader reader);
+
+        protected abstract IVRecv[] Receivers
+        {
+            get;
+        }
+
+        public void Initialize(Oni.InstanceDescriptor ides)
+        {
+            m_reference = ides;
+            m_reader = ides.OpenRead();
+            ides.Template.Type.Accept(this);
+        }
+
+        public void VisitArray(Oni.Metadata.MetaArray type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitBoundingBox(Oni.Metadata.MetaBoundingBox type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitBoundingSphere(Oni.Metadata.MetaBoundingSphere type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitByte(Oni.Metadata.MetaByte type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitColor(Oni.Metadata.MetaColor type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitEnum(Oni.Metadata.MetaEnum type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitFloat(Oni.Metadata.MetaFloat type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitInt16(Oni.Metadata.MetaInt16 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitInt32(Oni.Metadata.MetaInt32 type)
+        {
+            Receivers[m_index](type, this.m_reader);
+            m_index++;
+
+        }
+
+        public void VisitInt64(Oni.Metadata.MetaInt64 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitMatrix4x3(Oni.Metadata.MetaMatrix4x3 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitPadding(Oni.Metadata.MetaPadding type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitPlane(Oni.Metadata.MetaPlane type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitPointer(Oni.Metadata.MetaPointer type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitQuaternion(Oni.Metadata.MetaQuaternion type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitRawOffset(Oni.Metadata.MetaRawOffset type)
+        {
+            Receivers[m_index](type, this.m_reader);
+            m_index++;
+        }
+
+        public void VisitSepOffset(Oni.Metadata.MetaSepOffset type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitString(Oni.Metadata.MetaString type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitStruct(Oni.Metadata.MetaStruct type)
+        {
+            foreach (Oni.Metadata.Field fld in type.Fields)
+            {
+                Debug.Log(fld.Name);
+
+                fld.Type.Accept(this);
+            }
+        }
+
+        public void VisitUInt16(Oni.Metadata.MetaUInt16 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitUInt32(Oni.Metadata.MetaUInt32 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitUInt64(Oni.Metadata.MetaUInt64 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitVarArray(Oni.Metadata.MetaVarArray type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitVector2(Oni.Metadata.MetaVector2 type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void VisitVector3(Oni.Metadata.MetaVector3 type)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
     void Start()
@@ -317,12 +512,17 @@ public class BinaryDatReader : MonoBehaviour
     void _Start()
     {
         Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
-        l_0File = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
-        l_currentFile = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
+        l_currentFile = l_0File = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level0_Final.dat");
         System.DateTime l_dt = System.DateTime.Now;
 
         foreach (Oni.InstanceDescriptor ides in l_0File.Descriptors)
         {
+            switch (ides.Template.Tag)
+            {
+                case Oni.TemplateTag.DOOR:
+                    Round2.Generated.Binary.DOOR.RegisterDoorClass(ides);
+                    break;
+            }
             try
             {
                 if (ides.IsPlaceholder)
@@ -339,6 +539,8 @@ public class BinaryDatReader : MonoBehaviour
             }
         }
 
+        l_currentFile = fm.OpenFile((Application.isEditor ? @"D:\OniCleanInstall\" : @"..\..\") + @"GameDataFolder\level1_Final.dat");
+        
         foreach (Oni.InstanceDescriptor ides in l_currentFile.Descriptors)
         {
             switch (ides.Template.Tag)
@@ -350,11 +552,12 @@ public class BinaryDatReader : MonoBehaviour
                 case Oni.TemplateTag.AKEV:
                     Debug.Log(ides.Index);
                     break;
+
                 case Oni.TemplateTag.ONLV:
                     Round2.Generated.Binary.ONLV l_lvl = ConvertInstance<Round2.Generated.Binary.ONLV>(ides);
                     Debug.Log(l_lvl.m_AKEV_Link_48.Value.m_File_id_0);
                     l_lvl.Build();
-
+                    
                     foreach (Round2.Generated.Binary.AISA.Package pkg in l_lvl.m_AISA_Link_64.Value.m_pkg_20)
                     {
                         Debug.LogWarning(pkg.m_ONCC_link_28.m_lnkId);
@@ -366,8 +569,10 @@ public class BinaryDatReader : MonoBehaviour
             }
         }
 
+        //BINA_OBJC_DOOR.m_lateImpl();
         Debug.Log("initialization is over in " + (System.DateTime.Now -  l_dt).Milliseconds + " ms");
     }
+
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Round2/Draw binary readers")]
@@ -533,7 +738,7 @@ public class BinaryDatReader : MonoBehaviour
             l_convertionSource.Insert(0, "];\n");
             l_convertionSource.Insert(0, l_biggestBytesNeeded);
             l_convertionSource.Insert(0, "          byte[] l_bytes = new byte[");
-            l_convertionSource.Insert(0, "\n      public void Convert(byte[] data)\n      {\n");
+            l_convertionSource.Insert(0, "\n      public override void Convert(byte[] data)\n      {\n");
             l_convertionSource.AppendLine("\n     }");
             l_sourceMaker.Append(l_convertionSource.ToString());
             l_pkgMaker.AppendLine("}");
@@ -656,9 +861,10 @@ public class BinaryDatReader : MonoBehaviour
 
 namespace Round2
 {
-    interface BinaryInitializable
+    internal abstract class BinaryInitializable
     {
-       void Convert(byte[] data);
+        public abstract void Convert(byte[] data);
+        public Oni.InstanceFile m_sourceFile;
     }
 }
 
@@ -672,7 +878,7 @@ namespace Round2
             {
                 public int l_addr;
 
-                public void Convert(byte[] data)
+                public override void Convert(byte[] data)
                 {
                     //shouldn't be called anyway, huh?
                     throw new System.Exception("Don't forget to not use this stuff!");
@@ -688,8 +894,15 @@ namespace Round2
     {
         namespace Binary
         {
-            internal class Link<T> where T : Round2.BinaryInitializable
+            internal class Link<T>
+                where T : Round2.BinaryInitializable
             {
+                public Link()
+                {
+                    m_sourceFile = BinaryDatReader.l_currentFile;
+                }
+
+                public Oni.InstanceFile m_sourceFile;
                 public int m_lnkId;
                 T m_cachedObject;
 
@@ -702,7 +915,7 @@ namespace Round2
                 {
                     get
                     {
-                        return m_cachedObject == null ? m_cachedObject = BinaryDatReader.GetByLinkId<T>(m_lnkId) : m_cachedObject;
+                        return m_cachedObject == null ? m_cachedObject = BinaryDatReader.GetByLinkId<T>(m_lnkId, m_sourceFile) : m_cachedObject;
                     }
                 }
 
@@ -710,9 +923,10 @@ namespace Round2
                 {
                     get
                     {
-                        return BinaryDatReader.ResolveInstanceByLink(m_lnkId);
+                        return BinaryDatReader.ResolveInstanceByLink(m_lnkId, m_sourceFile);
                     }
                 }
+
             }
         }
     }

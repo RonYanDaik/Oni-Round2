@@ -283,7 +283,7 @@ namespace Round2.Generated.Binary
       /// </summary>
       public Link<TRSC> m_TRSC_link_C8C =  new Link<TRSC>();
 
-      public void Convert(byte[] data)
+      public override void Convert(byte[] data)
       {
           byte[] l_bytes = new byte[4];
          for(int i=0; i<4; i++)
