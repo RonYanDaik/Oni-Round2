@@ -8,6 +8,16 @@ public static class Extensions
 {
     const string SMLSIG = "[ SML :: ";
 
+    internal static Vector3 UnityVector(this Oni.Vector3 @this)
+    {
+        return new Vector3(@this.X, @this.Y, @this.Z);
+    }
+
+    internal static Quaternion UnityQuaternionRaw(this Oni.Quaternion @this)
+    {
+        return new Quaternion(@this.X, @this.Y, @this.Z, @this.W);
+    }
+
     internal static bool Contains<T1, T2>(this Dictionary<T1, T2> dict, T1 key, T2 value)
     {
         return dict.ContainsKey(key) && (object)dict[key] == (object)value;

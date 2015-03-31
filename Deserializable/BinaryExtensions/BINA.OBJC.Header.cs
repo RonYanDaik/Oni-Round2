@@ -5,7 +5,7 @@ namespace Round2.Generated.Binary
 {
     namespace Namespaces
     {
-        namespace IDXA
+        namespace BINA
         {
             namespace OBJC
             {

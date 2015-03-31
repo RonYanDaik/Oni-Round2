@@ -153,7 +153,7 @@ public class BinaryDatReader : MonoBehaviour
                             float l_xRot = l_rawReader.ReadSingle();
                             float l_yRot = l_rawReader.ReadSingle();
                             float l_zRot = l_rawReader.ReadSingle();
-                            Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM l_obj = ParseOBJCMember(l_objType, l_npos, l_rawReader, l_objID);
+                            Round2.Generated.Binary.Namespaces.BINA.OBJC.OBJCM l_obj = ParseOBJCMember(l_objType, l_npos, l_rawReader, l_objID);
 
                             if (l_obj != null)
                             {
@@ -177,15 +177,15 @@ public class BinaryDatReader : MonoBehaviour
         }
     }
 
-    private static Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM ParseOBJCMember(string objType, int npos, Oni.BinaryReader rawReader, int objID)
+    private static Round2.Generated.Binary.Namespaces.BINA.OBJC.OBJCM ParseOBJCMember(string objType, int npos, Oni.BinaryReader rawReader, int objID)
     {
-        Round2.Generated.Binary.Namespaces.IDXA.OBJC.Header l_objh = new Round2.Generated.Binary.Namespaces.IDXA.OBJC.Header();
+        Round2.Generated.Binary.Namespaces.BINA.OBJC.Header l_objh = new Round2.Generated.Binary.Namespaces.BINA.OBJC.Header();
 
         switch (objType)
         {
             case "DOOR":
                 {
-                    Round2.Generated.Binary.Namespaces.IDXA.OBJC.OBJCM l_res = new Round2.Generated.Binary.Namespaces.IDXA.OBJC.DOOR() { m_header = l_objh };
+                    Round2.Generated.Binary.Namespaces.BINA.OBJC.OBJCM l_res = new Round2.Generated.Binary.Namespaces.BINA.OBJC.DOOR() { m_header = l_objh };
                     l_res.ContinueParse(npos, rawReader);
                     return l_res;
                 }
@@ -569,6 +569,7 @@ public class BinaryDatReader : MonoBehaviour
             }
         }
 
+        Door.m_lateInitialize();
         //BINA_OBJC_DOOR.m_lateImpl();
         Debug.Log("initialization is over in " + (System.DateTime.Now -  l_dt).Milliseconds + " ms");
     }

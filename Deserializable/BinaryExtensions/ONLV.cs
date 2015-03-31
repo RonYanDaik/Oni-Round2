@@ -58,10 +58,17 @@ namespace Round2.Generated.Binary
                 }
             }
 
+            int l_i = 0;
+
             foreach (OBOA.Package pkg in this.m_OBOA_Link_4C.Value.m_pkg_20)
             {
+                l_i++;
+                Door.OBOALink(pkg);
+
                 if (pkg.m_OBAN_link_4.m_lnkId != 0)
                 {
+                    /*
+                     * TODO : implement OBOA's not only for doors, similar to code below:
                     string l_objname = pkg.m_Name_70;
                     UnityEngine.Vector3 l_pos = new UnityEngine.Vector3(-pkg.m_OBAN_link_4.Value.m_x_position_3C, pkg.m_OBAN_link_4.Value.m_y_position_40, pkg.m_OBAN_link_4.Value.m_z_position_44);
                     GameObject l_g = new GameObject(l_objname);
@@ -69,10 +76,11 @@ namespace Round2.Generated.Binary
                     l_g.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"));
                     l_g.AddComponent<MeshFilter>().mesh = pkg.m_M3GA_link_0.Value.m_pkg_20[0].m_M3GM_link_0.Value.UnityMesh;
                     l_g.AddComponent<MeshCollider>().mesh = pkg.m_M3GA_link_0.Value.m_pkg_20[0].m_M3GM_link_0.Value.UnityMesh;
+                    l_g.transform.position = new UnityEngine.Vector3(-pkg.m_OBAN_link_4.Value.m_x_position_3C, pkg.m_OBAN_link_4.Value.m_y_position_40, pkg.m_OBAN_link_4.Value.m_z_position_44);*/
                 }
                 else
                 {
-                    Debug.LogError("OBAN LINK = 0");
+                    Debug.LogError("OBAN LINK = 0, " + l_i + "\\" + this.m_OBOA_Link_4C.Value.m_pkg_20.Length);
                 }
             }
 

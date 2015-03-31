@@ -110,7 +110,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_14 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_door_id_14 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -143,7 +143,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_20 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_x_pos_20 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -154,7 +154,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_24 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_y_pos_24 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -165,7 +165,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_28 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_z_pos_28 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -176,7 +176,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_2C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_x_rot_2C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -187,7 +187,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_30 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_y_rot_30 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -198,7 +198,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_34 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_z_rot_34 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -209,7 +209,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_38 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_w_rot_38 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -402,9 +402,9 @@ public partial class Package
       /// </summary>
       public System.Int32 m_Unknown_10;
       /// <summary>
-      ///Unknown
+      ///door ID; only used for doors; in the case of double doors both doors have the same id but one of the door identifiers has bit 12 set
       /// </summary>
-      public System.Int32 m_Unknown_14;
+      public System.Int32 m_door_id_14;
       /// <summary>
       ///Unknown
       /// </summary>
@@ -414,33 +414,33 @@ public partial class Package
       /// </summary>
       public System.Int32 m_Unknown_1C;
       /// <summary>
-      ///Unknown
+      ///obj x position
       /// </summary>
-      public System.Single m_Unknown_20;
+      public System.Single m_x_pos_20;
       /// <summary>
-      ///Unknown
+      ///obj y position
       /// </summary>
-      public System.Single m_Unknown_24;
+      public System.Single m_y_pos_24;
       /// <summary>
-      ///Unknown
+      ///obj z position
       /// </summary>
-      public System.Single m_Unknown_28;
+      public System.Single m_z_pos_28;
       /// <summary>
-      ///Unknown
+      ///obj x rotation
       /// </summary>
-      public System.Single m_Unknown_2C;
+      public System.Single m_x_rot_2C;
       /// <summary>
-      ///Unknown
+      ///obj y rotation
       /// </summary>
-      public System.Single m_Unknown_30;
+      public System.Single m_y_rot_30;
       /// <summary>
-      ///Unknown
+      ///obj z rotation
       /// </summary>
-      public System.Single m_Unknown_34;
+      public System.Single m_z_rot_34;
       /// <summary>
-      ///Unknown
+      ///obj w rotation
       /// </summary>
-      public System.Single m_Unknown_38;
+      public System.Single m_w_rot_38;
       /// <summary>
       ///Unknown
       /// </summary>

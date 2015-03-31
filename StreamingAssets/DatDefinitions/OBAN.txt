@@ -5,39 +5,39 @@ Unknown	$08	4	Unknown
 Unknown	$0C	4	Unknown
 Unknown	$10	4	Unknown
 Unknown	$14	4	Unknown
-Unknown	$18	9	Unknown
-Unknown	$1C	9	Unknown
-Unknown	$20	9	Unknown
-Unknown	$24	9	Unknown
-Unknown	$28	9	Unknown
-Unknown	$2C	9	Unknown
-Unknown	$30	9	Unknown
-Unknown	$34	9	Unknown
-Unknown	$38	9	Unknown
-x-position	$3C	9	x-position of the start point
-y-position	$40	9	y-position (height) of the start point
-z-position	$44	9	z-position of the start point
-Unknown	$48	9	Unknown
-Unknown	$4C	9	Unknown
-Unknown	$50	9	Unknown
-Unknown	$54	9	Unknown
-Unknown	$58	9	Unknown
-Unknown	$5C	9	Unknown
-Unknown	$60	9	Unknown
-Unknown	$64	9	Unknown
-Unknown	$68	9	Unknown
-Unknown	$6C	9	Unknown
-Unknown	$70	9	Unknown
-Unknown	$74	9	Unknown
+initial position matrix a11	$18	9	matrix a11
+initial position matrix a12	$1C	9	matrix a12
+initial position matrix a13	$20	9	matrix a13
+initial position matrix a21	$24	9	matrix a21
+initial position matrix a22	$28	9	matrix a22
+initial position matrix a23	$2C	9	matrix a23
+initial position matrix a31	$30	9	matrix a31
+initial position matrix a32	$34	9	matrix a32
+initial position matrix a33	$38	9	matrix a33
+initial position matrix a41	$3C	9	matrix a41
+initial position matrix a42	$40	9	matrix a42
+initial position matrix a43	$44	9	matrix a43
+fixed transform a11	$48	9	matrix a11
+fixed transform a12	$4C	9	matrix a12
+fixed transform a13	$50	9	matrix a13
+fixed transform a21	$54	9	matrix a21
+fixed transform a22	$58	9	matrix a22
+fixed transform a23	$5C	9	matrix a23
+fixed transform a31	$60	9	matrix a31
+fixed transform a32	$64	9	matrix a32
+fixed transform a33	$68	9	matrix a33
+fixed transform a41	$6C	9	matrix a41
+fixed transform a42	$70	9	matrix a42
+fixed transform a43	$74	9	matrix a43
 Frames	$78	2	Number of frames
 Animation time	$7A	2	Animation time in 1/60 seconds
 Unknown	$7C	2	Unknown
 Packages	$7E	2	Amount of packages that follow
 *Package		$80	$7E	2	32
-Unknown	$00	9	Unknown
-Unknown	$04	9	Unknown
-Unknown	$08	9	Unknown
-Unknown	$0C	9	Unknown
+x rot	$00	9	x-rot
+y rot	$04	9	y-rot
+z rot	$08	9	z-rot
+w rot	$0C	9	w-rot
 x-position	$10	9	x-position
 y-position	$14	9	y-position
 z-position	$18	9	z-position

@@ -27,101 +27,101 @@ namespace Round2.Generated.Binary
       /// </summary>
       public System.Int32 m_Unknown_14;
       /// <summary>
-      ///Unknown
+      ///matrix a11
       /// </summary>
-      public System.Single m_Unknown_18;
+      public System.Single m_initial_position_matrix_a11_18;
       /// <summary>
-      ///Unknown
+      ///matrix a12
       /// </summary>
-      public System.Single m_Unknown_1C;
+      public System.Single m_initial_position_matrix_a12_1C;
       /// <summary>
-      ///Unknown
+      ///matrix a13
       /// </summary>
-      public System.Single m_Unknown_20;
+      public System.Single m_initial_position_matrix_a13_20;
       /// <summary>
-      ///Unknown
+      ///matrix a21
       /// </summary>
-      public System.Single m_Unknown_24;
+      public System.Single m_initial_position_matrix_a21_24;
       /// <summary>
-      ///Unknown
+      ///matrix a22
       /// </summary>
-      public System.Single m_Unknown_28;
+      public System.Single m_initial_position_matrix_a22_28;
       /// <summary>
-      ///Unknown
+      ///matrix a23
       /// </summary>
-      public System.Single m_Unknown_2C;
+      public System.Single m_initial_position_matrix_a23_2C;
       /// <summary>
-      ///Unknown
+      ///matrix a31
       /// </summary>
-      public System.Single m_Unknown_30;
+      public System.Single m_initial_position_matrix_a31_30;
       /// <summary>
-      ///Unknown
+      ///matrix a32
       /// </summary>
-      public System.Single m_Unknown_34;
+      public System.Single m_initial_position_matrix_a32_34;
       /// <summary>
-      ///Unknown
+      ///matrix a33
       /// </summary>
-      public System.Single m_Unknown_38;
+      public System.Single m_initial_position_matrix_a33_38;
       /// <summary>
-      ///x-position of the start point
+      ///matrix a41
       /// </summary>
-      public System.Single m_x_position_3C;
+      public System.Single m_initial_position_matrix_a41_3C;
       /// <summary>
-      ///y-position (height) of the start point
+      ///matrix a42
       /// </summary>
-      public System.Single m_y_position_40;
+      public System.Single m_initial_position_matrix_a42_40;
       /// <summary>
-      ///z-position of the start point
+      ///matrix a43
       /// </summary>
-      public System.Single m_z_position_44;
+      public System.Single m_initial_position_matrix_a43_44;
       /// <summary>
-      ///Unknown
+      ///matrix a11
       /// </summary>
-      public System.Single m_Unknown_48;
+      public System.Single m_fixed_transform_a11_48;
       /// <summary>
-      ///Unknown
+      ///matrix a12
       /// </summary>
-      public System.Single m_Unknown_4C;
+      public System.Single m_fixed_transform_a12_4C;
       /// <summary>
-      ///Unknown
+      ///matrix a13
       /// </summary>
-      public System.Single m_Unknown_50;
+      public System.Single m_fixed_transform_a13_50;
       /// <summary>
-      ///Unknown
+      ///matrix a21
       /// </summary>
-      public System.Single m_Unknown_54;
+      public System.Single m_fixed_transform_a21_54;
       /// <summary>
-      ///Unknown
+      ///matrix a22
       /// </summary>
-      public System.Single m_Unknown_58;
+      public System.Single m_fixed_transform_a22_58;
       /// <summary>
-      ///Unknown
+      ///matrix a23
       /// </summary>
-      public System.Single m_Unknown_5C;
+      public System.Single m_fixed_transform_a23_5C;
       /// <summary>
-      ///Unknown
+      ///matrix a31
       /// </summary>
-      public System.Single m_Unknown_60;
+      public System.Single m_fixed_transform_a31_60;
       /// <summary>
-      ///Unknown
+      ///matrix a32
       /// </summary>
-      public System.Single m_Unknown_64;
+      public System.Single m_fixed_transform_a32_64;
       /// <summary>
-      ///Unknown
+      ///matrix a33
       /// </summary>
-      public System.Single m_Unknown_68;
+      public System.Single m_fixed_transform_a33_68;
       /// <summary>
-      ///Unknown
+      ///matrix a41
       /// </summary>
-      public System.Single m_Unknown_6C;
+      public System.Single m_fixed_transform_a41_6C;
       /// <summary>
-      ///Unknown
+      ///matrix a42
       /// </summary>
-      public System.Single m_Unknown_70;
+      public System.Single m_fixed_transform_a42_70;
       /// <summary>
-      ///Unknown
+      ///matrix a43
       /// </summary>
-      public System.Single m_Unknown_74;
+      public System.Single m_fixed_transform_a43_74;
       /// <summary>
       ///Number of frames
       /// </summary>
@@ -180,122 +180,122 @@ namespace Round2.Generated.Binary
          {
              l_bytes[i] = data[i + 24];
          }
-         this.m_Unknown_18 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a11_18 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 28];
          }
-         this.m_Unknown_1C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a12_1C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 32];
          }
-         this.m_Unknown_20 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a13_20 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 36];
          }
-         this.m_Unknown_24 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a21_24 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 40];
          }
-         this.m_Unknown_28 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a22_28 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 44];
          }
-         this.m_Unknown_2C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a23_2C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 48];
          }
-         this.m_Unknown_30 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a31_30 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 52];
          }
-         this.m_Unknown_34 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a32_34 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 56];
          }
-         this.m_Unknown_38 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a33_38 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 60];
          }
-         this.m_x_position_3C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a41_3C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 64];
          }
-         this.m_y_position_40 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a42_40 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 68];
          }
-         this.m_z_position_44 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_initial_position_matrix_a43_44 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 72];
          }
-         this.m_Unknown_48 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a11_48 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 76];
          }
-         this.m_Unknown_4C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a12_4C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 80];
          }
-         this.m_Unknown_50 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a13_50 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 84];
          }
-         this.m_Unknown_54 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a21_54 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 88];
          }
-         this.m_Unknown_58 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a22_58 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 92];
          }
-         this.m_Unknown_5C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a23_5C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 96];
          }
-         this.m_Unknown_60 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a31_60 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 100];
          }
-         this.m_Unknown_64 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a32_64 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 104];
          }
-         this.m_Unknown_68 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a33_68 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 108];
          }
-         this.m_Unknown_6C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a41_6C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 112];
          }
-         this.m_Unknown_70 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a42_70 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 116];
          }
-         this.m_Unknown_74 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+         this.m_fixed_transform_a43_74 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
          for(int i=0; i<2; i++)
          {
              l_bytes[i] = data[i + 120];
@@ -325,7 +325,7 @@ for (int j=0;j<this.m_Packages_7E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_80[j] == null ?  m_pkg_80[j] = new Package() :   m_pkg_80[j];
-l_pkg.m_Unknown_0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_x_rot_0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_7E;j++)
@@ -336,7 +336,7 @@ for (int j=0;j<this.m_Packages_7E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_80[j] == null ?  m_pkg_80[j] = new Package() :   m_pkg_80[j];
-l_pkg.m_Unknown_4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_y_rot_4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_7E;j++)
@@ -347,7 +347,7 @@ for (int j=0;j<this.m_Packages_7E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_80[j] == null ?  m_pkg_80[j] = new Package() :   m_pkg_80[j];
-l_pkg.m_Unknown_8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_z_rot_8 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_7E;j++)
@@ -358,7 +358,7 @@ for (int j=0;j<this.m_Packages_7E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_80[j] == null ?  m_pkg_80[j] = new Package() :   m_pkg_80[j];
-l_pkg.m_Unknown_C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_w_rot_C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_7E;j++)
@@ -410,21 +410,21 @@ l_pkg.m_Passed_time_1C = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
 public partial class Package
 {
       /// <summary>
-      ///Unknown
+      ///x-rot
       /// </summary>
-      public System.Single m_Unknown_0;
+      public System.Single m_x_rot_0;
       /// <summary>
-      ///Unknown
+      ///y-rot
       /// </summary>
-      public System.Single m_Unknown_4;
+      public System.Single m_y_rot_4;
       /// <summary>
-      ///Unknown
+      ///z-rot
       /// </summary>
-      public System.Single m_Unknown_8;
+      public System.Single m_z_rot_8;
       /// <summary>
-      ///Unknown
+      ///w-rot
       /// </summary>
-      public System.Single m_Unknown_C;
+      public System.Single m_w_rot_C;
       /// <summary>
       ///x-position
       /// </summary>

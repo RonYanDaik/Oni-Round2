@@ -9,16 +9,16 @@ OBAN-link	$04	12	Link to the Object Animation
 ENVP-link	$08	12	Link to the Environment Particle Array
 Unknown	$0C	4	Unknown
 Unknown	$10	4	Unknown
-Unknown	$14	4	Unknown
+door id	$14	4	door ID; only used for doors; in the case of double doors both doors have the same id but one of the door identifiers has bit 12 set
 Unknown	$18	4	Unknown
 Unknown	$1C	4	Unknown
-Unknown	$20	9	Unknown
-Unknown	$24	9	Unknown
-Unknown	$28	9	Unknown
-Unknown	$2C	9	Unknown
-Unknown	$30	9	Unknown
-Unknown	$34	9	Unknown
-Unknown	$38	9	Unknown
+x pos	$20	9	obj x position
+y pos	$24	9	obj y position
+z pos	$28	9	obj z position
+x rot	$2C	9	obj x rotation
+y rot	$30	9	obj y rotation
+z rot	$34	9	obj z rotation
+w rot	$38	9	obj w rotation
 Unknown	$3C	9	Unknown
 Unknown	$40	9	Unknown
 Unknown	$44	9	Unknown
