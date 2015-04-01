@@ -26,7 +26,7 @@ namespace Round2.Generated.Binary
                     this.m_initial_position_matrix_a41_3C,
                     this.m_initial_position_matrix_a42_40,
                     this.m_initial_position_matrix_a43_44,
-                    0
+                    1
                 );
             }
         }
