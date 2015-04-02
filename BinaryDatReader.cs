@@ -570,6 +570,7 @@ public class BinaryDatReader : MonoBehaviour
         }
 
         Door.m_lateInitialize();
+        Door.m_lateInitialize = () => { };
         //BINA_OBJC_DOOR.m_lateImpl();
         Debug.Log("initialization is over in " + (System.DateTime.Now -  l_dt).Milliseconds + " ms");
     }

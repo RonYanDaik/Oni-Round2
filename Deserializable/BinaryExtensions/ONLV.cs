@@ -63,7 +63,8 @@ namespace Round2.Generated.Binary
             foreach (OBOA.Package pkg in this.m_OBOA_Link_4C.Value.m_pkg_20)
             {
                 l_i++;
-                Door.OBOALink(pkg);
+                RTOBOA.Instantiate(pkg);
+                //Door.OBOALink(pkg);
 
                 if (pkg.m_OBAN_link_4.m_lnkId != 0)
                 {

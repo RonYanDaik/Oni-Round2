@@ -44,9 +44,8 @@ namespace Round2.Generated.Binary
 
                             if ((l_doorClass = Round2.Generated.Binary.DOOR.PendDoorClass(m_doorType)) != null)
                             {
-                                Door l_d = GameObject.CreatePrimitive(PrimitiveType.Plane).AddComponent<Door>();
+                                Door l_d = new GameObject().AddComponent<Door>();
                                 l_d.m_proto = this;
-                                l_d.ManualStart();
                             }
                         }
                         else
