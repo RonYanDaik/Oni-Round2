@@ -18,6 +18,6 @@ public class RTEX : MonoBehaviour
 
     void OnGUI()
     {
-        Graphics.Blit(new Texture(), new Material(Shader.Find("Diffuse")));
+        Graphics.Blit(new Texture(), new Material(Shader.Find("VertexShadedDiffuse")));
     }
 }

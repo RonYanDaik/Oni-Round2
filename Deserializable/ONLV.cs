@@ -145,7 +145,7 @@ namespace Round2
                 MeshFilter mf = g.AddComponent<MeshFilter>();
                 object[] l_arr = l_objname.SmlToArray();
                 l_counter = l_arr == null || l_arr[2] == null ? -1 : (int)l_arr[2];
-                Material l_objmat = g.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"));
+                Material l_objmat = g.AddComponent<MeshRenderer>().material = new Material(Shader.Find("VertexShadedDiffuse"));
 
                 if (l_counter >= 0)
                 {

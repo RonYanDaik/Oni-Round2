@@ -60,7 +60,6 @@ public class RTOBOA : MonoBehaviour
         }
 
         AnimationClip[] l_clips = oban.GetClips(true);
-
         m_anim.AddClip(l_clips[0], "In");
         m_anim.AddClip(l_clips[1], "Out");
     }
@@ -69,7 +68,7 @@ public class RTOBOA : MonoBehaviour
     {
         if (m_anim != null)
         {
-            m_anim.Play("In");
+            m_anim.CrossFade("In", 0.1f);
         }
     }
 
@@ -77,7 +76,7 @@ public class RTOBOA : MonoBehaviour
     {
         if (m_anim != null)
         {
-            m_anim.Play("Out");
+            m_anim.CrossFade("Out", 0.1f);
         }
     }
 }

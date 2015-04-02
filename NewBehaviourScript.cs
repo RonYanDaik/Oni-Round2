@@ -61,7 +61,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
         t.SetPixels32(colors.ToArray());
 
         t.Apply(true);
-        (obj.gameObject.AddComponent<MeshRenderer>().material = new Material(Shader.Find("Diffuse"))).mainTexture = t;
+        (obj.gameObject.AddComponent<MeshRenderer>().material = new Material(Shader.Find("VertexShadedDiffuse"))).mainTexture = t;
     }
 
     void ValidateChildrens(Oni.Totoro.BodyNode parentNode, Dictionary<string, Transform> nameToTransform, string rootNodeName)
@@ -396,7 +396,7 @@ public class NewBehaviourScript : MonoBehaviour, ICHR
                         if (!invisble || showInvisible)
                         {
                             MeshRenderer mr = (mgo.AddComponent<MeshRenderer>());
-                            (mr.material = new Material(Shader.Find(transparent ? "TransparentTwoSided" : "Diffuse"))).mainTexture = t2d;
+                            (mr.material = new Material(Shader.Find(transparent ? "TransparentTwoSided" : "VertexShadedDiffuse"))).mainTexture = t2d;
                         }
                     }
                     mmf.mesh = me;

@@ -9,6 +9,7 @@ public class GeometryBuilder
     Vector3[] m_vrtx;
     Vector2[] m_txcoords;
     Vector3[] m_normals;
+    List<Color32> m_colors = new List<Color32>();
     
     public string Name
     {
@@ -26,10 +27,10 @@ public class GeometryBuilder
         m_normals = normalsSouce;
     }
 
-    public void Quad(int v1, int v2, int v3, int v4, int t1, int t2, int t3, int t4)
+    public void Quad(int v1, int v2, int v3, int v4, int t1, int t2, int t3, int t4, Color32[] colors = null)
     {
-        Triangle(v1, v2, v3, t1, t2, t3);
-        Triangle(v3, v4, v1, t3, t4, t1);
+        Triangle(v1, v2, v3, t1, t2, t3, colors == null ? new Color32[] { Color.white, Color.white, Color.white } : new Color32[] { colors[0], colors[1], colors[2] });
+        Triangle(v3, v4, v1, t3, t4, t1, colors == null ? new Color32[] { Color.white, Color.white, Color.white } : new Color32[] { colors[2], colors[3], colors[0] });
     }
 
     List<UvGroup> m_groups = new List<UvGroup>() { new UvGroup() };
@@ -37,6 +38,7 @@ public class GeometryBuilder
     class UvGroup
     {
         public int m_offset = 0;
+        public Dictionary<int, Color32> m_vtrToColor = new Dictionary<int, Color32>();
         public Dictionary<int, int> m_vrtToUv = new Dictionary<int, int>();
         /// <summary>
         /// add vertex index here
@@ -44,8 +46,17 @@ public class GeometryBuilder
         public List<int> m_strip = new List<int>();
     }
 
-    internal void Triangle(int v1, int v2, int v3, int t1, int t2, int t3)
+    internal void Triangle(int v1, int v2, int v3, int t1, int t2, int t3, Color32[] colors = null)
     {
+        if (colors != null)
+        {
+            m_colors.AddRange(colors);
+        }
+        else
+        {
+            m_colors.AddRange(new Color32[] { Color.white, Color.white, Color.white });
+        }
+
         bool l_addToNewStrip = true;
 
         foreach (UvGroup group in m_groups)
@@ -54,6 +65,9 @@ public class GeometryBuilder
             {
                 if (!group.m_vrtToUv.ContainsKey(v1) && !group.m_vrtToUv.ContainsKey(v2) && !group.m_vrtToUv.ContainsKey(v3))
                 {
+                    group.m_vtrToColor.Add(v1, colors[0]);
+                    group.m_vtrToColor.Add(v2, colors[1]);
+                    group.m_vtrToColor.Add(v3, colors[2]);
                     group.m_vrtToUv.Add(v1, t1);
                     group.m_vrtToUv.Add(v2, t2);
                     group.m_vrtToUv.Add(v3, t3);
@@ -83,6 +97,9 @@ public class GeometryBuilder
         {
             UvGroup l_group = new UvGroup();
             m_groups.Add(l_group);
+            l_group.m_vtrToColor.Add(v1, colors[0]);
+            l_group.m_vtrToColor.Add(v2, colors[1]);
+            l_group.m_vtrToColor.Add(v3, colors[2]);
             l_group.m_vrtToUv.Add(v1, t1);
             l_group.m_vrtToUv.Add(v2, t2);
             l_group.m_vrtToUv.Add(v3, t3);
@@ -167,10 +184,12 @@ public class GeometryBuilder
                 List<Vector2> l_uvs = new List<Vector2>();
                 Dictionary<int, int> l_fakeToRealIndex = new Dictionary<int, int>();
                 List<int> l_indices = new List<int>();
+                List<Color32> l_colors = new List<Color32>();
 
                 foreach (int vrti in group.m_vrtToUv.Keys)
                 {
                     l_vrts.Add(m_vrtx[vrti]);
+                    l_colors.Add(group.m_vtrToColor[vrti]);
                     l_uvs.Add(m_txcoords[group.m_vrtToUv[vrti]]);
 
                     if (!l_fakeToRealIndex.ContainsKey(vrti))
@@ -185,6 +204,7 @@ public class GeometryBuilder
                 Mesh l_mesh = new UnityEngine.Mesh();
                 l_mesh.vertices = l_vrts.ConvertAll<UnityEngine.Vector3>( u => new Vector3(-u.x, u.y, u.z)).ToArray();
                 l_mesh.uv = l_uvs.ToArray();
+                l_mesh.colors32 = l_colors.ToArray();
                 List<int> l_indicesRealigned = new List<int>();
                 List<int> l_indicesBuffer = new List<int>(3);
 

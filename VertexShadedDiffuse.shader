@@ -1,11 +1,10 @@
-﻿Shader "TwoSidedDiffuse" {
+﻿Shader "VertexShadedDiffuse" {
 	Properties {
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
 		LOD 200
-		Cull Off
 		
 		CGPROGRAM
 		#pragma surface surf Lambert
@@ -19,7 +18,7 @@
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			half4 c = tex2D (_MainTex, IN.uv_MainTex);
-			o.Albedo =  c.rgb;
+			o.Albedo = c.rgb * ( IN.color.g,  IN.color.g,  IN.color.g);
 			o.Alpha = c.a;
 		}
 		ENDCG
