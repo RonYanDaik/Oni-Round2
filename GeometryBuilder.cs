@@ -9,7 +9,6 @@ public class GeometryBuilder
     Vector3[] m_vrtx;
     Vector2[] m_txcoords;
     Vector3[] m_normals;
-    List<Color32> m_colors = new List<Color32>();
     
     public string Name
     {
@@ -48,15 +47,6 @@ public class GeometryBuilder
 
     internal void Triangle(int v1, int v2, int v3, int t1, int t2, int t3, Color32[] colors = null)
     {
-        if (colors != null)
-        {
-            m_colors.AddRange(colors);
-        }
-        else
-        {
-            m_colors.AddRange(new Color32[] { Color.white, Color.white, Color.white });
-        }
-
         bool l_addToNewStrip = true;
 
         foreach (UvGroup group in m_groups)
@@ -189,7 +179,6 @@ public class GeometryBuilder
                 foreach (int vrti in group.m_vrtToUv.Keys)
                 {
                     l_vrts.Add(m_vrtx[vrti]);
-                    l_colors.Add(group.m_vtrToColor[vrti]);
                     l_uvs.Add(m_txcoords[group.m_vrtToUv[vrti]]);
 
                     if (!l_fakeToRealIndex.ContainsKey(vrti))
@@ -198,6 +187,11 @@ public class GeometryBuilder
                     }
 
                     l_indices.Add(l_fakeToRealIndex[vrti]);
+                }
+
+                foreach (int vrti in group.m_vrtToUv.Keys)
+                {
+                    l_colors.Add(group.m_vtrToColor[vrti]);
                 }
 
                 CombineInstance l_ci = new CombineInstance();

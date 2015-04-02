@@ -120,9 +120,9 @@ namespace Round2.Generated.Binary
                                     quad.m_txca_id_3_18,
                                     new Color32[]
                                     { 
-                                        new Color32 ( l_color1Bytes[0], l_color1Bytes[1], l_color1Bytes[2],l_color1Bytes[3]),
-                                        new Color32 ( l_color2Bytes[0], l_color2Bytes[1], l_color2Bytes[2],l_color2Bytes[3]),
-                                        new Color32 ( l_color3Bytes[0], l_color3Bytes[1], l_color3Bytes[2],l_color3Bytes[3])
+                                        new Color32 ( l_color1Bytes[2], l_color1Bytes[1], l_color1Bytes[0],l_color1Bytes[3]),
+                                        new Color32 ( l_color2Bytes[2], l_color2Bytes[1], l_color2Bytes[0],l_color2Bytes[3]),
+                                        new Color32 ( l_color3Bytes[2], l_color3Bytes[1], l_color3Bytes[0],l_color3Bytes[3])
                                     }
                                 );
 
@@ -149,10 +149,10 @@ namespace Round2.Generated.Binary
                                     quad.m_txca_id_4_1C,
                                     new Color32[]
                                     {
-                                        new Color32 ( l_color1Bytes[0], l_color1Bytes[1], l_color1Bytes[2],l_color1Bytes[3]),
-                                        new Color32 ( l_color2Bytes[0], l_color2Bytes[1], l_color2Bytes[2],l_color2Bytes[3]),
-                                        new Color32 ( l_color3Bytes[0], l_color3Bytes[1], l_color3Bytes[2],l_color3Bytes[3]),
-                                        new Color32 ( l_color4Bytes[0], l_color4Bytes[1], l_color4Bytes[2],l_color4Bytes[3])
+                                        new Color32 ( l_color1Bytes[2], l_color1Bytes[1], l_color1Bytes[0],l_color1Bytes[3]),
+                                        new Color32 ( l_color2Bytes[2], l_color2Bytes[1], l_color2Bytes[0],l_color2Bytes[3]),
+                                        new Color32 ( l_color3Bytes[2], l_color3Bytes[1], l_color3Bytes[0],l_color3Bytes[3]),
+                                        new Color32 ( l_color4Bytes[2], l_color4Bytes[1], l_color4Bytes[0],l_color4Bytes[3])
                                     }
                                 );
                             //m_bldr.Quad(quad.m_pnta_id_1_0, quad.m_pnta_id_2_4, quad.m_pnta_id_3_8, quad.m_pnta_id_4_C, quad.m_txca_id_1_10, quad.m_txca_id_2_14, quad.m_txca_id_3_18, quad.m_txca_id_4_1C);
@@ -169,7 +169,7 @@ namespace Round2.Generated.Binary
                 {
                     m_fullRenderInfo[txid][flags].UpdateMesh();
                     GameObject l_g = new GameObject(" flags = " + flags.ToString("X") + " :: " + m_fullRenderInfo[txid][flags].Name);
-
+                    
                     Material l_m = (l_g.AddComponent<MeshRenderer>().material = new Material(Shader.Find("VertexShadedDiffuse")));
 
                     if (this.m_AKEV_Link_48.Value.m_TXMA_link_24.Value.m_pkg_20[txid] != null && this.m_AKEV_Link_48.Value.m_TXMA_link_24.Value.m_pkg_20[txid].m_TXMP_link_0.Value != null)
