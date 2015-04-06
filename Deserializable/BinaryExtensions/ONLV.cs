@@ -163,6 +163,41 @@ namespace Round2.Generated.Binary
                 }
             }
 
+            if(this.m_ENVP_Link_78.m_lnkId != 0)
+            {
+                foreach (ENVP.Package particle in this.m_ENVP_Link_78.Value.m_pkg_20)
+                {
+                    Oni.Matrix l_trs = new Oni.Matrix
+                    (
+                        particle.m_transform_a11_70,
+                        particle.m_transform_a12_74,
+                        particle.m_transform_a13_78,
+                        0,
+                        particle.m_transform_a21_7C,
+                        particle.m_transform_a22_80,
+                        particle.m_transform_a23_84,
+                        0,
+                        particle.m_transform_a31_88,
+                        particle.m_transform_a32_8C,
+                        particle.m_transform_a33_90,
+                        0,
+                        particle.m_transform_a41_94,
+                        particle.m_transform_a42_98,
+                        particle.m_transform_a43_9C,
+                        1
+                    );
+
+                    Oni.Vector3 l_scale;
+                    Oni.Vector3 l_pos;
+                    Oni.Quaternion l_rot;
+                    l_trs.Decompose( out l_scale, out l_rot, out l_pos);
+                    //Debug.DrawLine(UnityEngine.Vector3.zero, new UnityEngine.Vector3(-l_pos.X, l_pos.Y, l_pos.Z), Color.blue, 20f);
+                    
+                    //Debug.Log("#" + particle.m_3D_particle_0);
+                    //Debug.Log("$" + particle.m_Particle_name_40);
+                }
+            }
+            
             foreach (int txid in m_fullRenderInfo.Keys)
             {
                 foreach (int flags in m_fullRenderInfo[txid].Keys)

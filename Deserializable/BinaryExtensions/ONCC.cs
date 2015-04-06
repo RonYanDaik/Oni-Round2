@@ -286,7 +286,10 @@ namespace Round2.Generated.Binary
             l_gs[0].transform.parent = l_parent.transform;
             Debug.Log("added", l_parent.AddComponent<GUIANIMCONTROL>());
             Camera.allCameras[0].transform.parent = l_parent.transform;
-            l_parent.AddComponent<CharacterController>();
+            CharacterController l_cc = l_parent.AddComponent<CharacterController>();
+            l_cc.radius = 4;
+            l_cc.center = UnityEngine.Vector3.up * 9;
+            l_cc.height = 18;
             l_parent.AddComponent<Animation>();
         }
     }

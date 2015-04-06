@@ -25,7 +25,7 @@ namespace Round2.Generated.Binary
 
       public override void Convert(byte[] data)
       {
-          byte[] l_bytes = new byte[48];
+          byte[] l_bytes = new byte[64];
          for(int i=0; i<4; i++)
          {
              l_bytes[i] = data[i + 0];
@@ -48,14 +48,14 @@ namespace Round2.Generated.Binary
          this.m_Packages_1E = (System.Int16)BinaryDatReader.l_int16(l_bytes, 2);
 m_pkg_20 = new Package[this.m_Packages_1E];
 for (int j=0;j<this.m_Packages_1E;j++)
-{         for(int i=0; i<4; i++)
+{         for(int i=0; i<64; i++)
          {
              l_bytes[i] = data[i + 32+j * 208+0];
          }
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_3D_particle_0 = (System.Int32)BinaryDatReader.l_int32(l_bytes, 4);
+l_pkg.m_3D_particle_0 = (System.String)BinaryDatReader.l_str(l_bytes, 64);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -77,7 +77,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_70 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a11_70 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -88,7 +88,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_74 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a12_74 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -99,7 +99,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_78 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a13_78 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -110,7 +110,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_7C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a21_7C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -121,7 +121,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_80 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a22_80 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -132,7 +132,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_84 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a23_84 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -143,7 +143,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_88 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a31_88 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -154,7 +154,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_8C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a32_8C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -165,7 +165,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_90 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a33_90 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -176,7 +176,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_94 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a41_94 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -187,7 +187,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_98 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a42_98 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -198,7 +198,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_9C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_transform_a43_9C = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -209,7 +209,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_A0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_scale_x_A0 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -220,7 +220,7 @@ for (int j=0;j<this.m_Packages_1E;j++)
 {
 Package l_pkg;
 l_pkg = m_pkg_20[j] == null ?  m_pkg_20[j] = new Package() :   m_pkg_20[j];
-l_pkg.m_Unknown_A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
+l_pkg.m_scale_y_A4 = (System.Single)BinaryDatReader.l_float(l_bytes, 4);
 }
 }
 for (int j=0;j<this.m_Packages_1E;j++)
@@ -241,67 +241,67 @@ public partial class Package
       /// <summary>
       ///Reference to a BINA file of level 0
       /// </summary>
-      public System.Int32 m_3D_particle_0;
+      public System.String m_3D_particle_0;
       /// <summary>
       ///Name of the particle
       /// </summary>
       public System.String m_Particle_name_40;
       /// <summary>
-      ///Unknown
+      ///transform matrix a11
       /// </summary>
-      public System.Single m_Unknown_70;
+      public System.Single m_transform_a11_70;
       /// <summary>
-      ///Unknown
+      ///transform matrix a12
       /// </summary>
-      public System.Single m_Unknown_74;
+      public System.Single m_transform_a12_74;
       /// <summary>
-      ///Unknown
+      ///transform matrix a13
       /// </summary>
-      public System.Single m_Unknown_78;
+      public System.Single m_transform_a13_78;
       /// <summary>
-      ///Unknown
+      ///transform matrix a21
       /// </summary>
-      public System.Single m_Unknown_7C;
+      public System.Single m_transform_a21_7C;
       /// <summary>
-      ///Unknown
+      ///transform matrix a22
       /// </summary>
-      public System.Single m_Unknown_80;
+      public System.Single m_transform_a22_80;
       /// <summary>
-      ///Unknown
+      ///transform matrix a23
       /// </summary>
-      public System.Single m_Unknown_84;
+      public System.Single m_transform_a23_84;
       /// <summary>
-      ///Unknown
+      ///transform matrix a31
       /// </summary>
-      public System.Single m_Unknown_88;
+      public System.Single m_transform_a31_88;
       /// <summary>
-      ///Unknown
+      ///transform matrix a32
       /// </summary>
-      public System.Single m_Unknown_8C;
+      public System.Single m_transform_a32_8C;
       /// <summary>
-      ///Unknown
+      ///transform matrix a33
       /// </summary>
-      public System.Single m_Unknown_90;
+      public System.Single m_transform_a33_90;
       /// <summary>
-      ///Unknown
+      ///transform matrix a41
       /// </summary>
-      public System.Single m_Unknown_94;
+      public System.Single m_transform_a41_94;
       /// <summary>
-      ///Unknown
+      ///transform matrix a42
       /// </summary>
-      public System.Single m_Unknown_98;
+      public System.Single m_transform_a42_98;
       /// <summary>
-      ///Unknown
+      ///transform matrix a43
       /// </summary>
-      public System.Single m_Unknown_9C;
+      public System.Single m_transform_a43_9C;
       /// <summary>
-      ///Unknown
+      ///decal x scale
       /// </summary>
-      public System.Single m_Unknown_A0;
+      public System.Single m_scale_x_A0;
       /// <summary>
-      ///Unknown
+      ///decal y scale
       /// </summary>
-      public System.Single m_Unknown_A4;
+      public System.Single m_scale_y_A4;
       /// <summary>
       ///Unknown; always the same
       /// </summary>

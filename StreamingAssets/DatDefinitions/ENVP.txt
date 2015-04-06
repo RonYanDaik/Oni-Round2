@@ -4,20 +4,20 @@ Level id	$04	17	Level id
 Not used	$08	1022	Not used
 Packages	$1E	2	Amount of packages that follow
 *Package		$20	$1E	2	208
-3D particle	$00	164	Reference to a BINA file of level 0
+3D particle	$00	10064	Reference to a BINA file of level 0
 Particle name	$40	10048	Name of the particle
-Unknown	$70	9	Unknown
-Unknown	$74	9	Unknown
-Unknown	$78	9	Unknown
-Unknown	$7C	9	Unknown
-Unknown	$80	9	Unknown
-Unknown	$84	9	Unknown
-Unknown	$88	9	Unknown
-Unknown	$8C	9	Unknown
-Unknown	$90	9	Unknown
-Unknown	$94	9	Unknown
-Unknown	$98	9	Unknown
-Unknown	$9C	9	Unknown
-Unknown	$A0	9	Unknown
-Unknown	$A4	9	Unknown
+transform a11	$70	9	transform matrix a11
+transform a12	$74	9	transform matrix a12
+transform a13	$78	9	transform matrix a13
+transform a21	$7C	9	transform matrix a21
+transform a22	$80	9	transform matrix a22
+transform a23	$84	9	transform matrix a23
+transform a31	$88	9	transform matrix a31
+transform a32	$8C	9	transform matrix a32
+transform a33	$90	9	transform matrix a33
+transform a41	$94	9	transform matrix a41
+transform a42	$98	9	transform matrix a42
+transform a43	$9C	9	transform matrix a43
+scale x	$A0	9	decal x scale
+scale y	$A4	9	decal y scale
 Unknown	$A8	1040	Unknown; always the same

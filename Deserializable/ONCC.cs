@@ -148,7 +148,8 @@ namespace Round2
             //l_parts[0].transform.parent = new GameObject("chr").transform;
             Animation l_a = l_parts[0].gameObject.AddComponent<Animation>();
             l_parts[0].AddComponent<GUIANIMCONTROL>();
-            l_parts[0].AddComponent<CharacterController>();
+            CharacterController l_cc = l_parts[0].AddComponent<CharacterController>();
+            
             Camera.allCameras[0].transform.parent =
             l_parts[0].transform;
         }

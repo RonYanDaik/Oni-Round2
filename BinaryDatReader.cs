@@ -162,11 +162,50 @@ public class BinaryDatReader : MonoBehaviour
                                 l_obj.m_header.m_flags = l_flags;
                                 l_obj.m_header.m_pos = new Vector3(l_xPos, l_yPos, l_zPos);
                                 l_obj.m_header.m_rot = new Vector3(l_xRot, l_yRot, l_zRot);
-                                Debug.LogWarning(l_nextSize + ":" + l_objType + ":" + ides.GetHashCode() + "{" + l_obj.m_header.m_pos + "}" + "[" + l_obj.m_header.m_rot + "]");
+
+                                //TODO : casually refactor
+                                //TODO : replace plane to quad
+                                if (l_obj is Round2.Generated.Binary.Namespaces.BINA.OBJC.PART)
+                                {
+                                    (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.position = new UnityEngine.Vector3(-l_obj.m_header.m_pos.x, l_obj.m_header.m_pos.y, l_obj.m_header.m_pos.z);
+                                    (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.eulerAngles = l_obj.m_header.m_rot;
+                                    (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.localScale = new UnityEngine.Vector3((l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_xScale / 10f, 1, (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_yScale / 10f);
+                                    Debug.DrawLine(Vector3.up * 10, new Vector3(-l_obj.m_header.m_pos.x, l_obj.m_header.m_pos.y, l_obj.m_header.m_pos.z), Color.green, 15f);
+
+                                }
+
+                                //Debug.LogWarning(l_nextSize + ":" + l_objType + ":" + ides.GetHashCode() + "{" + l_obj.m_header.m_pos + "}" + "[" + l_obj.m_header.m_rot + "]");
                             }
 
                             l_rawReader.Position = l_npos;
                         }
+                    }
+                    break;
+
+                case Oni.Metadata.BinaryTag.PAR3:
+                    {
+                        int l_initPos = l_rawReader.Position;
+                        Round2.Generated.Binary.Namespaces.BINA.OBJC.PAR3.Header l_header = new Round2.Generated.Binary.Namespaces.BINA.OBJC.PAR3.Header();
+                        int l_completeParticleLength = l_rawReader.ReadInt32();
+                        l_rawReader.Skip(2);//skip length duplicate
+                        int l_version = l_rawReader.ReadInt16();
+                        l_rawReader.ReadInt32();//flags
+                        l_rawReader.ReadInt32();//flags2
+                        l_rawReader.ReadInt32();//unused
+                        l_header.m_variableCount = l_rawReader.ReadInt16();//amout of variables
+                        l_header.m_eventsCount = l_rawReader.ReadInt16();//amount of events
+                        l_header.m_emittersCount = l_rawReader.ReadInt16();//amount of emitters
+                        l_rawReader.ReadInt16();//unknown
+                        //Debug.Log(l_header.m_eventsCount.ToString("X") + " : PAR3 : " + ides.Name);
+                        l_rawReader.Skip(16 * 4);//skip slots. currently, they aren't used
+                        l_rawReader.Position = l_initPos + 0x120 - 4;
+                        l_header.m_textureName = l_rawReader.ReadString(64);
+                        l_rawReader.Position = l_initPos + 0xB4 - 4;
+                        l_header.m_xScale = l_rawReader.ReadSingle();
+                        l_rawReader.Position = l_initPos + 0xD0 - 4;
+                        l_header.m_yScale = l_rawReader.ReadSingle();
+                        Round2.Generated.Binary.Namespaces.BINA.OBJC.PART.RegisterParticleClass(new Round2.Generated.Binary.Namespaces.BINA.OBJC.PAR3() { m_header = l_header }, ides.Name);
+                        //Debug.LogError(">>>" + l_header.m_textureName);//texture name here
                     }
                     break;
 
@@ -191,6 +230,22 @@ public class BinaryDatReader : MonoBehaviour
                 }
                 break;
 
+            case "PART":
+                {
+                    Round2.Generated.Binary.Namespaces.BINA.OBJC.OBJCM l_res = new Round2.Generated.Binary.Namespaces.BINA.OBJC.PART() { m_header = l_objh };
+                    l_res.ContinueParse(npos, rawReader);
+                    //Debug.Log(l_res.m_header.m_pos.x);
+                    
+                    return l_res;
+                }
+                break;
+
+            case "FURN":
+                {
+                    //Debug.DrawLine(Vector3.up * 10, new Vector3(-l_objh.m_pos.x, l_objh.m_pos.y, l_objh.m_pos.z), Color.green, 15f);
+                }
+                break;
+
             default:
                 Debug.LogWarning("[UNSUPPORTED TAG : " + objType + "]");
                 break;
@@ -206,7 +261,7 @@ public class BinaryDatReader : MonoBehaviour
         {
             System.Func<Round2.BinaryInitializable> l_initializer = InitializeLoader(ides.Index, ides, "Round2.Generated.Binary." + typeof(T).Name);
 
-            
+
             if (ides.Template.Tag == Oni.TemplateTag.BINA)
             {
                 try
@@ -220,7 +275,7 @@ public class BinaryDatReader : MonoBehaviour
                 }
             }
         }
-    
+
         return (T)m_descriptors[ides]();
     }
 
@@ -303,191 +358,6 @@ public class BinaryDatReader : MonoBehaviour
         return null;
     }
 
-    internal class I_BINA : InitializationVisitor<I_BINA>
-    {
-        public int m_dataSize;
-        public int m_unk;
-
-        IVRecv[] m_recvs;
-
-        public I_BINA()
-        {
-            m_recvs = new IVRecv[] 
-            {
-                (type, reader) =>  m_dataSize = reader.ReadInt32() ,
-                (type, reader) =>  m_unk = reader.ReadInt32() 
-            };
-        }
-
-        protected override InitializationVisitor<I_BINA>.IVRecv[] Receivers
-        {
-            get 
-            {
-                return m_recvs;
-            }
-        }
-    }
-
-    internal abstract class InitializationVisitor<T> : Oni.Metadata.IMetaTypeVisitor
-        where T : InitializationVisitor<T>, new()
-    {
-        public InitializationVisitor()
-        { 
-            
-        }
-
-        Oni.BinaryReader m_reader;
-        int m_index;
-        Oni.InstanceDescriptor m_reference;
-
-        protected delegate void IVRecv(Oni.Metadata.MetaType type, Oni.BinaryReader reader);
-
-        protected abstract IVRecv[] Receivers
-        {
-            get;
-        }
-
-        public void Initialize(Oni.InstanceDescriptor ides)
-        {
-            m_reference = ides;
-            m_reader = ides.OpenRead();
-            ides.Template.Type.Accept(this);
-        }
-
-        public void VisitArray(Oni.Metadata.MetaArray type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitBoundingBox(Oni.Metadata.MetaBoundingBox type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitBoundingSphere(Oni.Metadata.MetaBoundingSphere type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitByte(Oni.Metadata.MetaByte type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitColor(Oni.Metadata.MetaColor type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitEnum(Oni.Metadata.MetaEnum type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitFloat(Oni.Metadata.MetaFloat type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitInt16(Oni.Metadata.MetaInt16 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitInt32(Oni.Metadata.MetaInt32 type)
-        {
-            Receivers[m_index](type, this.m_reader);
-            m_index++;
-
-        }
-
-        public void VisitInt64(Oni.Metadata.MetaInt64 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitMatrix4x3(Oni.Metadata.MetaMatrix4x3 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitPadding(Oni.Metadata.MetaPadding type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitPlane(Oni.Metadata.MetaPlane type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitPointer(Oni.Metadata.MetaPointer type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitQuaternion(Oni.Metadata.MetaQuaternion type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitRawOffset(Oni.Metadata.MetaRawOffset type)
-        {
-            Receivers[m_index](type, this.m_reader);
-            m_index++;
-        }
-
-        public void VisitSepOffset(Oni.Metadata.MetaSepOffset type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitString(Oni.Metadata.MetaString type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitStruct(Oni.Metadata.MetaStruct type)
-        {
-            foreach (Oni.Metadata.Field fld in type.Fields)
-            {
-                Debug.Log(fld.Name);
-
-                fld.Type.Accept(this);
-            }
-        }
-
-        public void VisitUInt16(Oni.Metadata.MetaUInt16 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitUInt32(Oni.Metadata.MetaUInt32 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitUInt64(Oni.Metadata.MetaUInt64 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitVarArray(Oni.Metadata.MetaVarArray type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitVector2(Oni.Metadata.MetaVector2 type)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void VisitVector3(Oni.Metadata.MetaVector3 type)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
-
     void Start()
     {
         _Start();
@@ -509,6 +379,9 @@ public class BinaryDatReader : MonoBehaviour
         return m_level0instances.ContainsKey(l_name) ? m_level0instances[l_name] : null;
     }
 
+    internal static Dictionary<string, Round2.Generated.Binary.TXMP> m_textures = new Dictionary<string, Round2.Generated.Binary.TXMP>();
+    internal static Action m_act = () => { };
+
     void _Start()
     {
         Oni.InstanceFileManager fm = new Oni.InstanceFileManager();
@@ -517,18 +390,27 @@ public class BinaryDatReader : MonoBehaviour
 
         foreach (Oni.InstanceDescriptor ides in l_0File.Descriptors)
         {
-            switch (ides.Template.Tag)
-            {
-                case Oni.TemplateTag.DOOR:
-                    Round2.Generated.Binary.DOOR.RegisterDoorClass(ides);
-                    break;
-            }
             try
             {
                 if (ides.IsPlaceholder)
                 {
                     Debug.LogError("placeholder in 0 file " + ides.Template.Tag);
                     continue;
+                }
+                else
+                {
+                    switch (ides.Template.Tag)
+                    {
+                        case Oni.TemplateTag.DOOR:
+                            Round2.Generated.Binary.DOOR.RegisterDoorClass(ides);
+                            break;
+                        case Oni.TemplateTag.BINA:
+                            ConvertInstance<Round2.Generated.Binary.BINA>(ides);
+                            break;
+                        case Oni.TemplateTag.TXMP:
+                            m_textures.Add(ides.Name, ConvertInstance<Round2.Generated.Binary.TXMP>(ides));
+                            break;
+                    }
                 }
 
                 ZeroRegistryPush(ides);
@@ -861,75 +743,5 @@ public class BinaryDatReader : MonoBehaviour
     }
 }
 
-namespace Round2
-{
-    internal abstract class BinaryInitializable
-    {
-        public abstract void Convert(byte[] data);
-        public Oni.InstanceFile m_sourceFile;
-    }
-}
 
-namespace Round2
-{
-    namespace Generated
-    {
-        namespace Binary
-        {
-            internal class Raw : Round2.BinaryInitializable
-            {
-                public int l_addr;
 
-                public override void Convert(byte[] data)
-                {
-                    //shouldn't be called anyway, huh?
-                    throw new System.Exception("Don't forget to not use this stuff!");
-                }
-            }
-        }
-    }
-}
-
-namespace Round2
-{
-    namespace Generated
-    {
-        namespace Binary
-        {
-            internal class Link<T>
-                where T : Round2.BinaryInitializable
-            {
-                public Link()
-                {
-                    m_sourceFile = BinaryDatReader.l_currentFile;
-                }
-
-                public Oni.InstanceFile m_sourceFile;
-                public int m_lnkId;
-                T m_cachedObject;
-
-                public static implicit operator Link<T>(int lnkid)
-                {
-                    return new Link<T>() { m_lnkId = (int)lnkid };
-                }
-
-                public T Value
-                {
-                    get
-                    {
-                        return m_cachedObject == null ? m_cachedObject = BinaryDatReader.GetByLinkId<T>(m_lnkId, m_sourceFile) : m_cachedObject;
-                    }
-                }
-
-                public Oni.InstanceDescriptor Descriptor
-                {
-                    get
-                    {
-                        return BinaryDatReader.ResolveInstanceByLink(m_lnkId, m_sourceFile);
-                    }
-                }
-
-            }
-        }
-    }
-}
