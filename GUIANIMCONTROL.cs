@@ -26,14 +26,18 @@ public class GUIANIMCONTROL : MonoBehaviour
         lt =            1 << 16,
         rt =            1 << 17,
         idle1 =         1 << 18,
-        ss_lt_run =     1 << 19,//needed for transition from ss_lt to run
-        ss_rt_run =     1 << 20,//needed for transition from ss_rt to run
-        crouch2idlea =  1 << 21,
-        crouch2idleb =  1 << 22,
-        idle2croucha =  1 << 23,
-        idle2crouchb =  1 << 24,
-        fw =            1 << 25,
-        bk =            1 << 26,
+        idle2 =         1 << 19,
+        ss_lt_run =     1 << 20,//needed for transition from ss_lt to run
+        ss_rt_run =     1 << 21,//needed for transition from ss_rt to run
+        crouch2idlea =  1 << 22,
+        crouch2idleb =  1 << 23,
+        idle2croucha =  1 << 24,
+        idle2crouchb =  1 << 25,
+        fw =            1 << 26,
+        bk =            1 << 27,
+        slide =         1 << 28,//needed for slide animations for right, left, backward slide
+        slide_run =     1 << 29,
+        id =            1 << 30//keep this flag last
     }
 
     float jumpHeight = 25;
@@ -193,6 +197,7 @@ public class GUIANIMCONTROL : MonoBehaviour
 
                 break;
             //end of crouch block
+            case AnimFlags.idle2:
             case AnimFlags.idle1:
                 {
                     if (Input.GetKey(KeyCode.W))
@@ -207,7 +212,6 @@ public class GUIANIMCONTROL : MonoBehaviour
                     if (Input.GetKey(KeyCode.A))
                     {
                         m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-
                         break;
                     }
                     if (Input.GetKey(KeyCode.D))
@@ -221,6 +225,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
                     }
@@ -275,8 +280,14 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump_fw | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
                     }
                 } 
                 break;
@@ -327,6 +338,11 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_rememberedSpeed = m_motionVector;
                         break;
                     }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
+                    }
                 }
                 break;
             case AnimFlags.run | AnimFlags.start:
@@ -335,6 +351,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     m_lastFlags = AnimFlags.jump_fw | AnimFlags.start;
+                    //ComFlag = false;
                     m_upperVector = m_jumpVal;
                     m_jumpStart = Time.time;
                     m_rememberedSpeed = m_motionVector;
@@ -388,8 +405,15 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.slide;
+                        //ComFlag = false;
                     }
                 }
                 break;
@@ -438,8 +462,15 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+                    
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                       m_lastFlags = AnimFlags.run_bk | AnimFlags.slide;
+                       //ComFlag = false;
                     }
                 }
                 break;
@@ -452,6 +483,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                     m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
                     m_upperVector = m_jumpVal;
                     m_jumpStart = Time.time;
+                    //ComFlag = false;
                     m_rememberedSpeed = m_motionVector;
                     break;
                 }
@@ -485,8 +517,15 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump_lt | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.slide;
+                        //ComFlag = false;
                     }
                 }
                 break;
@@ -520,6 +559,12 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_rememberedSpeed = m_motionVector;
                         break;
                     }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.slide;
+                        //ComFlag = false;
+                    }
                 }
                 break;
             //end of ss_lt
@@ -550,8 +595,14 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_lastFlags = AnimFlags.jump_rt | AnimFlags.start;
                         m_upperVector = m_jumpVal;
                         m_jumpStart = Time.time;
+                        //ComFlag = false;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.slide;
                     }
                 }
                 break;
@@ -584,6 +635,11 @@ public class GUIANIMCONTROL : MonoBehaviour
                         m_jumpStart = Time.time;
                         m_rememberedSpeed = m_motionVector;
                         break;
+                    }
+
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.slide;
                     }
                 }
                 break;
@@ -693,6 +749,7 @@ public class GUIANIMCONTROL : MonoBehaviour
 
             case AnimFlags.jump_fw | AnimFlags.start:
             case AnimFlags.jump_fw | AnimFlags.idle:
+                //ComFlag = false;
                 m_lastFlags = AnimFlags.jump_fw | AnimFlags.land;
 
                 if (Input.GetKey(KeyCode.W))
@@ -721,8 +778,24 @@ public class GUIANIMCONTROL : MonoBehaviour
         m_rememberedSpeed = Vector3.zero;
     }
 
+    bool m_comFlag;
+    bool m_forcedMix = false;
+
+    public bool ComFlag
+    {
+        get { return m_comFlag; }
+        set 
+        {
+            //Debug.Log(value);
+            m_forcedMix = value != m_comFlag;
+            m_comFlag = value;
+        }
+    }
+
     void OnLastFrame()
     {
+        m_forcedMix = false;
+
         switch (m_lastFlags)
         {
             case AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.rt:
@@ -830,6 +903,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 if (Input.GetKey(KeyCode.W))
                 {
                     m_lastFlags = AnimFlags.run | AnimFlags.lt;
+                    //ComFlag = false;
                 }
                 else
                 {
@@ -839,13 +913,16 @@ public class GUIANIMCONTROL : MonoBehaviour
             case AnimFlags.jump_fw | AnimFlags.start:
                 m_lastFlags = AnimFlags.jump_fw | AnimFlags.idle;
                 m_waitingForLanding = true;
+                //ComFlag = false;
                 break;
             //end of jump fw
             case AnimFlags.jump | AnimFlags.land | AnimFlags.fw:
                 m_lastFlags = AnimFlags.run | AnimFlags.lt;
+                //ComFlag = false;
                 break;
             case AnimFlags.jump | AnimFlags.land:
                 m_lastFlags = AnimFlags.idle1;
+                //ComFlag = false;
                 break;
             case AnimFlags.jump | AnimFlags.start:
                 m_lastFlags = AnimFlags.jump | AnimFlags.idle;
@@ -853,12 +930,19 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
             //end of jump idle
             case AnimFlags.idle1:
+                m_lastFlags = AnimFlags.idle2;
                 //do nothing?
                 break;
+            case AnimFlags.idle2:
+                 m_lastFlags = AnimFlags.idle1;
+                break;
+            //end of idle block
             case AnimFlags.run | AnimFlags.stepa:
+                //ComFlag = false;
                 if (Input.GetKey(KeyCode.W))
                 {
                     m_lastFlags = AnimFlags.run | AnimFlags.start;
+                    
                 }
                 else
                 {
@@ -876,6 +960,11 @@ public class GUIANIMCONTROL : MonoBehaviour
                     }
 
                     m_lastFlags = AnimFlags.run | AnimFlags.stepb;
+                }
+
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
                 }
                 break;
             case AnimFlags.run | AnimFlags.stepb:
@@ -895,7 +984,7 @@ public class GUIANIMCONTROL : MonoBehaviour
                 break;
 
             //end of forward
-
+            
             case AnimFlags.run_bk | AnimFlags.stepa:
                 if (Input.GetKey(KeyCode.S))
                 {
@@ -905,23 +994,142 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     m_lastFlags = AnimFlags.run_bk | AnimFlags.stepb;
                 }
+
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    m_lastFlags = AnimFlags.crouch | AnimFlags.bk;
+                    //ComFlag = true;
+                }
+
                 break;
             case AnimFlags.run_bk | AnimFlags.stepb:
                 m_lastFlags = AnimFlags.idle1;
                 break;
             case AnimFlags.run_bk | AnimFlags.start:
+                //ComFlag = false;
                 m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
                 break;
             case AnimFlags.run_bk | AnimFlags.rt:
+                //ComFlag = false;
                 m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
                 break;
             case AnimFlags.run_bk | AnimFlags.lt:
+                //ComFlag = false;
                 m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
                 break;
             case AnimFlags.run_bk | AnimFlags.stop:
                 m_lastFlags = AnimFlags.idle1;
                 break;
+
+            case AnimFlags.run_bk | AnimFlags.slide:
+                if (Input.GetKey(KeyCode.S))
+                { 
+                    m_lastFlags = AnimFlags.run_bk | AnimFlags.slide_run;
+                    //ComFlag = false;
+                }
+                else
+                {
+                    m_lastFlags = AnimFlags.run_bk | AnimFlags.slide | AnimFlags.id;
+                    //ComFlag = false;
+                }
+                break;
+
+            case AnimFlags.run_bk | AnimFlags.slide | AnimFlags.id:
+                {
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
+                        //ComFlag = true;
+                    }
+                    else
+                    {
+                        m_lastFlags = AnimFlags.idle1;
+                        //ComFlag = false;
+                    }
+                }
+                break;
+
+            case AnimFlags.run_bk | AnimFlags.slide_run:
+                {
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
+                        //ComFlag = false;
+                    }
+                    else
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stop;
+                        //ComFlag = false;
+                    }
+                }
+                break;
             //end of backward
+
+            case AnimFlags.crouch | AnimFlags.bk:
+            case AnimFlags.crouch | AnimFlags.fw:
+            case AnimFlags.crouch | AnimFlags.rt:
+            case AnimFlags.crouch | AnimFlags.lt:
+                {
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        m_lastFlags = AnimFlags.run | AnimFlags.stepa;
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.D))
+                    {
+                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
+                        break;
+                    }
+
+                    m_lastFlags = AnimFlags.idle1;
+                }
+                break;
+
+            case AnimFlags.ss_rt | AnimFlags.slide:
+            case AnimFlags.ss_lt | AnimFlags.slide:
+                {
+                    //NOTE : in case of chantging to LT in same direction, it will cause animation "stuck" if SHIFT is already pressed, because SHIFT related clip is already playing. 
+                    //TODO : find a solution for note above. Ultil then, change to "stepa"
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        m_lastFlags = AnimFlags.run | AnimFlags.stepa;
+                        Debug.Log(m_lastFlags);
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
+                        Debug.Log(m_lastFlags);
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
+                        Debug.Log(m_lastFlags);
+                        break;
+                    }
+                    if (Input.GetKey(KeyCode.D))
+                    {
+                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
+                        Debug.Log(m_lastFlags);
+                        break;
+                    }
+
+                    m_lastFlags = AnimFlags.idle1;
+                    Debug.Log(m_lastFlags);
+                }
+                break;
+
             case AnimFlags.ss_lt | AnimFlags.stepa:
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -931,16 +1139,24 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepb;
                 }
+
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    m_lastFlags = AnimFlags.crouch | AnimFlags.lt;
+                }
+
                 break;
             case AnimFlags.ss_lt | AnimFlags.stepb:
                 m_lastFlags = AnimFlags.idle1;
                 break;
             case AnimFlags.ss_lt | AnimFlags.start:
                 m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
+                //ComFlag = false;
                 break;
             case AnimFlags.ss_lt | AnimFlags.rt:
                 m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
                 break;
+
             case AnimFlags.ss_lt | AnimFlags.lt:
                 m_lastFlags = AnimFlags.ss_lt | AnimFlags.rt;
                 break;
@@ -957,12 +1173,18 @@ public class GUIANIMCONTROL : MonoBehaviour
                 {
                     m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepb;
                 }
+
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    m_lastFlags = AnimFlags.crouch | AnimFlags.rt;
+                }
                 break;
             case AnimFlags.ss_rt | AnimFlags.stepb:
                 m_lastFlags = AnimFlags.idle1;
                 break;
             case AnimFlags.ss_rt | AnimFlags.start:
                 m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
+                //ComFlag = false;
                 break;
             case AnimFlags.ss_rt | AnimFlags.rt:
                 m_lastFlags = AnimFlags.ss_rt | AnimFlags.lt;
@@ -1044,203 +1266,6 @@ public class GUIANIMCONTROL : MonoBehaviour
         } 
     }
 
-    public void OnActionFrame(string param)
-    {
-        if (param != m_clipname)
-        {
-            return;
-        }
-
-        if(param.Contains("|DONOTUSE"))
-        {
-            Debug.Log(param);
-            Debug.Break();
-            return;
-        }
-
-        //if (param == m_clipname)
-        {
-            OnLastFrame();
-        }
-        PlayClip("KONOKO" + GetAnim());
-        return;
-
-        switch (param)
-        {
-           
-            case "KONOKOidle1":
-                if (Input.GetKey(KeyCode.W))
-                {
-                    PlayClip("KONOKOrun1stepa");
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    PlayClip("KONOKOrun_bk_1stepa");
-                }
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    PlayClip("KONOKOss_rt_1stepa");
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    PlayClip("KONOKOss_lt_1stepa");
-                }
-                break;
-            #region run_forward
-            case "KONOKOrunstop":
-                PlayClip("KONOKOidle1");
-                break;
-            case "KONOKOrunstart":
-                PlayClip("KONOKOrun_rt");
-                break;
-
-            case "KONOKOrun1stepa":
-                if (Input.GetKey(KeyCode.W))
-                {
-                    PlayClip("KONOKOrunstart");
-                }
-                else
-                {
-                    PlayClip("KONOKOrun1stepb");
-                }
-                break;
-            case "KONOKOrun1stepb": 
-                PlayClip("KONOKOidle1");
-                break;
-
-            case "KONOKOrun_lt":
-                PlayClip("KONOKOrun_rt");
-            break;
-
-            case "KONOKOrun_rt":
-            if (Input.GetKey(KeyCode.W))
-            {
-                PlayClip("KONOKOrun_lt");
-            }
-            else
-            {
-                animation.CrossFade("KONOKOrunstop");
-            }
-            break;
-            #endregion
-            #region run_backward
-            case "KONOKOrun_bk_stop":
-            PlayClip("KONOKOidle1");
-            break;
-            case "KONOKOrun_bk_start":
-            
-            PlayClip("KONOKOrun_bk_rt");
-            
-            break;
-
-            case "KONOKOrun_bk_1stepa":
-            if (Input.GetKey(KeyCode.S))
-            {
-                PlayClip("KONOKOrun_bk_start");
-            }
-            else
-            {
-                PlayClip("KONOKOrun_bk_1stepb");
-            }
-            break;
-            case "KONOKOrun_bk_1stepb":
-            PlayClip("KONOKOidle1");
-            break;
-
-            case "KONOKOrun_bk_lt":
-            PlayClip("KONOKOrun_bk_rt");
-            break;
-
-            case "KONOKOrun_bk_rt":
-            if (Input.GetKey(KeyCode.S))
-            {
-                PlayClip("KONOKOrun_bk_lt");
-            }
-            else
-            {
-                animation.CrossFade("KONOKOrun_bk_stop");
-            }
-            break;
-            #endregion
-            #region run_left
-            case "KONOKOss_rt_stop":
-            PlayClip("KONOKOidle1");
-            break;
-            case "KONOKOss_rt_start":
-            PlayClip("KONOKOss_rt_rt");
-            break;
-            
-            case "KONOKOss_rt_1stepa":
-            if (Input.GetKey(KeyCode.A))
-            {
-                PlayClip("KONOKOss_rt_start");
-            }
-            else
-            {
-                PlayClip("KONOKOss_rt_1stepb");
-            }
-            break;
-            case "KONOKOss_rt_1stepb":
-            PlayClip("KONOKOidle1");
-            break;
-
-            case "KONOKOss_rt_lt":
-            PlayClip("KONOKOss_rt_rt");
-            break;
-
-            case "KONOKOss_rt_rt":
-            if (Input.GetKey(KeyCode.A))
-            {
-                PlayClip("KONOKOss_rt_lt");
-            }
-            else
-            {
-                animation.CrossFade("KONOKOss_rt_stop");
-            }
-            break;
-            #endregion
-            #region run_right
-            case "KONOKOss_lt_stop":
-            PlayClip("KONOKOidle1");
-            break;
-            case "KONOKOss_lt_start":
-            PlayClip("KONOKOss_lt_lt");
-            break;
-
-            case "KONOKOss_lt_1stepa":
-            if (Input.GetKey(KeyCode.D))
-            {
-                PlayClip("KONOKOss_lt_start");
-            }
-            else
-            {
-                PlayClip("KONOKOss_lt_1stepb");
-            }
-            break;
-            case "KONOKOss_lt_1stepb":
-            PlayClip("KONOKOidle1");
-            break;
-
-            case "KONOKOss_lt_lt":
-            PlayClip("KONOKOss_lt_rt");
-            break;
-
-            case "KONOKOss_lt_rt":
-            if (Input.GetKey(KeyCode.D))
-            {
-                PlayClip("KONOKOss_lt_lt");
-            }
-            else
-            {
-                animation.CrossFade("KONOKOss_lt_stop");
-            }
-            break;
-            #endregion
-        }
-        //Debug.Log("animation finish:" + param);
-    }
-
 	// Use this for initialization
 	void Start () 
     {
@@ -1275,23 +1300,66 @@ public class GUIANIMCONTROL : MonoBehaviour
     float startTime;
     string adds2 = "";
     List<string> m_loadedClips = new List<string>();
-
-    void PlayClip(string name)
+    string m_characterName = "KONOKO";
+    string m_characterCombName = "KONCOM";
+    
+    public void OnActionFrame(string param)
     {
-        if (!m_loadedClips.Contains(name))
+        //Debug.Log(param + "|"  + m_clipname);
+        if ( !param.Contains(m_clipname))
         {
-            AnimationClip l_clip = AnimationClipHolder.Get(name, this);
-            if (l_clip != null)
+            return;
+        }
+
+        if (param.Contains("|DONOTUSE"))
+        {
+            Debug.Log(param);
+            Debug.Break();
+            return;
+        }
+
+        //if (param == m_clipname)
+        {
+            OnLastFrame();
+        }
+        PlayClip(GetAnim());
+        return;
+        //Debug.Log("animation finish:" + param);
+    }
+
+    void PlayClip(string animname)
+    {
+        string l_bufferedName = animname;
+        AnimFlags l_bufferedFlags = m_lastFlags;
+        animname = (!ComFlag ? m_characterName : this.m_characterCombName) + l_bufferedName;
+
+        if (!m_loadedClips.Contains(animname))
+        {
+            AnimationClip l_clip = AnimationClipHolder.Get(animname, this);
+            
+            if (l_clip == null)
             {
-                animation.AddClip(l_clip, name);
-                m_loadedClips.Add(name);
+                ComFlag = !ComFlag;
+                animname = (!ComFlag ? m_characterName : this.m_characterCombName) + l_bufferedName;
+                Debug.LogWarning("forcibly switching com flag");
+                m_lastFlags = l_bufferedFlags;
+                l_clip = AnimationClipHolder.Get(animname, this);
+            }
+
+            if (l_clip == null)//if clip is still null
+            {
+                Debug.LogError("Cant load clip " + animname);
+                return;
             }
             else
             {
-                Debug.LogError("Cant load clip " + name);
+                l_clip.name = animname;
+                animation.AddClip(l_clip, animname);
+                m_loadedClips.Add(animname);
             }
         }
-        if (name != m_clipname && !animation.IsPlaying(name) && m_loadedClips.Contains(name))
+
+        if (animname != m_clipname && !animation.IsPlaying(animname) && m_loadedClips.Contains(animname))
         {
             Oni.Totoro.AnimationState old = 0;
             Oni.Totoro.AnimationState @new = 0;
@@ -1299,7 +1367,7 @@ public class GUIANIMCONTROL : MonoBehaviour
             if (!string.IsNullOrEmpty(m_clipname))
             {
                 from = animation[m_clipname];
-                to = animation[name];
+                to = animation[animname];
                 old = (Round2.Generated.Binary.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname)).ToState;
             }
             /*
@@ -1314,26 +1382,29 @@ public class GUIANIMCONTROL : MonoBehaviour
                 
             }*/
 
-            m_clipname = name;
-            @new = Round2.Generated.Binary.ONCC.GetByName("konoko_generic").GetAnimInfo(m_clipname).FromState;
-            adds2 = "mixstate: " + (old != @new).ToString();
-            
+            m_clipname = animname;
+            @new = Round2.Generated.Binary.ONCC.GetByName("konoko_generic").GetAnimInfo(animname).FromState;
+            adds2 = "mixstate: " + (old != @new);
+            adds2 += "\nforced mix : " + m_forcedMix;
+            adds2 += "\nfade len = " + (10f / animation[animname].clip.frameRate);
+            adds2 += "\n" + old + "==" + @new;
+
             {
-                if (old != @new)
+                if (old != @new || m_forcedMix)
                 {
-                    animation.CrossFade(name, 10f/animation[name].clip.frameRate);
+                    animation.CrossFade(animname, 10f / animation[animname].clip.frameRate);
                 }
                 else
                 {
-                    animation.CrossFade(name, 3f / animation[name].clip.frameRate);
+                    animation.CrossFade(animname, 3f / animation[animname].clip.frameRate);
                 }
             }
         }
         else
         {
-            if (!m_loadedClips.Contains(name))
+            if (!m_loadedClips.Contains(animname))
             {
-                Debug.LogError("nave no clip " + name);
+                Debug.LogError("nave no clip " + animname);
                 Debug.LogError("clipdump:");
                 string dump = "";
 
@@ -1460,11 +1531,11 @@ public class GUIANIMCONTROL : MonoBehaviour
         }
 
         m_lastCollisionFlags = flags;
+        PlayClip(GetAnim());
 
-        PlayClip("KONOKO" + GetAnim());
-        if (animation["KONOKO" + GetAnim()] != null)
+        if (animation[GetAnim()] != null)
         {
-            adds = animation["KONOKO" + GetAnim()].normalizedTime.ToString() + "\n" + (m_jumpStart != 0 ? m_upperVector * (Time.time - m_jumpStart) - 0.5f * (Time.time - m_jumpStart) * (Time.time - m_jumpStart) * 9.8f : 0).ToString();
+            adds = animation[GetAnim()].normalizedTime.ToString() + "\n" + (m_jumpStart != 0 ? m_upperVector * (Time.time - m_jumpStart) - 0.5f * (Time.time - m_jumpStart) * (Time.time - m_jumpStart) * 9.8f : 0).ToString();
         }
     }
 

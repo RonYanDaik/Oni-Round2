@@ -45,12 +45,10 @@ namespace Round2.Generated.Binary
                         if (m_particleClasses.ContainsKey(m_pClass))
                         {
                             m_class = m_particleClasses[m_pClass];
-                            Debug.Log(">>>sasd >>  +  " + m_particleClasses[m_pClass].m_header.m_textureName);
                             m_go = GameObject.CreatePrimitive(PrimitiveType.Plane);
                             GameObject.Destroy(m_go.collider);
                             m_go.name = m_pClass;
-                            m_go.transform.localScale = new UnityEngine.Vector3(l_sX / 10f , 1, l_sY / 10f );//need to divide in case of plane. TODO : replace to quad
-
+                            
                             if (BinaryDatReader.m_textures.ContainsKey(m_particleClasses[m_pClass].m_header.m_textureName))
                             {
                                 m_go.renderer.material.mainTexture = BinaryDatReader.m_textures[m_particleClasses[m_pClass].m_header.m_textureName].Surface_0;

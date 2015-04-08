@@ -164,12 +164,12 @@ public class BinaryDatReader : MonoBehaviour
                                 l_obj.m_header.m_rot = new Vector3(l_xRot, l_yRot, l_zRot);
 
                                 //TODO : casually refactor
-                                //TODO : replace plane to quad
+                                //TODO : replace plane with quad. Fix scale after
                                 if (l_obj is Round2.Generated.Binary.Namespaces.BINA.OBJC.PART)
                                 {
                                     (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.position = new UnityEngine.Vector3(-l_obj.m_header.m_pos.x, l_obj.m_header.m_pos.y, l_obj.m_header.m_pos.z);
                                     (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.eulerAngles = l_obj.m_header.m_rot;
-                                    (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.localScale = new UnityEngine.Vector3((l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_xScale / 10f, 1, (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_yScale / 10f);
+                                    (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_go.transform.localScale = new UnityEngine.Vector3((l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_xScale / 5f, 1, (l_obj as Round2.Generated.Binary.Namespaces.BINA.OBJC.PART).m_class.m_header.m_yScale / 5f);
                                     Debug.DrawLine(Vector3.up * 10, new Vector3(-l_obj.m_header.m_pos.x, l_obj.m_header.m_pos.y, l_obj.m_header.m_pos.z), Color.green, 15f);
 
                                 }

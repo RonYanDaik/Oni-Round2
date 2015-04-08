@@ -15,10 +15,17 @@ public static class AnimationClipHolder
         }
     }
 
-    public static AnimationClip Get(string name, GUIANIMCONTROL caller)
+    public static AnimationClip Get(string animname, GUIANIMCONTROL caller)
     {
-        Debug.Log("::" + name);
-        Debug.Log("query for " + name + "|" + m_holdDict.ContainsKey(name));
-        return m_holdDict[name](caller);
+        Debug.Log("::"  + animname);
+        Debug.Log("query for " + animname);
+        if (m_holdDict.ContainsKey(animname))
+        {
+            return m_holdDict[animname](caller);
+        }
+        else
+        {
+            return null;
+        }
     }
 }
