@@ -1,650 +1,194 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+
+[System.Flags]
+internal enum AnimFlags
+{
+    jump = 1 << 0,
+    jump_fw = 1 << 1,
+    jump_bk = 1 << 2,
+    jump_rt = 1 << 3,
+    jump_lt = 1 << 4,
+    crouch = 1 << 5,
+    idle = 1 << 6,
+    land = 1 << 7,
+    run = 1 << 8,
+    run_bk = 1 << 9,
+    ss_lt = 1 << 10,
+    ss_rt = 1 << 11,
+    stepa = 1 << 12,
+    stepb = 1 << 13,
+    start = 1 << 14,
+    stop = 1 << 15,
+    lt = 1 << 16,
+    rt = 1 << 17,
+    idle1 = 1 << 18,
+    idle2 = 1 << 19,
+    ss_lt_run = 1 << 20,//needed for transition from ss_lt to run
+    ss_rt_run = 1 << 21,//needed for transition from ss_rt to run
+    crouch2idlea = 1 << 22,
+    crouch2idleb = 1 << 23,
+    idle2croucha = 1 << 24,
+    idle2crouchb = 1 << 25,
+    fw = 1 << 26,
+    bk = 1 << 27,
+    slide = 1 << 28,//needed for slide animations for right, left, backward slide
+    slide_run = 1 << 29,
+    id = 1 << 30//keep this flag last
+}
 
 public class GUIANIMCONTROL : MonoBehaviour 
 {
-    [System.Flags]
-    enum AnimFlags
-    {
-        jump =          1 << 0,
-        jump_fw =       1 << 1,
-        jump_bk =       1 << 2,
-        jump_rt =       1 << 3,
-        jump_lt =       1 << 4,
-        crouch =        1 << 5,
-        idle =          1 << 6,
-        land =          1 << 7,
-        run =           1 << 8,
-        run_bk =        1 << 9,
-        ss_lt =         1 << 10,
-        ss_rt =         1 << 11,
-        stepa =         1 << 12,
-        stepb =         1 << 13,
-        start =         1 << 14,
-        stop =          1 << 15,
-        lt =            1 << 16,
-        rt =            1 << 17,
-        idle1 =         1 << 18,
-        idle2 =         1 << 19,
-        ss_lt_run =     1 << 20,//needed for transition from ss_lt to run
-        ss_rt_run =     1 << 21,//needed for transition from ss_rt to run
-        crouch2idlea =  1 << 22,
-        crouch2idleb =  1 << 23,
-        idle2croucha =  1 << 24,
-        idle2crouchb =  1 << 25,
-        fw =            1 << 26,
-        bk =            1 << 27,
-        slide =         1 << 28,//needed for slide animations for right, left, backward slide
-        slide_run =     1 << 29,
-        id =            1 << 30//keep this flag last
-    }
-
     float jumpHeight = 25;
     AnimFlags m_lastFlags = AnimFlags.idle1;
     AnimFlags m_prevFlags = 0;
-
     bool m_lockCursor = false;
+    IInputChannel m_channel = new PlayerInputChannel();
+    TRAMState m_state;
+
+    class TRAMState
+    {
+        private TRAMState()
+        { 
+            
+        }
+
+        public class Transitioner
+        {
+            public TRAMState m_nextState;
+            public Func<bool> m_valueTracker;
+        }
+
+        Action OnActivate = null;
+        public AnimFlags m_correspondingValue = AnimFlags.idle1;
+        List<Transitioner> m_lastFrameTransitions = new List<Transitioner>();
+        List<Transitioner> m_anyFrameTransitions = new List<Transitioner>();
+        List<Transitioner> m_landingTransitions = new List<Transitioner>();
+        string m_dbgName;
+
+        public static TRAMState FormState(AnimFlags state, Action activationHandler = null, string name = "")
+        {
+            return new TRAMState() { m_correspondingValue = state, m_dbgName = name, OnActivate = activationHandler };
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <param name="tracker"></param>
+        /// <returns>value of next state in chain</returns>
+        public TRAMState AddLastFrameCondition(TRAMState other, Func<bool> tracker)
+        {
+            Debug.Log( this.m_correspondingValue + " > " + other.m_correspondingValue);
+            m_lastFrameTransitions.Add(new Transitioner() { m_nextState = other, m_valueTracker = tracker });
+            return other;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <param name="tracker"></param>
+        /// <returns>value of next state in chain</returns>
+        public TRAMState AddAnyFrameCondition(TRAMState other, Func<bool> tracker)
+        {
+            m_anyFrameTransitions.Add(new Transitioner() { m_nextState = other, m_valueTracker = tracker });
+            return other;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <param name="tracker"></param>
+        /// <returns>value of next state in chain</returns>
+        public TRAMState AddLangingCondition(TRAMState other, Func<bool> tracker)
+        {
+            m_landingTransitions.Add(new Transitioner() { m_nextState = other, m_valueTracker = tracker });
+            return other;
+        }
+
+        public TRAMState OnLand()
+        {
+            TRAMState l_res = null;
+            foreach (Transitioner tr in m_landingTransitions)
+            {
+                if (tr.m_valueTracker())
+                {
+                    if (l_res != null)
+                    {
+                        Debug.LogWarning("CONFICTING TRANSITIONS : " + l_res.m_correspondingValue + " and " + tr.m_nextState.m_correspondingValue);
+                    }
+
+                    l_res = tr.m_nextState;
+                }
+            }
+
+            if (l_res != null && l_res.OnActivate != null)
+            {
+                l_res.OnActivate();
+            }
+            return l_res ?? this;
+        }
+
+        public TRAMState OnAnyFrame()
+        {
+            TRAMState l_res = null;
+
+            foreach (Transitioner tr in m_anyFrameTransitions)
+            {
+                if (tr.m_valueTracker())
+                {
+                    if (l_res != null)
+                    {
+                        Debug.LogWarning("CONFICTING TRANSITIONS : " + l_res.m_correspondingValue + " and " + tr.m_nextState.m_correspondingValue);
+                    }
+
+                    l_res = tr.m_nextState;
+                }
+            }
+
+            if (l_res != null && l_res.OnActivate != null)
+            {
+                l_res.OnActivate();
+            }
+            return l_res ?? this;
+        }
+
+        public TRAMState OnLastFrame()
+        {
+            TRAMState l_res = null;
+
+            foreach (Transitioner tr in m_lastFrameTransitions)
+            {
+                if (tr.m_valueTracker())
+                {
+                    if (l_res != null)
+                    {
+                        Debug.LogWarning("CONFICTING TRANSITIONS : " + l_res.m_correspondingValue + " and " + tr.m_nextState.m_correspondingValue);
+                    }
+
+                    l_res = tr.m_nextState;
+                }
+            }
+
+            if (l_res != null && l_res.OnActivate != null)
+            {
+                l_res.OnActivate();
+            }
+            return l_res ?? this;
+        }
+
+    }
 
     string GetAnim()
     {
         m_prevFlags = m_lastFlags;
         m_targetAngle = Quaternion.Euler(0, 0, 0);
-
-        switch (m_lastFlags)
-        {
-            case AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.rt:
-            case AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt:
-
-                if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.start;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.W))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.start;
-                        }
-                        else
-                        {
-                            m_lastFlags = AnimFlags.crouch2idleb;
-                        }
-                    }
-                }
-                else
-                {
-                    if (!Input.GetKey(KeyCode.S))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 90, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -90, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.W))
-                        {
-                            m_lastFlags = AnimFlags.crouch | AnimFlags.run | AnimFlags.lt;
-                        }
-                        else
-                        {
-                            m_lastFlags = AnimFlags.crouch | AnimFlags.idle;
-                        }
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 45, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -45, 0);
-                            break;
-                        }
-                    }
-                }
-
-                break;
-            case AnimFlags.crouch | AnimFlags.run | AnimFlags.lt:
-            case AnimFlags.crouch | AnimFlags.run | AnimFlags.rt:
-
-                if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.start;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.S))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.start;
-                        }
-                        else
-                        {
-                            m_lastFlags = AnimFlags.crouch2idleb;
-                        }
-                    }
-                }
-                else
-                {
-                    if (!Input.GetKey(KeyCode.W))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -90, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 90, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.S))
-                        {
-                            m_lastFlags = AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt;
-                        }
-                        else
-                        {
-                            m_lastFlags = AnimFlags.crouch | AnimFlags.idle;
-                        }
-                    }
-
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -45, 0);
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 45, 0);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case AnimFlags.crouch | AnimFlags.idle:
-                if (!Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch2idleb;   
-                }
-
-                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.run | AnimFlags.lt;
-                }
-
-                if(Input.GetKey(KeyCode.S))
-                {
-                     m_lastFlags = AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt;
-                }
-
-                break;
-            //end of crouch block
-            case AnimFlags.idle2:
-            case AnimFlags.idle1:
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.stepa;
-                    }
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.idle2croucha;
-                    }
-                }
-                break;
-            case AnimFlags.run | AnimFlags.lt:
-                {
-                    if (!Input.GetKey(KeyCode.W))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.S))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
-                            break;
-                        }
-
-                        m_lastFlags = AnimFlags.run | AnimFlags.stop;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 45, 0);
-                        }
-                        else
-                        {
-                            if (Input.GetKey(KeyCode.A))
-                            {
-                                m_targetAngle = Quaternion.Euler(0, -45, 0);
-                            }
-                        }
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_fw | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
-                    }
-                } 
-                break;
-            case AnimFlags.run | AnimFlags.rt:
-                {
-                    if (!Input.GetKey(KeyCode.W))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.S))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
-                            break;
-                        }
-
-                        m_lastFlags = AnimFlags.run | AnimFlags.stop;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, 45, 0);
-                        }
-                        else
-                        {
-                            if (Input.GetKey(KeyCode.A))
-                            {
-                                m_targetAngle = Quaternion.Euler(0, -45, 0);
-                            }
-                        }
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_fw | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
-                    }
-                }
-                break;
-            case AnimFlags.run | AnimFlags.start:
-            case AnimFlags.run | AnimFlags.stepa:
-
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    m_lastFlags = AnimFlags.jump_fw | AnimFlags.start;
-                    //ComFlag = false;
-                    m_upperVector = m_jumpVal;
-                    m_jumpStart = Time.time;
-                    m_rememberedSpeed = m_motionVector;
-                    break;
-                }
-
-                break;
-            //end of forward
-            case AnimFlags.run_bk | AnimFlags.lt:
-                {
-                    if (!Input.GetKey(KeyCode.S))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_lt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_rt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.W))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.rt;
-                            break;
-                        }
-
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stop;
-                        break;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -45, 0);
-                        }
-                        else
-                        {
-                            if (Input.GetKey(KeyCode.A))
-                            {
-                                m_targetAngle = Quaternion.Euler(0, 45, 0);
-                            }
-                        }
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.slide;
-                        //ComFlag = false;
-                    }
-                }
-                break;
-            case AnimFlags.run_bk | AnimFlags.rt:
-                {
-                    if (!Input.GetKey(KeyCode.S))
-                    {
-                        if (Input.GetKey(KeyCode.A))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_lt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_lastFlags = AnimFlags.run_bk | AnimFlags.ss_rt;
-                            break;
-                        }
-
-                        if (Input.GetKey(KeyCode.W))
-                        {
-                            m_lastFlags = AnimFlags.run | AnimFlags.rt;
-                            break;
-                        }
-
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stop;
-                        break;
-                    }
-                    else
-                    {
-                        if (Input.GetKey(KeyCode.D))
-                        {
-                            m_targetAngle = Quaternion.Euler(0, -45, 0);
-                        }
-                        else
-                        {
-                            if (Input.GetKey(KeyCode.A))
-                            {
-                                m_targetAngle = Quaternion.Euler(0, 45, 0);
-                            }
-                        }
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-                    
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                       m_lastFlags = AnimFlags.run_bk | AnimFlags.slide;
-                       //ComFlag = false;
-                    }
-                }
-                break;
-
-            case AnimFlags.run_bk | AnimFlags.start:
-            case AnimFlags.run_bk | AnimFlags.stepa:
-
-                if (Input.GetKey(KeyCode.Space))
-                {
-                    m_lastFlags = AnimFlags.jump_bk | AnimFlags.start;
-                    m_upperVector = m_jumpVal;
-                    m_jumpStart = Time.time;
-                    //ComFlag = false;
-                    m_rememberedSpeed = m_motionVector;
-                    break;
-                }
-
-                break;
-            //end of backward
-            case AnimFlags.ss_lt | AnimFlags.lt:
-                {
-                    if (!Input.GetKey(KeyCode.A))
-                    {   
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
-                    }
-
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt_run;
-                    }
-
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                    }
-
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_lt | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.slide;
-                        //ComFlag = false;
-                    }
-                }
-                break;
-            case AnimFlags.ss_lt | AnimFlags.rt:
-                {
-                    if (!Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
-                    }
-
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt_run;
-                    }
-
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                    }
-
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_lt | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.slide;
-                        //ComFlag = false;
-                    }
-                }
-                break;
-            //end of ss_lt
-            case AnimFlags.ss_rt | AnimFlags.lt:
-                {
-                    if (!Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
-                    }
-
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt_run;
-                    }
-
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                    }
-
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_rt | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        //ComFlag = false;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.slide;
-                    }
-                }
-                break;
-            case AnimFlags.ss_rt | AnimFlags.rt:
-                {
-                    if (!Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
-                    }
-
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt_run;
-                    }
-
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                    }
-
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-                    }
-
-                    if (Input.GetKey(KeyCode.Space))
-                    {
-                        m_lastFlags = AnimFlags.jump_rt | AnimFlags.start;
-                        m_upperVector = m_jumpVal;
-                        m_jumpStart = Time.time;
-                        m_rememberedSpeed = m_motionVector;
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.slide;
-                    }
-                }
-                break;
-            //end of transition from run to ss_rt
-        }
+        m_state = m_state.OnAnyFrame();
+        m_lastFlags = m_state.m_correspondingValue;
 
         string animname = "";
 
@@ -709,69 +253,8 @@ public class GUIANIMCONTROL : MonoBehaviour
 
     void OnLand()
     {
-        switch (m_lastFlags)
-        {
-            case AnimFlags.jump_lt | AnimFlags.start:
-            case AnimFlags.jump_lt | AnimFlags.idle:
-                m_lastFlags = AnimFlags.jump_lt | AnimFlags.land;
-
-                if (Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags |= AnimFlags.lt;
-                    break;
-                }
-                break;
-            //end of rt_jump
-
-            case AnimFlags.jump_rt | AnimFlags.start:
-            case AnimFlags.jump_rt | AnimFlags.idle:
-                m_lastFlags = AnimFlags.jump_rt | AnimFlags.land;
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    m_lastFlags |= AnimFlags.rt;
-                    break;
-                }
-                break;
-            //end of rt_jump
-
-            case AnimFlags.jump_bk | AnimFlags.start:
-            case AnimFlags.jump_bk | AnimFlags.idle:
-                m_lastFlags = AnimFlags.jump_bk | AnimFlags.land;
-
-                if (Input.GetKey(KeyCode.S))
-                {
-                    m_lastFlags |= AnimFlags.bk;
-                    break;
-                }
-                break;
-            //end of backward jump
-
-            case AnimFlags.jump_fw | AnimFlags.start:
-            case AnimFlags.jump_fw | AnimFlags.idle:
-                //ComFlag = false;
-                m_lastFlags = AnimFlags.jump_fw | AnimFlags.land;
-
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags |= AnimFlags.fw;
-                    break;
-                }
-                break;
-            //end of forward + jump
-            case AnimFlags.jump | AnimFlags.start:
-            case AnimFlags.jump | AnimFlags.idle:
-
-                m_lastFlags = AnimFlags.jump | AnimFlags.land;
-
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags |= AnimFlags.fw;
-                    break;
-                }
-                break;
-        }
-
+        m_state = m_state.OnLand();
+        m_lastFlags = m_state.m_correspondingValue;
         m_upperVector = 0;
         m_jumpStart = -1;
         m_waitingForLanding = false;
@@ -792,482 +275,17 @@ public class GUIANIMCONTROL : MonoBehaviour
         }
     }
 
-    void OnLastFrame()
+    void DoJump()
     {
-        m_forcedMix = false;
-
-        switch (m_lastFlags)
-        {
-            case AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.rt:
-                m_lastFlags = AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt;
-                break;
-
-            case AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt:
-                m_lastFlags = AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.rt;
-                break;
-
-            case AnimFlags.crouch | AnimFlags.run | AnimFlags.rt:
-                m_lastFlags = AnimFlags.crouch | AnimFlags.run | AnimFlags.lt;
-                break;
-
-            case AnimFlags.crouch | AnimFlags.run | AnimFlags.lt:
-                m_lastFlags = AnimFlags.crouch | AnimFlags.run | AnimFlags.rt;
-                break;
-
-            case AnimFlags.idle2croucha:
-                m_lastFlags = AnimFlags.idle2crouchb;
-                break;
-
-            case AnimFlags.idle2crouchb:
-
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.idle;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.crouch2idleb;
-                }
-
-                break;
-
-            case AnimFlags.crouch2idleb:
-                m_lastFlags = AnimFlags.crouch2idlea;
-                break;
-
-            case AnimFlags.crouch2idlea:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-
-            //end of crouching block
-            case AnimFlags.jump_lt | AnimFlags.land:
-            case AnimFlags.jump_lt | AnimFlags.land | AnimFlags.lt:
-                if (Input.GetKey(KeyCode.A))
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.rt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.idle1;
-                }
-
-                break;
-
-            case AnimFlags.jump_lt | AnimFlags.start:
-                m_lastFlags = AnimFlags.jump_lt | AnimFlags.idle;
-                m_waitingForLanding = true;
-                break;
-
-            //end of jump lt
-            case AnimFlags.jump_rt | AnimFlags.land:
-            case AnimFlags.jump_rt | AnimFlags.land | AnimFlags.rt:
-                if (Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.lt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.idle1;
-                }
-
-                break;
-
-            case AnimFlags.jump_rt | AnimFlags.start:
-                m_lastFlags = AnimFlags.jump_rt | AnimFlags.idle;
-                m_waitingForLanding = true;
-                break;
-
-            //end of jump rt
-
-            case AnimFlags.jump_bk | AnimFlags.land:
-            case AnimFlags.jump_bk | AnimFlags.land | AnimFlags.bk:
-                if (Input.GetKey(KeyCode.S))
-                {
-                    m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.idle1;
-                }
-
-                break;
-
-            case AnimFlags.jump_bk | AnimFlags.start:
-                m_lastFlags = AnimFlags.jump_bk | AnimFlags.idle;
-                m_waitingForLanding = true;
-                break;
-            //end of jump_bk
-
-            case AnimFlags.jump_fw | AnimFlags.land:
-            case AnimFlags.jump_fw | AnimFlags.land | AnimFlags.fw:
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.lt;
-                    //ComFlag = false;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.idle1;
-                }
-                break;
-            case AnimFlags.jump_fw | AnimFlags.start:
-                m_lastFlags = AnimFlags.jump_fw | AnimFlags.idle;
-                m_waitingForLanding = true;
-                //ComFlag = false;
-                break;
-            //end of jump fw
-            case AnimFlags.jump | AnimFlags.land | AnimFlags.fw:
-                m_lastFlags = AnimFlags.run | AnimFlags.lt;
-                //ComFlag = false;
-                break;
-            case AnimFlags.jump | AnimFlags.land:
-                m_lastFlags = AnimFlags.idle1;
-                //ComFlag = false;
-                break;
-            case AnimFlags.jump | AnimFlags.start:
-                m_lastFlags = AnimFlags.jump | AnimFlags.idle;
-                m_waitingForLanding = true;
-                break;
-            //end of jump idle
-            case AnimFlags.idle1:
-                m_lastFlags = AnimFlags.idle2;
-                //do nothing?
-                break;
-            case AnimFlags.idle2:
-                 m_lastFlags = AnimFlags.idle1;
-                break;
-            //end of idle block
-            case AnimFlags.run | AnimFlags.stepa:
-                //ComFlag = false;
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.start;
-                    
-                }
-                else
-                {
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.ss_lt;
-
-                        break;
-                    }
-
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.ss_rt;
-                        break;
-                    }
-
-                    m_lastFlags = AnimFlags.run | AnimFlags.stepb;
-                }
-
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.fw;
-                }
-                break;
-            case AnimFlags.run | AnimFlags.stepb:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            case AnimFlags.run | AnimFlags.start:
-                m_lastFlags = AnimFlags.run | AnimFlags.rt;
-                break;
-            case AnimFlags.run | AnimFlags.rt:
-                m_lastFlags = AnimFlags.run | AnimFlags.lt;
-                break;
-            case AnimFlags.run | AnimFlags.lt:
-                m_lastFlags = AnimFlags.run | AnimFlags.rt;
-                break;
-            case AnimFlags.run | AnimFlags.stop:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-
-            //end of forward
-            
-            case AnimFlags.run_bk | AnimFlags.stepa:
-                if (Input.GetKey(KeyCode.S))
-                {
-                    m_lastFlags = AnimFlags.run_bk | AnimFlags.start;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.run_bk | AnimFlags.stepb;
-                }
-
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.bk;
-                    //ComFlag = true;
-                }
-
-                break;
-            case AnimFlags.run_bk | AnimFlags.stepb:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            case AnimFlags.run_bk | AnimFlags.start:
-                //ComFlag = false;
-                m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
-                break;
-            case AnimFlags.run_bk | AnimFlags.rt:
-                //ComFlag = false;
-                m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                break;
-            case AnimFlags.run_bk | AnimFlags.lt:
-                //ComFlag = false;
-                m_lastFlags = AnimFlags.run_bk | AnimFlags.rt;
-                break;
-            case AnimFlags.run_bk | AnimFlags.stop:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-
-            case AnimFlags.run_bk | AnimFlags.slide:
-                if (Input.GetKey(KeyCode.S))
-                { 
-                    m_lastFlags = AnimFlags.run_bk | AnimFlags.slide_run;
-                    //ComFlag = false;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.run_bk | AnimFlags.slide | AnimFlags.id;
-                    //ComFlag = false;
-                }
-                break;
-
-            case AnimFlags.run_bk | AnimFlags.slide | AnimFlags.id:
-                {
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                        //ComFlag = true;
-                    }
-                    else
-                    {
-                        m_lastFlags = AnimFlags.idle1;
-                        //ComFlag = false;
-                    }
-                }
-                break;
-
-            case AnimFlags.run_bk | AnimFlags.slide_run:
-                {
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.lt;
-                        //ComFlag = false;
-                    }
-                    else
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stop;
-                        //ComFlag = false;
-                    }
-                }
-                break;
-            //end of backward
-
-            case AnimFlags.crouch | AnimFlags.bk:
-            case AnimFlags.crouch | AnimFlags.fw:
-            case AnimFlags.crouch | AnimFlags.rt:
-            case AnimFlags.crouch | AnimFlags.lt:
-                {
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.stepa;
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
-                        break;
-                    }
-
-                    m_lastFlags = AnimFlags.idle1;
-                }
-                break;
-
-            case AnimFlags.ss_rt | AnimFlags.slide:
-            case AnimFlags.ss_lt | AnimFlags.slide:
-                {
-                    //NOTE : in case of chantging to LT in same direction, it will cause animation "stuck" if SHIFT is already pressed, because SHIFT related clip is already playing. 
-                    //TODO : find a solution for note above. Ultil then, change to "stepa"
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        m_lastFlags = AnimFlags.run | AnimFlags.stepa;
-                        Debug.Log(m_lastFlags);
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        m_lastFlags = AnimFlags.run_bk | AnimFlags.stepa;
-                        Debug.Log(m_lastFlags);
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.A))
-                    {
-                        m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepa;
-                        Debug.Log(m_lastFlags);
-                        break;
-                    }
-                    if (Input.GetKey(KeyCode.D))
-                    {
-                        m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepa;
-                        Debug.Log(m_lastFlags);
-                        break;
-                    }
-
-                    m_lastFlags = AnimFlags.idle1;
-                    Debug.Log(m_lastFlags);
-                }
-                break;
-
-            case AnimFlags.ss_lt | AnimFlags.stepa:
-                if (Input.GetKey(KeyCode.A))
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.start;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.stepb;
-                }
-
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.lt;
-                }
-
-                break;
-            case AnimFlags.ss_lt | AnimFlags.stepb:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            case AnimFlags.ss_lt | AnimFlags.start:
-                m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
-                //ComFlag = false;
-                break;
-            case AnimFlags.ss_lt | AnimFlags.rt:
-                m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
-                break;
-
-            case AnimFlags.ss_lt | AnimFlags.lt:
-                m_lastFlags = AnimFlags.ss_lt | AnimFlags.rt;
-                break;
-            case AnimFlags.ss_lt | AnimFlags.stop:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            //end of ss_lt
-            case AnimFlags.ss_rt | AnimFlags.stepa:
-                if (Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.start;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.stepb;
-                }
-
-                if (Input.GetKey(KeyCode.LeftShift))
-                {
-                    m_lastFlags = AnimFlags.crouch | AnimFlags.rt;
-                }
-                break;
-            case AnimFlags.ss_rt | AnimFlags.stepb:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            case AnimFlags.ss_rt | AnimFlags.start:
-                m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
-                //ComFlag = false;
-                break;
-            case AnimFlags.ss_rt | AnimFlags.rt:
-                m_lastFlags = AnimFlags.ss_rt | AnimFlags.lt;
-                break;
-            case AnimFlags.ss_rt | AnimFlags.lt:
-                m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
-                break;
-            case AnimFlags.ss_rt | AnimFlags.stop:
-                m_lastFlags = AnimFlags.idle1;
-                break;
-            //end if ss_rt
-
-            case AnimFlags.run | AnimFlags.ss_lt:
-                if (Input.GetKey(KeyCode.A))
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
-                }
-                break;
-            //end of transition forward to ss_lt
-            case AnimFlags.run | AnimFlags.ss_rt:
-                if (Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
-                }
-                break;
-            //end of transition forward to ss_rt
-            case AnimFlags.ss_lt_run:
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.rt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.stop;
-                }
-                break;
-            //end of transition ss_lt to run
-            case AnimFlags.ss_rt_run:
-                if (Input.GetKey(KeyCode.W))
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.lt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.run | AnimFlags.stop;
-                }
-                break;
-            //end of transition ss_rt to run
-            case AnimFlags.run_bk | AnimFlags.ss_lt :
-                if (Input.GetKey(KeyCode.A))
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.lt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_lt | AnimFlags.stop;
-                }
-                break;
-            //end of transition run_bk to ss_lt
-            case AnimFlags.run_bk | AnimFlags.ss_rt:
-                if (Input.GetKey(KeyCode.D))
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.rt;
-                }
-                else
-                {
-                    m_lastFlags = AnimFlags.ss_rt | AnimFlags.stop;
-                }
-                break;
-            //end of transition run_bk to ss_rt
-        } 
+        m_upperVector = m_jumpVal;
+        m_jumpStart = Time.time;
+        m_waitingForLanding = true;
+        //ComFlag = false;
+        m_rememberedSpeed = m_motionVector;
     }
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
     {
         transform.position += Vector3.up * 2;
         Vector3 angles = transform.eulerAngles;
@@ -1275,7 +293,393 @@ public class GUIANIMCONTROL : MonoBehaviour
         m_camera.transform.parent = null;
         m_x = angles.y;
         m_y = angles.x;
-	}
+
+        #region input axis accessors
+        Func<bool> l_forwardPositive = () => m_channel[ChannelKind.Forward];
+        Func<bool> l_forwardNegative = () => !m_channel[ChannelKind.Forward];
+        Func<bool> l_backwardPositive = () => m_channel[ChannelKind.Backward];
+        Func<bool> l_backwardNegative = () => !m_channel[ChannelKind.Backward];
+        Func<bool> l_sidestepLeftPositive = () => m_channel[ChannelKind.Left];
+        Func<bool> l_sidestepLeftNegative = () => !m_channel[ChannelKind.Left];
+        Func<bool> l_sidestepRightPositive = () => m_channel[ChannelKind.Right];
+        Func<bool> l_sidestepRightNegative = () => !m_channel[ChannelKind.Right];
+        Func<bool> l_crouchNegative = () => !m_channel[ChannelKind.Crouch];
+        Func<bool> l_crouchPositive = () => m_channel[ChannelKind.Crouch];
+        Func<bool> l_jumpPositive = () => m_channel[ChannelKind.Jump];
+        Func<bool> l_jumpNegative = () => !m_channel[ChannelKind.Jump];
+        #endregion
+
+        TRAMState l_idle1 = TRAMState.FormState(AnimFlags.idle1);
+        TRAMState l_idle2 = TRAMState.FormState(AnimFlags.idle2);
+        TRAMState l_run1stepa = TRAMState.FormState(AnimFlags.run | AnimFlags.stepa);
+        TRAMState l_run_bk_1stepa = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.stepa);
+        TRAMState l_ss_lt_1stepa = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.stepa);
+        TRAMState l_ss_rt_1stepa = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.stepa);
+        TRAMState l_ss_rt_Lt = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.lt);
+        TRAMState l_ss_rt_Rt = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.rt);
+        TRAMState l_ss_rt_Start = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.start);
+        TRAMState l_ss_rt_stop = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.stop);
+        TRAMState l_ss_lt_Lt = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.lt);
+        TRAMState l_ss_lt_Rt = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.rt);
+        TRAMState l_ss_lt_Start = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.start);
+        TRAMState l_ss_lt_stop = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.stop);
+
+        #region run
+        TRAMState l_runLt = TRAMState.FormState(AnimFlags.run | AnimFlags.lt);
+        TRAMState l_runRt = TRAMState.FormState(AnimFlags.run | AnimFlags.rt);
+        TRAMState l_runStart = TRAMState.FormState(AnimFlags.run | AnimFlags.start);
+        TRAMState l_runstepb = TRAMState.FormState(AnimFlags.run | AnimFlags.stepb);
+        TRAMState l_runstop = TRAMState.FormState(AnimFlags.run | AnimFlags.stop);
+        TRAMState l_run_ss_rt = TRAMState.FormState(AnimFlags.run | AnimFlags.ss_rt);
+        TRAMState l_run_ss_lt = TRAMState.FormState(AnimFlags.run | AnimFlags.ss_lt);
+        TRAMState l_crouch_fw = TRAMState.FormState(AnimFlags.crouch | AnimFlags.fw);
+
+        {
+            l_run1stepa.AddAnyFrameCondition(l_crouch_fw, l_crouchPositive);
+            l_runStart.AddAnyFrameCondition(l_crouch_fw, l_crouchPositive);
+            l_runLt.AddAnyFrameCondition(l_crouch_fw, l_crouchPositive);
+            l_runRt.AddAnyFrameCondition(l_crouch_fw, l_crouchPositive);
+            l_crouch_fw.AddLastFrameCondition(l_idle1, l_forwardNegative);
+            l_crouch_fw.AddLastFrameCondition(l_run1stepa, l_forwardPositive);
+
+            Func<bool> l_run_specific_negative = () =>
+            {
+                m_targetAngle = Quaternion.Euler(0, l_sidestepLeftPositive() ? -45 : l_sidestepRightPositive() ? 45 : 0, 0);
+                return l_forwardNegative();
+            };
+
+            l_run1stepa
+            .AddLastFrameCondition(l_runStart, l_forwardPositive)
+            .AddLastFrameCondition(l_runRt, l_forwardPositive)
+            .AddLastFrameCondition(l_runLt , l_forwardPositive)
+            .AddLastFrameCondition(l_runRt, l_forwardPositive);
+            l_run1stepa.AddLastFrameCondition(l_runstepb, l_forwardNegative);
+            l_runLt.AddAnyFrameCondition(l_runstop, l_run_specific_negative);
+            l_runRt.AddAnyFrameCondition(l_runstop, l_run_specific_negative);
+            l_runRt.AddAnyFrameCondition(l_run_ss_rt, () => l_forwardNegative() && l_sidestepRightPositive());
+            l_runLt.AddAnyFrameCondition(l_run_ss_rt, () => l_forwardNegative() && l_sidestepRightPositive());
+            l_runRt.AddAnyFrameCondition(l_run_ss_lt, () => l_forwardNegative() && l_sidestepLeftPositive());
+            l_runLt.AddAnyFrameCondition(l_run_ss_lt, () => l_forwardNegative() && l_sidestepLeftPositive());
+            l_run_ss_rt.AddLastFrameCondition(l_ss_rt_Rt, l_sidestepRightPositive);
+            l_run_ss_rt.AddLastFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+            l_run_ss_lt.AddLastFrameCondition(l_ss_lt_Lt, l_sidestepLeftPositive);
+            l_run_ss_lt.AddLastFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+            l_runLt.AddAnyFrameCondition(l_run_bk_1stepa, () => l_forwardNegative() && l_backwardPositive());
+            l_runRt.AddAnyFrameCondition(l_run_bk_1stepa, () => l_forwardNegative() && l_backwardPositive());
+            l_runstop.AddLastFrameCondition(l_idle1, l_forwardNegative);
+            l_runstepb.AddLastFrameCondition(l_idle1, l_forwardNegative);
+            l_runstepb.AddAnyFrameCondition(l_run1stepa, l_forwardPositive);
+            l_runstop.AddAnyFrameCondition(l_run1stepa, l_forwardPositive);
+            l_runStart.AddLastFrameCondition(l_runstop, l_forwardNegative);
+        }
+        #endregion
+
+        #region run bk
+        TRAMState l_run_bk_Lt = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.lt);
+        TRAMState l_run_bk_Rt = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.rt);
+        TRAMState l_run_bk_Start = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.start);
+        TRAMState l_run_bk_stepb = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.stepb);
+        TRAMState l_run_bk_stop = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.stop);
+        TRAMState l_run_bk_ss_rt = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.ss_rt);
+        TRAMState l_run_bk_ss_lt = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.ss_lt);
+        TRAMState l_crouch_bk = TRAMState.FormState(AnimFlags.crouch | AnimFlags.bk);
+        TRAMState l_run_bk_slide = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.slide);
+        TRAMState l_run_bk_slide_run = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.slide_run);
+        TRAMState l_run_bk_slide_id = TRAMState.FormState(AnimFlags.run_bk | AnimFlags.slide | AnimFlags.id);
+
+        {
+            l_run_bk_1stepa.AddAnyFrameCondition(l_crouch_bk, l_crouchPositive);
+            l_run_bk_Start.AddAnyFrameCondition(l_run_bk_slide, l_crouchPositive);
+            l_run_bk_Lt.AddAnyFrameCondition(l_run_bk_slide, l_crouchPositive);
+            l_run_bk_Rt.AddAnyFrameCondition(l_run_bk_slide, l_crouchPositive);
+            l_run_bk_slide.AddLastFrameCondition(l_run_bk_slide_run, l_backwardPositive);
+            l_run_bk_slide.AddLastFrameCondition(l_run_bk_slide_id, l_backwardNegative);
+            l_crouch_bk.AddLastFrameCondition(l_idle1, ()=> true);
+            l_run_bk_slide_id.AddLastFrameCondition(l_idle1, () => true);
+            l_run_bk_slide_run.AddLastFrameCondition(l_idle1, l_backwardNegative);
+            l_run_bk_slide_run.AddLastFrameCondition(l_run_bk_Lt, l_backwardPositive);
+
+            Func<bool> l_run_bk_specific_negative = () =>
+            {
+                m_targetAngle = Quaternion.Euler(0, l_sidestepLeftPositive() ? 45 : l_sidestepRightPositive() ? -45 : 0, 0);
+                return l_backwardNegative();
+            };
+
+            l_run_bk_1stepa
+            .AddLastFrameCondition(l_run_bk_Start, l_backwardPositive)
+            .AddLastFrameCondition(l_run_bk_Rt, l_backwardPositive)
+            .AddLastFrameCondition(l_run_bk_Lt, l_backwardPositive)
+            .AddLastFrameCondition(l_run_bk_Rt, l_backwardPositive);
+            l_run_bk_1stepa.AddLastFrameCondition(l_run_bk_stepb, l_backwardNegative);
+            l_run_bk_Lt.AddAnyFrameCondition(l_run_bk_stop, l_run_bk_specific_negative);
+            l_run_bk_Rt.AddAnyFrameCondition(l_run_bk_stop, l_run_bk_specific_negative);
+            l_run_bk_Lt.AddAnyFrameCondition(l_run1stepa, () => l_backwardNegative() && l_forwardPositive());
+            l_run_bk_Rt.AddAnyFrameCondition(l_run1stepa, () => l_backwardNegative() && l_forwardPositive());
+            l_run_bk_Lt.AddAnyFrameCondition(l_run_bk_ss_rt, () => l_backwardNegative() && l_sidestepRightPositive());
+            l_run_bk_Rt.AddAnyFrameCondition(l_run_bk_ss_rt, () => l_backwardNegative() && l_sidestepRightPositive());
+            l_run_bk_Lt.AddAnyFrameCondition(l_run_bk_ss_lt, () => l_backwardNegative() && l_sidestepLeftPositive());
+            l_run_bk_Rt.AddAnyFrameCondition(l_run_bk_ss_lt, () => l_backwardNegative() && l_sidestepLeftPositive());
+            l_run_bk_ss_rt.AddLastFrameCondition(l_ss_rt_Rt, l_sidestepRightPositive);
+            l_run_bk_ss_rt.AddLastFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+            l_run_bk_ss_lt.AddLastFrameCondition(l_ss_lt_Lt, l_sidestepLeftPositive);
+            l_run_bk_ss_lt.AddLastFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+            l_run_bk_stop.AddLastFrameCondition(l_idle1, l_backwardNegative);
+            l_run_bk_stepb.AddLastFrameCondition(l_idle1, l_backwardNegative);
+            l_run_bk_stepb.AddAnyFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+            l_run_bk_stop.AddAnyFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+            l_run_bk_Start.AddLastFrameCondition(l_run_bk_stop, l_backwardNegative);
+        }
+        #endregion
+
+        #region ss_lt
+        l_ss_lt_1stepa
+        .AddLastFrameCondition(l_ss_lt_Start, l_sidestepLeftPositive)
+        .AddLastFrameCondition(l_ss_lt_Lt, l_sidestepLeftPositive)
+        .AddLastFrameCondition(l_ss_lt_Rt, l_sidestepLeftPositive)
+        .AddLastFrameCondition(l_ss_lt_Lt, l_sidestepLeftPositive);
+        TRAMState l_ss_lt_stepb = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.stepb);
+        TRAMState l_ss_lt_run = TRAMState.FormState(AnimFlags.ss_lt_run);
+        TRAMState l_jump_lt_start = TRAMState.FormState(AnimFlags.jump_lt | AnimFlags.start, DoJump);
+        TRAMState l_jump_lt_idle = TRAMState.FormState(AnimFlags.jump_lt | AnimFlags.idle);
+        TRAMState l_jump_lt_land = TRAMState.FormState(AnimFlags.jump_lt | AnimFlags.land);
+        TRAMState l_jump_lt_land_lt = TRAMState.FormState(AnimFlags.jump_lt | AnimFlags.land | AnimFlags.lt);
+        TRAMState l_jump_lt_crouch = TRAMState.FormState(AnimFlags.jump_lt | AnimFlags.crouch);
+        TRAMState l_ss_lt_slide = TRAMState.FormState(AnimFlags.ss_lt | AnimFlags.slide);
+        TRAMState l_crouch_lt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.lt);
+        l_ss_lt_1stepa.AddAnyFrameCondition(l_crouch_lt, l_crouchPositive);
+        l_ss_lt_Lt.AddAnyFrameCondition(l_ss_lt_slide, l_crouchPositive);
+        l_ss_lt_Rt.AddAnyFrameCondition(l_ss_lt_slide, l_crouchPositive);
+        l_ss_lt_Start.AddAnyFrameCondition(l_ss_lt_slide, l_crouchPositive);
+        l_ss_lt_slide.AddLastFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+        l_ss_lt_slide.AddLastFrameCondition(l_ss_lt_Lt, l_sidestepLeftPositive);
+        l_crouch_lt.AddLastFrameCondition(l_idle1, () => true);
+        l_ss_lt_1stepa.AddLastFrameCondition(l_ss_lt_stepb, l_sidestepLeftNegative);
+        l_ss_lt_Lt.AddAnyFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+        l_ss_lt_Rt.AddAnyFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+        l_ss_lt_Lt.AddAnyFrameCondition(l_run_bk_Lt, l_backwardPositive);
+        l_ss_lt_Rt.AddAnyFrameCondition(l_run_bk_Lt, l_backwardPositive);
+        l_ss_lt_Lt.AddAnyFrameCondition(l_ss_lt_run, l_forwardPositive);
+        l_ss_lt_Rt.AddAnyFrameCondition(l_ss_lt_run, l_forwardPositive);
+        l_ss_lt_Lt.AddAnyFrameCondition(l_jump_lt_start, l_jumpPositive);
+        l_ss_lt_Rt.AddAnyFrameCondition(l_jump_lt_start, l_jumpPositive);
+        l_jump_lt_start.AddLastFrameCondition(l_jump_lt_idle, l_crouchNegative);
+        l_jump_lt_start.AddLastFrameCondition(l_jump_lt_crouch, l_crouchPositive);
+        l_jump_lt_idle.AddAnyFrameCondition(l_jump_lt_crouch, l_crouchPositive);
+        l_jump_lt_idle.AddLangingCondition(l_jump_lt_land_lt, l_sidestepLeftPositive);
+        l_jump_lt_idle.AddLangingCondition(l_jump_lt_land, l_sidestepLeftNegative);
+        l_jump_lt_crouch.AddLangingCondition(l_jump_lt_land_lt, l_sidestepLeftPositive);
+        l_jump_lt_crouch.AddLangingCondition(l_jump_lt_land, l_sidestepLeftNegative);
+        l_jump_lt_land.AddLastFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_jump_lt_land.AddLastFrameCondition(l_idle1, l_sidestepLeftNegative);
+        l_jump_lt_land_lt.AddLastFrameCondition(l_ss_lt_Rt, l_sidestepLeftPositive);
+        l_jump_lt_land_lt.AddLastFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+        l_ss_lt_run.AddLastFrameCondition(l_runRt, l_forwardPositive);
+        l_ss_lt_run.AddLastFrameCondition(l_ss_lt_stop, l_forwardNegative);
+        l_ss_lt_stop.AddLastFrameCondition(l_idle1, l_sidestepLeftNegative);
+        l_ss_lt_stepb.AddLastFrameCondition(l_idle1, l_sidestepLeftNegative);
+        l_ss_lt_stepb.AddAnyFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_ss_lt_stop.AddAnyFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_ss_lt_Start.AddLastFrameCondition(l_ss_lt_stop, l_sidestepLeftNegative);
+        #endregion
+
+        #region ss_rt
+        l_ss_rt_1stepa
+        .AddLastFrameCondition(l_ss_rt_Start, l_sidestepRightPositive)
+        .AddLastFrameCondition(l_ss_rt_Rt, l_sidestepRightPositive)
+        .AddLastFrameCondition(l_ss_rt_Lt, l_sidestepRightPositive)
+        .AddLastFrameCondition(l_ss_rt_Rt, l_sidestepRightPositive);
+        TRAMState l_ss_rt_stepb = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.stepb);
+        TRAMState l_ss_rt_run = TRAMState.FormState(AnimFlags.ss_rt_run);
+        TRAMState l_jump_rt_start = TRAMState.FormState(AnimFlags.jump_rt | AnimFlags.start, DoJump);
+        TRAMState l_jump_rt_idle = TRAMState.FormState(AnimFlags.jump_rt | AnimFlags.idle);
+        TRAMState l_jump_rt_land = TRAMState.FormState(AnimFlags.jump_rt | AnimFlags.land);
+        TRAMState l_jump_rt_land_lt = TRAMState.FormState(AnimFlags.jump_rt | AnimFlags.land | AnimFlags.rt);
+        TRAMState l_jump_rt_crouch = TRAMState.FormState(AnimFlags.jump_rt | AnimFlags.crouch);
+        TRAMState l_ss_rt_slide = TRAMState.FormState(AnimFlags.ss_rt | AnimFlags.slide);
+        TRAMState l_crouch_rt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.rt);
+        l_ss_rt_1stepa.AddAnyFrameCondition(l_crouch_rt, l_crouchPositive);
+        l_ss_rt_Lt.AddAnyFrameCondition(l_ss_rt_slide, l_crouchPositive);
+        l_ss_rt_Rt.AddAnyFrameCondition(l_ss_rt_slide, l_crouchPositive);
+        l_ss_rt_Start.AddAnyFrameCondition(l_ss_rt_slide, l_crouchPositive);
+        l_ss_rt_slide.AddLastFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+        l_ss_rt_slide.AddLastFrameCondition(l_ss_rt_Lt, l_sidestepRightPositive);
+        l_crouch_rt.AddLastFrameCondition(l_idle1, () => true);
+        l_ss_rt_1stepa.AddLastFrameCondition(l_ss_rt_stepb, l_sidestepRightNegative);
+        l_ss_rt_Lt.AddAnyFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+        l_ss_rt_Rt.AddAnyFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+        l_ss_rt_Lt.AddAnyFrameCondition(l_run_bk_Rt, l_backwardPositive);
+        l_ss_rt_Rt.AddAnyFrameCondition(l_run_bk_Rt, l_backwardPositive);
+        l_ss_rt_Lt.AddAnyFrameCondition(l_ss_rt_run, l_forwardPositive);
+        l_ss_rt_Rt.AddAnyFrameCondition(l_ss_rt_run, l_forwardPositive);
+        l_ss_rt_Lt.AddAnyFrameCondition(l_jump_rt_start, l_jumpPositive);
+        l_ss_rt_Rt.AddAnyFrameCondition(l_jump_rt_start, l_jumpPositive);
+        l_jump_rt_start.AddLastFrameCondition(l_jump_rt_idle, l_crouchNegative);
+        l_jump_rt_start.AddLastFrameCondition(l_jump_rt_crouch, l_crouchPositive);
+        l_jump_rt_idle.AddAnyFrameCondition(l_jump_rt_crouch, l_crouchPositive);
+        l_jump_rt_idle.AddLangingCondition(l_jump_rt_land_lt, l_sidestepRightPositive);
+        l_jump_rt_idle.AddLangingCondition(l_jump_rt_land, l_sidestepRightNegative);
+        l_jump_rt_crouch.AddLangingCondition(l_jump_rt_land_lt, l_sidestepRightPositive);
+        l_jump_rt_crouch.AddLangingCondition(l_jump_rt_land, l_sidestepRightNegative);
+        l_jump_rt_land.AddLastFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_jump_rt_land.AddLastFrameCondition(l_idle1, l_sidestepRightNegative);
+        l_jump_rt_land_lt.AddLastFrameCondition(l_ss_rt_Rt, l_sidestepRightPositive);
+        l_jump_rt_land_lt.AddLastFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+        l_ss_rt_run.AddLastFrameCondition(l_runLt, l_forwardPositive);
+        l_ss_rt_run.AddLastFrameCondition(l_ss_rt_stop, l_forwardNegative);
+        l_ss_rt_stop.AddLastFrameCondition(l_idle1, l_sidestepRightNegative);
+        l_ss_rt_stepb.AddLastFrameCondition(l_idle1, l_sidestepRightNegative);
+        l_ss_rt_stepb.AddAnyFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_ss_rt_stop.AddAnyFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_ss_rt_Start.AddLastFrameCondition(l_ss_rt_stop, l_sidestepRightNegative);
+        #endregion
+
+        TRAMState l_jump_start = TRAMState.FormState(AnimFlags.jump | AnimFlags.start, DoJump);
+
+        #region idle -> jump
+        TRAMState l_jump_idle = TRAMState.FormState(AnimFlags.jump | AnimFlags.idle);
+        TRAMState l_jump_land = TRAMState.FormState(AnimFlags.jump | AnimFlags.land);
+        TRAMState l_jump_land_fw = TRAMState.FormState(AnimFlags.jump | AnimFlags.land | AnimFlags.fw);
+        TRAMState l_jump_crouch = TRAMState.FormState(AnimFlags.jump | AnimFlags.crouch);
+        l_jump_start.AddLastFrameCondition(l_jump_idle, () => true);
+        l_jump_idle.AddAnyFrameCondition(l_jump_crouch, l_crouchPositive);
+        l_jump_idle.AddLangingCondition(l_jump_land, l_forwardNegative);
+        l_jump_idle.AddLangingCondition(l_jump_land_fw, l_forwardPositive);
+        l_jump_crouch.AddLangingCondition(l_jump_land, l_forwardNegative);
+        l_jump_crouch.AddLangingCondition(l_jump_land_fw, l_forwardPositive);
+        l_jump_land_fw.AddLastFrameCondition(l_runLt, l_forwardPositive);
+        l_jump_land_fw.AddLastFrameCondition(l_runstop, l_forwardNegative);
+        l_jump_land.AddLastFrameCondition(l_run1stepa, l_forwardPositive);
+        l_jump_land.AddLastFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+        l_jump_land.AddLastFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_jump_land.AddLastFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_jump_land.AddLastFrameCondition(l_idle1, () => !(m_channel[ChannelKind.Forward] || m_channel[ChannelKind.Backward] || m_channel[ChannelKind.Right] || m_channel[ChannelKind.Left]));
+        #endregion
+
+        #region crouch motion
+        TRAMState l_idle2croucha = TRAMState.FormState(AnimFlags.idle2croucha);
+        TRAMState l_idle2crouchb = TRAMState.FormState(AnimFlags.idle2crouchb);
+        TRAMState l_crouch2idlea = TRAMState.FormState(AnimFlags.crouch2idlea);
+        TRAMState l_crouch2idleb = TRAMState.FormState(AnimFlags.crouch2idleb);
+        TRAMState l_crouch_idle = TRAMState.FormState(AnimFlags.crouch | AnimFlags.idle);
+        l_crouch_idle.AddLastFrameCondition(l_crouch_idle, l_crouchPositive);
+        l_crouch_idle.AddAnyFrameCondition(l_crouch2idleb, l_crouchNegative);
+        l_crouch2idleb.AddLastFrameCondition(l_idle2crouchb, l_crouchPositive);
+        l_crouch2idleb.AddLastFrameCondition(l_crouch2idlea, l_crouchNegative);
+        l_crouch2idlea.AddLastFrameCondition(l_idle1, l_crouchNegative);
+        l_crouch2idlea.AddLastFrameCondition(l_idle2croucha, l_crouchPositive);
+        l_idle2croucha.AddLastFrameCondition(l_idle2crouchb, l_crouchPositive);
+        l_idle2crouchb.AddLastFrameCondition(l_crouch_idle, l_crouchPositive);
+        l_idle2crouchb.AddLastFrameCondition(l_crouch_idle, l_crouchNegative);
+        l_idle2croucha.AddLastFrameCondition(l_crouch2idlea, l_crouchNegative);
+        #endregion
+
+        #region crouch run
+        TRAMState l_crouch_run_lt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.run | AnimFlags.lt);
+        TRAMState l_crouch_run_rt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.run | AnimFlags.rt);
+        {
+            Func<bool> l_crouch_run_specific_input = () => l_crouchPositive() && (l_sidestepLeftPositive() | l_sidestepRightPositive() | l_forwardPositive());
+            Func<bool> l_crouch_run_specific_input_neg = () => l_crouchPositive() && (!l_sidestepLeftPositive() && !l_sidestepRightPositive() && !l_forwardPositive());
+
+            Func<bool> l_crouch_miltidirection = () =>
+            {
+                m_targetAngle = Quaternion.Euler(0, (m_channel[ChannelKind.Left] ? -90 : m_channel[ChannelKind.Right] ? 90f : 0) / (m_channel[ChannelKind.Forward] ? 2f : 1f), 0);
+                return l_crouchNegative();
+            };
+
+            l_crouch_run_lt.AddLastFrameCondition(l_crouch_run_rt, l_crouch_run_specific_input);
+            l_crouch_run_rt.AddLastFrameCondition(l_crouch_run_lt, l_crouch_run_specific_input);
+            l_crouch_run_lt.AddAnyFrameCondition(l_runStart, l_crouch_miltidirection);
+            l_crouch_run_rt.AddAnyFrameCondition(l_runStart, l_crouch_miltidirection);
+            l_crouch_run_lt.AddAnyFrameCondition(l_crouch_idle, l_crouch_run_specific_input_neg);
+            l_crouch_run_rt.AddAnyFrameCondition(l_crouch_idle, l_crouch_run_specific_input_neg);
+            l_crouch_idle.AddAnyFrameCondition(l_crouch_run_lt, l_crouch_run_specific_input);
+        }
+        #endregion
+
+        #region crouch run bk
+        TRAMState l_crouch_run_bk_lt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.lt);
+        TRAMState l_crouch_run_bk_rt = TRAMState.FormState(AnimFlags.crouch | AnimFlags.run_bk | AnimFlags.rt);
+        {
+            Func<bool> l_crouch_run_bk_specific_input = () => l_crouchPositive() && (l_sidestepLeftPositive() | l_sidestepRightPositive() | l_backwardPositive());
+            Func<bool> l_crouch_run_bk_specific_input_neg = () => l_crouchPositive() && (!l_sidestepLeftPositive() && !l_sidestepRightPositive() && !l_backwardPositive());
+
+            Func<bool> l_crouch_bk_miltidirection = () =>
+            {
+                m_targetAngle = Quaternion.Euler(0, (m_channel[ChannelKind.Left] ? 90 : m_channel[ChannelKind.Right] ? -90f : 0) / (m_channel[ChannelKind.Backward] ? 2f : 1f), 0);
+                return l_crouchNegative() && l_forwardNegative();
+            };
+
+            l_crouch_run_bk_lt.AddLastFrameCondition(l_crouch_run_bk_rt, l_crouch_run_bk_specific_input);
+            l_crouch_run_bk_rt.AddLastFrameCondition(l_crouch_run_bk_lt, l_crouch_run_bk_specific_input);
+            l_crouch_run_bk_lt.AddAnyFrameCondition(l_run_bk_Start, l_crouch_bk_miltidirection);
+            l_crouch_run_bk_rt.AddAnyFrameCondition(l_run_bk_Start, l_crouch_bk_miltidirection);
+            l_crouch_run_bk_lt.AddAnyFrameCondition(l_crouch_idle, l_crouch_run_bk_specific_input_neg);
+            l_crouch_run_bk_rt.AddAnyFrameCondition(l_crouch_idle, l_crouch_run_bk_specific_input_neg);
+            l_crouch_idle.AddAnyFrameCondition(l_crouch_run_bk_lt, () => m_channel[ChannelKind.Backward | ChannelKind.Crouch]);
+        }
+        #endregion
+
+        #region jump fw
+        TRAMState l_jump_fw_start = TRAMState.FormState(AnimFlags.jump_fw | AnimFlags.start, DoJump);
+        TRAMState l_jump_fw_idle = TRAMState.FormState(AnimFlags.jump_fw | AnimFlags.idle);
+        TRAMState l_jump_fw_land = TRAMState.FormState(AnimFlags.jump_fw | AnimFlags.land);
+        TRAMState l_jump_fw_land_fw = TRAMState.FormState(AnimFlags.jump_fw | AnimFlags.land | AnimFlags.fw);
+        TRAMState l_jump_fw_crouch = TRAMState.FormState(AnimFlags.jump_fw | AnimFlags.crouch);
+        l_runLt.AddAnyFrameCondition(l_jump_fw_start, l_jumpPositive);
+        l_runRt.AddAnyFrameCondition(l_jump_fw_start, l_jumpPositive);
+        l_jump_fw_start.AddLastFrameCondition(l_jump_fw_idle, l_crouchNegative);
+        l_jump_fw_start.AddLastFrameCondition(l_jump_fw_crouch, l_crouchPositive);
+        l_jump_fw_idle.AddAnyFrameCondition(l_jump_fw_crouch, l_crouchPositive);
+        l_jump_fw_idle.AddLangingCondition(l_jump_fw_land, l_forwardNegative);
+        l_jump_fw_idle.AddLangingCondition(l_jump_fw_land_fw, l_forwardPositive);
+        l_jump_fw_crouch.AddLangingCondition(l_jump_fw_land, l_forwardNegative);
+        l_jump_fw_crouch.AddLangingCondition(l_jump_fw_land_fw, l_forwardPositive);
+        l_jump_fw_land.AddLastFrameCondition(l_run1stepa, l_forwardPositive);
+        l_jump_fw_land.AddLastFrameCondition(l_idle1, l_forwardNegative);
+        l_jump_fw_land_fw.AddLastFrameCondition(l_runstop, l_forwardNegative);
+        l_jump_fw_land_fw.AddLastFrameCondition(l_runLt, l_forwardPositive);
+        #endregion
+
+        #region jump bk
+        TRAMState l_jump_bk_start = TRAMState.FormState(AnimFlags.jump_bk | AnimFlags.start, DoJump);
+        TRAMState l_jump_bk_idle = TRAMState.FormState(AnimFlags.jump_bk | AnimFlags.idle);
+        TRAMState l_jump_bk_land = TRAMState.FormState(AnimFlags.jump_bk | AnimFlags.land);
+        TRAMState l_jump_bk_land_bk = TRAMState.FormState(AnimFlags.jump_bk | AnimFlags.land | AnimFlags.bk);
+        TRAMState l_jump_bk_crouch = TRAMState.FormState(AnimFlags.jump_bk | AnimFlags.crouch);
+        l_run_bk_Lt.AddAnyFrameCondition(l_jump_bk_start, l_jumpPositive);
+        l_run_bk_Rt.AddAnyFrameCondition(l_jump_bk_start, l_jumpPositive);
+        l_jump_bk_start.AddLastFrameCondition(l_jump_bk_idle, l_crouchNegative);
+        l_jump_bk_start.AddLastFrameCondition(l_jump_bk_crouch, l_crouchPositive);
+        l_jump_bk_idle.AddAnyFrameCondition(l_jump_bk_crouch, l_crouchPositive);
+        l_jump_bk_idle.AddLangingCondition(l_jump_bk_land, l_backwardNegative);
+        l_jump_bk_idle.AddLangingCondition(l_jump_bk_land_bk, l_backwardPositive);
+        l_jump_bk_crouch.AddLangingCondition(l_jump_bk_land, l_backwardNegative);
+        l_jump_bk_crouch.AddLangingCondition(l_jump_bk_land_bk, l_backwardPositive);
+        l_jump_bk_land.AddLastFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+        l_jump_bk_land.AddLastFrameCondition(l_idle1, l_backwardNegative);
+        l_jump_bk_land_bk.AddLastFrameCondition(l_run_bk_stop, l_backwardNegative);
+        l_jump_bk_land_bk.AddLastFrameCondition(l_run_bk_Lt, l_backwardPositive);
+        #endregion
+
+        #region idle
+        l_idle1.AddLastFrameCondition(l_idle2, () => !m_channel[ChannelKind.Any]);
+        l_idle2.AddLastFrameCondition(l_idle1, () => !m_channel[ChannelKind.Any]);
+        l_idle1.AddAnyFrameCondition(l_run1stepa, l_forwardPositive);
+        l_idle2.AddAnyFrameCondition(l_run1stepa, l_forwardPositive);
+        l_idle1.AddAnyFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+        l_idle2.AddAnyFrameCondition(l_run_bk_1stepa, l_backwardPositive);
+        l_idle1.AddAnyFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_idle2.AddAnyFrameCondition(l_ss_lt_1stepa, l_sidestepLeftPositive);
+        l_idle1.AddAnyFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_idle2.AddAnyFrameCondition(l_ss_rt_1stepa, l_sidestepRightPositive);
+        l_idle1.AddAnyFrameCondition(l_jump_start, l_jumpPositive);
+        l_idle2.AddAnyFrameCondition(l_jump_start, l_jumpPositive);
+        l_idle1.AddAnyFrameCondition(l_idle2croucha, l_crouchPositive);
+        l_idle2.AddAnyFrameCondition(l_idle2croucha, l_crouchPositive);
+        #endregion
+
+        m_state = l_idle1;
+    }
 
     public float m_upperVector = 0;
     public Vector3 m_motionVector;
@@ -1305,7 +709,8 @@ public class GUIANIMCONTROL : MonoBehaviour
     
     public void OnActionFrame(string param)
     {
-        //Debug.Log(param + "|"  + m_clipname);
+        //Debug.Log(param + "|" + m_clipname + "||" + param.Contains(m_clipname));
+        
         if ( !param.Contains(m_clipname))
         {
             return;
@@ -1320,8 +725,9 @@ public class GUIANIMCONTROL : MonoBehaviour
 
         //if (param == m_clipname)
         {
-            OnLastFrame();
+            //OnLastFrame();
         }
+        m_state = m_state.OnLastFrame();
         PlayClip(GetAnim());
         return;
         //Debug.Log("animation finish:" + param);
@@ -1548,7 +954,7 @@ public class GUIANIMCONTROL : MonoBehaviour
     void OnGUI()
     {
         GUILayout.Space(50);
-        GUILayout.Label(m_clipname + "\n" + adds + "\n" + adds2 + "\nadditional angle:" + m_targetAngle.eulerAngles);
+        GUILayout.Label(m_clipname + "\n" + adds + "\n" + adds2 + "\nadditional angle:" + m_targetAngle.eulerAngles + "\nJumpTime : " +(m_jumpStart != -1 ? Time.time - m_jumpStart : 0 ));
 
         return;
         if (animation != null)
